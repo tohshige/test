@@ -23,3 +23,7 @@ test private
 
 選手毎にイニング数をカウントしているので
 コールドゲームフラグの必要なし
+
+
+tests
+`from vs code`
