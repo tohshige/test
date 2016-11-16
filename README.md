@@ -14,7 +14,7 @@ test private
     - [h2](#h2)
 
 <!-- /TOC -->
-
+[ページ](https://tohshige.github.io/test/)
 
 | -     | 打者  | 投手  |
 |-------|-----|-----|
