@@ -14,8 +14,10 @@ test
             var url = $("#url_post").val();
 
                 var JSONdata = {
-                    value1: $("#value1").val(),
-                    value2: $("#value2").val()      
+                    business_service_id: $("#business_service_id").val(),
+                    apiVersion: $("#apiVersion").val(),
+                    Store_Id: $("#Store_Id").val(),
+                    NeedNextMonthsInformation: $("#NeedNextMonthsInformation").val(),
                 };
 
             alert(JSON.stringify(JSONdata));
@@ -55,7 +57,7 @@ test
 "NeedNextMonthsInformation":"1"
 }    
     <h1>HTMLファイルからPOSTでJSONデータを送信する</h1>
-    <p>URL: <input type="text" id="url_post" name="url" size="100" value="http://testurl/"></p>
+    <p>URL: <input type="text" id="url_post" name="url" size="100" value="https://ve.m.service.smt.docomo.ne.jp/r4d/ap/auth/lpbasisif/1.0/lpbasisif_UserInfo_GX/list"></p>
     <p>value1: <input type="text" id="business_service_id" size="30" value="HC01"></p>
     <p>value2: <input type="text" id="apiVersion"          size="30" value="1.0"></p>
     <p>value2: <input type="text" id="Store_Id"            size="30" value="1.0"></p>
