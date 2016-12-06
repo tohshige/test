@@ -10,7 +10,10 @@
         $("#response").html("Response Values");
 
         $("#button").click( function(){
+                  //form から読み取り
             var url = $("#url_post").val();
+                //test ファイルから読み取り
+                 url='sample.json'
 
                 var JSONdata = {
                     business_service_id: $("#business_service_id").val(),
@@ -64,14 +67,27 @@
     <p><button id="button" type="button">submit</button></p>
     <textarea id="response" cols=120 rows=10 disabled></textarea>
 
-<form method="post" action="https://ve.m.service.smt.docomo.ne.jp/r4d/ap/auth/lpbasisif/1.0/lpbasisif_UserInfo_GX/list">
-    <p>value1: <input type="text" name="business_service_id"   size="30" value="HC01"></p>
-    <p>value2: <input type="text" name="apiVersion"              size="30" value="1.0"></p>
-    <p>value2: <input type="text" name="Store_Id"              size="30" value="1.0"></p>
-    <p>value2: <input type="text" name="NeedNextMonthsInformation" size="30" value="1"></p>
-    <p><button type="submit">submit</button></p>
-</form>
+
 
 
 </body>
+<script type="text/javascript">
+// 定義
+var data = {
+    name : 'kobayashi',
+    age : 24,
+    schols : [
+        '千葉小学校',
+        '神奈川中学校',
+        '東京高校'
+        ]
+};
+
+// 利用
+console.log(data.name);
+console.log(data.age);
+console.log(data.schols);
+console.log(data.schols[0]);
+</script>
+
 </html>

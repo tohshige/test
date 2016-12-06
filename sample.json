@@ -1,0 +1,33 @@
+
+        {
+        "ResultCode": "2000",
+                "UserInformation": {
+                "AccountId": "OJGL44OO5NNOJT5TP4T5TTPG",
+                        "isSUID": "0",
+                        "StageRankId": "8000",
+                        "isTop": "0",
+                        "isFix": "1",
+                        "StageRankName": "シングルマスター",
+                        "StageRankImageUrl": "https://static.d.dmkt-sp.jp/common/maschalle/img/rank01_01.png",
+                        "PointGivingPercent": 0,
+                        "AmountToTargetStage": 2000,
+                        "NumberOfMonthsUse": 0,
+                        "NumberOfMonthsUseToTargetStage": 1,
+                        "TargetStageRankId": "6000",
+                        "TargetStageRankName": "ダブルマスター",
+                        "NextStageRankId": "8000",
+                        "NextStageRankName": "シングルマスター",
+                        "ContractStateInformation": [
+                                {
+                                "ContractState": "0",
+                                        "storeId": "36",
+                                        "monthlyFee": 500
+                                        }
+                        ]
+                        }
+        }
+
+[
+{"name":"Google", "url":"https://www.google.co.jp/"},
+{"name":"Yahoo!", "url":"http://www.yahoo.co.jp/"}
+]
