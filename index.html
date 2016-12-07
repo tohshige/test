@@ -14,7 +14,7 @@
 //cokkie 書き込み
 document.cookie = 'data=123;'
 //全クッキー表示
-alert(document.cookie);
+//alert(document.cookie);
       var cookies = document.cookie;
 //      var cookieItem = cookies.split(";");
 //      var cookieValue = "";
@@ -57,15 +57,15 @@ alert(document.cookie);
                 success : function(data) {
 
                     // Success 成功
-                    alert("success");
-                    alert(JSON.stringify(data));
+//                    alert("success");
+//                    alert(JSON.stringify(data));
                     data_persed  = JSON.parse(JSON.stringify(data));
                     alert("画像" + data_persed.UserInformation.StageRankImageUrl);
                     img_url      =    data_persed.UserInformation.StageRankImageUrl;
                     $("#image-box").children("img").attr({'src':img_url});
                     $("#image-box").append('<br>ゲットした画像ファイルURL<br>jqueryでIMG #image-box をキーに要素書き換え<br>' + img_url + '<br>');
                     document.cookie = 'img_url='+img_url+';'//クッキーに保存
-                    alert("画像をクッキーに保存しました");
+//                    alert("画像をクッキーに保存しました");
 
                     getugaku =  data_persed.UserInformation.ContractStateInformation[0].monthlyFee;
                     $("#image-box").append('<b>月額 ￥' + getugaku + '円</b><br><hr>');
