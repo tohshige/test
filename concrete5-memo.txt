@@ -1,0 +1,55 @@
+﻿concrete5 同士の標準機能での Export & Import 
+アクセス条件： FTP＆データベース （できればsshリモート）
+下記調査はローカルの為フルコントロール
+
+
+12／1現在編集権限はCMS上だけと思われる
+CMS上でもパーツで権限を付与していく？
+そこら辺のルールがまだこれからドコモ側が決めていくものと思われる
+
+APIアクセスをテストしましたが、クロスサイト対策をされているためエラー
+自ドメインで実行する必要あり、こちらもJquery程度だとおもわれるので
+出来上がった者に対する微調整だけで良いと思われる。
+
+
+＜判明したこと＞
+！記事などページの文章はDBに保存される
+！DBまるごとになるためサイト管理者のパスワードも移行されてしまう
+！インストールされてるフォルダ以下すべてファイルをコピー
+！画像ファイル保存先 /files /files/cache ランダムな階層で保存される
+
+＜調査環境＞
+A:VirtualBox+WINXP+MAMP環境 (Gitサーバ) Gitで差分を監視用
+　　　↓ 取り込みテスト
+B:LOCAL-MAMP環境
+
+Export 元 http://192.168.11.36/c 
+Import先  http://192.168.11.20/c
+
+＜手順＞
+concrete5 サイトのバックアップ方法
+http://concrete5-japan.org/help/5-6/install/how_to_backup/
+admin でログイン
+管理画面から
+　1.開発者モードON（要望のバージョンにはない）
+　2.メンテナンスモードON,3.キャッシュ削除、4.DBバックアップを実行
+
+concrete5 サイトを復旧（リストア）する方法
+http://concrete5-japan.org/help/faq/how-to-restore/
+
+管理者パスワード 暗号化（Md5＋SALT文字）
+
+＜その他＞
+基本上流のフォルダにカスタムファイルは設置
+例）テーマ (php,css,js ファイル)
+\concrete\themes
+カスタムテーマ
+\themes
+
+＜小技などのサイト＞
+http://concrete5-nocdn.tomo.ac/concrete5tips/
+
+this file gdrive url
+https://drive.google.com/open?id=0BwhTeHq30poRSVhPdkpyUWY4eTg
+
+
