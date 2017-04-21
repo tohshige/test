@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="semantic.min.css">
+    <script src="semantic.min.js"></script>
+  </head>
+<form id="allform">
+<div class="ui top attached button">Button before grid</div>
+<div id="all" class="ui grid container">
+  <div class="eight wide column">
+      <h4 class="long">トゥルースリーパー cero＜セロ＞<br><span>（マットレス）</span></h4>
+    <p>通常販売価格：<em>22,800</em>円(税抜)～</p>
+    <p><a href="#" class="modal-cero arrow_01">商品詳細を見る</a></p>
+    <p>マットレスを複数購入すると、価格の安いほうが<span class="f_red">【30%OFF!】</span></p>
+    <dl class="selectNum">
+      <dt>シングルサイズ</dt>
+      <dd><select name="cart_122" id="cart_122">
+        <option selected="selected">数量</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        </select></dd>
+      <dt>セミダブルサイズ </dt>
+      <dd><select name="cart_123" id="cart_123">
+        <option selected="selected">数量</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        </select></dd>
+      <dt>ダブルサイズ</dt>
+      <dd>
+        <select name="cart_124" id="cart_124">
+          <option selected="selected">数量</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </dd>
+    </dl>
+    <p><span class="note_04">※キャンペーン対象商品</span></p>
+
+
+  </div>
+  <div class="eight wide column">
+ <p>kago tuika test @shige 在庫6個の商品</p>
+<div class="ui labeled button" tabindex="0">
+<button id="abc" class="ui blue button">注文</button>
+  <a class="ui basic grey left pointing label">
+    楽天カートに入れる
+  </a>
+</div>
+<br>
+↑ボタンを押すと↓楽天側のカゴに入る。<br>
+<a class="ui button" target="_blank" href="https://basket.step.rakuten.co.jp/rms/mall/bs/cart/?shop_bid=199614&l2-id=shop_header_cart
+">カゴ確認</a><br>
+
+  </div>
+
+<p id=sel class="ui red text"></p>
+<div class="ui alert"></div>
+
+<div class="ui top attached tabular menu">
+  <div class="active item">result</div>
+</div>
+<div id="result1" class="ui bottom attached active tab segment">
+</div>
+<div id="result"></div>
+<div id="results"></div>
+
+</form>
+
+<pre class="grey text">
+https://basket.step.rakuten.co.jp/rms/mall/bs/cart/?shop_bid=199614&l2-id=shop_header_cart
+
+
+要件
+■まとめ買い対象商品
+1. 初期状態はプロパーのみ選択可能な状態、まとめ買い対象はdisable、購入ボタンもdisable
+2. プロパーを選択すると、まとめ買い対象はenable、購入ボタンもdisable
+3. プロパーはdisableになり、変更できない
+4. まとめ買い対象商品の数量を変更したもの(1以上)がまとめ買い対象商品としてカウントされる
+
+■プロパー商品の変更方法
+1. 選び直すボタンを設置、初期状態はdisable
+2. プロパーを選択した時点で、enable
+3. 選び直すをクリックすると、プロパーとまとめ買い対象がリセットされてプロパーがenable、まとめ買い対象がdisableの状態になる
+
+■カゴに商品入れるリクエストの組み立て方
+1. shopIdはshopjapanのもので固定
+2. itemIdはHTMLに入れてもらう
+3. unitsに個数を入れる
+4. これを数量が選択してある商品分繰り返す
+5. 全商品分リクエストしたらカゴのページに遷移
+</pre>
+
+</div>
+
+<script type="text/javascript" src="js/rcart.js"></script>
+<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
