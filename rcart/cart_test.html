@@ -6,33 +6,35 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="semantic.min.css">
     <script src="semantic.min.js"></script>
+
+    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/cnt_modal.css" rel="stylesheet" type="text/css">
 
-  </head>
+</head>
 
-  <script type="text/javascript">
-      // $(document).ready(function() {
-      //    $('#target').load('cart_test.html');//temp disable
-      //  $('#modal-cero').modal('show');
-      // });
-      $('.modal-cero').on('click',function(){
-        $('#modal-cero').modal('show');
-      });
-      // # link 無効
-      $(function(){
-          $('a[href="#"]').click(function(){
+<script type="text/javascript">
+    // $(document).ready(function() {
+    // //    $('#target').load('cart_test.html');//temp disable
+    //  $('#modal-cero').modal('show');
+    // });
+
+    // # link 無効
+    $(function() {
+        $('a[href="#"].modal-cero').click(function() {
             $('#modal-cero').modal('show');
-              return false;
-          })
-      });
-  </script>
+            return false;
+        })
+    });
+</script>
 <pre>
-Test Of NewModal
-＆ 選ばれた選択肢の抽出
-＆ 選び直し選択によりリンクボタン有効無効
-＆ ラジオボタン選んだらセレクトボックス有効
+・新しいモーダルTest Of NewModal
+・選ばれた選択肢の抽出、ラジオクリックで「選び直すボタン」を有効
+・「選び直すボタン」により、選択リット＆数量選択無効
+・ラジオボタン選んだら数量選択有効
+・数量まで選択されたら「購入する」ボタン有効
 </pre>
-  <p><a href="#" class="modal-cero arrow_01">商品詳細を見る</a></p>
+<p><a href="#" class="modal-cero arrow_01">商品詳細を見る</a></p>
   <!--  modal -->
   <div id="modal-cero" class="ui modal">
   <i class="close icon"></i>
@@ -141,32 +143,25 @@ Test Of NewModal
       </dd>
     </dl>
     <p><span class="note_04">※キャンペーン対象商品</span></p>
-
-
   </div>
-  <div class="eight wide column">
- <p>kago tuika test @shige 在庫6個の商品</p>
-<div class="ui labeled button" tabindex="0">
-<button id="abc" class="ui blue button">注文</button>
-  <a class="ui basic grey left pointing label">
-    楽天カートに入れる
-  </a>
-</div>
-<br>
-↑ボタンを押すと↓楽天側のカゴに入る。<br>
-<a class="ui button" target="_blank" href="https://basket.step.rakuten.co.jp/rms/mall/bs/cart/?shop_bid=199614&l2-id=shop_header_cart
-">カゴ確認</a><br>
 
-  </div>
 <style>
 input[disabled][readonly]{background-color:#CCC;}
 </style>
-<button id="reset_radio" class="ui disabled button" >
+
+<button id="reset_radio" class="ui sixteen wide column disabled button" >
     <p></p>
     <p class="btn">
         <img alt="マットを選び直す" src="img/btn_buy_selected2.gif" width="365" height="50" >
     </p>
 </button>
+<button id="go_cart" class="ui sixteen wide column disabled button" >
+    <p>選択した商品と合計金額は、次ページでご確認いただけます。</p>
+    <p class="btn">
+        <img src="img/btn_buy_selected.gif" width="365" height="50" >
+    </p>
+</button>
+
 
 <p id=sel class="ui red text"></p>
 <div class="ui alert"></div>
@@ -181,9 +176,20 @@ input[disabled][readonly]{background-color:#CCC;}
 
 </form>
 
+<div class="eight wide column">
+    <p>kago tuika test @shige 在庫6個の商品</p>
+    <div class="ui labeled button" tabindex="0">
+        <button id="addCart" class="ui blue button">注文</button>
+        <a class="ui basic grey left pointing label">楽天カートに入れる</a>
+    </div>
+    <br> ↑ボタンを押すと↓楽天側のカゴに入る。<br>
+    <a class="ui button" target="_blank" href="https://basket.step.rakuten.co.jp/rms/mall/bs/cart/?shop_bid=199614&l2-id=shop_header_cart">カゴ確認</a><br>
+</div>
+
 <pre class="grey text">
 https://basket.step.rakuten.co.jp/rms/mall/bs/cart/?shop_bid=199614&l2-id=shop_header_cart
 
+https://basket.step.rakuten.co.jp/rms/mall/bs/cart/?shop_bid=199614&added_item=10000075
 
 要件
 ■まとめ買い対象商品
@@ -208,4 +214,3 @@ https://basket.step.rakuten.co.jp/rms/mall/bs/cart/?shop_bid=199614&l2-id=shop_h
 </div>
 
 <script type="text/javascript" src="js/rcart.js"></script>
-<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
