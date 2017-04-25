@@ -3,6 +3,11 @@
 
 /* common
 ----------------------------------------*/
+/*semantic ui*/
+.ui .modal {
+  width: 660px
+}
+
 .cntModal {
 	width:660px;
 	margin:0 auto;
@@ -38,7 +43,7 @@
 .cntModal .text {
 	float:left;
 	width:375px;
-	
+
 }
 .cntModal p {
 	padding-bottom:10px;
@@ -191,7 +196,7 @@
 	padding-bottom:15px;
 }
 #modal-aero li.point1 .image,
-#modal-aero li.point2 .image, 
+#modal-aero li.point2 .image,
 #modal-aero li.point3 .image {
 	float:right;
 	width:227px;
@@ -233,7 +238,7 @@
 	padding-bottom:15px;
 }
 #modal-cero li.point1 .image,
-#modal-cero li.point2 .image, 
+#modal-cero li.point2 .image,
 #modal-cero li.point3 .image {
 	float:right;
 	width:227px;
@@ -271,7 +276,7 @@
 	padding-bottom:15px;
 }
 #modal-neofeel li.point1 .image,
-#modal-neofeel li.point2 .image, 
+#modal-neofeel li.point2 .image,
 #modal-neofeel li.point3 .image {
 	float:right;
 	width:227px;
@@ -309,7 +314,7 @@
 	padding-bottom:15px;
 }
 #modal-ceropillow li.point1 .image,
-#modal-ceropillow li.point2 .image, 
+#modal-ceropillow li.point2 .image,
 #modal-ceropillow li.point3 .image {
 	float:right;
 	width:227px;
@@ -350,7 +355,7 @@
 	padding-bottom:15px;
 }
 #modal-neofeelpillow li.point1 .image,
-#modal-neofeelpillow li.point2 .image, 
+#modal-neofeelpillow li.point2 .image,
 #modal-neofeelpillow li.point3 .image {
 	float:right;
 	width:227px;
@@ -391,7 +396,7 @@
 	padding-bottom:15px;
 }
 #modal-wellfitpillow li.point1 .image,
-#modal-wellfitpillow li.point2 .image, 
+#modal-wellfitpillow li.point2 .image,
 #modal-wellfitpillow li.point3 .image {
 	float:right;
 	width:227px;
