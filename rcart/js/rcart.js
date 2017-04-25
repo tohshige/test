@@ -1,3 +1,13 @@
+// Shift-JIS
+
+// href 無効
+$(function(){
+	$('a.disable').click(function(){
+		return false;
+	})
+});
+$( "select" ).attr( "disabled" ,"disabled");
+
 //jquery ajax form.serialize
 
 $("#allDummy").on('change',function() {
@@ -54,16 +64,53 @@ $.ajax({
 
 
 // <script>
+//全フィールドを走査して表示。
   function showValues() {
     var fields = $( ":input" ).serializeArray();
-    $( "#results" ).empty();
-    jQuery.each( fields, function( i, field ) {
-      $( "#results" ).append( field.value + " " );
-      $( "#results" ).append( field.name + " " );
-    });
-  }
+    var select_flg="";
+    $( "#result1" ).empty();
+    $('.ui.sidebar').sidebar('toggle');
 
+    jQuery.each( fields, function( i, field ) {
+      if(field.value=="数量"){
+         return true;  // continue の代わりskipする
+      }
+      // 前方一致のときの処理
+      if(!field.name.indexOf('radio') && field.value !== ""){
+        $( "#result1" ).append( field.name + " " );
+        $( "#reset_radio" ).removeClass( "disabled");
+        $("select").removeAttr("disabled");//選び直すボタン ON
+        var select_flg = "on";
+      }
+      $( "#result1" ).append( field.name + " " );
+      $( "#result1" ).append( field.value + " " );
+      $( "#results_all" ).append( field.name + " " );
+      $( "#results_all" ).append( field.value + " " );
+    });
+    if (select_flg == "on"){
+      // $("select").removeAttr("disabled");
+    }else{
+      // $("select").attr("disabled", "disabled");
+    }
+
+  }
+function reset_radio() {
+  // $("radio").attr("checked",false);
+  var res = confirm("マットを選び直しますか？");
+  if( res == true ) {
+     // OKなら移動
+     $("input[type='radio']").attr("checked", false);
+     $( "#reset_radio" ).attr( "disabled",false);
+     $( "select" ).attr( "disabled" ,false);
+  }
+  else {
+     // キャンセルならダイアログ表示
+  }
+}
+//radio select が変化するたびに ShowValue実行
   $( ":checkbox, :radio" ).click( showValues );
   $( "select" ).change( showValues );
+  $( "#reset_radio" ).click( reset_radio );
+
   showValues();
 // </script>

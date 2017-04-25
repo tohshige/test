@@ -6,11 +6,114 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="semantic.min.css">
     <script src="semantic.min.js"></script>
+    <link href="css/cnt_modal.css" rel="stylesheet" type="text/css">
+
   </head>
+
+  <script type="text/javascript">
+      // $(document).ready(function() {
+      //    $('#target').load('cart_test.html');//temp disable
+      //  $('#modal-cero').modal('show');
+      // });
+      $('.modal-cero').on('click',function(){
+        $('#modal-cero').modal('show');
+      });
+      // # link 無効
+      $(function(){
+          $('a[href="#"]').click(function(){
+            $('#modal-cero').modal('show');
+              return false;
+          })
+      });
+  </script>
+<pre>
+Test Of NewModal
+＆ 選ばれた選択肢の抽出
+＆ 選び直し選択によりリンクボタン有効無効
+＆ ラジオボタン選んだらセレクトボックス有効
+</pre>
+  <p><a href="#" class="modal-cero arrow_01">商品詳細を見る</a></p>
+  <!--  modal -->
+  <div id="modal-cero" class="ui modal">
+  <i class="close icon"></i>
+        <!-- <div class="btnClose">
+          <a class="simplemodal-close" href="#"><img width="17" height="17" src="img/btn_close_01.gif"></a>
+      </div> -->
+      <h2 class="title01"><img src="img/cero_title.jpg" width="642" height="30"></h2>
+      <ul>
+          <li class="point1">
+              <div class="image"><img src="img/cero_img_01.jpg" width="228" height="169"></div>
+              <div class="text">
+                  <h3><img src="img/cero_mttl_01.gif" width="353" height="48"></h3>
+                  <p>網状素材の「ナノブリッド&reg;」と、硬わた素材の「ファイバークッション」を2層に重ねた独自の両面仕様。<br> 夏は通気性の良い「ナノブリッド&reg;」面を上に、冬はあたたかい「ファイバークッション」を上に、と季節に合わせた使い分けが可能です。
+                      <br>
+                  </p>
+              </div>
+          </li>
+          <li class="point2">
+              <div class="image"><img src="img/cero_img_02.jpg" width="228" height="169"></div>
+              <div class="text">
+                  <h3><img src="img/cero_mttl_02.gif" width="353" height="48"></h3>
+                  <p>「ナノブリッド&reg;」はもちろん、「ファイバークッション」も水洗いできるので、不快感の原因になる汗やホコリをきれいに洗い流すことができて夏でも清潔に保てます。<br>
+                  </p>
+              </div>
+          </li>
+          <li class="point3">
+              <div class="image"><img src="img/cero_img_03.jpg" width="226" height="205"></div>
+              <div class="text">
+                  <h3><img src="img/cero_mttl_03.gif" width="353" height="48"></h3>
+                  <p>メッシュ素材とジャージー素材の両面仕様。中の素材は6つのブロックに分かれているので、カバーへの出し入れが簡単です。<br> 「ナノブリッド&reg;」側にメッシュ面を、「ファイバークッション」側にジャージー面をあわせてお使いください。
+                  </p>
+              </div>
+          </li>
+      </ul>
+</div>
+
+
 <form id="allform">
 <div class="ui top attached button">Button before grid</div>
+
+
+<!-- select -->
 <div id="all" class="ui grid container">
-  <div class="eight wide column">
+  <!-- radio -->
+<li>
+  <div class="four wide column">
+  <div class="photo"><img src="img/mattress_neo_w260.jpg" width="256"></div>
+  <div class="text">
+      <h4 class="long">トゥルースリーパー ネオフィール<br><span>（マットレス）</span></h4>
+      <p>通常販売価格：<em>22,800</em>円(税抜)～</p>
+      <p><a href="#" class="modal-neofeel arrow_01">商品詳細を見る</a></p>
+      <dl class="selectNum">
+          <dt style="padding:8px 0 0;">シングルサイズ</dt>
+          <dd><input type="radio" name="radio1" value="S"></dd>
+          <dt style="padding:8px 0 0;">セミダブルサイズ</dt>
+          <dd><input type="radio" name="radio1" value="SD"></dd>
+          <dt style="padding:8px 0 10px;">ダブルサイズ</dt>
+          <dd><input type="radio" name="radio1" value="W"></dd>
+      </dl>
+      <p><span class="note_04">※キャンペーン対象商品</span></p>
+  </div>
+  </div>
+</li>
+<li>
+    <div class="photo"><img src="img/mattress_excellent_single_w260.jpg" width="258"></div>
+    <div class="text">
+        <h4 class="long">トゥルースリーパー エクセレント<br><span>（低反発マットレス）</span></h4>
+        <p>通常販売価格：<em>29,800</em>円(税抜)～</p>
+        <p><a href="#" class="modal-excellent arrow_01">商品詳細を見る</a></p>
+        <dl class="selectNum">
+            <dt style="padding:8px 0 0;">シングルサイズ</dt>
+            <dd><input type="radio" name="radio3" value="S"></dd>
+            <dt style="padding:8px 0 0;">セミダブルサイズ</dt>
+            <dd><input type="radio" name="radio3" value="SD"></dd>
+            <dt style="padding:8px 0 10px;">ダブルサイズ</dt>
+            <dd><input type="radio" name="radio3" value="W"></dd>
+        </dl>
+        <p><span class="note_04">※キャンペーン対象商品</span></p>
+    </div>
+</li>
+  <div class="four wide column">
       <h4 class="long">トゥルースリーパー cero＜セロ＞<br><span>（マットレス）</span></h4>
     <p>通常販売価格：<em>22,800</em>円(税抜)～</p>
     <p><a href="#" class="modal-cero arrow_01">商品詳細を見る</a></p>
@@ -55,6 +158,15 @@
 ">カゴ確認</a><br>
 
   </div>
+<style>
+input[disabled][readonly]{background-color:#CCC;}
+</style>
+<button id="reset_radio" class="ui disabled button" >
+    <p></p>
+    <p class="btn">
+        <img alt="マットを選び直す" src="img/btn_buy_selected2.gif" width="365" height="50" >
+    </p>
+</button>
 
 <p id=sel class="ui red text"></p>
 <div class="ui alert"></div>
