@@ -11,22 +11,34 @@
     <link href="css/common.css" rel="stylesheet" type="text/css">
     <link href="css/cnt_modal.css" rel="stylesheet" type="text/css">
 
+
+
 </head>
 
 <script type="text/javascript">
-    // $(document).ready(function() {
-    // //    $('#target').load('cart_test.html');//temp disable
-    //  $('#modal-cero').modal('show');
-    // });
+$(document).ready(function() {
+   $('#target').load('modal.html');//modal contents
+        // <!-- load modal html -->
+        // <div id="target"></div>
+});
 
-    // # link 無効
-    $(function() {
-        $('a[href="#"].modal-cero').click(function() {
-            $('#modal-cero').modal('show');
-            return false;
-        })
-    });
+
+$('#allform').submit(function(event) {
+// ここでsubmitをキャンセルします。
+    event.preventDefault();
+});
+// # link 無効
+$(function() {
+    $('a[href="#"].modal-cero').click(function() {
+        $('#modal-cero').modal('show');
+        return false;
+    })
+});
 </script>
+<body>
+
+
+    
 <pre>
 ・テスト環境GitHubからMono96確認用へ自動デプロイ設定
 ・新しいモーダルTest Of NewModal
@@ -36,44 +48,17 @@
 ・数量まで選択されたら「購入する」ボタン有効
 </pre>
 <p><a href="#" class="modal-cero arrow_01">商品詳細を見る</a></p>
-  <!--  modal -->
-  <div id="modal-cero" class="ui modal">
-  <i class="close icon"></i>
-        <!-- <div class="btnClose">
-          <a class="simplemodal-close" href="#"><img width="17" height="17" src="img/btn_close_01.gif"></a>
-      </div> -->
-      <h2 class="title01"><img src="img/cero_title.jpg" width="642" height="30"></h2>
-      <ul>
-          <li class="point1">
-              <div class="image"><img src="img/cero_img_01.jpg" width="228" height="169"></div>
-              <div class="text">
-                  <h3><img src="img/cero_mttl_01.gif" width="353" height="48"></h3>
-                  <p>網状素材の「ナノブリッド&reg;」と、硬わた素材の「ファイバークッション」を2層に重ねた独自の両面仕様。<br> 夏は通気性の良い「ナノブリッド&reg;」面を上に、冬はあたたかい「ファイバークッション」を上に、と季節に合わせた使い分けが可能です。
-                      <br>
-                  </p>
-              </div>
-          </li>
-          <li class="point2">
-              <div class="image"><img src="img/cero_img_02.jpg" width="228" height="169"></div>
-              <div class="text">
-                  <h3><img src="img/cero_mttl_02.gif" width="353" height="48"></h3>
-                  <p>「ナノブリッド&reg;」はもちろん、「ファイバークッション」も水洗いできるので、不快感の原因になる汗やホコリをきれいに洗い流すことができて夏でも清潔に保てます。<br>
-                  </p>
-              </div>
-          </li>
-          <li class="point3">
-              <div class="image"><img src="img/cero_img_03.jpg" width="226" height="205"></div>
-              <div class="text">
-                  <h3><img src="img/cero_mttl_03.gif" width="353" height="48"></h3>
-                  <p>メッシュ素材とジャージー素材の両面仕様。中の素材は6つのブロックに分かれているので、カバーへの出し入れが簡単です。<br> 「ナノブリッド&reg;」側にメッシュ面を、「ファイバークッション」側にジャージー面をあわせてお使いください。
-                  </p>
-              </div>
-          </li>
-      </ul>
-</div>
 
 
-<form id="allform">
+<form id="allform" action onsubmit="showValues('on');return false;">#allform
+
+        <!--<button id="go_cart" class="ui blue button disabled">go all注文shopjapan</button>-->
+        <a class="ui blue button" href="cart_test.html" >reload</a>
+        <button id="addCartSJ" class="ui blue button">注文shopjapan</button>
+        <button id="addCartkuroko" class="ui blue button">注文</button>
+
+
+
 <div class="ui top attached button">Button before grid</div>
 
 
@@ -89,12 +74,11 @@
       <p><a href="#" class="modal-neofeel arrow_01">商品詳細を見る</a></p>
       <dl class="selectNum">
           <dt style="padding:8px 0 0;">シングルサイズ</dt>
-          <dd><input type="radio" name="radio1" value="S"></dd>
           <dd><input type="radio" name="radio1" value="10000729"></dd>
           <dt style="padding:8px 0 0;">セミダブルサイズ</dt>
-          <dd><input type="radio" name="radio1" value="SD"></dd>
+          <dd><input type="radio" name="radio1" value="10000730"></dd>
           <dt style="padding:8px 0 10px;">ダブルサイズ</dt>
-          <dd><input type="radio" name="radio1" value="W"></dd>
+          <dd><input type="radio" name="radio1" value="10000731"></dd>
       </dl>
       <p><span class="note_04">※キャンペーン対象商品</span></p>
   </div>
@@ -124,20 +108,20 @@
     <p>マットレスを複数購入すると、価格の安いほうが<span class="f_red">【30%OFF!】</span></p>
     <dl class="selectNum">
       <dt>シングルサイズ</dt>
-      <dd><select name="cart_122" id="cart_122">
+      <dd><select name="10000729" id="cart_122">
         <option selected="selected">数量</option>
         <option value="1">1</option>
         <option value="2">2</option>
         </select></dd>
       <dt>セミダブルサイズ </dt>
-      <dd><select name="cart_123" id="cart_123">
+      <dd><select name="10000730" id="cart_123">
         <option selected="selected">数量</option>
         <option value="1">1</option>
         <option value="2">2</option>
         </select></dd>
       <dt>ダブルサイズ</dt>
       <dd>
-        <select name="cart_124" id="cart_124">
+          <select name="10000731" id="cart_124">
           <option selected="selected">数量</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -160,7 +144,7 @@ input[disabled][readonly]{background-color:#CCC;}
 <button id="go_cart" class="ui sixteen wide column disabled button" >
     <p>選択した商品と合計金額は、次ページでご確認いただけます。</p>
     <p class="btn">
-        <img src="img/btn_buy_selected.gif" width="365" height="50" >
+        <img alt="購入ボタン" src="img/btn_buy_selected.gif" width="365" height="50" >
     </p>
 </button>
 
@@ -171,10 +155,11 @@ input[disabled][readonly]{background-color:#CCC;}
 <div class="ui top attached tabular menu">
   <div class="active item">result</div>
 </div>
-<div id="result1" class="ui bottom attached active tab segment">
+<div class="ui bottom attached active tab segment">
+    <p id="result1" ></p>
+    <p id="result" ></p>
+    <p id="results "></p>
 </div>
-<div id="result"></div>
-<div id="results"></div>
 
 </form>
 
@@ -185,7 +170,7 @@ input[disabled][readonly]{background-color:#CCC;}
         <a class="ui basic grey left pointing label">楽天カートに入れる</a>
     </div>
     <br> ↑ボタンを押すと↓楽天側のカゴに入る。<br>
-    <a class="ui button" target="_blank" href="https://basket.step.rakuten.co.jp/rms/mall/bs/cart/?shop_bid=199614&l2-id=shop_header_cart">カゴ確認</a><br>
+    <a class="ui button" target="_blank" href="https://basket.step.rakuten.co.jp/rms/mall/bs/cart/">カゴ確認</a><br>
 </div>
 
 <pre class="grey text">
@@ -214,5 +199,10 @@ https://basket.step.rakuten.co.jp/rms/mall/bs/cart/?shop_bid=199614&added_item=1
 </pre>
 
 </div>
+        <!-- load modal html -->
+        <div id="target"></div>
 
 <script type="text/javascript" src="js/rcart.js"></script>
+
+
+</body>
