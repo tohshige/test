@@ -254,10 +254,7 @@ $(function() {
 
 <div id="btnBuy2">
 <p></p>
-<p class="btn"><a href="#error" id="cart_url"><img src="img/btn_buy_selected2.gif" width="365" height="50" onClick="FreeCartClass.f_buyItem();"></a></p>
-</div>
-
-<p class="goBuy"><a href="#btnBuy">購入へ進む</a></p>
+<p class="btn">old <a href="#error" id="cart_url"><img src="img/btn_buy_selected2.gif" width="365" height="50" onClick="FreeCartClass.f_buyItem();"></a></p>
 </div>
 
 <!--mat reset bottun-->
@@ -267,6 +264,10 @@ $(function() {
         <img alt="マットを選び直す" src="img/btn_buy_selected2.gif" width="365" height="50" >
     </p>
 </button>
+
+<p class="goBuy"><a href="#btnBuy">購入へ進む</a></p>
+</div>
+
 
 
 
@@ -810,9 +811,17 @@ $(function() {
 <ul class="lineupList">
 </ul>
 
+<!--go_cart-->
+<div id="error" style="display:none;"></div>
+<button id="go_cart" class="ui sixteen wide column disabled button" >
+    <p>選択した商品と合計金額は、次ページでご確認いただけます。</p>
+    <p class="btn">
+        <!--<img alt="購入ボタン" onclick="showValues('on');" src="img/btn_buy_selected.gif" width="365" height="50" >-->
+        <img alt="購入ボタン" src="img/btn_buy_selected.gif" width="365" height="50" >
+    </p>
+</button>
+
 </div>
-
-
 <!--<div class="cntInnerB" id="lineupOther">
 <h3><img src="img/custom_mttl_04.gif" width="860" height="35"></h3>
 <ul class="lineupList w210">
@@ -852,21 +861,12 @@ $(function() {
 </ul>
 </div>-->
 
-<div id="error" style="display:none;">
-</div>
+<div id="error" style="display:none;"></div>
 
 <div id="btnBuy">
-<p>選択した商品と合計金額は、次ページでご確認いただけます。</p>
+<p>old 選択した商品と合計金額は、次ページでご確認いただけます。</p>
 <p class="btn"><a href="#error" id="cart_url"><img src="img/btn_buy_selected.gif" width="365" height="50" onClick="FreeCartClass.f_buyItem();"></a></p>
 </div>
-
-<button id="go_cart" class="ui sixteen wide column disabled button" >
-    <p>選択した商品と合計金額は、次ページでご確認いただけます。</p>
-    <p class="btn">
-        <!--<img alt="購入ボタン" onclick="showValues('on');" src="img/btn_buy_selected.gif" width="365" height="50" >-->
-        <img alt="購入ボタン" src="img/btn_buy_selected.gif" width="365" height="50" >
-    </p>
-</button>
 
 
 </div><!-- / .contents -->

@@ -1,6 +1,6 @@
 @charset "shift_jis";
 
-/* ‹¤’Êƒoƒi[
+/* ï¿½ï¿½ï¿½Êƒoï¿½iï¿½[
 ----------------------------------------*/
 
 .cpBnner01 {
@@ -39,12 +39,12 @@
 	margin-left:98px;
 }
 
-/* ƒeƒLƒXƒg‹¤’Ê
+/* ï¿½eï¿½Lï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½
 ----------------------------------------*/
 body { -webkit-text-size-adjust: 100%; }
 
 
-/* ¦ˆó•t‚«’ß */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 .note_01 {
 	font-size:10px;
 	line-height:1.3;
@@ -52,18 +52,18 @@ body { -webkit-text-size-adjust: 100%; }
 	margin-left:1em;
 	text-align:left;
 }
-/* ‚½‚¾‚Ì’ß */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½Ì’ï¿½ï¿½ï¿½ */
 .note_02 {
 	font-size:10px;
 	line-height:1.3;
 	text-align:left;
 }
 
-/* Ô•¶š */
+/* ï¿½Ô•ï¿½ï¿½ï¿½ */
 .note_03 {
 	color:#F00;
 }
-/* Ô•¶š 10px */
+/* ï¿½Ô•ï¿½ï¿½ï¿½ 10px */
 .note_04 {
 	color:#F00;
 	font-size:10px;
@@ -76,7 +76,7 @@ body { -webkit-text-size-adjust: 100%; }
 }
 
 
-/* –îˆóƒAƒCƒRƒ“,ƒŠƒ“ƒNƒAƒCƒRƒ“‚È‚Ç
+/* ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½Cï¿½Rï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½Aï¿½Cï¿½Rï¿½ï¿½ï¿½È‚ï¿½
 ----------------------------------------*/
 a {
 	color:#3399CC;
@@ -122,7 +122,7 @@ a:hover {
 }
 
 
-/*@V¤•iƒAƒCƒRƒ“‘Î‰*/
+/*ï¿½@ï¿½Vï¿½ï¿½ï¿½iï¿½Aï¿½Cï¿½Rï¿½ï¿½ï¿½Î‰ï¿½*/
 h3.newIcon {
 	vertical-align:middle;
 }
@@ -138,14 +138,14 @@ p.long {
 	letter-spacing: -1px;
 }
 
-/* ƒ^ƒCƒgƒ‹ H*
+/* ï¿½^ï¿½Cï¿½gï¿½ï¿½ H*
 ----------------------------------------*/
 .title01 {
 	text-align:center;
 	padding-bottom: 10px;
 }
 
-/* ¤•iƒy[ƒW ƒ^ƒCƒgƒ‹*/
+/* ï¿½ï¿½ï¿½iï¿½yï¿½[ï¿½W ï¿½^ï¿½Cï¿½gï¿½ï¿½*/
 .title02 { 
 	height:110px;
 	width:900px;
@@ -323,7 +323,7 @@ p.long {
 	padding-bottom: 15px;
 }
 
-/* ƒRƒ“ƒeƒ“ƒc‰º•”
+/* ï¿½Rï¿½ï¿½ï¿½eï¿½ï¿½ï¿½cï¿½ï¿½ï¿½ï¿½
 ----------------------------------------*/
 
 #cntBottom {
@@ -338,7 +338,7 @@ p.long {
 	padding:50px 30px 0 30px;
 }
 
-/* ƒpƒ“‚­‚¸ */
+/* ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 .pkz{
 	float:left;
 	margin-top: 0px;
@@ -354,12 +354,12 @@ p.long {
 .pkz em{
 }
 
-/* ƒy[ƒW‚Ìæ“ª‚Ö–ß‚é */
+/* ï¿½yï¿½[ï¿½Wï¿½Ìæ“ªï¿½Ö–ß‚ï¿½ */
 .pageTop {
 	text-align:right;
 }
 
-/* ‘O‚Ìƒy[ƒW‚Ö–ß‚é */
+/* ï¿½Oï¿½Ìƒyï¿½[ï¿½Wï¿½Ö–ß‚ï¿½ */
 .pageBack {
 	padding:10px 0;
 }
@@ -369,7 +369,7 @@ p.long {
 }
 
 
-/* ƒRƒ“ƒeƒ“ƒcƒy[ƒW ‹¤’Ê
+/* ï¿½Rï¿½ï¿½ï¿½eï¿½ï¿½ï¿½cï¿½yï¿½[ï¿½W ï¿½ï¿½ï¿½ï¿½
 ----------------------------------------*/
 
 #cntPint {
@@ -508,7 +508,7 @@ p.long {
 
 
 
-/*ƒŒƒCƒAƒEƒg
+/*ï¿½ï¿½ï¿½Cï¿½Aï¿½Eï¿½g
 ----------------------------------------*/
 
 html {
@@ -641,7 +641,7 @@ h1.pageName span {
 
 
 
-/* ƒJƒXƒ^ƒ€
+/* ï¿½Jï¿½Xï¿½^ï¿½ï¿½
 ----------------------------------------*/
 #header {
 	height:136px;
@@ -653,7 +653,7 @@ h1.pageName span {
 	background-position:0 -135px;
 }
 
-/* ƒRƒ“ƒeƒ“ƒc
+/* ï¿½Rï¿½ï¿½ï¿½eï¿½ï¿½ï¿½c
 ----------------------------------------*/
 
 .title01 {
@@ -673,7 +673,7 @@ h1.pageName span {
 #mainBnr .ext span {
 	color:#FFA208;
 }
-/* w“ü‚Öi‚Ş */
+/* ï¿½wï¿½ï¿½ï¿½Öiï¿½ï¿½ */
 
 .goBuy {
 	clear:both;
@@ -702,7 +702,7 @@ h1.pageName span {
 	padding:10px;
 }
 
-/* ƒAƒCƒRƒ“’Ç‰Á */
+/* ï¿½Aï¿½Cï¿½Rï¿½ï¿½ï¿½Ç‰ï¿½ */
 .lineupList .icon {
 	padding:6px;
 	margin-left: 7px;
@@ -861,7 +861,7 @@ h1.pageName span {
 
 
 
-/* ƒGƒ‰[ƒƒbƒZ[ƒW
+/* ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½bï¿½Zï¿½[ï¿½W
 ----------------------------------------*/
 
 #error {
@@ -891,13 +891,13 @@ h1.pageName span {
 	margin:0 auto;
 }
 
-#btnBuy2 {
-	display:block;
-	width:860px;
-	margin:15px 0 30px 0;
-	padding:15px 0;
-	background-color:#fdfbc9;
-	text-align:center;
+#btnBuy2,#reset_radio,#go_cart {
+    display:block;
+    width:860px;
+    margin:15px 0 30px 0;
+    padding:15px 0;
+    background-color:#fdfbc9;
+    text-align:center;
 }
 #btnBuy2 .btn {
 	padding:8px;
@@ -907,7 +907,7 @@ h1.pageName span {
 	margin:0 auto;
 }
 
-/* ƒZƒbƒg—pƒRƒƒ“ƒg
+/* ï¿½Zï¿½bï¿½gï¿½pï¿½Rï¿½ï¿½ï¿½ï¿½ï¿½g
 ----------------------------------------*/
 
 .boxW860 .itemInfo .text #txt_set {
@@ -920,7 +920,7 @@ margin-top: 8px;
 color:#FF0000;
 font-weight: bolder;}
 
-/* ‹­’²
+/* ï¿½ï¿½ï¿½ï¿½
 ----------------------------------------*/
 .f_red {
 color:#FF0000;
