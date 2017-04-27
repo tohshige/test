@@ -145,6 +145,7 @@ $(function() {
 <p><a href="#" class="modal-cero arrow_01">商品詳細を見る</a></p>
       <dl class="selectNum">
           <dt style="padding:8px 0 0;">シングルサイズ</dt>
+          <!--name にラジオネームを ValueにItemIDを-->
           <dd><input type="radio" name="radio1" value="10000729"></dd>
           <dt style="padding:8px 0 0;">セミダブルサイズ</dt>
           <dd><input type="radio" name="radio1" value="10000730"></dd>
@@ -259,7 +260,13 @@ $(function() {
 <p class="goBuy"><a href="#btnBuy">購入へ進む</a></p>
 </div>
 
-
+<!--mat reset bottun-->
+<button id="reset_radio" class="ui sixteen wide column disabled button" >
+    <p></p>
+    <p class="btn">
+        <img alt="マットを選び直す" src="img/btn_buy_selected2.gif" width="365" height="50" >
+    </p>
+</button>
 
 
 
@@ -526,6 +533,7 @@ $(function() {
 <h3><img src="img/custom_mttl_02.gif" width="860" height="35"></h3>
 <ul class="lineupList">
 
+<!-- 例：画面下サブの商品-->
 <li>
 <div class="photo">
 <img src="img/pillow_cero_w260.jpg" width="258">
@@ -537,7 +545,7 @@ $(function() {
 <p>マットレスと一緒に買ったら<span class="f_red">【20%OFF!】</span></p>
 <dl class="selectNum">
 <dt>1サイズのみ</dt>
-<dd><select name="10002534" id="cart_119">
+<dd><select name="10002534" id="cart_119"><!--select name を ItemId に変更-->
 <option selected="selected">数量</option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -545,8 +553,8 @@ $(function() {
 </dl>
 </div>
 </li>
-
 <!-- 例：画面下サブの商品 -->
+
 <li>
 <div class="photo">
 <img src="img/pillow_cero_w260.jpg" width="258">
@@ -565,7 +573,6 @@ $(function() {
 </dl>
 </div>
 </li>
-<!-- 例：画面下サブの商品 -->
 
 <li>
 <div class="photo">
@@ -853,6 +860,14 @@ $(function() {
 <p class="btn"><a href="#error" id="cart_url"><img src="img/btn_buy_selected.gif" width="365" height="50" onClick="FreeCartClass.f_buyItem();"></a></p>
 </div>
 
+<button id="go_cart" class="ui sixteen wide column disabled button" >
+    <p>選択した商品と合計金額は、次ページでご確認いただけます。</p>
+    <p class="btn">
+        <!--<img alt="購入ボタン" onclick="showValues('on');" src="img/btn_buy_selected.gif" width="365" height="50" >-->
+        <img alt="購入ボタン" src="img/btn_buy_selected.gif" width="365" height="50" >
+    </p>
+</button>
+
 
 </div><!-- / .contents -->
 
@@ -887,7 +902,6 @@ $(function() {
 </div><!--/ #wrapper-->
 
 
-<div id="target"></div>
 
 
 
@@ -899,6 +913,12 @@ $(function() {
 
 </div>
 
+<script type="text/javascript" src="js/rcart.js"></script>
 
 </body>
+
+
 </html>
+
+<!--modal include from modal.html-->
+<div id="target"></div>
