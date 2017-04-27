@@ -110,8 +110,10 @@ function showValues(on_off) {
         $("#go_cart").removeClass("disabled");//購入ボタン 表示
     }
     if (on_off === "on") {
-        confirm_cart("カゴ確認ページへ進む");
-        location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
+        // // confirm_cart("カゴ確認ページへ進む");
+        // setTimeout(function(){
+        //     location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
+        // },3000);
     }
     //reset kounyu flg
     on_off = "";
@@ -155,6 +157,15 @@ $("#reset_radio").click(reset_radio);
 // $("#addCartSJ").click(showValues('on'));
 // all seek add cart
 // $("#go_cart").click(showValues('on'));
+
+$("#go_cart").on('click',function(){
+    showValues('on');
+    //1秒後
+    setTimeout(function(){
+            location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
+    },2000);
+});
+
 
 // showValues();
 
