@@ -1,0 +1,70 @@
+<html>
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//raw.github.com/padolsey/jQuery-Plugins/master/cross-domain-ajax/jquery.xdomainajax.js"></script>
+
+<script>
+(function() {
+
+    var APPID = '1065583458205479367';      // ★ここには楽天のアプリID を設定する
+    var MAX_PAGE = 5;
+    var n = 1;
+
+    function put_item(item) {
+        $("#output tbody").append(
+`
+<tr>
+<td>${n}</td>
+<td>${item.shopName}</td>
+<td>${item.itemCode}</td>
+<td>${item.itemName}</td>
+<td>${item.affiliateRate}</td>
+</tr>
+`
+        );
+        n += 1;
+    }
+
+    function search_rakuten(page) {
+        var keyword = encodeURIComponent("円");
+        $.ajax({
+            url: 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20140222?applicationId=' + APPID +
+                '&keyword=' + keyword +
+                '&sort=%2DaffiliateRate' +
+                '&page=' + page,
+            type: 'GET',
+            dataType: 'html',
+            timeout: 30000,
+            success: function(resp){
+                var work = document.createElement("DIV");
+                work.innerHTML = resp.responseText;
+                var data = JSON.parse(work.firstChild.nodeValue);
+                for (var i in data.Items) {
+                    put_item(data.Items[i].Item);
+                }
+                if (page < MAX_PAGE) {
+                    search_rakuten(page + 1);
+                }
+            },
+            error: function(xhr, status, error){
+                alert("ERROR !");
+                console.log("ERROR: ", status, error);
+                console.log(xhr);
+            }
+        });
+    }
+
+    search_rakuten(1);
+
+})();
+
+</script>
+</head>
+
+<body>
+<table id="output" border="1">
+    <tbody></tbody>
+</table>
+</body>
+
+</html>
