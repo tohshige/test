@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="semantic.min.css">
     <script src="semantic.min.js"></script>
 
-    <link href="css/reset.css" rel="stylesheet" type="text/css">
+    <!--<link href="css/reset.css" rel="stylesheet" type="text/css">
     <link href="css/common.css" rel="stylesheet" type="text/css">
-    <link href="css/cnt_modal.css" rel="stylesheet" type="text/css">
+    <link href="css/cnt_modal.css" rel="stylesheet" type="text/css">-->
 
 
 
@@ -51,6 +51,8 @@ $(function() {
     <div class="four wide column">
     <p><a href="#" class="modal-cero arrow_01">商品詳細を見る modal test</a></p>
     <a class="ui blue button" href="cart_test.html" >reload</a>
+    <a class="ui red button" href="https://basket.step.rakuten.co.jp/rms/mall/bs/cart/" target="_blank" >楽天かご確認</a>
+    
     </div>
 </div>
 
@@ -69,11 +71,11 @@ $(function() {
   <!-- radio -->
 <li>
   <div class="four wide column">
-  <div class="photo"><img src="img/mattress_neo_w260.jpg" width="256"></div>
-  <div class="text">
-      <h4 class="long">トゥルースリーパー ネオフィール<br><span>（マットレス）</span></h4>
-      <p>通常販売価格：<em>22,800</em>円(税抜)～</p>
-      <p><a href="#" class="modal-neofeel arrow_01">商品詳細を見る</a></p>
+<div class="photo"><img src="img/mattress_cero_w260.jpg" width="256"></div>
+<div class="text">
+<h4 class="long">トゥルースリーパー cero＜セロ＞<br><span>（マットレス）</span></h4>
+<p>通常販売価格：<em>22,800</em>円(税抜)～</p>
+<p><a href="#" class="modal-cero arrow_01">商品詳細を見る</a></p>
       <dl class="selectNum">
           <dt style="padding:8px 0 0;">シングルサイズ</dt>
           <dd><input type="radio" name="radio1" value="10000729"></dd>
@@ -86,23 +88,17 @@ $(function() {
   </div>
   </div>
 </li>
-<li>
-    <div class="photo"><img src="img/mattress_excellent_single_w260.jpg" width="258"></div>
-    <div class="text">
-        <h4 class="long">トゥルースリーパー エクセレント<br><span>（低反発マットレス）</span></h4>
-        <p>通常販売価格：<em>29,800</em>円(税抜)～</p>
-        <p><a href="#" class="modal-excellent arrow_01">商品詳細を見る</a></p>
-        <dl class="selectNum">
-            <dt style="padding:8px 0 0;">シングルサイズ</dt>
-            <dd><input type="radio" name="radio3" value="S"></dd>
-            <dt style="padding:8px 0 0;">セミダブルサイズ</dt>
-            <dd><input type="radio" name="radio3" value="SD"></dd>
-            <dt style="padding:8px 0 10px;">ダブルサイズ</dt>
-            <dd><input type="radio" name="radio3" value="W"></dd>
-        </dl>
-        <p><span class="note_04">※キャンペーン対象商品</span></p>
-    </div>
-</li>
+
+
+
+<button id="reset_radio" class="ui sixteen wide column disabled button" >
+    <p></p>
+    <p class="btn">
+        <img alt="マットを選び直す" src="img/btn_buy_selected2.gif" width="365" height="50" >
+    </p>
+</button>
+
+
 <li>
 <div class="photo">
 <img src="img/pillow_cero_w260.jpg" width="258">
@@ -153,15 +149,9 @@ $(function() {
   </div>
 
 <style>
-input[disabled][readonly]{background-color:#CCC;}
+input[disabled][readonly]{background-color:black;}
 </style>
 
-<button id="reset_radio" class="ui sixteen wide column disabled button" >
-    <p></p>
-    <p class="btn">
-        <img alt="マットを選び直す" src="img/btn_buy_selected2.gif" width="365" height="50" >
-    </p>
-</button>
 <button id="go_cart" class="ui sixteen wide column disabled button" >
     <p>選択した商品と合計金額は、次ページでご確認いただけます。</p>
     <p class="btn">
@@ -194,6 +184,8 @@ input[disabled][readonly]{background-color:#CCC;}
     <br> ↑ボタンを押すと↓楽天側のカゴに入る。<br>
     <a class="ui button" target="_blank" href="https://basket.step.rakuten.co.jp/rms/mall/bs/cart/">カゴ確認</a><br>
 </div>
+
+
 
 <pre class="grey text">
 https://basket.step.rakuten.co.jp/rms/mall/bs/cart/?shop_bid=199614&l2-id=shop_header_cart
