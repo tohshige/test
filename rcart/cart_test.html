@@ -38,26 +38,28 @@ $(function() {
 <body>
 
 
+<div id="all" class="ui grid container">
     
-<pre>
-・テスト環境GitHubからMono96確認用へ自動デプロイ設定
-・新しいモーダルTest Of NewModal
-・選ばれた選択肢の抽出、ラジオクリックで「選び直すボタン」を有効
-・「選び直すボタン」により、選択リット＆数量選択無効
-・ラジオボタン選んだら数量選択有効
-・数量まで選択されたら「購入する」ボタン有効
-</pre>
-<p><a href="#" class="modal-cero arrow_01">商品詳細を見る</a></p>
-
-
-<form id="allform" action onsubmit="showValues('on');return false;">#allform
+    <pre class="six wide column">
+    ・テスト環境GitHubからMono96確認用へ自動デプロイ設定
+    ・新しいモーダルTest Of NewModal
+    ・選ばれた選択肢の抽出、ラジオクリックで「選び直すボタン」を有効
+    ・「選び直すボタン」により、選択リット＆数量選択無効
+    ・ラジオボタン選んだら数量選択有効
+    ・数量まで選択されたら「購入する」ボタン有効
+    </pre>
+    <div class="four wide column">
+    <p><a href="#" class="modal-cero arrow_01">商品詳細を見る modal test</a></p>
+    <a class="ui blue button" href="cart_test.html" >reload</a>
+    </div>
+</div>
 
         <!--<button id="go_cart" class="ui blue button disabled">go all注文shopjapan</button>-->
-        <a class="ui blue button" href="cart_test.html" >reload</a>
-        <button id="addCartSJ" class="ui blue button">注文shopjapan</button>
-        <button id="addCartkuroko" class="ui blue button">注文</button>
+        <!--<button id="addCartSJ" class="ui blue button">注文shopjapan</button>
+        <button id="addCartkuroko" class="ui blue button">注文</button>-->
 
-
+<!--FORM!-->
+<form id="allform" action onsubmit="showValues('on');return false;">
 
 <div class="ui top attached button">Button before grid</div>
 
