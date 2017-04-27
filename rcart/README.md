@@ -1,9 +1,8 @@
-## このページのURL は↓
-http://mono-96.jp/tmp/test/rcart/
-
-### test
+### test ここでJSプログラムを作成 完成後 Allに反映
 http://mono-96.jp/tmp/test/rcart/cart_test.html
 
+### All
+http://mono-96.jp/tmp/test/rcart/
 
 
-https://tohshige.github.io/test/
+
