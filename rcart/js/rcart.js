@@ -18,7 +18,7 @@ sd 10000730
 d  10000731
 
 cero pillow 10002534
-
+wellfit 10002532
 */
 function addCart(itemid, units) {
     shop_bid = '199614'; // shopjapan id
@@ -28,6 +28,7 @@ function addCart(itemid, units) {
         method: 'GET',
         dataType: 'jsonp',
         crossDomain: true,
+        async: false,
         url: 'https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=' + shop_bid + '&itemid=' + itemid + '&units=' + units + '&device=pc&userid=itempage',
         success: function (result) {
             var alltext = JSON.stringify(result); //to string
@@ -36,7 +37,7 @@ function addCart(itemid, units) {
             console.log(json);
             var message='itemid:'+itemid+' units:'+units+' '+json.dialogTitle + json.resultMessage
             console.log(message);
-            $('#result1').append(message);
+            $('#result1').append(message+'\n');
         },
         error: function (result) {
             alltext = JSON.stringify(result); //to string
@@ -74,7 +75,7 @@ function showValues(on_off) {
             if (on_off === "on") {
                 setTimeout(function(){
                     addCart(field.value, units = 1);// order
-                },1000);
+                },2000);
             }
         }
         // select option > cart 前方一致のときの処理
@@ -84,7 +85,7 @@ function showValues(on_off) {
             if (on_off === "on") {
                 setTimeout(function(){
                     addCart(field.name, field.value);// order
-                },1000);
+                },2000);
             }
         }
         // $("#result1").append(field.name + " ");
@@ -150,7 +151,7 @@ $("#reset_radio").click(reset_radio);
 
 $("#go_cart").on('click',function(){
     showValues('on');
-    if (false=== confirm_cart('商品をカゴに追加しました。\n購入された商品カゴを確認しますか？')){return;};
+    if (false=== confirm_cart('ご選択された商品をカゴに追加しました。\n購入された商品カゴを確認しますか？')){return;};
     //1秒後
     setTimeout(function(){
             location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
