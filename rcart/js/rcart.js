@@ -30,11 +30,13 @@ function addCart(itemid, units) {
         crossDomain: true,
         url: 'https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=' + shop_bid + '&itemid=' + itemid + '&units=' + units + '&device=pc&userid=itempage',
         success: function (result) {
-            alltext = JSON.stringify(result); //to string
-            $('#result').append(alltext);
-            json = $.parseJSON(alltext);
+            var alltext = JSON.stringify(result); //to string
+            // console.log(alltext);
+            var json = $.parseJSON(alltext);
             console.log(json);
-            $('#result1').append('itemid:'+itemid+' units:'+units+' '+json.dialogTitle + json.resultMessage);
+            var message='itemid:'+itemid+' units:'+units+' '+json.dialogTitle + json.resultMessage
+            console.log(message);
+            $('#result1').append(message);
         },
         error: function (result) {
             alltext = JSON.stringify(result); //to string
