@@ -82,6 +82,9 @@ function showValues(on_off) {
     // $('.ui.sidebar').sidebar('toggle');
     flgArray = new Array();
     $.each(fields, function (i, field) {
+        if (fields.length == i-1){alert("finish");}
+        console.log(i);
+        console.log(fields.length);
         var radioFlg = "";  //mat
         var selectFlg = ""; //option
         if (field.value == "数量") {
@@ -95,7 +98,7 @@ function showValues(on_off) {
             if (on_off === "on") {
                 setTimeout(function(){
                     addCart(field.value, units = 1);// order
-                },4000);
+                },i*100);
             }
         }
         // select option > cart 前方一致のときの処理
@@ -105,10 +108,9 @@ function showValues(on_off) {
             if (on_off === "on") {
                 setTimeout(function(){
                     addCart(field.name, field.value);// order
-                },4000);
+                },1000+i*100);
             }
         }
-
     });
     if (flgArray['radioFlg'] === "on") {//Each外部に出せない！
         $("select").removeAttr("disabled"); //Select hyouji
@@ -172,9 +174,9 @@ $("#go_cart").on('click',function(){
     // if (false=== confirm_cart('ご選択された商品をカゴに追加しました。\n購入された商品は「カゴ確認」から確認いただけます。')){return;};
     alert('ご選択された商品をカゴに追加しました。\n購入された商品は「カゴ確認」から確認いただけます。');
     //1秒後
-    setTimeout(function(){
-//            location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
-    },2000);
+    // setTimeout(function(){
+    //        location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
+    // },8000);
 });
 
 
