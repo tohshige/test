@@ -21,7 +21,7 @@ cero pillow 10002534
 wellfit 10002532
 */
 function addCart(itemid, units) {
-    shop_bid = '199614'; // shopjapan id
+    var shop_bid = '199614'; // shopjapan id
     // confirm_cart();
 
     $.ajax({
@@ -29,13 +29,14 @@ function addCart(itemid, units) {
         dataType: 'jsonp',
         crossDomain: true,
         async: false,
-        url: 'https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=' + shop_bid + '&itemid=' + itemid + '&units=' + units + '&device=pc&userid=itempage',
+     // url: 'https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=' + shop_bid + '&itemid=' + itemid + '&units=' + units + '&device=pc&userid=itempage',
+        url: 'https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=' + shop_bid + '&itemid=' + itemid + '&units=' + units + '',
         success: function (result) {
             var alltext = JSON.stringify(result); //to string
             // console.log(alltext);
             var json = $.parseJSON(alltext);
             console.log(json);
-            var message='itemid:'+itemid+' units:'+units+' '+json.dialogTitle + json.resultMessage
+            var message='itemid:'+itemid+' units:'+units+' '+json.dialogTitle + json.resultMessage;
             console.log(message);
             $('#result1').append(message+'\n');
         },
@@ -46,6 +47,25 @@ function addCart(itemid, units) {
         }
     });
 }
+
+function addCart1(itemid,units){
+var shop_bid = '199614'; // shopjapan id
+var url= 'https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=' + shop_bid + '&itemid=' + itemid + '&units=' + units + '';
+
+var jqxhr = $.get( url, function() {
+        console.log( "success" );
+    })
+    .done(function() {
+        console.log( "second success" );
+    })
+    .fail(function() {
+        console.log( "error" );
+    })
+    .always(function() {
+        console.log( "finished" );
+    });
+}
+
 
 //全フィールドを走査して表示。
 function showValues(on_off) {
@@ -61,7 +81,7 @@ function showValues(on_off) {
     // $("#result1").empty();
     // $('.ui.sidebar').sidebar('toggle');
     flgArray = new Array();
-    jQuery.each(fields, function (i, field) {
+    $.each(fields, function (i, field) {
         var radioFlg = "";  //mat
         var selectFlg = ""; //option
         if (field.value == "数量") {
@@ -75,7 +95,7 @@ function showValues(on_off) {
             if (on_off === "on") {
                 setTimeout(function(){
                     addCart(field.value, units = 1);// order
-                },2000);
+                },4000);
             }
         }
         // select option > cart 前方一致のときの処理
@@ -85,13 +105,10 @@ function showValues(on_off) {
             if (on_off === "on") {
                 setTimeout(function(){
                     addCart(field.name, field.value);// order
-                },2000);
+                },4000);
             }
         }
-        // $("#result1").append(field.name + " ");
-        // $("#result1").append(field.value + " ");
-        // $("#results_all").append(field.name + " ");
-        // $("#results_all").append(field.value + " ");
+
     });
     if (flgArray['radioFlg'] === "on") {//Each外部に出せない！
         $("select").removeAttr("disabled"); //Select hyouji
@@ -151,10 +168,12 @@ $("#reset_radio").click(reset_radio);
 
 $("#go_cart").on('click',function(){
     showValues('on');
-    if (false=== confirm_cart('ご選択された商品をカゴに追加しました。\n購入された商品カゴを確認しますか？')){return;};
+    // if (false=== confirm_cart('ご選択された商品をカゴに追加しました。\n購入された商品カゴを確認しますか？')){return;};
+    // if (false=== confirm_cart('ご選択された商品をカゴに追加しました。\n購入された商品は「カゴ確認」から確認いただけます。')){return;};
+    alert('ご選択された商品をカゴに追加しました。\n購入された商品は「カゴ確認」から確認いただけます。');
     //1秒後
     setTimeout(function(){
-            location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
+//            location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
     },2000);
 });
 
