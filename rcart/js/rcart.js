@@ -119,7 +119,7 @@ function showValues(on_off) {
         $("select").removeAttr("disabled"); //Select hyouji
         $("#reset_radio").removeClass("disabled");//選び直すボタン 表示
     }
-    if (flgArray['radioFlg'] === "on" && flgArray['selectFlg'] === "on") {
+    if (flgArray['radioFlg'] === "on" || flgArray['selectFlg'] === "on") {
         $("#go_cart").removeClass("disabled");//購入ボタン 表示
     }
     if (on_off === "on") {
