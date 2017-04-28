@@ -814,11 +814,26 @@ $(function() {
 <!--go_cart-->
 <div id="error" style="display:none;"></div>
 <button id="go_cart" class="ui sixteen wide column disabled button" >
-    <p>選択した商品と合計金額は、次ページでご確認いただけます。</p>
+    <!--<p>選択した商品と合計金額は、次ページでご確認いただけます。</p>-->
     <p class="btn">
         <!--<img alt="購入ボタン" onclick="showValues('on');" src="img/btn_buy_selected.gif" width="365" height="50" >-->
         <img alt="購入ボタン" src="img/btn_buy_selected.gif" width="365" height="50" >
     </p>
+</button>
+
+<button id="go_cart_view" class="ui sixteen wide column disabled button" >
+    <div class="ui segment" >
+        <div id="loader" class="ui  dimmer">
+        <div class="ui text inverted loader">お待ち下さい</div>
+    </div>
+    </div>
+        <p>選択した商品と合計金額はカゴ確認ご確認いただけます。</p>
+        <p class="btn">
+            <!--<img alt="購入ボタン" onclick="showValues('on');" src="img/btn_buy_selected.gif" width="365" height="50" >-->
+            <a href="https://basket.step.rakuten.co.jp/rms/mall/bs/cart/" target="_blank">
+            <img alt="カゴの確認" src="img/dummy.gif" width="365" height="50" >
+            </a>
+        </p>
 </button>
 
 </div>
