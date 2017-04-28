@@ -81,8 +81,9 @@ function showValues(on_off) {
     // $("#result1").empty();
     // $('.ui.sidebar').sidebar('toggle');
     flgArray = new Array();
+    var allCount = 0; //selected item count
     $.each(fields, function (i, field) {
-        if (fields.length == i-1){alert("finish");}
+        if (fields.length == i && on_off == "on"){alert("finish " +allCount );}
         console.log(i);
         console.log(fields.length);
         var radioFlg = "";  //mat
@@ -96,6 +97,7 @@ function showValues(on_off) {
             // $("#result1").append(field.name + " ");
             // addCart(itemid,units);
             if (on_off === "on") {
+                allCount++;
                 setTimeout(function(){
                     addCart(field.value, units = 1);// order
                 },i*100);
@@ -106,6 +108,7 @@ function showValues(on_off) {
             flgArray['selectFlg'] = "on";
             // $("#result1").append(field.name + " ");
             if (on_off === "on") {
+                allCount++;
                 setTimeout(function(){
                     addCart(field.name, field.value);// order
                 },1000+i*100);
@@ -120,9 +123,9 @@ function showValues(on_off) {
         $("#go_cart").removeClass("disabled");//購入ボタン 表示
     }
     if (on_off === "on") {
-        // // confirm_cart("カゴ確認ページへ進む");
+        confirm_cart("カゴ確認ページへ進む");
         // setTimeout(function(){
-        //     location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
+            // location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
         // },3000);
     }
     //reset kounyu flg
@@ -151,6 +154,8 @@ function reset_radio() {
         $("select").attr("disabled", false);
         // $("#go_cart").attr("disabled", false);
         $("#go_cart").addClass("disabled");
+          location.reload();
+
     } else {
         // キャンセルならダイアログ表示
     }
@@ -177,6 +182,12 @@ $("#go_cart").on('click',function(){
     // setTimeout(function(){
     //        location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
     // },8000);
+        $("#loader").addClass("active");
+    
+    setTimeout(function(){
+        $("#go_cart_view").removeClass("disabled");
+        $("#loader").removeClass("active");
+    },8000);
 });
 
 
