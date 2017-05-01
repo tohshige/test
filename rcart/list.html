@@ -33,13 +33,15 @@
 <body>
 
     <div class="container" ng-controller="MainCtrl" ng-cloak>
-        <h4>genreId: {{genreId}}</h4>
+        <h4>genreId: {{genreId}}       orderBy: 'itemCode' </h4>
 
         <div class="row">
-            <div ng-repeat="item in items" class="col-sm-6 col-md-3">
+            <!--                            orderBy: 'itemCode -->
+            <div ng-repeat="item in items | orderBy: 'itemCode' " class="col-sm-6 col-md-3">
                 <div class="thumbnail">
                     <a ng-href="{{item.affiliateUrl}}" target="_blank">
-                        <img ng-src="{{item.mediumImageUrls[0]}}">
+                        <!--<img ng-src="{{item.mediumImageUrls[0]}}">-->
+                        <img ng-src="{{item.smallImageUrls[0]}}">
                     </a>
                     <div class="caption">
                         <h3>
