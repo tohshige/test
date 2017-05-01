@@ -14,8 +14,8 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
+    //modal用HTMLを読み込み
     $('#target').load('modal.html');//temp disable
-    $('#modal-cero').modal('show');
 });
 //click modal
 $('.modal-not-migration').on('click',function(){
@@ -28,6 +28,7 @@ $('#allform').submit(function(event) {
 });
 // # link 無効
 $(function() {
+    // クラス名からModal内IDに変換
     // $('a[href="#"].modal-cero').click(function() {
     $('a[href="#"]').click(function(e) {
         var modalId=e.target.className.split( ' ' );
@@ -188,11 +189,11 @@ $(function() {
 <p><a href="#" class="modal-excellent arrow_01">商品詳細を見る</a></p>
 <dl class="selectNum">
 <dt style="padding:8px 0 0;">シングルサイズ</dt>
-<dd><input type="radio"></dd>
+<dd><input type="radio" name="radio3" value="10000610"></dd>
 <dt style="padding:8px 0 0;">セミダブルサイズ</dt>
-<dd><input type="radio"></dd>
+<dd><input type="radio" name="radio3" value="10000611"></dd>
 <dt style="padding:8px 0 10px;">ダブルサイズ</dt>
-<dd><input type="radio"></dd>
+<dd><input type="radio" name="radio3" value="10000612"></dd>
 </dl>
 <p><span class="note_04">※キャンペーン対象商品</span></p>
 </div>
@@ -206,13 +207,13 @@ $(function() {
 <p><a href="#" class="modal-premium arrow_01">商品詳細を見る</a></p>
 <dl class="selectNum">
 <dt style="padding:8px 0 0;">シングルサイズ</dt>
-<dd><input type="radio"></dd>
+<dd><input type="radio" name="radio4" value="10000610"></dd>
 <dt style="padding:8px 0 0;">セミダブルサイズ</dt>
-<dd><input type="radio"></dd>
+<dd><input type="radio" name="radio4" value="10000673"></dd>
 <dt style="padding:8px 0 0;">ダブルサイズ</dt>
-<dd><input type="radio"></dd>
+<dd><input type="radio" name="radio4" value="10000674"></dd>
 <dt style="padding:8px 0 10px;">クイーンサイズ</dt>
-<dd><input type="radio"></dd>
+<dd><input type="radio" name="radio4" value="10000610"></dd>
 </dl>
 <p><span class="note_04">※キャンペーン対象商品</span></p>
 </div>
@@ -274,20 +275,20 @@ $(function() {
 <p>マットレスを複数購入すると、価格の安いほうが<span class="f_red">【30%OFF!】</span></p>
 <dl class="selectNum">
 <dt>シングルサイズ</dt>
-<dd><select name="cart_122" id="cart_122">
+<dd><select name="10000729" id="cart_122">
 <option selected="selected">数量</option>
 <option value="1">1</option>
 <option value="2">2</option>
 </select></dd>
 <dt>セミダブルサイズ </dt>
-<dd><select name="cart_123" id="cart_123">
+<dd><select name="10000730" id="cart_123">
 <option selected="selected">数量</option>
 <option value="1">1</option>
 <option value="2">2</option>
 </select></dd>
 <dt>ダブルサイズ</dt>
 <dd>
-<select name="cart_124" id="cart_124">
+<select name="10000731" id="cart_124">
 <option selected="selected">数量</option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -542,24 +543,6 @@ $(function() {
 </li>
 <!-- 例：画面下サブの商品 -->
 
-<li>
-<div class="photo">
-<img src="img/pillow_cero_w260.jpg" width="258">
-</div>
-<div class="text">
-<h4>cero＜セロ＞ ピロー</h4>
-<p>通常販売価格：<em>9,800</em>円(税抜)</p>
-<p><a href="#" class="modal-ceropillow arrow_01">商品詳細を見る</a></p>
-<p>マットレスと一緒に買ったら<span class="f_red">【20%OFF!】</span></p>
-<dl class="selectNum">
-<dt>1サイズのみ</dt>
-<dd><select name="cart_119" id="cart_119"><option selected="selected">数量</option>
-<option value="1">1</option>
-<option value="2">2</option>
-</select></dd>
-</dl>
-</div>
-</li>
 
 <li>
 <div class="photo">
@@ -579,6 +562,7 @@ $(function() {
 </dl>
 </div>
 </li>
+
 <li>
 <div class="photo">
 <img src="img/pillow_richfit_w260.jpg" width="258">
@@ -597,6 +581,7 @@ $(function() {
 </dl>
 </div>
 </li>
+
 <li>
 <div class="photo"><img src="img/pillow_angel_w260.jpg" width="258"></div>
 <div class="text">
@@ -614,6 +599,7 @@ $(function() {
 </dl>
 </div>
 </li>
+
 <li>
 <div class="photo">
 <img src="img/pillow_neckfit_w260.jpg" width="258"></div>
@@ -809,7 +795,7 @@ $(function() {
 
 <button id="go_cart_view" class="ui sixteen wide column disabled button" >
     <div class="ui segment" >
-        <div id="loader" class="ui  dimmer">
+        <div id="loader" class="ui dimmer">
         <div class="ui text inverted loader">お待ち下さい</div>
     </div>
     </div>
