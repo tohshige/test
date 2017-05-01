@@ -28,9 +28,14 @@ $('#allform').submit(function(event) {
 });
 // # link 無効
 $(function() {
-    $('a[href="#"].modal-cero').click(function() {
-        $('#modal-cero').modal('show');
-        return false;
+    // $('a[href="#"].modal-cero').click(function() {
+    $('a[href="#"]').click(function(e) {
+        var modalId=e.target.className.split( ' ' );
+        if(modalId.lastIndexOf('modal')){
+            // $('#modal-cero').modal('show');
+            $('#'+modalId[0]).modal('show');
+            return false;
+        }
     })
 });
 
@@ -50,8 +55,6 @@ $(function() {
 
 <body lang="ja">
 
-
-<p><a href="#" class="modal-not-migration arrow_01">未移行：非表示にしてあるモーダル</a></p>
 
 
 
@@ -158,23 +161,6 @@ $(function() {
 </li>
 <!-- 例メインの商品ラジオボタン -->
 
-<li>
-<div class="photo"><img src="img/mattress_cero_w260.jpg" width="256"></div>
-<div class="text">
-<h4 class="long">トゥルースリーパー cero＜セロ＞<br><span>（マットレス）</span></h4>
-<p>通常販売価格：<em>22,800</em>円(税抜)～</p>
-<p><a href="#" class="modal-cero arrow_01">商品詳細を見る</a></p>
-<dl class="selectNum">
-<dt style="padding:8px 0 0;">シングルサイズ</dt>
-<dd><input type="radio"></dd>
-<dt style="padding:8px 0 0;">セミダブルサイズ</dt>
-<dd><input type="radio"></dd>
-<dt style="padding:8px 0 10px;">ダブルサイズ</dt>
-<dd><input type="radio"></dd>
-</dl>
-<p><span class="note_04">※キャンペーン対象商品</span></p>
-</div>
-</li>
 
 <li>
 <div class="photo"><img src="img/mattress_neo_w260.jpg" width="256"></div>
@@ -184,11 +170,11 @@ $(function() {
 <p><a href="#" class="modal-neofeel arrow_01">商品詳細を見る</a></p>
 <dl class="selectNum">
 <dt style="padding:8px 0 0;">シングルサイズ</dt>
-<dd><input type="radio"></dd>
+<dd><input type="radio" name="radio2" value="10000732"></dd>
 <dt style="padding:8px 0 0;">セミダブルサイズ</dt>
-<dd><input type="radio"></dd>
+<dd><input type="radio" name="radio2" value="10000733"></dd>
 <dt style="padding:8px 0 10px;">ダブルサイズ</dt>
-<dd><input type="radio"></dd>
+<dd><input type="radio" name="radio2" value="10000734"></dd>
 </dl>
 <p><span class="note_04">※キャンペーン対象商品</span></p>
 </div>
@@ -927,7 +913,7 @@ $(function() {
 
 
 </div>
-
+<a name="btnBuy"></a>
 <script type="text/javascript" src="js/rcart.js"></script>
 
 </body>
