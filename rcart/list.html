@@ -36,8 +36,13 @@
         <h4>genreId: {{genreId}}       orderBy: 'itemCode' </h4>
 
         <div class="row">
-            <!--                            orderBy: 'itemCode -->
-            <div ng-repeat="item in items | orderBy: 'itemCode' " class="col-sm-6 col-md-3">
+            <div class="action-list">
+                <input id="keyword" name="keyword" type="text" ng-model="search" placeholder="åüçı" />
+                <button ng-click="price()">à¿Ç¢èá</button>
+                <button ng-click="price1()">çÇÇ¢èá</button>
+            </div>
+                <!--                            orderBy: 'itemCode -->
+            <div ng-repeat="item in items | filter:search | orderBy: orderVal " class="col-sm-6 col-md-3">
                 <div class="thumbnail">
                     <a ng-href="{{item.affiliateUrl}}" target="_blank">
                         <!--<img ng-src="{{item.mediumImageUrls[0]}}">-->
@@ -127,6 +132,15 @@
                         $scope.items = result.Items;
                         $scope.totalItems = result.count;
                         $scope.genreId=genreId;
+    // ï¿Ç—èáÇÃéwíË
+    $scope.orderVal = 'itemCode';
+    // priceè∏èá
+    $scope.price = function () {
+        $scope.orderVal = 'itemPrice';
+    };
+    $scope.price1 = function () {
+        $scope.orderVal = '-itemPrice';
+    };
                     });
 
             }
