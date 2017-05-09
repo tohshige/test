@@ -10,6 +10,16 @@ https://github.com/tohshige/test/blob/master/rcart/index.html#L141,L161
 https://github.com/tohshige/test/blob/master/rcart/index.html#L523,L543
 
 
+### ：カラー別でカートに入れる
+```
+<input type="hidden" name="item_id" value="10000470">
+<input type="hidden" name="inventory_id" value="2458">
+<input type="hidden" name="inventory_flag" value="2">
+
+<input type="hidden" name="item_id" value="10003451">
+<input type="hidden" name="inventory_flag" value="1">
+```
+
 
 
 ## old
