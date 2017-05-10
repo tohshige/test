@@ -25,6 +25,20 @@ d  10000731
 
 cero pillow 10002534
 wellfit 10002532
+
+
+アイボリー：TRSPSMSI	 
+https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=199614&itemid=10000470&units=1&inventory_id=2458&inventory_flag=2
+
+ピンク：TRSPSMSP	 
+https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=199614&itemid=10000470&units=1&inventory_id=2459&inventory_flag=2
+
+ブルー：TRSPSMSB	 
+https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=199614&itemid=10000470&units=1&inventory_id=2460&inventory_flag=2
+
+inventry_id なしだと Error
+https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=199614&itemid=10000470&units=1
+
 */
 function addCart(itemid, units) {
     var shop_bid = '199614'; // shopjapan id
