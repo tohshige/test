@@ -39,9 +39,26 @@ https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=199614&itemid=1000047
 inventry_id なしだと Error
 https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=199614&itemid=10000470&units=1
 
+エンジェルフィット ピローカバー
+10000475
+https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=199614&itemid=10000475&units=1&inventory_id=1206
+https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=199614&itemid=10000475&units=1&inventory_id=1207
+https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=199614&itemid=10000475&units=1&inventory_id=1208
+
+
 */
 function addCart(itemid, units) {
     var shop_bid = '199614'; // shopjapan id
+    var resArray = itemid.split("_");
+    var inventoryid ="";
+    var inventoryflg = "";
+    if(resArray[1]){
+        itemid = resArray[0];
+        inventoryid = resArray[1];
+        if(resArray[2]){
+            inventoryflg = resArray[2];
+        }
+    }
     // confirm_cart();
 
     $.ajax({
@@ -49,8 +66,8 @@ function addCart(itemid, units) {
         dataType: 'jsonp',
         crossDomain: true,
         async: false,
-     // url: 'https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=' + shop_bid + '&itemid=' + itemid + '&units=' + units + '&device=pc&userid=itempage',
-        url: 'https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=' + shop_bid + '&itemid=' + itemid + '&units=' + units + '',
+   //   url: 'https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=' + shop_bid + '&itemid=' + itemid + '&units=' + units + '',
+        url: 'https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=' + shop_bid + '&itemid=' + itemid + '&units=' + units + '&inventory_id=' + inventoryid + '&inventory_flg=' + inventoryflg + '',
         success: function (result) {
             var alltext = JSON.stringify(result); //to string
             // console.log(alltext);
@@ -95,7 +112,9 @@ function showValues(on_off) {
 
     // var goAddCart = goAddCart || false;
     var fields = $(":input").serializeArray();
+    console.log(fields);
     var fieldsform = $("form").serializeArray();
+    console.log(fieldsform);
     // new on_off = on_off;
     // fields.push(['on_off:'+on_off ]);
     // $("#result1").empty();
