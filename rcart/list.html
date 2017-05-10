@@ -38,6 +38,7 @@
         <div class="row">
             <div class="action-list">
                 <input id="keyword" name="keyword" type="text" ng-model="search" placeholder="検索" />
+                <input id="itemName" name="itemName" type="text" ng-model="search" placeholder="検索" />
                 <button ng-click="price()">安い順</button>
                 <button ng-click="price1()">高い順</button>
             </div>
@@ -74,6 +75,53 @@
     </div>
 
 
+    <div class="container" ng-controller="MainCtrl" ng-cloak>
+        <h4>genreId: {{genreId}}       orderBy: 'itemCode' </h4>
+        <div class="row">
+            <div ng-repeat="item in items1 | filter:search | orderBy: orderVal " class="col-sm-6 col-md-3">
+                <div class="thumbnail">
+                    <a ng-href="{{item.affiliateUrl}}" target="_blank">
+                        <!--<img ng-src="{{item.mediumImageUrls[0]}}">-->
+                        <img ng-src="{{item.smallImageUrls[0]}}">
+                    </a>
+                    <div class="caption">
+                        <h3>
+                            <a ng-href="{{item.affiliateUrl}}" target="_blank">{{item.itemName}}</a>
+                        </h3>
+                        <p>{{item.itemCode}}</p>
+                        <div class="price">{{item.itemPrice}}円</div>
+                        <rating ng-model="item.reviewAverage" max="5"></rating>
+                        <div class="catchcopy">{{item.catchcopy}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" ng-controller="MainCtrl" ng-cloak>
+        <h4>genreId: {{genreId}}       orderBy: 'itemCode' </h4>
+        <div class="row">
+            <div ng-repeat="item in items2 | filter:search | orderBy: orderVal " class="col-sm-6 col-md-3">
+                <div class="thumbnail">
+                    <a ng-href="{{item.affiliateUrl}}" target="_blank">
+                        <!--<img ng-src="{{item.mediumImageUrls[0]}}">-->
+                        <img ng-src="{{item.smallImageUrls[0]}}">
+                    </a>
+                    <div class="caption">
+                        <h3>
+                            <a ng-href="{{item.affiliateUrl}}" target="_blank">{{item.itemName}}</a>
+                        </h3>
+                        <p>{{item.itemCode}}</p>
+                        <div class="price">{{item.itemPrice}}円</div>
+                        <rating ng-model="item.reviewAverage" max="5"></rating>
+                        <div class="catchcopy">{{item.catchcopy}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.28/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.2.10/angular-locale_ja-jp.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
@@ -88,6 +136,7 @@
         var keyword = 'スリーパー';
         var shopCode= 'shopjapan';
         var genreId = '508183';
+        var genreId = '215566'; //parent
 
 
         // 一度に読み込む件数
@@ -120,7 +169,7 @@
                     format: 'json',
                     // sort: '-reviewAverage',
                     shopCode: shopCode,
-                    // genreId: genreId,
+                    genreId: genreId,
 
                     // keyword: keyword
                 };
@@ -129,24 +178,47 @@
                 $http.jsonp(api, { params: params })
                     .success(function (result) {
                         console.log(result.Items);
-                        $scope.items = result.Items;
-                        $scope.totalItems = result.count;
+                        if ($scope.currentPage == 1){
+                            $scope.items = result.Items;
+                            $scope.totalItems = result.count;
+                        } else if ($scope.currentPage == 2){
+                            $scope.items1 = result.Items;
+                            $scope.totalItems1 = result.count;
+                        } else if ($scope.currentPage == 3){
+                            $scope.items2 = result.Items;
+                            $scope.totalItems2 = result.count;
+                        }
                         $scope.genreId=genreId;
-    // 並び順の指定
-    $scope.orderVal = 'itemCode';
-    // price昇順
-    $scope.price = function () {
-        $scope.orderVal = 'itemPrice';
-    };
-    $scope.price1 = function () {
-        $scope.orderVal = '-itemPrice';
-    };
+                        // 並び順の指定
+                        $scope.orderVal = 'itemCode';
+                        // price昇順
+                        $scope.price = function () {
+                            $scope.orderVal = 'itemPrice';
+                        };
+                        $scope.price1 = function () {
+                            $scope.orderVal = '-itemPrice';
+                        };
                     });
 
             }
 
             // APIを呼び出す
             $scope.callAPI()
+
+            // APIを呼び出す
+            setTimeout(function(){
+                //test 60 items
+                $scope.currentPage = 2;
+                $scope.callAPI()
+            },3000);
+
+            // APIを呼び出す
+            setTimeout(function(){
+                //test 60 items
+                $scope.currentPage = 3;
+                $scope.callAPI()
+            },5000);
+
         });
     </script>
 
