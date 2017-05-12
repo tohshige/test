@@ -17,7 +17,7 @@ itemid_inventoryid_inventoryflg
 ## カラー別でカートに入れる  
 ### new：  
 ```html
-<input type="hidden" name="item_id" value="10000475_1206">
+<input type="hidden" name="item_id" value="10000475_1206_1">
 ```
 ### old:  
 ```html
