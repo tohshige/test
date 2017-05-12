@@ -48,6 +48,9 @@ $(function() {
     })
 });
 </script>
+<style>
+    .displayNone{display: none;}
+</style>
 
   <!-- modal migration -->
 
@@ -252,13 +255,18 @@ $(function() {
     </p>
 </button>
 
-<p class="goBuy"><a href="#btnBuy">購入へ進む</a></p>
+
+
 </div>
 
+<!--押されたら下記の商品を表示-->
+<div id="bottomCart" class="displayNone" >
 
 
 
 <div class="cntInnerB" id="lineupSet">
+<p class="goBuy"><a href="#btnBuy">購入へ進む</a></p>
+
 <h3><img src="img/custom_mttl_b.jpg"></h3>
 
 
@@ -806,6 +814,11 @@ $(function() {
 </button>
 
 </div>
+
+<!--bottomCart-->
+</div>
+
+
 <!--<div class="cntInnerB" id="lineupOther">
 <h3><img src="img/custom_mttl_04.gif" width="860" height="35"></h3>
 <ul class="lineupList w210">
