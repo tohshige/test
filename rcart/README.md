@@ -14,14 +14,16 @@ itemid_inventoryid_inventoryflg
 エンジェルフィット ピローカバー  
 'name=10000475_1206'
 
-### ：カラー別でカートに入れる
+## カラー別でカートに入れる  
+### new：  
+```html
+<input type="hidden" name="item_id" value="10000475_1206">
 ```
+### old:  
+```html
 <input type="hidden" name="item_id" value="10000470">
 <input type="hidden" name="inventory_id" value="2458">
 <input type="hidden" name="inventory_flag" value="2">
-
-<input type="hidden" name="item_id" value="10003451">
-<input type="hidden" name="inventory_flag" value="1">
 ```
 
 
