@@ -1,6 +1,6 @@
 @charset "shift_jis";
 
-/* ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Êƒo?ï¿½ï¿½i?ï¿½ï¿½[
+/* ?E½E½?E½E½?E½E½Êƒo?E½E½i?E½E½[
 ----------------------------------------*/
 .ui.segment .ui.dimmer.active{
   background: #fdfbc9;
@@ -55,12 +55,12 @@
 	margin-left:98px;
 }
 
-/* ?ï¿½ï¿½e?ï¿½ï¿½L?ï¿½ï¿½X?ï¿½ï¿½g?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
+/* ?E½E½e?E½E½L?E½E½X?E½E½g?E½E½?E½E½?E½E½?E½E½
 ----------------------------------------*/
 body { -webkit-text-size-adjust: 100%; }
 
 
-/* ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½t?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ */
+/* ?E½E½?E½E½?E½E½?E½E½?E½E½t?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½ */
 .note_01 {
 	font-size:10px;
 	line-height:1.3;
@@ -68,18 +68,18 @@ body { -webkit-text-size-adjust: 100%; }
 	margin-left:1em;
 	text-align:left;
 }
-/* ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ì’ï¿½?ï¿½ï¿½?ï¿½ï¿½ */
+/* ?E½E½?E½E½?E½E½?E½E½?E½E½Ì’ï¿½?E½E½?E½E½ */
 .note_02 {
 	font-size:10px;
 	line-height:1.3;
 	text-align:left;
 }
 
-/* ?ï¿½ï¿½Ô•ï¿½?ï¿½ï¿½?ï¿½ï¿½ */
+/* ?E½E½Ô•ï¿½?E½E½?E½E½ */
 .note_03 {
 	color:#F00;
 }
-/* ?ï¿½ï¿½Ô•ï¿½?ï¿½ï¿½?ï¿½ï¿½ 10px */
+/* ?E½E½Ô•ï¿½?E½E½?E½E½ 10px */
 .note_04 {
 	color:#F00;
 	font-size:10px;
@@ -92,7 +92,7 @@ body { -webkit-text-size-adjust: 100%; }
 }
 
 
-/* ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½A?ï¿½ï¿½C?ï¿½ï¿½R?ï¿½ï¿½?ï¿½ï¿½,?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½N?ï¿½ï¿½A?ï¿½ï¿½C?ï¿½ï¿½R?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½È‚ï¿½
+/* ?E½E½?E½E½?E½E½?E½E½?E½E½A?E½E½C?E½E½R?E½E½?E½E½,?E½E½?E½E½?E½E½?E½E½?E½E½N?E½E½A?E½E½C?E½E½R?E½E½?E½E½?E½E½È‚ï¿½
 ----------------------------------------*/
 a {
 	color:#3399CC;
@@ -138,7 +138,7 @@ a:hover {
 }
 
 
-/*?ï¿½ï¿½@?ï¿½ï¿½V?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½i?ï¿½ï¿½A?ï¿½ï¿½C?ï¿½ï¿½R?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Î‰ï¿½*/
+/*?E½E½@?E½E½V?E½E½?E½E½?E½E½i?E½E½A?E½E½C?E½E½R?E½E½?E½E½?E½E½Î‰ï¿½*/
 h3.newIcon {
 	vertical-align:middle;
 }
@@ -154,14 +154,14 @@ p.long {
 	letter-spacing: -1px;
 }
 
-/* ?ï¿½ï¿½^?ï¿½ï¿½C?ï¿½ï¿½g?ï¿½ï¿½?ï¿½ï¿½ H*
+/* ?E½E½^?E½E½C?E½E½g?E½E½?E½E½ H*
 ----------------------------------------*/
 .title01 {
 	text-align:center;
 	padding-bottom: 10px;
 }
 
-/* ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½i?ï¿½ï¿½y?ï¿½ï¿½[?ï¿½ï¿½W ?ï¿½ï¿½^?ï¿½ï¿½C?ï¿½ï¿½g?ï¿½ï¿½?ï¿½ï¿½*/
+/* ?E½E½?E½E½?E½E½i?E½E½y?E½E½[?E½E½W ?E½E½^?E½E½C?E½E½g?E½E½?E½E½*/
 .title02 { 
 	height:110px;
 	width:900px;
@@ -339,7 +339,7 @@ p.long {
 	padding-bottom: 15px;
 }
 
-/* ?ï¿½ï¿½R?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½e?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½c?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
+/* ?E½E½R?E½E½?E½E½?E½E½e?E½E½?E½E½?E½E½c?E½E½?E½E½?E½E½?E½E½
 ----------------------------------------*/
 
 #cntBottom {
@@ -354,7 +354,7 @@ p.long {
 	padding:50px 30px 0 30px;
 }
 
-/* ?ï¿½ï¿½p?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ */
+/* ?E½E½p?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½ */
 .pkz{
 	float:left;
 	margin-top: 0px;
@@ -370,12 +370,12 @@ p.long {
 .pkz em{
 }
 
-/* ?ï¿½ï¿½y?ï¿½ï¿½[?ï¿½ï¿½W?ï¿½ï¿½Ìæ“ª?ï¿½ï¿½Ö–ß‚ï¿½ */
+/* ?E½E½y?E½E½[?E½E½W?E½E½Ìæ“ª?E½E½Ö–ß‚ï¿½ */
 .pageTop {
 	text-align:right;
 }
 
-/* ?ï¿½ï¿½O?ï¿½ï¿½Ìƒy?ï¿½ï¿½[?ï¿½ï¿½W?ï¿½ï¿½Ö–ß‚ï¿½ */
+/* ?E½E½O?E½E½Ìƒy?E½E½[?E½E½W?E½E½Ö–ß‚ï¿½ */
 .pageBack {
 	padding:10px 0;
 }
@@ -385,7 +385,7 @@ p.long {
 }
 
 
-/* ?ï¿½ï¿½R?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½e?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½c?ï¿½ï¿½y?ï¿½ï¿½[?ï¿½ï¿½W ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
+/* ?E½E½R?E½E½?E½E½?E½E½e?E½E½?E½E½?E½E½c?E½E½y?E½E½[?E½E½W ?E½E½?E½E½?E½E½?E½E½
 ----------------------------------------*/
 
 #cntPint {
@@ -524,7 +524,7 @@ p.long {
 
 
 
-/*?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½C?ï¿½ï¿½A?ï¿½ï¿½E?ï¿½ï¿½g
+/*?E½E½?E½E½?E½E½C?E½E½A?E½E½E?E½E½g
 ----------------------------------------*/
 
 html {
@@ -579,40 +579,56 @@ html {
 /* H1
 ----------------------------------------*/
 h1.pageName {
-	background:#01256B;
-	height:18px;
+	background:#ED0003;;
+	height:24px;
 }
 h1.pageName span {
 	display:block;
 	margin:0 auto;
 	width:900px;
 	color:#FFF;
+	font-size:12px;
+	line-height:24px;
+	font-weight:bold;
 }
 
 /* header
 ----------------------------------------*/
 #header {
 	background:url(../img/wrapper_bg_01.jpg) 0 0 no-repeat;
-	height:189px;
+	height:130px;
+	margin-top:0px;
+	margin-bottom:0px;
+	position: relative;
 }
 #header .siteName {
 	float:left;
 	width:230px;
-    padding: 35px 0 0 55px;
+    padding:35px 0 0 55px;
 }
 
 #header .discription {
 	float:right;
 	padding:35px 0 0 0;
 }
-#header .discription .shopJapan,
+#header .discription .shopjapan,
 #header .discription .copy {
 	margin-right:65px;
 	text-align:right;
 	font-size:10px;
 }
-#header .discription .shopJapan img {
-	vertical-align: middle;
+#header .discription .shopjapan_txt{
+	position:absolute;
+	top:75px;
+	right:50px;
+	display: block;
+	z-index:2;
+}
+#header .discription .shopjapan_img{
+	position: absolute;
+	top:40px;
+	right:55px;
+	display:block;
 }
 #header .discription .faq {
 	padding:10px 65px 0 0;
@@ -625,6 +641,39 @@ h1.pageName span {
 	width:82px;
 }
 
+#header .raku_medal{
+	position: absolute;
+	top:30px;
+	left:250px;
+	z-index:1;
+}
+#header .raku_medal img{
+	width:230px;
+}
+h2.pageLast {
+	background:#ED0003;;
+	height:50px;
+	padding:10px 0;
+}
+h2.pageLast p{
+    margin: 0;
+    text-align: right;
+}
+h2.pageLast p a{
+	text-indent: -119988px;
+    overflow: hidden;
+    text-align: left;
+    text-transform: capitalize;
+    display: inline-block;
+    background: url(https://www.rakuten.ne.jp/gold/shopjapan/images/top/sprite.png) -20px -226px no-repeat;
+    -moz-background-size: 570px 1855px;
+    -o-background-size: 570px 1855px;
+    -webkit-background-size: 570px 1855px;
+    background-size: 570px 1855px;
+    width: 216px;
+    height: 28px;
+    vertical-align: bottom;
+}
 
 
 
@@ -657,7 +706,8 @@ h1.pageName span {
 
 
 
-/* ?ï¿½ï¿½J?ï¿½ï¿½X?ï¿½ï¿½^?ï¿½ï¿½?ï¿½ï¿½
+
+/* ?E½E½J?E½E½X?E½E½^?E½E½?E½E½
 ----------------------------------------*/
 #header {
 	height:136px;
@@ -669,7 +719,7 @@ h1.pageName span {
 	background-position:0 -135px;
 }
 
-/* ?ï¿½ï¿½R?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½e?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½c
+/* ?E½E½R?E½E½?E½E½?E½E½e?E½E½?E½E½?E½E½c
 ----------------------------------------*/
 
 .title01 {
@@ -689,7 +739,7 @@ h1.pageName span {
 #mainBnr .ext span {
 	color:#FFA208;
 }
-/* ?ï¿½ï¿½w?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Öi?ï¿½ï¿½?ï¿½ï¿½ */
+/* ?E½E½w?E½E½?E½E½?E½E½Öi?E½E½?E½E½ */
 
 .goBuy {
 	clear:both;
@@ -718,7 +768,7 @@ h1.pageName span {
 	padding:10px;
 }
 
-/* ?ï¿½ï¿½A?ï¿½ï¿½C?ï¿½ï¿½R?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ç‰ï¿½ */
+/* ?E½E½A?E½E½C?E½E½R?E½E½?E½E½?E½E½Ç‰ï¿½ */
 .lineupList .icon {
 	padding:6px;
 	margin-left: 7px;
@@ -877,7 +927,7 @@ h1.pageName span {
 
 
 
-/* ?ï¿½ï¿½G?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½[?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½b?ï¿½ï¿½Z?ï¿½ï¿½[?ï¿½ï¿½W
+/* ?E½E½G?E½E½?E½E½?E½E½[?E½E½?E½E½?E½E½b?E½E½Z?E½E½[?E½E½W
 ----------------------------------------*/
 
 #error {
@@ -923,7 +973,7 @@ h1.pageName span {
 	margin:0 auto;
 }
 
-/* ?ï¿½ï¿½Z?ï¿½ï¿½b?ï¿½ï¿½g?ï¿½ï¿½p?ï¿½ï¿½R?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½g
+/* ?E½E½Z?E½E½b?E½E½g?E½E½p?E½E½R?E½E½?E½E½?E½E½?E½E½?E½E½g
 ----------------------------------------*/
 
 .boxW860 .itemInfo .text #txt_set {
@@ -936,7 +986,7 @@ margin-top: 8px;
 color:#FF0000;
 font-weight: bolder;}
 
-/* ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
+/* ?E½E½?E½E½?E½E½?E½E½
 ----------------------------------------*/
 .f_red {
 color:#FF0000;
