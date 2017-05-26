@@ -4,6 +4,15 @@
 https://tohshige.github.io/test/
 <!-- TOC -->
 
+GIT 管理以下にさらに別のリポジストリを追加してみる
+health/www2017/
+gitを入れ子にするテスト
+health.git /test.git
+
+health/.gitignore で　www2017
+
+
+
 macos へ引っ越しじゃあ
 
 
