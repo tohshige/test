@@ -163,7 +163,11 @@ function showValues(on_off) {
         $("#go_cart").removeClass("disabled");//購入ボタン 表示
     }
     if (on_off === "on") {
-        confirm_cart("カゴ確認ページへ進む");
+        // return confirm_cart("カゴ確認ページへ進む");
+        return true;
+        // if(!confirm_cart("カゴ確認ページへ進む")){
+        //     return;
+        // }
         // setTimeout(function(){
             // location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
         // },3000);
@@ -177,9 +181,10 @@ function confirm_cart(message) {
     if(!message){message="ご選択された商品を買い物かごに追加しますか？";}
     var res = confirm(message);
     if (res == true) {
-        // return true;
+        return true;
     } else {
         return false;
+        // return ;
     }
 }
 
@@ -191,7 +196,7 @@ function reset_radio() {
         // OKなら移動
         $("input[type='radio']").attr("checked", false);
         $("#reset_radio").attr("disabled", false);
-        $("select").attr("disabled", false);
+        $("select").attr("disabled", true);
         // $("#go_cart").attr("disabled", false);
         $("#go_cart").addClass("disabled");
           location.reload();
@@ -214,10 +219,17 @@ $("#reset_radio").click(reset_radio);
 // $("#go_cart").click(showValues('on'));
 
 $("#go_cart").on('click',function(){
-    showValues('on');
+if(!confirm_cart("ご選択された商品を買い物かごに追加しますか？")){
+    return;
+}
+
+    // showValues('on');
+    if(!showValues('on')){
+        return;
+    }
     // if (false=== confirm_cart('ご選択された商品をカゴに追加しました。\n購入された商品カゴを確認しますか？')){return;};
     // if (false=== confirm_cart('ご選択された商品をカゴに追加しました。\n購入された商品は「カゴ確認」から確認いただけます。')){return;};
-    alert('ご選択された商品をカゴに追加しました。\n購入された商品は「カゴ確認」から確認いただけます。');
+    alert('ご選択された商品をカゴに追加いたします。\n購入された商品は「カゴの中身を確認する」ボタンから確認いただけます。');
     //1秒後
     // setTimeout(function(){
     //        location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
