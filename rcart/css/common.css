@@ -7,7 +7,7 @@
 }
 
 .ui.dimmer .ui.text.loader {
-  color: black;
+  color: red;
   font-size: 20px;
 }
 .ui.loader {
