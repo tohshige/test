@@ -1,0 +1,14 @@
+{
+  "name": "rcart",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "none",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-convert-encoding": "^1.0.0",
+    "gulp-iconv": "0.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.1.2"
+  }
+}
