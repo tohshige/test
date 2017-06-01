@@ -60,3 +60,7 @@ git push -f origin master:master
 ```
 0 4 * * * /bin/bash /path/to/sync.sh >> /path/to/sync.log 2>&1
 ```
+
+
+Test heroku
+https://oshige.herokuapp.com/
