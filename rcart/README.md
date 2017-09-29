@@ -64,3 +64,12 @@ git push -f origin master:master
 
 Test heroku
 https://oshige.herokuapp.com/
+
+```
+composer
+brew tap
+brew tap homebrew/dupes
+brew tap homebrew/php
+brew install homebrew/php/composer
+composer -V
+```
