@@ -49,9 +49,45 @@ $(function() {
         return false;
     })
 });
+
+// スクロールしたらじわっとフッター表示
+$(function() {
+  var topBtn = $('#footerFloatingMenu');
+  topBtn.hide();
+  $(window).scroll(function() {
+    // 200pxで表示
+    if ($(this).scrollTop() > 200) {
+      topBtn.fadeIn();
+    } else {
+      topBtn.fadeOut();
+    }
+  });
+});
+
 </script>
 <style>
-    .displayNone{display: none;}
+.displayNone{display: none;}
+
+/* footerFloating */
+#footerFloatingMenu .ui.segment {
+  background: red;
+}
+
+#footerFloatingMenu {
+  background: yellow;
+  display: block;
+  width: 100%;
+  position: fixed;
+  left: 0px;
+  bottom: 2px;
+  z-index: 9999;
+  text-align: center;
+  padding: 0 auto;
+}
+
+#footerFloatingMenu img {
+  max-width: 99%;
+}
 </style>
 
   <!-- modal migration -->
@@ -63,7 +99,95 @@ $(function() {
 
 
 
-
+<h3 class="ui block header">footer Floating Menu,  resposive + semantic ui + jquery <br>
+  スクロールしたらじわっとフッター表示</h3>
+  
+  <div class="ui divided items container segment">
+    <div class="item">
+      <div class="image">
+        <img src="https://semantic-ui.com/images/wireframe/image.png">
+      </div>
+      <div class="content">
+        <a class="header">商品その1ＸＸＸＸＸＸＸＸＸＸＸ</a>
+        <div class="meta">
+          <span >ＸＸＸＸＸＸＸＸＸＸＸ</span>
+        </div>
+        <div class="description">
+            <p>低反発マットレス1枚と同時に、複数枚のマットレスや低反発ピロー、マットレスカバーをご購入いただくと、おトクな割引価格でお求めいただけます。たとえば、低反発マットレス1点のご購入にあわせ、複数用のマットレスを購入すれば30％オフ！寝具一式をまとめて購入される方にも、複数セット購入して大切な人にプレゼントする方にも大変お得です。</p>
+          </div>
+        <div class="extra">
+          <dd><input type="radio" name="radio1" value="10000070"></dd>
+          <div class="ui right floated primary button">
+            Buy tickets１
+            <i class="right chevron icon"></i>
+          </div>
+          <div class="ui label">IMAX</div>
+          <div class="ui label"><i class="globe icon"></i> Additional Languages</div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="image">
+        <img src="https://semantic-ui.com/images/wireframe/image.png">
+      </div>
+      <div class="content">
+        <a class="header">My Neighbor Totoro</a>
+        <div class="meta">
+          <span class="cinema">IFC Cinema</span>
+        </div>
+        <div class="description">
+          <p></p>
+        </div>
+        <div class="extra">
+          <div class="ui right floated primary button">
+            Buy tickets
+            <i class="right chevron icon"></i>
+          </div>
+          <div class="ui label">Limited</div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="image">
+        <img src="https://semantic-ui.com/images/wireframe/image.png">
+      </div>
+      <div class="content">
+        <a class="header">Watchmen</a>
+        <div class="meta">
+          <span class="cinema">IFC</span>
+        </div>
+        <div class="description">
+          <p></p>
+        </div>
+        <div class="extra">
+          <div class="ui right floated primary button">
+            Buy tickets
+            <i class="right chevron icon"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <div id="footerFloatingMenu">
+        <div class="ui segment">
+          <div class="ui title">
+            <p id="total">\0円</p>
+            <p id="total2">\0円</p>
+          </div>
+        </div>
+    </div>
+  
+  </div>
+  
+  <div class="ui text container segment">
+    <br>content<br>  <br>content<br>
+    <br>content<br>  <br>content<br>
+    <hr>
+    <br>content<br>  <br>content<br>
+    <br>content<br>  <br>content<br>
+  
+  </div>
+    
 
 
 
