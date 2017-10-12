@@ -1,0 +1,1000 @@
+@charset "shift_jis";
+
+/* ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽﾊバ?・ｽ・ｽi?・ｽ・ｽ[
+----------------------------------------*/
+.ui.segment .ui.dimmer.active{
+  background: #fdfbc9;
+}
+
+.ui.dimmer .ui.text.loader {
+  color: red;
+  font-size: 20px;
+}
+.ui.loader {
+  top:-6%;
+}
+.ui.segment {
+  border: 0;
+  background: #fdfbc9;
+}
+
+
+.cpBnner01 {
+	width:900px;
+	margin:0 auto 20px auto;
+}
+.cpBnner01 .bn {
+	margin-bottom:5px;
+}
+#premium .cpBnner01,
+#cero .cpBnner01,
+#neofeel .cpBnner01,
+#excellent .cpBnner01,
+#comfort .cpBnner01 {
+	width:890px;
+}
+
+#custom .cpBnner01 {
+	width:860px;
+	margin-left:-15px;
+}
+
+.cpBnner01 div.detailBtn {
+	z-index:999;
+	height:45px;
+	margin-top:-40px;
+	text-align:left;
+}
+.cpBnner01 div.detailBtn img.excellent {
+	margin-left:30px;
+}
+.cpBnner01 div.detailBtn img.richfit {
+	margin-left:358px;
+}
+.cpBnner01 div.detailBtn img.washablefit {
+	margin-left:98px;
+}
+
+/* ?・ｽ・ｽe?・ｽ・ｽL?・ｽ・ｽX?・ｽ・ｽg?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ
+----------------------------------------*/
+body { -webkit-text-size-adjust: 100%; }
+
+
+/* ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽt?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ */
+.note_01 {
+	font-size:10px;
+	line-height:1.3;
+	text-indent:-1em;
+	margin-left:1em;
+	text-align:left;
+}
+/* ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽﾌ抵ｿｽ?・ｽ・ｽ?・ｽ・ｽ */
+.note_02 {
+	font-size:10px;
+	line-height:1.3;
+	text-align:left;
+}
+
+/* ?・ｽ・ｽﾔ包ｿｽ?・ｽ・ｽ?・ｽ・ｽ */
+.note_03 {
+	color:#F00;
+}
+/* ?・ｽ・ｽﾔ包ｿｽ?・ｽ・ｽ?・ｽ・ｽ 10px */
+.note_04 {
+	color:#F00;
+	font-size:10px;
+	line-height:1.3;
+}
+
+.btnClose {
+	text-align:right;
+	padding-bottom:5px;
+}
+
+
+/* ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽA?・ｽ・ｽC?・ｽ・ｽR?・ｽ・ｽ?・ｽ・ｽ,?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽN?・ｽ・ｽA?・ｽ・ｽC?・ｽ・ｽR?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽﾈゑｿｽ
+----------------------------------------*/
+a {
+	color:#3399CC;
+	text-decoration:underline;
+}
+a:hover {
+	color:#006699;
+	text-decoration:underline;
+}
+
+.arrow_01 {
+	padding-left:10px;
+	background:url(../img/arrow_01.gif) left center no-repeat;
+}
+
+.icon_video {
+	padding:2px 0 2px 24px;
+	background:url(../img/icon_video.gif) left center no-repeat;
+}
+.icon_user {
+	padding:2px 0 2px 24px;
+	background:url(../img/icon_user.gif) left center no-repeat;
+}
+.icon_spec {
+	padding:2px 0 2px 24px;
+	background:url(../img/icon_spec.gif) left center no-repeat;
+}
+.icon_henpin {
+	padding:2px 0 2px 24px;
+	background:url(../img/icon_henpin.gif) left center no-repeat;
+}
+.icon_new {
+	padding:2px 35px 2px 0;
+	background:url(../img/icon_new.gif) right center no-repeat;
+}
+.icon_comingsoon {
+	padding:2px 70px 2px 0;
+	background:url(../img/icon_comingsoon.gif) right center no-repeat;
+}
+.icon_voice {
+	padding:2px 0 2px 24px;
+	background:url(../img/icon_voice.gif) left center no-repeat;
+}
+
+
+/*?・ｽ・ｽ@?・ｽ・ｽV?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽi?・ｽ・ｽA?・ｽ・ｽC?・ｽ・ｽR?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽﾎ会ｿｽ*/
+h3.newIcon {
+	vertical-align:middle;
+}
+img.newIconL,
+img.newIcon {
+	padding-left:3px;
+	vertical-align:middle;
+}
+:root img.newIcon {
+	padding-bottom:2px;
+}
+p.long {
+	letter-spacing: -1px;
+}
+
+/* ?・ｽ・ｽ^?・ｽ・ｽC?・ｽ・ｽg?・ｽ・ｽ?・ｽ・ｽ H*
+----------------------------------------*/
+.title01 {
+	text-align:center;
+	padding-bottom: 10px;
+}
+
+/* ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽi?・ｽ・ｽy?・ｽ・ｽ[?・ｽ・ｽW ?・ｽ・ｽ^?・ｽ・ｽC?・ｽ・ｽg?・ｽ・ｽ?・ｽ・ｽ*/
+.title02 { 
+	height:110px;
+	width:900px;
+	margin:0 auto;
+	background:url(../img/titlebg_02.jpg) 0 0 no-repeat;
+	position: relative;
+}
+.title02 h2 {
+	float:left;
+	width:590px;
+	/*padding-top:20px;*/
+}
+
+#premium .title02 { 
+	height:110px;
+	width:900px;
+	margin:0 auto;
+	background:url(../img/titlebg_02_premium.jpg) 0 0 no-repeat;
+}
+ .title02 h2 {
+	/*float:left;
+	width:420px;
+	padding-top:20px;*/
+	position: absolute;
+	top: 20px;
+	left: 45px;
+}
+
+#neofeel .title02 { 
+	height:110px;
+	width:900px;
+	margin:0 auto;
+	background:url(../img/titlebg_02_neofeel.jpg) 0 0 no-repeat;
+}
+
+#neofeel .title02 h2 {
+	/*float:left;
+	width:451px;
+	padding-top:20px;*/
+	position: absolute;
+	top: 20px;
+	left: 45px;
+}
+
+#cero .title02 { 
+	height:110px;
+	width:900px;
+	margin:0 auto;
+	background:url(../img/titlebg_02_cero.jpg) 0 0 no-repeat;
+}
+#cero .title02 h2 {
+	/*float:left;
+	width:464px;
+	padding-top:20px;*/
+	position: absolute;
+	top: 20px;
+	left: 45px;
+}
+
+#comfort .title02 { 
+	height:110px;
+	width:900px;
+	margin:0 auto;
+	background:url(../img/titlebg_02_premium.jpg) 0 0 no-repeat;
+}
+#comfort .title02 h2 {
+	/*float:left;
+	width:464px;
+	padding-top:20px;*/
+	position: absolute;
+	top: 20px;
+	left: 45px;
+}
+
+/* ----------------------*/
+
+#pillow_cero .title02 { 
+	height:110px;
+	width:900px;
+	margin:0 auto;
+	background:url(../img/titlebg_02_cero.jpg) 0 0 no-repeat;
+}
+#pillow_cero .title02 h2 {
+	float:left;
+	width:420px;
+	padding-top:20px;
+}
+
+#pillow_neofeel .title02 { 
+	height:110px;
+	width:900px;
+	margin:0 auto;
+	background:url(../img/titlebg_02_neofeel.jpg) 0 0 no-repeat;
+}
+#pillow_neofeel .title02 h2 {
+	float:left;
+	width:420px;
+	padding-top:20px;
+}
+
+#pillow_richfit .title02 { 
+	height:110px;
+	width:900px;
+	margin:0 auto;
+	background:url(../img/titlebg_02_premium.jpg) 0 0 no-repeat;
+}
+#pillow_richfit .title02 h2 {
+	float:left;
+	width:420px;
+	padding-top:20px;
+}
+
+#pillow_washablefit .title02 { 
+	height:110px;
+	width:900px;
+	margin:0 auto;
+	background:url(../img/titlebg_02_premium.jpg) 0 0 no-repeat;
+}
+#pillow_washablefit .title02 h2 {
+	float:left;
+	width:420px;
+	padding-top:20px;
+}
+
+#pillow_angel .title02 { 
+	height:110px;
+	width:900px;
+	margin:0 auto;
+	background:url(../img/titlebg_02_premium.jpg) 0 0 no-repeat;
+}
+#pillow_angel .title02 h2 {
+	float:left;
+	width:420px;
+	padding-top:20px;
+}
+
+#pillow_neckfit .title02 { 
+	height:110px;
+	width:900px;
+	margin:0 auto;
+	background:url(../img/titlebg_02_premium.jpg) 0 0 no-repeat;
+}
+#pillow_neckfit .title02 h2 {
+	float:left;
+	width:420px;
+	padding-top:20px;
+}
+
+/* ----------------------*/
+
+/*
+.title02 h2 img {
+	margin-left:45px;
+}
+*/
+.title02 .back {
+	float:right;
+	width:260px;
+	padding-top:45px;
+	text-align:left;
+}
+.title02_W h2 {
+	width:645px !important;
+}
+.title02_W .back {
+	width:205px !important;
+}
+.title02_W .back2 {
+	padding: 40px 50px 0 0 !important;
+	float: right;
+}
+
+.title03 {
+	text-align:center;
+	padding-bottom: 15px;
+}
+
+/* ?・ｽ・ｽR?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽe?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽc?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ
+----------------------------------------*/
+
+#cntBottom {
+	background:url(../img/wrapper_bg_03.png) 0 0 repeat-x;
+/*	padding:75px 30px 25px 30px; */
+	padding:70px 30px 20px 30px;
+}
+
+#qa #cntBottom {
+	background:url(../img/wrapper_bg_03.png) 0 0 repeat-x;
+/*	padding:75px 30px 25px 30px; */
+	padding:50px 30px 0 30px;
+}
+
+/* ?・ｽ・ｽp?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ */
+.pkz{
+	float:left;
+	margin-top: 0px;
+	margin-left: 55px;
+	margin-bottom: 10px;
+	width:750px;
+	font-size:10px;
+	color:#666;
+}
+.pkz a{
+	text-decoration:underline;
+}
+.pkz em{
+}
+
+/* ?・ｽ・ｽy?・ｽ・ｽ[?・ｽ・ｽW?・ｽ・ｽﾌ先頭?・ｽ・ｽﾖ戻ゑｿｽ */
+.pageTop {
+	text-align:right;
+}
+
+/* ?・ｽ・ｽO?・ｽ・ｽﾌペ?・ｽ・ｽ[?・ｽ・ｽW?・ｽ・ｽﾖ戻ゑｿｽ */
+.pageBack {
+	padding:10px 0;
+}
+.pageBack a {
+	padding:1px 0 1px 17px;
+	background:url(../img/arrow_03.gif) left top no-repeat;
+}
+
+
+/* ?・ｽ・ｽR?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽe?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽc?・ｽ・ｽy?・ｽ・ｽ[?・ｽ・ｽW ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ
+----------------------------------------*/
+
+#cntPint {
+	padding:5px 0 30px 0;
+	background:url(../img/cnt_point_bg.jpg) top right no-repeat;
+}
+#cntPint h3 {
+	margin-bottom:8px;
+}
+#cntPint dl {
+	margin-left:15px;
+}
+#cntPint dl dt {
+	width:430px;
+	margin-bottom:4px;
+}
+#cntPint dl dd {
+	width:430px;
+	margin-bottom:5px;
+}
+
+/*----------------------------------*/
+
+#outro {
+	margin-bottom:40px;
+}
+#outro h3 {
+	margin-bottom:20px;
+}
+
+/*----------------------------------*/
+
+#cntItemList {
+	background:url(../img/cnt_itemlist_bg.gif) left bottom no-repeat;
+}
+#cntItemList h4 {
+	padding-bottom:3px;
+	margin-bottom:8px;
+	background:url(../img/line_dot_01.gif) left bottom repeat-x;
+	font-weight:bold;
+	line-height:1.1;
+}
+#cntItemList h4 strong {
+	font-size:16px;
+	color:#E66C00;
+	font-weight:bold;
+}
+#cntItemList .listInner {
+	padding:20px;
+}
+#cntItemList .mattressItem {
+	width:400px;
+	float:left;
+}
+#cntItemList .comfortItem {
+	width:400px;
+	float:right;
+}
+#cntItemList .excellent,
+#cntItemList .comfort {
+	width:400px;
+}
+#cntItemList .premium {
+	width:400px;
+}
+#cntItemList .text {
+	float:left;
+	width:190px;
+	margin-bottom:10px
+}
+#cntItemList .text p a {
+	font-weight:bold;
+}
+#cntItemList .itemImage {
+	float:right;
+	width:200px;
+	margin-bottom:10px
+}
+#cntItemList .itemImage a {
+	display:block;
+	padding:1px;
+	border:1px solid #E0D297;
+}
+#cntItemList .excellent ul,
+#cntItemList .premium ul,
+#cntItemList .comfort ul {
+	/*background:url(../img/line_dot_04.gif) 0 0 repeat-x;
+	clear:both;*/
+	padding:10px 0;
+}
+#cntItemList .excellent ul li,
+#cntItemList .premium ul li {
+	float:left;
+	width:190px;
+}
+#cntItemList .excellent ul li a,
+#cntItemList .premium ul li a,
+#cntItemList .comfort ul li a, .gotoDetail a {
+	padding-left:10px;
+	background:url(../img/arrow_01.gif) left center no-repeat;
+}
+#cntItemList .comfort .gotoDetail {
+	clear:both;
+	width:100%; /*for IE6*/
+	padding-top:10px;
+	/*background:url(../img/line_dot_04.gif) 0 0 repeat-x;*/
+	text-align:right;
+}
+
+#cntItemList .comfortItem:after,
+#cntItemList .matterssItem:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+#cntItemList .comfort,
+#cntItemList .excellent,
+#cntItemList .premium { display: inline-block; }
+/* \*/
+* html .userVoic ul,
+* html .userVoic ul li { height: 1%; }
+#cntItemList .comfort,
+#cntItemList .excellent,
+#cntItemList .premium { display: block; }
+/* */
+
+
+
+
+
+
+
+
+
+
+
+/*?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽC?・ｽ・ｽA?・ｽ・ｽE?・ｽ・ｽg
+----------------------------------------*/
+
+html {
+	background:#5883CA;
+}
+#wrapper {
+	background:url(../img/body_bg.jpg) center 0 no-repeat;
+}
+#wrapper .inner {
+	background:url(../img/wrapper_bg_02.png) 0 0 repeat-y;
+}
+#wrapper #wrapper_layout {
+	background:url(../img/body_bg_footer.png) center bottom repeat-x;
+}
+
+#wrapper .inner,
+#header,
+.contents {
+ margin: 0 auto;
+ width: 960px;
+}
+#footer .inner{
+ margin: 0 auto;
+ width: 900px;
+ background:#FFF;
+}
+
+.contents {
+	background:url(../img/wrapper_bg_01.jpg) 0 -188px no-repeat;
+}
+.contents .cntInnerA {
+	margin:0 50px;
+	/zoom :1; 
+}
+.contents .cntInnerB {
+	margin:0 30px 0 50px;
+	/zoom :1;
+}
+.contents .cntInnerB:after,
+.contents .cntInnerA:after {
+	content:'';
+	display:block;
+	clear:both;
+	height:0;
+}
+
+#footer{
+	clear:both;
+}
+
+
+/* H1
+----------------------------------------*/
+h1.pageName {
+	background:#ED0003;;
+	height:24px;
+}
+h1.pageName span {
+	display:block;
+	margin:0 auto;
+	width:900px;
+	color:#FFF;
+	font-size:12px;
+	line-height:24px;
+	font-weight:bold;
+}
+
+/* header
+----------------------------------------*/
+#header {
+	background:url(../img/wrapper_bg_01.jpg) 0 0 no-repeat;
+	height:130px;
+	margin-top:0px;
+	margin-bottom:0px;
+	position: relative;
+}
+#header .siteName {
+	float:left;
+	width:230px;
+    padding:35px 0 0 55px;
+}
+
+#header .discription {
+	float:right;
+	padding:35px 0 0 0;
+}
+#header .discription .shopjapan,
+#header .discription .copy {
+	margin-right:65px;
+	text-align:right;
+	font-size:10px;
+}
+#header .discription .shopjapan_txt{
+	position:absolute;
+	top:75px;
+	right:50px;
+	display: block;
+	z-index:2;
+}
+#header .discription .shopjapan_img{
+	position: absolute;
+	top:40px;
+	right:55px;
+	display:block;
+}
+#header .discription .faq {
+	padding:10px 65px 0 0;
+	text-align:right;
+}
+#header .discription .henpin {
+	width:88px;
+}
+#header .discription .koukan {
+	width:82px;
+}
+
+#header .raku_medal{
+	position: absolute;
+	top:30px;
+	left:250px;
+	z-index:1;
+}
+#header .raku_medal img{
+	width:230px;
+}
+h2.pageLast {
+	background:#ED0003;;
+	height:50px;
+	padding:10px 0;
+}
+h2.pageLast p{
+    margin: 0;
+    text-align: right;
+}
+h2.pageLast p a{
+	text-indent: -119988px;
+    overflow: hidden;
+    text-align: left;
+    text-transform: capitalize;
+    display: inline-block;
+    background: url(https://www.rakuten.ne.jp/gold/shopjapan/images/top/sprite.png) -20px -226px no-repeat;
+    -moz-background-size: 570px 1855px;
+    -o-background-size: 570px 1855px;
+    -webkit-background-size: 570px 1855px;
+    background-size: 570px 1855px;
+    width: 216px;
+    height: 28px;
+    vertical-align: bottom;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ?・ｽ・ｽJ?・ｽ・ｽX?・ｽ・ｽ^?・ｽ・ｽ?・ｽ・ｽ
+----------------------------------------*/
+#header {
+	height:136px;
+}
+#header #globalNavi {
+	display:none;
+}
+.contents {
+	background-position:0 -135px;
+}
+
+/* ?・ｽ・ｽR?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽe?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽc
+----------------------------------------*/
+
+.title01 {
+	margin-bottom:5px;
+}
+
+#mainBnr {
+ margin-bottom:30px;
+}
+
+#mainBnr .ext {
+	margin-top:30px;
+	text-align:center;
+	font-weight:bold;
+	font-size:16px;
+}
+#mainBnr .ext span {
+	color:#FFA208;
+}
+/* ?・ｽ・ｽw?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽﾖ進?・ｽ・ｽ?・ｽ・ｽ */
+
+.goBuy {
+	clear:both;
+	font-weight:bold;
+	text-align:right;
+	padding:0 20px 15px 0;
+}	
+.goBuy a {
+	background:url(../img/arrow_02.gif) left center no-repeat;
+	padding-left:17px;
+}
+
+.cntInnerB h3 {
+	padding-bottom:20px;
+}
+.lineupList {
+	padding-bottom:10px;
+}
+.lineupList li {
+	width:290px;
+	float:left;
+	margin-bottom:20px;
+	background:url(../img/custom_bg_02.gif) 0 0 no-repeat;
+}
+.lineupList .photo {
+	padding:10px;
+}
+
+/* ?・ｽ・ｽA?・ｽ・ｽC?・ｽ・ｽR?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽﾇ会ｿｽ */
+.lineupList .icon {
+	padding:6px;
+	margin-left: 7px;
+	margin-top: 0px;
+	}
+
+.lineupList .photo img {
+	border:1px solid #e0d297;
+}
+.lineupList .text {
+	padding:0 20px 5px 10px;
+	background:url(../img/custom_bg_02.gif) left bottom no-repeat;
+}
+.text h4 {
+	font-weight:bold;
+	font-size:14px;
+	margin-bottom:5px;
+}
+.text h4.long{
+	letter-spacing: -1px;
+}
+.text h4 span {
+	font-weight:normal;
+	font-size:12px;
+}
+.text p {
+	margin-bottom:5px;
+}
+.selectNum dt {
+	float:left;
+	clear:both;
+	width:100px;
+	padding:10px 0;
+	line-height:1.6;
+}
+.selectNum dd {
+	padding:10px 0 10px 100px;
+	background:url(../img/line_dot_01.gif) 0 0 repeat-x;
+	text-align:right;
+}
+.selectNum dd select {
+	width:75px;
+}
+
+.boxW860 {
+	margin-bottom:15px;
+	background:url(../img/custom_bg_03.gif) left top no-repeat;
+}
+.boxW860 .itemInfo {
+	padding:10px 20px 5px 10px;
+}
+.boxW860 .photo {
+	width:195px;
+	float:left;
+}
+.boxW860 .photo img {
+	border:1px solid #e0d297;
+}
+.blockClor {
+	padding:10px 20px 10px 20px;
+	background:url(../img/custom_bg_03.gif) left bottom no-repeat;
+}
+.blockClor li {
+	width:270px;
+	float:left;
+}
+.blockClor .color02 {
+	width:285px;
+	border-left:1px solid #e0d297;
+	border-right:1px solid #e0d297;
+}
+
+.blockClor p {
+	font-weight:bold;
+	padding-left:20px;
+	background:url(../img/icon_color_01.gif) left center no-repeat;
+}
+.blockClor .color02 p {
+	margin-left:15px;
+	background:url(../img/icon_color_02.gif) left center no-repeat;
+}
+.blockClor .color03 p {
+	margin-left:15px;
+	background:url(../img/icon_color_03.gif) left center no-repeat;
+}
+.blockClor .color01 dl {
+	padding:10px 15px 0 0;
+}
+.blockClor .color02 dl {
+	padding:10px 15px 0 15px;
+}
+.blockClor .color03 dl {
+	padding:10px 0 0 15px;
+}
+
+.w210 li {
+	width:210px;
+	background:url(../img/custom_bg_01.gif) 0 0 no-repeat;
+}
+.w210 .text {
+	background:url(../img/custom_bg_01.gif) left bottom no-repeat;
+}
+
+.w210 li#special {
+	width:210px;
+	background:url(../img/custom_bg_01b.gif) 0 0 no-repeat;
+}
+.w210 li#special .text{
+	background:url(../img/custom_bg_01b.gif) left bottom no-repeat;
+}
+
+.cp_area dl {
+    margin-top: 1em;
+}
+
+.cp_area dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.cp_area dl dd ul {
+    font-size: 10px;
+    line-height: 1.3em;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.lineupList:after,
+.blockClor:after,
+.itemInfo:after,
+.selectNum:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+.lineupList,
+.blockClor,
+.itemInfo,
+.selectNum { display: inline-block; }
+/* \*/
+* html .lineupList,
+* html .blockClor,
+* html .itemInfo,
+* html .selectNum { height: 1%; }
+.lineupList,
+.blockClor,
+.itemInfo,
+.selectNum { display: block; }
+/* */
+
+
+
+/* ?・ｽ・ｽG?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ[?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽb?・ｽ・ｽZ?・ｽ・ｽ[?・ｽ・ｽW
+----------------------------------------*/
+
+#error {
+	margin:10px 50px;
+	border:2px solid #F00;
+	padding:15px;
+	text-align:center;
+}
+#error p {
+	color:#F00;
+	font-size:14px;
+	font-weight:bold;
+}
+
+
+#btnBuy {
+	margin:15px 50px;
+	padding:15px;
+	background-color:#fdfbc9;
+	text-align:center;
+}
+#btnBuy .btn {
+	padding:8px;
+}
+#btnBuy .att {
+	width:365px;
+	margin:0 auto;
+}
+
+#btnBuy2,#reset_radio,#go_cart,#go_cart_view {
+    display:block;
+    width:860px;
+    margin:15px 0 30px 0;
+    padding:15px 0;
+    background-color:#fdfbc9;
+    text-align:center;
+}
+#btnBuy2 .btn {
+	padding:8px;
+}
+#btnBuy2 .att {
+	width:365px;
+	margin:0 auto;
+}
+
+/* ?・ｽ・ｽZ?・ｽ・ｽb?・ｽ・ｽg?・ｽ・ｽp?・ｽ・ｽR?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽg
+----------------------------------------*/
+
+.boxW860 .itemInfo .text #txt_set {
+margin-top: 8px;
+	width: 620px;
+	margin-left: 190px;
+}
+
+.boxW860 .itemInfo .text #txt_set span {
+color:#FF0000;
+font-weight: bolder;}
+
+/* ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽ
+----------------------------------------*/
+.f_red {
+color:#FF0000;
+font-weight: bolder;}
+
+.price_off {
+	margin: auto;
+	margin-top: 18px;
+	margin-bottom: 35px;
+	text-align: center;
+}

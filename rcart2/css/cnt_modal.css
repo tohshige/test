@@ -1,0 +1,427 @@
+@charset "shift_jis";
+
+
+/* common
+----------------------------------------*/
+/*semantic ui*/
+.ui .modal {
+  width: 660px
+}
+
+.cntModal {
+	width:660px;
+	margin:0 auto;
+}
+.cntModal .read {
+	margin:0 15px 20px 15px;
+}
+.cntModal .block01 {
+	padding-bottom:20px;
+}
+
+.cntModal .block01:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+.cntModal .block01 { display: inline-block; }
+/* \*/
+* html .cntModal .block01 { height: 1%; }
+.cntModal .block01 { display: block; }
+/* */
+
+
+.cntModal .image {
+	clear:both;
+	float:left;
+	width:255px;
+	text-align:center;
+	padding-bottom:10px;
+}
+.cntModal .text {
+	float:left;
+	width:375px;
+
+}
+.cntModal p {
+	padding-bottom:10px;
+}
+
+.cntModal02 {
+	width:880px;
+	margin:0 auto;
+}
+
+
+/* #modal-comfort
+----------------------------------------*/
+
+#modal-comfort .txt01 {
+	/*padding:0 210px 30px 0;*/
+	background:url(../img/comfort_img_02.jpg) top right no-repeat;
+}
+
+/* #modal-standard
+----------------------------------------*/
+#modal-standard dt {
+	float:left;
+	clear:both;
+	width:55px;
+	padding-bottom:10px;
+}
+
+#modal-standard dd {
+	padding-left:10px;
+}
+
+/* #modal-premium
+----------------------------------------*/
+#modal-premium li {
+	margin:0 12px 15px 12px;
+	padding-bottom:15px;
+	background:url(../img/line_dot_01.gif) left bottom repeat-x;
+}
+#modal-premium li .image {
+	float:right;
+	width:276px;
+}
+#modal-premium li .text {
+	float:left;
+	width:321px;
+}
+#modal-premium li h3 {
+	margin-bottom:10px;
+}
+#modal-premium li p {
+	padding-bottom:0;
+}
+#modal-premium li:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+#modal-premium li { display: inline-block; }
+/* \*/
+* html #modal-premium li { height: 1%; }
+#modal-premium li { display: block; }
+/* */
+
+
+/* #modal-cp
+----------------------------------------*/
+#modal-cp li {
+	margin:0 12px 15px 12px;
+	padding-bottom:15px;
+}
+#modal-cp li .image {
+	float:right;
+	width:276px;
+}
+#modal-cp li .text {
+	float:left;
+	width:321px;
+}
+#modal-cp li h3 {
+	margin-bottom:10px;
+}
+#modal-cp li p {
+	padding-bottom:0;
+}
+#modal-cp li:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+#modal-cp li { display: inline-block; }
+/* \*/
+* html #modal-cp li { height: 1%; }
+#modal-cp li { display: block; }
+/* */
+
+
+
+/* #modal-excellent
+----------------------------------------*/
+#modal-excellent li {
+	margin:0 12px 15px 12px;
+	padding-bottom:15px;
+	background:url(../img/line_dot_01.gif) left bottom repeat-x;
+}
+#modal-excellent li.point1 .image,
+#modal-excellent li.point2 .image,
+#modal-excellent li.point3 .image,
+#modal-excellent li.point4 .image,
+#modal-excellent li.point5 .image {
+	float:right;
+	width:228px;
+}
+#modal-excellent li.point1 .text,
+#modal-excellent li.point2 .text,
+#modal-excellent li.point3 .text,
+#modal-excellent li.point4 .text,
+#modal-excellent li.point5 .text {
+	float:left;
+	width:368px;
+}
+
+#modal-excellent li h3 {
+	margin-bottom:10px;
+}
+#modal-excellent li p {
+	padding-bottom:0;
+}
+#modal-excellent li:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+#modal-excellent li { display: inline-block; }
+/* \*/
+* html #modal-excellent li { height: 1%; }
+#modal-excellent li { display: block; }
+/* */
+
+/* #modal-aero
+----------------------------------------*/
+#modal-aero li {
+	margin:0 12px 15px 12px;
+	padding-bottom:15px;
+}
+#modal-aero li.point1 .image,
+#modal-aero li.point2 .image,
+#modal-aero li.point3 .image {
+	float:right;
+	width:227px;
+}
+#modal-aero li.point1 .text,
+#modal-aero li.point3 .text {
+	float:left;
+	width:368px;
+}
+
+#modal-aero li.point2 .text {
+	float:left;
+	width:600px;
+}
+#modal-aero li h3 {
+	margin-bottom:10px;
+}
+#modal-aero li p {
+	padding-bottom:0;
+}
+#modal-aero li:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+#modal-aero li { display: inline-block; }
+/* \*/
+* html #modal-aero li { height: 1%; }
+#modal-aero li { display: block; }
+/* */
+
+
+/* #modal-cero
+----------------------------------------*/
+#modal-cero li {
+	margin:0 12px 15px 12px;
+	padding-bottom:15px;
+}
+#modal-cero li.point1 .image,
+#modal-cero li.point2 .image,
+#modal-cero li.point3 .image {
+	float:right;
+	width:227px;
+}
+#modal-cero li.point1 .text,
+#modal-cero li.point2 .text,
+#modal-cero li.point3 .text {
+	float:left;
+	width:368px;
+}
+#modal-cero li h3 {
+	margin-bottom:10px;
+}
+#modal-cero li p {
+	padding-bottom:0;
+}
+#modal-cero li:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+#modal-cero li { display: inline-block; }
+/* \*/
+* html #modal-cero li { height: 1%; }
+#modal-cero li { display: block; }
+/* */
+
+
+/* #modal-neofeel
+----------------------------------------*/
+#modal-neofeel li {
+	margin:0 12px 15px 12px;
+	padding-bottom:15px;
+}
+#modal-neofeel li.point1 .image,
+#modal-neofeel li.point2 .image,
+#modal-neofeel li.point3 .image {
+	float:right;
+	width:227px;
+}
+#modal-neofeel li.point1 .text,
+#modal-neofeel li.point2 .text,
+#modal-neofeel li.point3 .text {
+	float:left;
+	width:368px;
+}
+#modal-neofeel li h3 {
+	margin-bottom:10px;
+}
+#modal-neofeel li p {
+	padding-bottom:0;
+}
+#modal-neofeel li:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+#modal-neofeel li { display: inline-block; }
+/* \*/
+* html #modal-neofeel li { height: 1%; }
+#modal-neofeel li { display: block; }
+/* */
+
+
+/* #modal-ceropillow
+----------------------------------------*/
+#modal-ceropillow li {
+	margin:0 12px 15px 12px;
+	padding-bottom:15px;
+}
+#modal-ceropillow li.point1 .image,
+#modal-ceropillow li.point2 .image,
+#modal-ceropillow li.point3 .image {
+	float:right;
+	width:227px;
+}
+#modal-ceropillow li.point1 .text,
+#modal-ceropillow li.point2 .text,
+#modal-ceropillow li.point3 .text {
+	float:left;
+	width:368px;
+}
+#modal-ceropillow li h3 {
+	margin-bottom:10px;
+}
+#modal-ceropillow li p {
+	padding-bottom:0;
+}
+#modal-ceropillow li:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+#modal-ceropillow li { display: inline-block; }
+/* \*/
+* html #modal-ceropillow li { height: 1%; }
+#modal-ceropillow li { display: block; }
+#modal-ceropillow #tencel{
+	font-family: Arial,sans-serif ;
+}
+/* */
+
+
+/* #modal-neofeelpillow
+----------------------------------------*/
+#modal-neofeelpillow li {
+	margin:0 12px 15px 12px;
+	padding-bottom:15px;
+}
+#modal-neofeelpillow li.point1 .image,
+#modal-neofeelpillow li.point2 .image,
+#modal-neofeelpillow li.point3 .image {
+	float:right;
+	width:227px;
+}
+#modal-neofeelpillow li.point1 .text,
+#modal-neofeelpillow li.point2 .text{
+	float:left;
+	width:368px;
+}
+#modal-neofeelpillow li.point3 .text {
+	float:left;
+	width:600px;
+}
+#modal-neofeelpillow li h3 {
+	margin-bottom:10px;
+}
+#modal-neofeelpillow li p {
+	padding-bottom:0;
+}
+#modal-neofeelpillow li:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+#modal-neofeelpillow li { display: inline-block; }
+/* \*/
+* html #modal-neofeelpillow li { height: 1%; }
+#modal-neofeelpillow li { display: block; }
+/* */
+
+
+/* #modal-wellfitpillow
+----------------------------------------*/
+#modal-wellfitpillow li {
+	margin:0 12px 15px 12px;
+	padding-bottom:15px;
+}
+#modal-wellfitpillow li.point1 .image,
+#modal-wellfitpillow li.point2 .image,
+#modal-wellfitpillow li.point3 .image {
+	float:right;
+	width:227px;
+}
+#modal-wellfitpillow li.point1 .text,
+#modal-wellfitpillow li.point2 .text,
+#modal-wellfitpillow li.point3 .text {
+	float:left;
+	width:368px;
+}
+#modal-wellfitpillow li h3 {
+	margin-bottom:10px;
+}
+#modal-wellfitpillow li p {
+	padding-bottom:0;
+}
+#modal-wellfitpillow li:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+#modal-wellfitpillow li { display: inline-block; }
+/* \*/
+* html #modal-wellfitpillow li { height: 1%; }
+#modal-wellfitpillow li { display: block; }
+/* */
