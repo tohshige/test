@@ -959,7 +959,7 @@ h2.pageLast p a{
 
 #btnBuy2,#reset_radio,#go_cart,#go_cart_view {
     display:block;
-    width:860px;
+    /* width:860px; */
     margin:15px 0 30px 0;
     padding:15px 0;
     background-color:#fdfbc9;
