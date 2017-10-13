@@ -58,6 +58,10 @@ function addCart(itemid, units) {
         if(resArray[2]){
             inventoryflg = resArray[2];
         }
+        if(resArray[3]){
+            price = resArray[3];
+            alert(price);
+        }
     }
     // confirm_cart();
 
@@ -121,6 +125,7 @@ function showValues(on_off) {
     // $('.ui.sidebar').sidebar('toggle');
     flgArray = new Array();
     var allCount = 0; //selected item count
+    var priceAll = 0;//‡Œv‹àŠz
     $.each(fields, function (i, field) {
         if (fields.length == i && on_off == "on"){alert("finish " +allCount );}
         console.log(i);
@@ -145,6 +150,16 @@ function showValues(on_off) {
         // select option > cart ‘O•ûˆê’v‚Ì‚Æ‚«‚Ìˆ—
         if (!field.name.indexOf('1000') && field.value !== "") {
             flgArray['selectFlg'] = "on";
+            var resArray = field.name.split("_");
+            var price = Number( resArray[3]);
+            priceAll += price * Number(field.value);
+            console.log(priceAll);
+            $("#priceAll").text(priceAll);
+            var priceTarget = $("#priceTarget").val();
+            // Number( );
+            var priceRemain= priceTarget - priceAll;
+            $("#priceRemain").text(priceRemain);
+            
             // $("#result1").append(field.name + " ");
             if (on_off === "on") {
                 allCount++;
