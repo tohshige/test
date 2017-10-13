@@ -11,8 +11,9 @@ https://github.com/tohshige/test/blob/master/rcart/index.html#L523,L543
 ```
 上記の name= 部分はItemIDですが以下のようにアンダースコア'_'付きで区切って指定すると  
 インベントリIDとインベントリフラグとして識別するよう追加変更  
-itemid_inventoryid_inventoryflg  
-エンジェルフィット ピローカバー  
+itemid_inventoryid_inventoryflg_itemPrice  
+*事前に合計を求めるため、itemPriceを追加
+例　エンジェルフィット ピローカバー  
 name=10000475_1206
 ```
 
@@ -20,6 +21,8 @@ name=10000475_1206
 ### new：  
 ```html
 <input type="hidden" name="item_id" value="10000470_2458_2">
+単価1000円の商品。末尾に_10000を追記
+<input type="hidden" name="item_id" value="10000470_2458_2_10000">
 ```
 ### old:  
 ```html
