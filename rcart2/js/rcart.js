@@ -155,10 +155,15 @@ function showValues(on_off) {
             priceAll += price * Number(field.value);
             console.log(priceAll);
             $("#priceAll").text(priceAll);
-            var priceTarget = $("#priceTarget").val();
+            var priceTarget = $("#priceTarget").text();
             // Number( );
             var priceRemain= priceTarget - priceAll;
             $("#priceRemain").text(priceRemain);
+
+            $('#priceAll').fadeOut(500,function(){$(this).fadeIn(500)});
+
+            var topBtn = $('#footerFloatingMenu');
+            topBtn.fadeIn();
             
             // $("#result1").append(field.name + " ");
             if (on_off === "on") {
@@ -175,7 +180,8 @@ function showValues(on_off) {
         $("#bottomCart").removeClass("displayNone");//選び直すボタン 表示
     }
     if (flgArray['radioFlg'] === "on" || flgArray['selectFlg'] === "on") {
-        $("#go_cart").removeClass("disabled");//購入ボタン 表示
+        // $("#go_cart").removeClass("disabled");//購入ボタン 表示
+        $("[id$='go_cart']").removeClass("disabled");//購入ボタン 表示
     }
     if (on_off === "on") {
         // return confirm_cart("カゴ確認ページへ進む");
@@ -184,7 +190,7 @@ function showValues(on_off) {
         //     return;
         // }
         // setTimeout(function(){
-            // location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
+        //  location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
         // },3000);
     }
     //reset kounyu flg
@@ -233,7 +239,8 @@ $("#reset_radio").click(reset_radio);
 // all seek add cart
 // $("#go_cart").click(showValues('on'));
 
-$("#go_cart").on('click',function(){
+// $("#go_cart").on('click',function(){
+$("[id$='go_cart']").on('click',function(){
     if(!confirm_cart("ご選択された商品を買い物かごに追加しますか？")){
         return;
     }
