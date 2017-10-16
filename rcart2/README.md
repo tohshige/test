@@ -25,16 +25,18 @@ name=10000475_1206
 
 ```
 
+## チェックボックスタグは固定タグ　select のあとに以下のタグで
 https://github.com/tohshige/test/blob/master/rcart2/index.html#L143
-# チェックボックスタグは固定　select のあとに以下のタグで
+
+```html
 <input type="checkbox" name="chk" value="1" >
   name を変えると計算しなくなります。
+```
 
 
-
-- 昔のHTMLは非表示にしてるだけなので、必要なければ削除を
+## 昔のHTMLは非表示にしてるだけなので、必要なければ削除を
 https://github.com/tohshige/test/blob/master/rcart2/index.html#L273
 - これ以降をバッサリ削除でも問題なし
 
-- モーダル
+## モーダル
 https://github.com/tohshige/test/blob/master/rcart2/modal.html#L7
