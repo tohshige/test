@@ -6,6 +6,11 @@ $("a[href='#btnBuy']").click(function() {
   return false;
 });
 
+$("[id$='go_cart']").click(function() {
+  $("html,body").animate({scrollTop:$('#go_cart_view').offset().top});
+  return false;
+});
+
 // href 無効
 $(function () {
     $('a.disable').click(function () {
@@ -60,7 +65,7 @@ function addCart(itemid, units) {
         }
         if(resArray[3]){
             price = resArray[3];
-            alert(price);
+            console.log(price);
         }
     }
     // confirm_cart();
@@ -147,9 +152,14 @@ function showValues(on_off) {
                 },i*100);
             }
         }
+
+        var chkBox = fields[i+1];//すぐ隣のcheckbox がチェックされているか
         // select option > cart 前方一致のときの処理
-        if (!field.name.indexOf('1000') && field.value !== "") {
+        if (!field.name.indexOf('1000') && field.value !== "" && chkBox.name == 'chk') {
             flgArray['selectFlg'] = "on";
+            // var chkBox = $('[name='+field.name+']').next("div + input");
+            console.log(chkBox.name);
+            
             var resArray = field.name.split("_");
             var price = Number( resArray[3]);
             priceAll += price * Number(field.value);
@@ -158,7 +168,14 @@ function showValues(on_off) {
             var priceTarget = $("#priceTarget").text();
             // Number( );
             var priceRemain= priceTarget - priceAll;
-            $("#priceRemain").text(priceRemain);
+            if (priceRemain > 0){
+              $("#priceRemain").text(priceRemain);
+              $("#couponGet").addClass("displayNone");//目標OFF
+              $("#coupon").removeClass("displayNone");//クーボンボタンON
+            }else{
+              $("#couponGet").removeClass("displayNone");//目標ON
+              $("#coupon").addClass("displayNone");      //クーボンボタンOFF
+            }
 
             $('#priceAll').fadeOut(500,function(){$(this).fadeIn(500)});
 
