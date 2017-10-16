@@ -155,40 +155,24 @@ function showValues(on_off) {
 
         var chkBox = fields[i+1];//すぐ隣のcheckbox がチェックされているか
         // select option > cart 前方一致のときの処理
-        if (!field.name.indexOf('1000') && field.value !== "" && chkBox.name == 'chk') {
+        if (!field.name.indexOf('1000') && field.value !== ""  ) {
             flgArray['selectFlg'] = "on";
-            // var chkBox = $('[name='+field.name+']').next("div + input");
             console.log(chkBox.name);
             
             var resArray = field.name.split("_");
             var price = Number( resArray[3]);
-            priceAll += price * Number(field.value);
-            console.log(priceAll);
-            $("#priceAll").text(priceAll);
-            var priceTarget = $("#priceTarget").text();
-            // Number( );
-            var priceRemain= priceTarget - priceAll;
-            if (priceRemain > 0){
-              $("#priceRemain").text(priceRemain);
-              $("#couponGet").addClass("displayNone");//目標OFF
-              $("#coupon").removeClass("displayNone");//クーボンボタンON
-            }else{
-              $("#couponGet").removeClass("displayNone");//目標ON
-              $("#coupon").addClass("displayNone");      //クーボンボタンOFF
-            }
-
-            $('#priceAll').fadeOut(500,function(){$(this).fadeIn(500)});
-
-            var topBtn = $('#footerFloatingMenu');
-            topBtn.fadeIn();
-            
-            // $("#result1").append(field.name + " ");
-            if (on_off === "on") {
+            // checked 
+            if (!field.name.indexOf('1000') && field.value !== "" && chkBox.name == 'chk') {
+              priceAll += price * Number(field.value);
+              if (on_off === "on") {
                 allCount++;
                 setTimeout(function(){
                     addCart(field.name, field.value);// order
                 },1000+i*100);
+              }
             }
+            console.log(priceAll);
+            priceCal(priceAll);// 残高の計算、要素の書き換え
         }
     });
     if (flgArray['radioFlg'] === "on") {//Each外部に出せない！
@@ -212,6 +196,25 @@ function showValues(on_off) {
     }
     //reset kounyu flg
     on_off = "";
+
+}
+
+function priceCal (priceAll){
+  $("#priceAll").text(priceAll);
+  var priceTarget = $("#priceTarget").text();
+  var priceRemain= priceTarget - priceAll;
+  if (priceRemain > 0){
+    $("#priceRemain").text(priceRemain);
+    $("#couponGet").addClass("displayNone");//目標OFF
+    $("#coupon").removeClass("displayNone");//クーボンボタンON
+  }else{
+    $("#couponGet").removeClass("displayNone");//目標ON
+    $("#coupon").addClass("displayNone");      //クーボンボタンOFF
+  }
+
+  $('#priceAll').fadeOut(500,function(){$(this).fadeIn(500)});
+
+  $('#footerFloatingMenu').fadeIn();
 
 }
 
