@@ -3,6 +3,7 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <title>トゥルースリーパー公式｜複数購入｜マットレス・ふとん・枕・カバー｜ショップジャパン楽天市場店</title>
 
 <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
@@ -222,13 +223,15 @@ $(function() {
   <!-- 3つめ分完了 -->
 <hr>
 <!--go_cart-->
-<button id="go_cart" class="ui sixteen wide column disabled button" >
+<div class="item">
+    <button id="go_cart" class="ui sixteen wide column disabled button" >
     <p class="btn">
-        <img alt="購入ボタン" src="img/btn_buy_selected.gif" width="365" height="50" >
+        <img alt="購入ボタン" src="img/btn_buy_selected.gif" width="" height="" >
     </p>
 </button>
-
-<button id="go_cart_view" class="ui sixteen wide column disabled button" >
+</div>
+<div class="item">
+    <button id="go_cart_view" class="ui sixteen wide column disabled button" >
     <div class="ui segment" >
         <div id="loader" class="ui dimmer">
         <!--<div class="ui text inverted loader">処理をしてますので、少々お待ちください</div>-->
@@ -236,19 +239,20 @@ $(function() {
     </div>
     </div>
         <p>選択した商品と合計金額はお買物カゴでご確認いただけます。</p>
-        <p class="btn">
+        <div class=" image">
             <a href="https://basket.step.rakuten.co.jp/rms/mall/bs/cart/" target="_blank">
-            <img alt="カゴの確認" src="img/btn_watch_cart.gif" width="365" height="50" >
+            <img alt="カゴの確認" class="image" src="img/btn_watch_cart.gif" width="" height="" >
             </a>
-        </p>
+          </div>
 </button>
+</div>
 
   <div id="footerFloatingMenu">
       <div class="ui segment">
           <p id="" class="textYellow">現在の合計金額は￥
             <span id="priceAll">0</span>円(税抜き)
             <div id="footer_go_cart" class="compact ui floated large  yellow  button disabled">
-              チェックした商品をカートに入れる
+                チェックした商品をカートに入れる
             </div>
           </p>
           <p id="coupon">合計金額
@@ -256,17 +260,16 @@ $(function() {
               あと￥
             <span id="priceRemain">0</span>円!!</p>
           <p id="couponGet" class="displayNone">クーポンがご利用になれます、クーポンはこちら</p>
-                
       </div>
   </div>
 
 </div>
+    
 
 
 
 
-
-<div id="wrapper">
+<div id="wrapper" class="displayNone">
 
 
 
