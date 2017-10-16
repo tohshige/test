@@ -3,7 +3,7 @@
 /* ?・ｽ・ｽ?・ｽ・ｽ?・ｽ・ｽﾊバ?・ｽ・ｽi?・ｽ・ｽ[
 ----------------------------------------*/
 .ui.segment .ui.dimmer.active{
-  background: #fdfbc9;
+  /* background: #fdfbc9; */
 }
 
 .ui.dimmer .ui.text.loader {
@@ -14,8 +14,8 @@
   top:-6%;
 }
 .ui.segment {
-  border: 0;
-  background: #fdfbc9;
+  /* border: 0;
+  background: #fdfbc9; */
 }
 
 
