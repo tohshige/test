@@ -3,7 +3,7 @@
 <head>
 <meta charset="euc-jp">
 
-<title>最大50％以上OFF！秋のBeauty Wagon SALE｜ショップジャパン楽天市場店</title>
+<title>MAX60%OFF！｜ショップジャパン楽天市場店</title>
 
 <!-- 楽天TOP解析タグ -->
 <script src="//assets.adobedtm.com/fde17e0362c40547334f4e041add368f158b4119/satelliteLib-e346cd8edc0ac640d3ce7c060b5a38f5169d4add.js"></script>
@@ -62,7 +62,60 @@ $(function() {
         return false;
     })
 });
+	
+	
+	
+	
+	
+	
+	
+	
+	// スクロールしたらじわっとフッター表示
+$(function() {
+  var topBtn = $('#footerFloatingMenu');
+  topBtn.hide();
+  $(window).scroll(function() {
+    // 200pxで表示
+    if ($(this).scrollTop() > 200) {
+      topBtn.fadeIn();
+    } else {
+      topBtn.fadeOut();
+    }
+  });
+});
 </script>
+
+
+<style>
+.displayNone{display: none;}
+
+.textYellow{
+  color: yellow;
+}
+/* footerFloating */
+#footerFloatingMenu .ui.segment {
+  background: red;
+  /* opacity: 0.85; */
+  padding: 5px;
+  color: white;
+}
+
+#footerFloatingMenu {
+  background: yellow;
+  display: block;
+  width: 100%;
+  position: fixed;
+  left: 0px;
+  bottom: 2px;
+  z-index: 999999999;
+  text-align: center;
+  padding: 0 auto;
+}
+
+#footerFloatingMenu img {
+  max-width: 99%;
+}
+</style>
 
 <!--<script type="text/javascript">
 if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {{
@@ -129,9 +182,19 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
 
 <!-- 1つめ分 -->
 <div class="item">
+  <div class="image">
+   
+  </div>
   <div class="content">
-    <h3 class="header"></h3>
-    <div class="description"> </div>
+    <h3 class="header">商品その1ＸＸＸＸＸＸＸＸＸＸＸ</h3>
+
+    <div class="description">
+        <p>低反発マットレス1枚と同時に、複数枚のマットレスや低反発ピロー、マットレスカバーをご購入いただくと、おトクな割引価格でお求めいただけます。たとえば、低反発マットレス1点のご購入にあわせ、複数用のマットレスを購入すれば30％オフ！寝具一式をまとめて購入される方にも、複数セット購入して大切な人にプレゼントする方にも大変お得です。</p>
+        <p>通常販売価格：1,000円(税抜)〜</p>
+        <p>いまなら<span class="f_red">【20%OFF!】</span>
+          <span class="ui red circular label">20%OFF!</span>
+        </p>
+    </div>
 
       <div class="description">
         <select class="ui right big label" name="10003534_0_0_1000" >
@@ -145,7 +208,7 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
           選択
         </div>
       </label>
-    <p><a href="#" class="modal-awfm arrow_01">商品詳細を見る</a></p>
+    <p><a href="#" class="modal-sumaho arrow_01">商品詳細を見る</a></p>
     </div>
 
   </div>
@@ -571,11 +634,24 @@ function cdTimer1() {
 
 
 
+<!--フッターフローティング-->
+ <div id="footerFloatingMenu">
+      <div class="ui segment">
+          <p id="" class="textYellow">現在の合計金額は￥
+            <span id="priceAll">0</span>円(税抜き)
+            <div id="footer_go_cart" class="compact ui floated large  yellow  button disabled">
+                チェックした商品をカートに入れる
+            </div>
+          </p>
+          <p id="coupon">合計金額
+            <span id="priceTarget">15000</span>円で50%OFFクーポンGET!!
+              あと￥
+            <span id="priceRemain">0</span>円!!</p>
+          <p id="couponGet" class="displayNone">クーポンがご利用になれます、クーポンはこちら</p>
+      </div>
+  </div>
 
-
-
-
-
+<!--フッターフローティング-->
 
 
 
