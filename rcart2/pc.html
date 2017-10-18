@@ -96,7 +96,7 @@ height: 80px;
   position: fixed;
   left: 0px;
   bottom: 2px;
-  z-index: 999999999;
+  z-index: 999;
   text-align: center;
   padding: 0 auto;
 }
@@ -165,7 +165,9 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
 <area shape="rect" coords="748,6,986,91" href="#ngwp">
 </map>-->
   
-  <ul class="item_lineup" style="display:flex;flex-wrap: wrap;padding-left:0px;height:5000px;width:980px;margin:0 auto;justify-content: space-between;position: relative;">
+ <!-- <ul class="item_lineup" style="display:flex;flex-wrap: wrap;padding-left:0px;height:5000px;width:980px;margin:0 auto;justify-content: space-between;position: relative;">-->
+  
+    <ul class="item_lineup" style="padding-left:0px;height:7950px;width:980px;margin:0 auto;position: relative;">
 
 <!-------------------------------- trsp2 --------------------------------->
 <li id="trsp2" style="position: relative;margin:650px 0 0px 18px;">
@@ -204,7 +206,7 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
       </label>
       </div>
       <hr>
-    <p><a href="#" class="modal-trsp2 arrow_01">> 商品詳細を見る</a></p>
+    <p><a href="#" class="modal-trsp2 arrow_01">> 商品内容をこちら</a></p>
     </div>
 
   </div>
@@ -241,7 +243,7 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
 <!-------------------------------- trsp2 --------------------------------->
 
 <!-------------------------------- nice --------------------------------->
-<li id="nice" style="position: relative;margin:0px 0 0px 20px;">
+<li id="nice" style="position: relative;margin:250px 0 0px 20px;">
 <img src="img/nice_title.png" class="item_title">
 <div class="col_img">
 <iframe scrolling="no" src="nice.html" style="margin-left:490px;"></iframe></div>
@@ -274,7 +276,7 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
       </label>
       </div>
       <hr>
-    <p><a href="#" class="modal-nice arrow_01">> 商品詳細を見る</a></p>
+    <p><a href="#" class="modal-nice arrow_01">> 商品内容をこちら</a></p>
     </div>
  </div><!--div-->
   </div>
@@ -313,103 +315,556 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
 <!-------------------------------- nice --------------------------------->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-------------------------------- AWFM --------------------------------->
-<li id="awfm" style="position: relative;margin:650px 0px 0px 20px;">
-<img src="img/trsp2_title.png" class="item_title">
+<!-------------------------------- trsp --------------------------------->
+<li id="trsp" style="position: relative;margin:270px 0 0px 18px;">
+<img src="img/trsp_title.png" class="item_title">
 <div class="col_img">
-<iframe scrolling="no" src="trsp2.html"></iframe></div>
+<iframe scrolling="no" src="trsp.html"></iframe></div>
 <div class="col_cart">
-<img src="img/trsp2_pri.jpg">
-<form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center;">
-<input type="text" name="units" size="4" value="1" style="display:none">
-<input type="image" src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/1col_cart_btn.jpg" name="button1">
-<input type="hidden" name="__event" value="ES01_003_001">
-<input type="hidden" name="shop_bid" value="199614">
-<input type="hidden" name="item_id" value="10003908">
-<input type="hidden" name="inventory_flag" value="1">
-</form>
-<hr>
-<div class="info"><a href="#" class="modal-awfm btn">> 商品内容はこちら</a></div>
+<img src="img/trsp_pri.jpg">
+<!-- 1つめ分 -->
+<div class="item">
+  <div class="image">
+   
+  </div>
+  <div class="content">
+    <h3 class="header"></h3>
+
+    <div class="description">
+      
+  
+    </div>
+
+      <div class="description">
+      <div class="pad">
+      <span>この商品を</span>
+        <select class="ui right big label" name="10003534_0_0_1000" >
+           
+          <option selected="selected" style="">数量</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>個
+      <label>
+        <div class="ui primary tiny button" style="font-size: 15px;position: relative;top:-1px;">
+          <input type="checkbox" name="chk" value="1" >
+            選択する
+        </div>
+      </label>
+      </div>
+      <hr>
+    <p><a href="#" class="modal-trsp arrow_01">> 商品内容をこちら</a></p>
+    </div>
+
+  </div>
+</div>
+<!-- 1つめ分完了 -->
+
+<!--go_cart-->
+<div class="item" style="display: none;">
+    <button id="go_cart" class="ui sixteen wide column disabled button" >
+    <p class="btn">
+        <img alt="購入ボタン" src="img/btn_buy_selected.gif" width="" height="" >
+    </p>
+</button>
+</div>
+<div class="item" style="display: none;">
+    <button id="go_cart_view" class="ui sixteen wide column disabled button" >
+    <div class="ui segment" >
+        <div id="loader" class="ui dimmer">
+        <!--<div class="ui text inverted loader">処理をしてますので、少々お待ちください</div>-->
+        <div class="ui text loader">処理をしていますので、少々お待ちください。</div>
+    </div>
+    </div>
+        <p>選択した商品と合計金額はお買物カゴでご確認いただけます。</p>
+        <div class=" image">
+            <a href="https://basket.step.rakuten.co.jp/rms/mall/bs/cart/" target="_blank">
+            <img alt="カゴの確認" class="image" src="img/btn_watch_cart.gif" width="" height="" >
+            </a>
+          </div>
+</button>
+</div>
 
 </div>
 </li>
-<!-------------------------------- AWFM --------------------------------->
+<!-------------------------------- trsp --------------------------------->
+
+<!-------------------------------- sim --------------------------------->
+<li id="sim" style="position: relative;margin:320px 0 0px 20px;">
+<img src="img/sim_title.png" class="item_title">
+<div class="col_img">
+<iframe scrolling="no" src="sim.html" style="margin-left:490px;"></iframe></div>
+<div>
+<div class="col_cart_2">
+<img src="img/sim_s_pri.jpg">
+<!-- 1つめ分 -->
+<div class="item">
+  <div class="image">
+   
+  </div>
+  <div class="content">
+    <h3 class="header"></h3>
+    <div class="description"></div>
+
+     
+     
+     
+      <div class="description">
+      <div class="pad">
+      <span>この商品を</span>
+        <select class="ui right big label" name="10003534_0_0_1000" >
+           
+          <option selected="selected" style="">数量</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>個
+      <label>
+        <div class="ui primary tiny button" style="font-size: 15px;position: relative;top:-1px;">
+          <input type="checkbox" name="chk" value="1" >
+            選択する
+        </div>
+      </label>
+      </div>
+    </div>
+     
+     <img src="img/sim_t_pri.jpg">
+      <div class="description">
+      <div class="pad">
+      <span>この商品を</span>
+        <select class="ui right big label" name="10003534_0_0_1000" >
+           
+          <option selected="selected" style="">数量</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>個
+      <label>
+        <div class="ui primary tiny button" style="font-size: 15px;position: relative;top:-1px;">
+          <input type="checkbox" name="chk" value="1" >
+            選択する
+        </div>
+      </label>
+      </div>
+      <hr>
+    <p><a href="#" class="modal-sim arrow_01">> 商品内容をこちら</a></p>
+    </div>
+ </div><!--div-->
+  </div>
+</div>
+<!-- 1つめ分完了 -->
+
+<!--go_cart-->
+<div class="item" style="display: none;">
+    <button id="go_cart" class="ui sixteen wide column disabled button" >
+    <p class="btn">
+        <img alt="購入ボタン" src="img/btn_buy_selected.gif" width="" height="" >
+    </p>
+</button>
+</div>
+<div class="item" style="display: none;">
+    <button id="go_cart_view" class="ui sixteen wide column disabled button" >
+    <div class="ui segment" >
+        <div id="loader" class="ui dimmer">
+        <!--<div class="ui text inverted loader">処理をしてますので、少々お待ちください</div>-->
+        <div class="ui text loader">処理をしていますので、少々お待ちください。</div>
+    </div>
+    </div>
+        <p>選択した商品と合計金額はお買物カゴでご確認いただけます。</p>
+        <div class=" image">
+            <a href="https://basket.step.rakuten.co.jp/rms/mall/bs/cart/" target="_blank">
+            <img alt="カゴの確認" class="image" src="img/btn_watch_cart.gif" width="" height="" >
+            </a>
+          </div>
+</button>
+</div>
+
+</div>
 
 
+</li>
+<!-------------------------------- nice --------------------------------->
+
+<!-------------------------------- rah --------------------------------->
+<li id="rah" style="position: relative;margin:560px 0 0px 18px;">
+<img src="img/rah_title.png" class="item_title">
+<div class="col_img">
+<iframe scrolling="no" src="rah.html"></iframe></div>
+<div class="col_cart">
+<img src="img/rah_s_pri.jpg">
+<!-- 1つめ分 -->
+<div class="item">
+  <div class="image">
+   
+  </div>
+  <div class="content">
+    <h3 class="header"></h3>
+
+    <div class="description"></div>
+      
+        <div class="description">
+      <div class="pad">
+      <span>この商品を</span>
+        <select class="ui right big label" name="10003534_0_0_1000" >
+           
+          <option selected="selected" style="">数量</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>個
+      <label>
+        <div class="ui primary tiny button" style="font-size: 15px;position: relative;top:-1px;">
+          <input type="checkbox" name="chk" value="1" >
+            選択する
+        </div>
+      </label>
+      </div>
+    </div>
+      
+      
+      
+      <img src="img/rah_t_pri.jpg">
+      
+      
+
+      <div class="description">
+      <div class="pad">
+      <span>この商品を</span>
+        <select class="ui right big label" name="10003534_0_0_1000" >
+           
+          <option selected="selected" style="">数量</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>個
+      <label>
+        <div class="ui primary tiny button" style="font-size: 15px;position: relative;top:-1px;">
+          <input type="checkbox" name="chk" value="1" >
+            選択する
+        </div>
+      </label>
+      </div>
+      <hr>
+    <p><a href="#" class="modal-rah arrow_01">> 商品内容をこちら</a></p>
+    </div>
+
+  </div>
+</div>
+<!-- 1つめ分完了 -->
+
+<!--go_cart-->
+<div class="item" style="display: none;">
+    <button id="go_cart" class="ui sixteen wide column disabled button" >
+    <p class="btn">
+        <img alt="購入ボタン" src="img/btn_buy_selected.gif" width="" height="" >
+    </p>
+</button>
+</div>
+<div class="item" style="display: none;">
+    <button id="go_cart_view" class="ui sixteen wide column disabled button" >
+    <div class="ui segment" >
+        <div id="loader" class="ui dimmer">
+        <!--<div class="ui text inverted loader">処理をしてますので、少々お待ちください</div>-->
+        <div class="ui text loader">処理をしていますので、少々お待ちください。</div>
+    </div>
+    </div>
+        <p>選択した商品と合計金額はお買物カゴでご確認いただけます。</p>
+        <div class=" image">
+            <a href="https://basket.step.rakuten.co.jp/rms/mall/bs/cart/" target="_blank">
+            <img alt="カゴの確認" class="image" src="img/btn_watch_cart.gif" width="" height="" >
+            </a>
+          </div>
+</button>
+</div>
+
+</div>
+</li>
+<!-------------------------------- rah --------------------------------->
+
+<!-------------------------------- ngw --------------------------------->
+<li id="ngw" style="position: relative;margin:550px 0 0px 20px;">
+<img src="img/ngw_title.png" class="item_title">
+<div class="col_img">
+<iframe scrolling="no" src="ngw.html" style="margin-left:490px;"></iframe></div>
+<div>
+<div class="col_cart_2">
+<img src="img/ngw_s_pri.jpg">
+<!-- 1つめ分 -->
+<div class="item">
+  <div class="image">
+   
+  </div>
+  <div class="content">
+    <h3 class="header"></h3>
+    <div class="description"></div>
+
+     
+     
+     
+      <div class="description">
+      <div class="pad">
+      <span>この商品を</span>
+        <select class="ui right big label" name="10003534_0_0_1000" >
+           
+          <option selected="selected" style="">数量</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>個
+      <label>
+        <div class="ui primary tiny button" style="font-size: 15px;position: relative;top:-1px;">
+          <input type="checkbox" name="chk" value="1" >
+            選択する
+        </div>
+      </label>
+      </div>
+    </div>
+     
+     <img src="img/ngw_t_pri.jpg">
+      <div class="description">
+      <div class="pad">
+      <span>この商品を</span>
+        <select class="ui right big label" name="10003534_0_0_1000" >
+           
+          <option selected="selected" style="">数量</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>個
+      <label>
+        <div class="ui primary tiny button" style="font-size: 15px;position: relative;top:-1px;">
+          <input type="checkbox" name="chk" value="1" >
+            選択する
+        </div>
+      </label>
+      </div>
+      <hr>
+    <p><a href="#" class="modal-ngw arrow_01">> 商品内容をこちら</a></p>
+    </div>
+ </div><!--div-->
+  </div>
+</div>
+<!-- 1つめ分完了 -->
+
+<!--go_cart-->
+<div class="item" style="display: none;">
+    <button id="go_cart" class="ui sixteen wide column disabled button" >
+    <p class="btn">
+        <img alt="購入ボタン" src="img/btn_buy_selected.gif" width="" height="" >
+    </p>
+</button>
+</div>
+<div class="item" style="display: none;">
+    <button id="go_cart_view" class="ui sixteen wide column disabled button" >
+    <div class="ui segment" >
+        <div id="loader" class="ui dimmer">
+        <!--<div class="ui text inverted loader">処理をしてますので、少々お待ちください</div>-->
+        <div class="ui text loader">処理をしていますので、少々お待ちください。</div>
+    </div>
+    </div>
+        <p>選択した商品と合計金額はお買物カゴでご確認いただけます。</p>
+        <div class=" image">
+            <a href="https://basket.step.rakuten.co.jp/rms/mall/bs/cart/" target="_blank">
+            <img alt="カゴの確認" class="image" src="img/btn_watch_cart.gif" width="" height="" >
+            </a>
+          </div>
+</button>
+</div>
+
+</div>
 
 
+</li>
+<!-------------------------------- ngw --------------------------------->
+
+<!-------------------------------- rvt --------------------------------->
+<li id="rvt" style="position: relative;margin:560px 0 0px 18px;">
+<img src="img/rvt_title.png" class="item_title">
+<div class="col_img">
+<iframe scrolling="no" src="rvt.html"></iframe></div>
+<div class="col_cart">
+<img src="img/rah_s_pri.jpg">
+<!-- 1つめ分 -->
+<div class="item">
+  <div class="image">
+   
+  </div>
+  <div class="content">
+    <h3 class="header"></h3>
+
+    <div class="description"></div>
+      
+        <div class="description">
+      <div class="pad">
+      <span>この商品を</span>
+        <select class="ui right big label" name="10003534_0_0_1000" >
+           
+          <option selected="selected" style="">数量</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>個
+      <label>
+        <div class="ui primary tiny button" style="font-size: 15px;position: relative;top:-1px;">
+          <input type="checkbox" name="chk" value="1" >
+            選択する
+        </div>
+      </label>
+      </div>
+    </div>
+      
+      
+      
+      <img src="img/rvt_t_pri.jpg">
+      
+      
+
+      <div class="description">
+      <div class="pad">
+      <span>この商品を</span>
+        <select class="ui right big label" name="10003534_0_0_1000" >
+           
+          <option selected="selected" style="">数量</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>個
+      <label>
+        <div class="ui primary tiny button" style="font-size: 15px;position: relative;top:-1px;">
+          <input type="checkbox" name="chk" value="1" >
+            選択する
+        </div>
+      </label>
+      </div>
+      <hr>
+    <p><a href="#" class="modal-rvt arrow_01">> 商品内容をこちら</a></p>
+    </div>
+
+  </div>
+</div>
+<!-- 1つめ分完了 -->
+
+<!--go_cart-->
+<div class="item" style="display: none;">
+    <button id="go_cart" class="ui sixteen wide column disabled button" >
+    <p class="btn">
+        <img alt="購入ボタン" src="img/btn_buy_selected.gif" width="" height="" >
+    </p>
+</button>
+</div>
+<div class="item" style="display: none;">
+    <button id="go_cart_view" class="ui sixteen wide column disabled button" >
+    <div class="ui segment" >
+        <div id="loader" class="ui dimmer">
+        <!--<div class="ui text inverted loader">処理をしてますので、少々お待ちください</div>-->
+        <div class="ui text loader">処理をしていますので、少々お待ちください。</div>
+    </div>
+    </div>
+        <p>選択した商品と合計金額はお買物カゴでご確認いただけます。</p>
+        <div class=" image">
+            <a href="https://basket.step.rakuten.co.jp/rms/mall/bs/cart/" target="_blank">
+            <img alt="カゴの確認" class="image" src="img/btn_watch_cart.gif" width="" height="" >
+            </a>
+          </div>
+</button>
+</div>
+
+</div>
+</li>
+<!-------------------------------- rvt --------------------------------->
+
+<!-------------------------------- awfm --------------------------------->
+<li id="awfm" style="position: relative;margin:550px 0 0px 20px;">
+<img src="img/awfm_title.png" class="item_title">
+<div class="col_img">
+<iframe scrolling="no" src="awfm.html" style="margin-left:490px;"></iframe></div>
+<div>
+<div class="col_cart_2">
+<img src="img/awfm_s_pri.jpg">
+<!-- 1つめ分 -->
+<div class="item">
+  <div class="image">
+   
+  </div>
+  <div class="content">
+    <h3 class="header"></h3>
+    <div class="description"></div>
+
+     
+     
+     
+      <div class="description">
+      <div class="pad">
+      <span>この商品を</span>
+        <select class="ui right big label" name="10003534_0_0_1000" >
+           
+          <option selected="selected" style="">数量</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>個
+      <label>
+        <div class="ui primary tiny button" style="font-size: 15px;position: relative;top:-1px;">
+          <input type="checkbox" name="chk" value="1" >
+            選択する
+        </div>
+      </label>
+      </div>
+    </div>
+     
+     <img src="img/awfm_t_pri.jpg">
+      <div class="description">
+      <div class="pad">
+      <span>この商品を</span>
+        <select class="ui right big label" name="10003534_0_0_1000" >
+           
+          <option selected="selected" style="">数量</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>個
+      <label>
+        <div class="ui primary tiny button" style="font-size: 15px;position: relative;top:-1px;">
+          <input type="checkbox" name="chk" value="1" >
+            選択する
+        </div>
+      </label>
+      </div>
+      <hr>
+    <p><a href="#" class="modal-awfm arrow_01">> 商品内容をこちら</a></p>
+    </div>
+ </div><!--div-->
+  </div>
+</div>
+<!-- 1つめ分完了 -->
+
+<!--go_cart-->
+<div class="item" style="display: none;">
+    <button id="go_cart" class="ui sixteen wide column disabled button" >
+    <p class="btn">
+        <img alt="購入ボタン" src="img/btn_buy_selected.gif" width="" height="" >
+    </p>
+</button>
+</div>
+<div class="item" style="display: none;">
+    <button id="go_cart_view" class="ui sixteen wide column disabled button" >
+    <div class="ui segment" >
+        <div id="loader" class="ui dimmer">
+        <!--<div class="ui text inverted loader">処理をしてますので、少々お待ちください</div>-->
+        <div class="ui text loader">処理をしていますので、少々お待ちください。</div>
+    </div>
+    </div>
+        <p>選択した商品と合計金額はお買物カゴでご確認いただけます。</p>
+        <div class=" image">
+            <a href="https://basket.step.rakuten.co.jp/rms/mall/bs/cart/" target="_blank">
+            <img alt="カゴの確認" class="image" src="img/btn_watch_cart.gif" width="" height="" >
+            </a>
+          </div>
+</button>
+</div>
+
+</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</li>
+<hr style="margin-top:370px;">
+<!-------------------------------- awfm --------------------------------->
+<img src="img/detail.jpg" style="width:px;margin: 50px 0 0 15px;" id="out">
 
 </ul>
+
+
+
+
 
 <!-------------------------------- アウトレットセールについて --------------------------------->
 <!--<br><br><hr><br><br><br>-->
@@ -445,7 +900,7 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
 </div>-->
 <!-------------------------------- アウトレットセールについて --------------------------------->
 
-<div class="to_top">
+<div class="to_top" style="margin-bottom:170px;">
 <a href="#top">このページのTOPへ</a>
 </div>
 
@@ -471,8 +926,13 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
 <!--縦バナー-->
 
 <!--縦バナー-->
-<div class="right_bnr">
+<div class="right_bnr" style="position: fixed;right: 0; top: 105px;z-index: 999;">
 <a href="#out"><img src="./img/right_bnr.png" width="105px" height="200px"></a>
+<p></p>
+</div>
+
+<div style="position: fixed;right: 0; top: 320px;z-index: 999;">
+<img src="./img/right_bnr2.png" width="105px" height="264px">
 <p></p>
 </div>
 <!--縦バナー-->
@@ -629,7 +1089,7 @@ function cdTimer1() {
 	
 	.arrow_01{
 		display: block;
-		width: 120px;
+		width: 130px;
 		margin: 20px auto;
 		text-decoration: underline;
 		font-weight: bold;
