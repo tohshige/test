@@ -1,0 +1,4 @@
+# default SHIFT-JIS
+*.js diff=sjis
+*.html diff=sjis
+*.css diff=sjis

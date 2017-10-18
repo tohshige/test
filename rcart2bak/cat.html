@@ -1,0 +1,79 @@
+<html>
+<head>
+<!--<meta content="text/html; charset=utf-8" http-equiv="Content-type"/>-->
+<meta content="text/html; charset=shift-jis" http-equiv="Content-type"/>
+<title>Test</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prototype/1.7.3/prototype.min.js" type="text/javascript"></script>
+<script src="common.js" type="text/javascript"></script>
+<script>
+<!--
+addEvent(window, &#39;load&#39;, init, false);
+function init()
+{
+	addEvent($("form1").webapi, &#39;change&#39;, setMenuItem, false);
+	setMenuItem();
+}
+function setMenuItem()
+{
+	var api_key = &#39;[1077567408172147763]&#39;;
+	var url = &#39;http://api.rakuten.co.jp/rws/2.0/json&#39;
+		+ &#39;?operation=GenreSearch&version=2007-04-11&genreId=0&callBack=setItem&&#39;
+		+ &#39;developerId=&#39; + api_key;
+	var script     = document.createElement(&#39;script&#39;);
+	script.type    = &#39;text/javascript&#39;;
+	script.charset = &#39;utf-8&#39;;
+	script.src     = url;
+	document.getElementsByTagName("head")[0].appendChild(script);
+}
+function setItem(json)
+{
+	var menuItem = {
+		"Aws": [
+	    {"genreId": "Blended", "genreName": "すべて"},
+            {"genreId": "Books", "genreName": "和書"},
+            {"genreId": "ForeignBooks", "genreName": "洋書"},
+            {"genreId": "Electronics", "genreName": "エレクトロニクス"},
+            {"genreId": "Kitchen", "genreName": "ホーム&キッチン"},
+            {"genreId": "Music", "genreName": "ミュージック"},
+            {"genreId": "MusicTracks", "genreName": "曲名"},
+            {"genreId": "Classical", "genreName": "クラシック音楽"},
+            {"genreId": "DVD", "genreName": "DVD"},
+            {"genreId": "VHS", "genreName": "VHS"},
+            {"genreId": "Video", "genreName": "ビデオ"},
+            {"genreId": "Software", "genreName": "ソフトウェア"},
+            {"genreId": "VideoGames", "genreName": "ゲーム"},
+            {"genreId": "Toys", "genreName": "おもちゃ"},
+            {"genreId": "Hobbies", "genreName": "ホビー"},
+            {"genreId": "SportingGoods", "genreName": "スポーツ&アウトドア"},
+            {"genreId": "HealthPersonalCare", "genreName": "ヘルス&ビューティー"},
+            {"genreId": "Watches", "genreName": "時計"},
+            {"genreId": "Baby", "genreName": "ベビー&マタニティ"},
+            {"genreId": "Apparel", "genreName": "アパレル"}
+		],
+		"Rws": json.Body.GenreSearch.child
+	};
+	//初期化
+	var option_cnt = $("form1").category.options.length;
+	for(var i = 0; i < option_cnt; i++)
+	{
+		$("form1").category.remove(0);
+	}
+	var n = $F("webapi");
+	for(var i = 0; i < menuItem[n].length; i++)
+	{
+		$("form1").category.options[i] = new Option(menuItem[n][i]["genreName"], menuItem[n][i]["genreId"]);
+	}
+}
+-->
+</script>
+</head>
+<body>
+<form id="form1">
+<select id="webapi" name="webapi">
+<option value="Aws">アマゾン</option>
+<option value="Rws">楽天</option>
+</select>
+<select id="category" name="category">
+</select>
+</body>
+</html>
