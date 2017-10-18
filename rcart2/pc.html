@@ -70,19 +70,7 @@ $(function() {
 	
 	
 	
-	// スクロールしたらじわっとフッター表示
-$(function() {
-  var topBtn = $('#footerFloatingMenu');
-  topBtn.hide();
-  $(window).scroll(function() {
-    // 200pxで表示
-    if ($(this).scrollTop() > 200) {
-      topBtn.fadeIn();
-    } else {
-      topBtn.fadeOut();
-    }
-  });
-});
+
 </script>
 
 
@@ -94,15 +82,16 @@ $(function() {
 }
 /* footerFloating */
 #footerFloatingMenu .ui.segment {
-  background: red;
+  background: #1aabff;
   /* opacity: 0.85; */
   padding: 5px;
   color: white;
+height: 80px;
 }
 
 #footerFloatingMenu {
-  background: yellow;
-  display: block;
+  background: #1aabff;
+  /*display: block;*/
   width: 100%;
   position: fixed;
   left: 0px;
@@ -147,6 +136,20 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
 
 <body>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="white"></div>
 <div class="main_bnr"></div>
 <img src="img/kv.png" class="kv">
@@ -164,70 +167,59 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
   
   <ul class="item_lineup" style="display:flex;flex-wrap: wrap;padding-left:0px;height:5000px;width:980px;margin:0 auto;justify-content: space-between;position: relative;">
 
-<!-------------------------------- AWFM --------------------------------->
-<li id="awfm" style="position: relative;margin:650px 0 0px 20px;">
+<!-------------------------------- trsp2 --------------------------------->
+<li id="trsp2" style="position: relative;margin:650px 0 0px 18px;">
 <img src="img/trsp2_title.png" class="item_title">
 <div class="col_img">
 <iframe scrolling="no" src="trsp2.html"></iframe></div>
 <div class="col_cart">
 <img src="img/trsp2_pri.jpg">
-
-<hr>
-
-
-
-
-
-
-
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
    
   </div>
   <div class="content">
-    <h3 class="header">商品その1ＸＸＸＸＸＸＸＸＸＸＸ</h3>
+    <h3 class="header"></h3>
 
     <div class="description">
-        <p>低反発マットレス1枚と同時に、複数枚のマットレスや低反発ピロー、マットレスカバーをご購入いただくと、おトクな割引価格でお求めいただけます。たとえば、低反発マットレス1点のご購入にあわせ、複数用のマットレスを購入すれば30％オフ！寝具一式をまとめて購入される方にも、複数セット購入して大切な人にプレゼントする方にも大変お得です。</p>
-        <p>通常販売価格：1,000円(税抜)〜</p>
-        <p>いまなら<span class="f_red">【20%OFF!】</span>
-          <span class="ui red circular label">20%OFF!</span>
-        </p>
+      
+  
     </div>
 
       <div class="description">
+      <div class="pad">
+      <span>この商品を</span>
         <select class="ui right big label" name="10003534_0_0_1000" >
-          <option selected="selected">数量</option>
+           
+          <option selected="selected" style="">数量</option>
           <option value="1">1</option>
           <option value="2">2</option>
         </select>個
       <label>
-        <div class="ui primary tiny button">
+        <div class="ui primary tiny button" style="font-size: 15px;position: relative;top:-1px;">
           <input type="checkbox" name="chk" value="1" >
-          選択
+            選択する
         </div>
       </label>
-    <p><a href="#" class="modal-sumaho arrow_01">商品詳細を見る</a></p>
+      </div>
+      <hr>
+    <p><a href="#" class="modal-trsp2 arrow_01">> 商品詳細を見る</a></p>
     </div>
 
   </div>
 </div>
 <!-- 1つめ分完了 -->
 
-
-
-
-
 <!--go_cart-->
-<div class="item">
+<div class="item" style="display: none;">
     <button id="go_cart" class="ui sixteen wide column disabled button" >
     <p class="btn">
         <img alt="購入ボタン" src="img/btn_buy_selected.gif" width="" height="" >
     </p>
 </button>
 </div>
-<div class="item">
+<div class="item" style="display: none;">
     <button id="go_cart_view" class="ui sixteen wide column disabled button" >
     <div class="ui segment" >
         <div id="loader" class="ui dimmer">
@@ -244,36 +236,125 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
 </button>
 </div>
 
-  <div id="footerFloatingMenu">
-      <div class="ui segment">
-          <p id="" class="textYellow">現在の合計金額は￥
-            <span id="priceAll">0</span>円(税抜き)
-            <div id="footer_go_cart" class="compact ui floated large  yellow  button disabled">
-                チェックした商品をカートに入れる
-            </div>
-          </p>
-          <p id="coupon">合計金額
-            <span id="priceTarget">15000</span>円で50%OFFクーポンGET!!
-              あと￥
-            <span id="priceRemain">0</span>円!!</p>
-          <p id="couponGet" class="displayNone">クーポンがご利用になれます、クーポンはこちら</p>
-      </div>
-  </div>
-
-
-
-
-
-
-
-
-
 </div>
 </li>
-<!-------------------------------- AWFM --------------------------------->
+<!-------------------------------- trsp2 --------------------------------->
+
+<!-------------------------------- nice --------------------------------->
+<li id="nice" style="position: relative;margin:0px 0 0px 20px;">
+<img src="img/nice_title.png" class="item_title">
+<div class="col_img">
+<iframe scrolling="no" src="nice.html" style="margin-left:490px;"></iframe></div>
+<div>
+<div class="col_cart_2">
+<img src="img/nice_pri.jpg">
+<!-- 1つめ分 -->
+<div class="item">
+  <div class="image">
+   
+  </div>
+  <div class="content">
+    <h3 class="header"></h3>
+    <div class="description"></div>
+
+      <div class="description">
+      <div class="pad">
+      <span>この商品を</span>
+        <select class="ui right big label" name="10003534_0_0_1000" >
+           
+          <option selected="selected" style="">数量</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>個
+      <label>
+        <div class="ui primary tiny button" style="font-size: 15px;position: relative;top:-1px;">
+          <input type="checkbox" name="chk" value="1" >
+            選択する
+        </div>
+      </label>
+      </div>
+      <hr>
+    <p><a href="#" class="modal-nice arrow_01">> 商品詳細を見る</a></p>
+    </div>
+ </div><!--div-->
+  </div>
+</div>
+<!-- 1つめ分完了 -->
+
+<!--go_cart-->
+<div class="item" style="display: none;">
+    <button id="go_cart" class="ui sixteen wide column disabled button" >
+    <p class="btn">
+        <img alt="購入ボタン" src="img/btn_buy_selected.gif" width="" height="" >
+    </p>
+</button>
+</div>
+<div class="item" style="display: none;">
+    <button id="go_cart_view" class="ui sixteen wide column disabled button" >
+    <div class="ui segment" >
+        <div id="loader" class="ui dimmer">
+        <!--<div class="ui text inverted loader">処理をしてますので、少々お待ちください</div>-->
+        <div class="ui text loader">処理をしていますので、少々お待ちください。</div>
+    </div>
+    </div>
+        <p>選択した商品と合計金額はお買物カゴでご確認いただけます。</p>
+        <div class=" image">
+            <a href="https://basket.step.rakuten.co.jp/rms/mall/bs/cart/" target="_blank">
+            <img alt="カゴの確認" class="image" src="img/btn_watch_cart.gif" width="" height="" >
+            </a>
+          </div>
+</button>
+</div>
+
+</div>
 
 
-<br><br><br><br><br><br><br><br><br><br><br>
+</li>
+<!-------------------------------- nice --------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-------------------------------- AWFM --------------------------------->
 <li id="awfm" style="position: relative;margin:650px 0px 0px 20px;">
 <img src="img/trsp2_title.png" class="item_title">
@@ -314,68 +395,6 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
 
 
 
-<!-------------------------------- ist --------------------------------->
-<li id="ist" style="position: relative;margin:0 0 -230px -6px;">
-<div class="col_img">
-<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/ist_bh_tit1.jpg" style="vertical-align: bottom;">
-<iframe scrolling="no" src="ist.html"></iframe></div>
-<div class="col_cart">
-<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/ist_bh_pri.jpg">
-<form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center;">
-<input type="text" name="units" size="4" value="1" style="display:none">
-<input type="image" src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/1col_cart_btn.jpg" name="button1" style="margin:-5px;">
-<input type="hidden" name="__event" value="ES01_003_001">
-<input type="hidden" name="shop_bid" value="199614">
-<input type="hidden" name="item_id" value="10003899">
-<input type="hidden" name="inventory_flag" value="1">
-</form>
-<div class="info"><a href="#" class="modal-ist btn">商品内容はこちら</a></div>
-
-</div>
-</li>
-<!-------------------------------- ist --------------------------------->
-
-<!-------------------------------- wdc --------------------------------->
-<li id="wdc" style="position: relative;margin:0 0 -230px -6px;">
-<div class="col_img">
-<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/wdc_bh_tit1.jpg" style="vertical-align: bottom;">
-<iframe scrolling="no" src="wdc.html"></iframe></div>
-<div class="col_cart">
-<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/wdc_bh_pri.jpg">
-<form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center;">
-<input type="text" name="units" size="4" value="1" style="display:none">
-<input type="image" src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/1col_cart_btn.jpg" name="button1" style="margin:-5px;">
-<input type="hidden" name="__event" value="ES01_003_001">
-<input type="hidden" name="shop_bid" value="199614">
-<input type="hidden" name="item_id" value="10003907">
-<input type="hidden" name="inventory_flag" value="1">
-</form>
-<div class="info"><a href="#" class="modal-wdc btn">商品内容はこちら</a></div>
-
-</div>
-</li>
-<!-------------------------------- wdc --------------------------------->
-
-<!-------------------------------- bbb --------------------------------->
-<li id="bbb" style="position: relative;margin:0 0 -230px -6px;">
-<div class="col_img">
-<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/bbb_bh_tit1.jpg" style="vertical-align: bottom;">
-<iframe scrolling="no" src="bbb.html"></iframe></div>
-<div class="col_cart">
-<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/bbb_bh_pri.jpg">
-<form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center;">
-<input type="text" name="units" size="4" value="1" style="display:none">
-<input type="image" src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/1col_cart_btn.jpg" name="button1" style="margin:-5px;">
-<input type="hidden" name="__event" value="ES01_003_001">
-<input type="hidden" name="shop_bid" value="199614">
-<input type="hidden" name="item_id" value="10003900">
-<input type="hidden" name="inventory_flag" value="1">
-</form>
-<div class="info"><a href="#" class="modal-bbb btn">商品内容はこちら</a></div>
-
-</div>
-</li>
-<!-------------------------------- bbb --------------------------------->
 
 
 
@@ -387,87 +406,6 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-<!-------------------------------- crf --------------------------------->
-<li id="crf" style="width:480px;margin-bottom: 35px;">
-<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/crf_bh_2c_tai01.jpg">
-<iframe scrolling="no" src="crf.html" style="height:440px;"></iframe>
-<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/crf_bh_pri.jpg" >
-<form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
-<input type="text" name="units" size="4" value="1" style="display:none">
-<input type="image" src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/2col_cart_btn.jpg" name="button1" style="margin:-5px 0 -5px 0px;">
-<input type="hidden" name="__event" value="ES01_003_001">
-<input type="hidden" name="shop_bid" value="199614">
-<input type="hidden" name="item_id" value="10003909">
-<input type="hidden" name="inventory_flag" value="1">
-</form>
-<div class="info"><a href="#" class="modal-crf btn_2">商品内容はこちら</a></div>
-</li>
-<!-------------------------------- crf --------------------------------->
-
-
-
-<!-------------------------------- hdp --------------------------------->
-<li id="hdp" style="width:480px;">
-<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/hdst_bh_2c_tai01.jpg">
-<iframe scrolling="no" src="hdp.html" style="height:440px;"></iframe>
-<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/hdst_bh_pri.jpg" >
-<form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
-<input type="text" name="units" size="4" value="1" style="display:none">
-<input type="image" src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/2col_cart_btn.jpg" name="button1" style="margin:-5px 0 -5px 0px;">
-<input type="hidden" name="__event" value="ES01_003_001">
-<input type="hidden" name="shop_bid" value="199614">
-<input type="hidden" name="item_id" value="10003904">
-<input type="hidden" name="inventory_flag" value="1">
-</form>
-<div class="info"><a href="#" class="modal-hdp btn_2">商品内容はこちら</a></div>
-</li>
-<!-------------------------------- hdp --------------------------------->
-
-
-<!-------------------------------- ngwp --------------------------------->
-<li id="ngwp" style="width:480px;margin-bottom: 35px;">
-<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/ngwp_bh_2c_tai01.jpg">
-<iframe scrolling="no" src="ngwp.html" style="height:440px;"></iframe>
-<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/ngwp_bh_pri.jpg" >
-<form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
-<input type="text" name="units" size="4" value="1" style="display:none">
-<input type="image" src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/2col_cart_btn.jpg" name="button1" style="margin:-5px 0 -5px 0px;">
-<input type="hidden" name="__event" value="ES01_003_001">
-<input type="hidden" name="shop_bid" value="199614">
-<input type="hidden" name="item_id" value="10003902">
-<input type="hidden" name="inventory_flag" value="1">
-</form>
-<div class="info"><a href="#" class="modal-ngwp btn_2">商品内容はこちら</a></div>
-</li>
-<!-------------------------------- ngwp --------------------------------->
-
-<!-------------------------------- ngwb --------------------------------->
-<li id="ngwb" style="width:480px;">
-<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/ngwb_bh_2c_tai01.jpg">
-<iframe scrolling="no" src="ngwb.html" style="height:440px;"></iframe>
-<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/ngwb_bh_pri.jpg" >
-<form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
-<input type="text" name="units" size="4" value="1" style="display:none">
-<input type="image" src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/2col_cart_btn.jpg" name="button1" style="margin:-5px 0 -5px 0px;">
-<input type="hidden" name="__event" value="ES01_003_001">
-<input type="hidden" name="shop_bid" value="199614">
-<input type="hidden" name="item_id" value="10003903">
-<input type="hidden" name="inventory_flag" value="1">
-</form>
-<div class="info"><a href="#" class="modal-ngwb btn_2">商品内容はこちら</a></div>
-</li>
-<!-------------------------------- ngwb --------------------------------->
 
 
 
@@ -633,26 +571,72 @@ function cdTimer1() {
 
 
 
-
 <!--フッターフローティング-->
  <div id="footerFloatingMenu">
-      <div class="ui segment">
-          <p id="" class="textYellow">現在の合計金額は￥
-            <span id="priceAll">0</span>円(税抜き)
-            <div id="footer_go_cart" class="compact ui floated large  yellow  button disabled">
-                チェックした商品をカートに入れる
+      <div class="ui segment" style="width:950px;margin: 0 auto; border: none;">
+          <p id="" class="textYellow"><div class="change_price">現在の合計金額は￥
+            <span id="priceAll">0</span>円(税抜)</div>
+            <div id="footer_go_cart" class="compact ui floated large  yellow  button disabled position">
+                <span>選択した商品をカートに入れる</span>
             </div>
           </p>
-          <p id="coupon">合計金額
+        <!--  <p id="coupon">合計金額
             <span id="priceTarget">15000</span>円で50%OFFクーポンGET!!
               あと￥
             <span id="priceRemain">0</span>円!!</p>
-          <p id="couponGet" class="displayNone">クーポンがご利用になれます、クーポンはこちら</p>
+          <p id="couponGet" class="displayNone">クーポンがご利用になれます、クーポンはこちら</p>-->
       </div>
   </div>
 
 <!--フッターフローティング-->
 
+<style>
+	.change_price{
+		display: block;
+		position: relative;
+		width: 500px;
+		background-color: #fff;
+		color:#000;
+		border-radius: 5px;
+		height: 50px;
+		line-height: 50px;
+		font-size: 18px;
+		font-weight: bold;
+		left:0px;
+		top:-5px;
+		border:3px solid #555;
+	}
+	.position{
+		position: relative;
+		left: 270px;
+		top: -54px;
+		width: 429px;
+			height: 50px;
+		line-height: 50px;
+		background-color: #ff0000;
+	}
+	
+	.position span{
+		
+		line-height: 30px;
+	}
+	
+	.pad{
+	width: 320px;
+	margin: 0 auto 15px;
+	
+	}
+	
+	.arrow_01{
+		display: block;
+		width: 120px;
+		margin: 20px auto;
+		text-decoration: underline;
+		font-weight: bold;
+	}
+	
+	
+	</style>
 
 
 <!--もったい無い-->
@@ -663,6 +647,27 @@ function cdTimer1() {
 <script type="text/javascript" src="js/rcart.js"></script>
 
 <!--もったい無い-->
+
+
+
+
+<script>
+	// スクロールしたらじわっとフッター表示
+$(function() {
+  var topBtn = $('#footerFloatingMenu');
+  topBtn.hide();
+  $(window).scroll(function() {
+    // 200pxで表示
+    if ($(this).scrollTop() > 200) {
+      topBtn.fadeIn();
+    } else {
+      topBtn.fadeOut();
+    }
+  });
+});
+
+
+</script>
 </body>
 </html>
 

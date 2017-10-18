@@ -222,6 +222,16 @@
 	right:20px;
 }
 
+.col_cart_2{
+	height:437px;
+	width: 438px;
+	position: absolute;
+	top:5px;
+}
+
+
+
+
 .col_cart img{
 	/*width: 355px;
 	height:328px;*/
