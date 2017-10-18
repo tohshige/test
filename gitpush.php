@@ -1,5 +1,5 @@
 <?
-// auto git push .gitpush.php
+// auto git push .gitpush.php maiji
 exec('cd /home/mono-96/www/mono-96.jp/tmp/test', $op, $rv);
 exec('/usr/local/bin/git status', $op, $rv);
 exec('/usr/local/bin/git add -A', $op, $rv);
