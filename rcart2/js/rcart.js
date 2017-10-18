@@ -261,27 +261,29 @@ $("#reset_radio").click(reset_radio);
 
 // $("#go_cart").on('click',function(){
 $("[id$='go_cart']").on('click',function(){
-    if(!confirm_cart("ご選択された商品を買い物かごに追加しますか？")){
-        return;
-    }
-    // showValues('on');
-    if(!showValues('on')){
-        return;
-    }
-    alert('ご選択された商品を買い物かごに追加いたします。\n購入された商品は「カゴの中身を確認する」ボタンから確認いただけます。');
-    setInterval(function(){
-        $('.ui.text.loader').fadeOut(900,function(){$(this).fadeIn(600)});
-    },1000);
-    //1秒後
-    // setTimeout(function(){
-    //        location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
-    // },8000);
-    $("#loader").addClass("active");
-    
-    setTimeout(function(){
-        $("#go_cart_view").removeClass("disabled");
-        $("#loader").removeClass("active");
-    },8000);
+  if(!confirm_cart("ご選択された商品を買い物かごに追加しますか？")){
+      return;
+  }
+  // showValues('on');
+  if(!showValues('on')){
+      return;
+  }
+  alert('ご選択された商品を買い物かごに追加いたします。\n購入された商品は「カゴの中身を確認する」ボタンから確認いただけます。');
+  setInterval(function(){
+      $('.ui.text.loader').fadeOut(900,function(){$(this).fadeIn(600)});
+  },1000);
+  //1秒後
+  // setTimeout(function(){
+  //        location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
+  // },8000);
+  $("#loader").addClass("active");
+  
+  setTimeout(function(){
+    $("#go_cart_view").removeClass("disabled");
+    $("#loader").removeClass("active");
+    // window.open("https://basket.step.rakuten.co.jp/rms/mall/bs/cart/"); //popup blockで動作しない。
+    location.href ='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/';
+  },8000);
 });
 
 
