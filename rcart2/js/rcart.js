@@ -11,6 +11,10 @@ $("[id$='go_cart']").click(function() {
   return false;
 });
 
+// set all selectbox default value
+$("select").val(1);// 2banme
+// $('select').val(0);//1”Ô–Ú
+
 // $("#pageTop").click(function() {
 //   $("html, body").animate({ scrollTop: $(document).height() }, "slow");
 //   return false;
