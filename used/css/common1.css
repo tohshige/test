@@ -3,6 +3,13 @@
 
 *{outline: none;}
 
+.ui.primary.tiny.button.cartAddBtn{
+  font-size: 15px;
+  position: relative;
+  top:-1px;
+  background-color: #82b63a;
+}
+
 body{
     /*background: #efefef;*/
     animation: fadeIn 2s ease 0s 1 normal;
