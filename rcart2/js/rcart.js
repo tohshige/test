@@ -180,23 +180,23 @@ function showValues(on_off) {
                 },i*100);
             }
         }
-
         var chkBox = fields[i+1];//すぐ隣のcheckbox がチェックされているか
         // select option > cart 前方一致のときの処理
-        if (!field.name.indexOf('1000') && field.value !== ""  ) {
+        if (!field.name.indexOf('1000') && field.value !== "") {
             flgArray['selectFlg'] = "on";
-            console.log(chkBox.name);
-            
             var resArray = field.name.split("_");
             var price = Number( resArray[3]);
             // checked 
-            if (!field.name.indexOf('1000') && field.value !== "" && chkBox.name == 'chk') {
-              priceAll += price * Number(field.value);
-              if (on_off === "on") {
-                allCount++;
-                setTimeout(function(){
-                    addCart(field.name, field.value);// order
-                },1000+i*100);
+            if ( chkBox ) {
+              if(chkBox.name == 'chk') {
+                console.log(chkBox.name);
+                priceAll += price * Number(field.value);
+                if (on_off === "on") {
+                  allCount++;
+                  setTimeout(function(){
+                      addCart(field.name, field.value);// order
+                  },1000+i*100);
+                }
               }
             }
             console.log(priceAll);
