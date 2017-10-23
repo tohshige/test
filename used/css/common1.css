@@ -448,7 +448,9 @@ v
 	z-index: 999;
 }
 
-
+.supec_btn{
+	display: flex;
+}
 
 
 
