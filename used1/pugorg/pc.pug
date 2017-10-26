@@ -1,3 +1,4 @@
+include ./mixins.pug
 doctype html
 html
   head
@@ -5,10 +6,10 @@ html
     title MAX60%OFF！｜ショップジャパン楽天市場店
     // 楽天TOP解析タグ 
     script(src='//assets.adobedtm.com/fde17e0362c40547334f4e041add368f158b4119/satelliteLib-e346cd8edc0ac640d3ce7c060b5a38f5169d4add.js')
-    // <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+    //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js')
     script(src='//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js')
     script(src='https://www.rakuten.ne.jp/gold/shopjapan/trs/iframe/matome/semantic.min.js')
-    // <script src="js/smoothscroll.js"></script> 
+    //- script(src='js/smoothscroll.js')
     link(rel='stylesheet', href='css/semantic.min.css')
     link(rel='stylesheet', href='https://www.rakuten.ne.jp/gold/shopjapan/css/normalize.css')
     link(rel='stylesheet', href='css/common1.css')
@@ -79,13 +80,11 @@ html
       #footerFloatingMenu img {
         max-width: 99%;
       }
-    //      <script type="text/javascript">
+    //- script(type='text/javascript').
       if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {{
       location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
-      }
-      }
-      </script>
-    //<script type="text/javascript" src="js/jquery-1.11.1.min.js" charset="UTF-8"></script>
+      }}
+    //- script(type='text/javascript', src='js/jquery-1.11.1.min.js', charset='UTF-8')
     script(type='text/javascript') _satellite.pageBottom();
   //楽天解析タグ
   body
@@ -111,50 +110,20 @@ html
       style.
        .none{  display:none;}
       //==================モッタイナイ市も購入手順==================
-      //        <img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/nav171020.jpg" usemap="#nav">
-        <br><br>
-        
-        <map name="nav">
-        <area shape="rect" coords="22,5,260,90" href="#awfm">
-        <area shape="rect" coords="263,4,501,89" href="#lgmc">
-        <area shape="rect" coords="505,5,743,88" href="#crf">
-        <area shape="rect" coords="748,6,986,91" href="#ngwp">
-        </map>
-      // <ul class="item_lineup" style="display:flex;flex-wrap: wrap;padding-left:0px;height:5000px;width:980px;margin:0 auto;justify-content: space-between;position: relative;">
-      ul.item_lineup(style='padding-left:0px;height:8650px;width:980px;margin:0 auto;position: relative')
-        //==================MIXINS ==================
-        mixin item()
-          // 1つめ分 
-          .item
-            .image
-            .content
-              h3.header
-              .description
-              .description
+      //- img(src='https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/nav171020.jpg', usemap='#nav')
+      //- br
+      //- br
+      //- map(name='nav')
+      //-   area(shape='rect', coords='22,5,260,90', href='#awfm')
+      //-   area(shape='rect', coords='263,4,501,89', href='#lgmc')
+      //-   area(shape='rect', coords='505,5,743,88', href='#crf')
+      //-   area(shape='rect', coords='748,6,986,91', href='#ngwp')
 
-        //parts of kago
-        mixin pad(color,itemcode,padStyle)
-          .pad(style=padStyle)
-            span.item_name= color
-            select.ui.right.big.label(name= itemcode)
-              option 数量
-              option 1
-              option 2
-            | 個
-            label
-              .ui.primary.tiny.button.cartAddBtn
-                input(type='checkbox', name='chk', value='1')
-                |  買い物カゴに追加する
-        mixin specBtn()
-          hr
-          .supec_btn
-            a.arrow_01(class!=attributes.class href='#') > 商品内容はこちら
-            a.modal-sinpin.arrow_01(href='#') > 新品同様/特価良品とは
+      ul.item_lineup(style='padding-left:0px;height:8650px;width:980px;margin:0 auto;position: relative')
         //==================trsp2 ==================
-        li#trsp2(style='position: relative;margin:200px 0 0px 18px')
-          img.item_title(src='img/trsp2_title.png')
-          .col_img
-            iframe(scrolling='no', src='trsp2.html')
+        - var itemName = 'trsp2';
+        li(id=itemName,style='position: relative;margin:200px 0 0px 18px')
+          +itemImg(itemName)
           .col_cart
             img(src='img/trsp2_pri.jpg')
             // 1つめ分 
@@ -165,16 +134,13 @@ html
                 .description
                 .description
                   +pad('この商品を', '10003933_0_0_5460')
-                  +specBtn()(class='modal-trsp2')
-
+                  +specBtn()(class='modal-'+ itemName)
             // 1つめ分完了 
         //==================trsp2 ==================
-
         //==================nice ==================
-        li#nice(style='position: relative;margin:250px 0 0px 20px')
-          img.item_title(src='img/nice_title.png')
-          .col_img
-            iframe(scrolling='no', src='nice.html', style='margin-left:490px')
+        - var itemName = 'nice';
+        li(id=itemName,style='position: relative;margin:250px 0 0px 20px')
+          +itemImgRight('nice')
           div
             .col_cart_2
               img(src='img/nice_pri.jpg')
@@ -185,18 +151,15 @@ html
                   h3.header
                   .description
                   .description
-                    //- +item()
                     +pad('　レッドを', '10003922_8864_2_5980')
                     +pad('ブラックを','10003922_8865_2_5980','')
-                    +specBtn()(class='modal-nice')
-
-            // 1つめ分完了 
+                    +specBtn()(class='modal-'+ itemName)
+              // 1つめ分完了 
         //==================nice ==================
         //==================trsp ==================
-        li#trsp(style='position: relative;margin:270px 0 440px 18px')
-          img.item_title(src='img/trsp_title.png')
-          .col_img
-            iframe(scrolling='no', src='trsp.html')
+        - var itemName = 'trsp';
+        li(id=itemName,style='position: relative;margin:270px 0 440px 18px')
+          +itemImg(itemName)
           .col_cart
             img(src='img/trsp_pri.jpg')
             // 1つめ分 
@@ -209,18 +172,14 @@ html
                   +pad('　シングルを', '10003918_0_0_15960','width:438px')
                   +pad('セミダブルを', '10003919_0_0_17220','width:438px')
                   +pad('　　ダブルを', '10003920_0_0_18760','width:438px')
-                  hr
-                  .supec_btn
-                    a.modal-trsp.arrow_01(href='#') > 商品内容はこちら
-                    a.modal-sinpin.arrow_01(href='#') > 新品同様/特価良品とは
+                  +specBtn()(class='modal-'+ itemName)
             // 1つめ分完了 
         //==================trsp ==================
         //==================sim ==================
-        li#sim(style='position: relative;margin:320px 0 0px 20px')
-          img.item_title(src='img/sim_title.png')
-          .col_img
-            iframe(scrolling='no', src='sim.html', style='margin-left:490px')
+        - var itemName = 'sim';
+        li(id=itemName,style='position: relative;margin:320px 0 0px 20px')
           div
+            +itemImgRight(itemName)
             .col_cart_2
               img(src='img/sim_s_pri.jpg')
               // 1つめ分 
@@ -234,14 +193,13 @@ html
                   img(src='img/sim_t_pri.jpg')
                   .description
                     +pad('この商品を', '10003924_0_0_4980')
-                    +specBtn()(class='modal-sim')
+                    +specBtn()(class='modal-'+ itemName)
             // 1つめ分完了 
         //==================nice ==================
         //==================rah ==================
-        li#rah(style='position: relative;margin:560px 0 0px 18px')
-          img.item_title(src='img/rah_title.png')
-          .col_img
-            iframe(scrolling='no', src='rah.html')
+        - var itemName = 'rah';
+        li(id=itemName,style='position: relative;margin:560px 0 0px 18px')
+          +itemImg(itemName)
           .col_cart
             img(src='img/rah_s_pri.jpg')
             // 1つめ分 
@@ -255,14 +213,13 @@ html
                 img(src='img/rah_t_pri.jpg')
                 .description
                   +pad('この商品を', '10003926_0_0_5980')
-                  +specBtn()(class='modal-rah')
+                  +specBtn()(class='modal-'+ itemName)
             // 1つめ分完了 
         //==================rah ==================
         //==================ngw ==================
-        li#ngw(style='position: relative;margin:550px 0 680px 20px')
-          img.item_title(src='img/ngw_title.png')
-          .col_img
-            iframe(scrolling='no', src='ngw.html', style='margin-left:490px')
+        - var itemName = 'ngw';
+        li(id=itemName,style='position: relative;margin:550px 0 680px 20px')
+          +itemImgRight(itemName)
           div
             .col_cart_2
               img(src='img/ngw_s_pri.jpg')
@@ -273,61 +230,18 @@ html
                   h3.header
                   .description
                   .description
-                    .pad
-                      span.item_name 　ピンクを
-                      select.ui.right.big.label(name='10003927_8860_2_6800')
-                        option(selected='') 数量
-                        option(value='1') 1
-                        option(value='2') 2
-                      | 個
-                      label
-                        .ui.primary.tiny.button.cartAddBtn
-                          input(type='checkbox', name='chk', value='1')
-                          |  買い物カゴに追加する
-                    .pad
-                      span.item_name ブラウンを
-                      select.ui.right.big.label(name='10003927_8861_2_6800')
-                        option(selected='') 数量
-                        option(value='1') 1
-                        option(value='2') 2
-                      | 個
-                      label
-                        .ui.primary.tiny.button.cartAddBtn
-                          input(type='checkbox', name='chk', value='1')
-                          |  買い物カゴに追加する
+                    +pad('　ピンクを', '10003927_8860_2_6800')
+                    +pad('ブラウンを', '10003927_8861_2_6800')
                   img(src='img/ngw_t_pri.jpg')
                   .description
-                    .pad
-                      span.item_name 　ピンクを
-                      select.ui.right.big.label(name='10003928_8862_2_5800')
-                        option(selected='') 数量
-                        option(value='1') 1
-                        option(value='2') 2
-                      | 個
-                      label
-                        .ui.primary.tiny.button.cartAddBtn
-                          input(type='checkbox', name='chk', value='1')
-                          |  買い物カゴに追加する
-                    .pad
-                      span.item_name ブラウンを
-                      select.ui.right.big.label(name='10003928_8863_2_5800')
-                        option(selected='') 数量
-                        option(value='1') 1
-                        option(value='2') 2
-                      | 個
-                      label
-                        .ui.primary.tiny.button.cartAddBtn
-                          input(type='checkbox', name='chk', value='1')
-                          |  買い物カゴに追加する
-                    hr
-                    .supec_btn
-                      a.modal-ngw.arrow_01(href='#') > 商品内容はこちら
-                      a.modal-sinpin.arrow_01(href='#') > 新品同様/特価良品とは
-                //div
-            // 1つめ分完了 
+                    +pad('　ピンクを', '10003928_8862_2_5800')
+                    +pad('ブラウンを', '10003928_8863_2_5800')
+                    +specBtn()(class='modal-'+ itemName)
+              // 1つめ分完了 
         //==================ngw ==================
         //==================rvt ==================
-        li#rvt(style='position: relative;margin:560px 0 0px 18px')
+        - var itemName = 'ngw';
+        li(id=itemName,style='position: relative;margin:560px 0 0px 18px')
           img.item_title(src='img/rvt_title.png')
           .col_img
             iframe(scrolling='no', src='rvt.html')
@@ -340,38 +254,16 @@ html
                 h3.header
                 .description
                 .description
-                  .pad
-                    span.item_name この商品を
-                    select.ui.right.big.label(name='10003929_0_0_9800')
-                      option(selected='') 数量
-                      option(value='1') 1
-                      option(value='2') 2
-                    | 個
-                    label
-                      .ui.primary.tiny.button.cartAddBtn
-                        input(type='checkbox', name='chk', value='1')
-                        |  買い物カゴに追加する
+                  +pad('この商品を', '10003929_0_0_9800')
                 img(src='img/rvt_t_pri.jpg')
                 .description
-                  .pad
-                    span.item_name この商品を
-                    select.ui.right.big.label(name='10003930_0_0_8800')
-                      option(selected='') 数量
-                      option(value='1') 1
-                      option(value='2') 2
-                    | 個
-                    label
-                      .ui.primary.tiny.button.cartAddBtn
-                        input(type='checkbox', name='chk', value='1')
-                        |  買い物カゴに追加する
-                  hr
-                  .supec_btn
-                    a.modal-rvt.arrow_01(href='#') > 商品内容はこちら
-                    a.modal-sinpin.arrow_01(href='#') > 新品同様/特価良品とは
+                  +pad('この商品を', '10003930_0_0_8800')
+                  +specBtn()(class='modal-'+ itemName)
             // 1つめ分完了 
         //==================rvt ==================
         //==================awfm ==================
-        li#awfm(style='position: relative;margin:550px 0 0px 20px')
+        - var itemName = 'awfm';
+        li(id=itemName,style='position: relative;margin:550px 0 0px 20px')
           img.item_title(src='img/awfm_title.png')
           .col_img
             iframe(scrolling='no', src='awfm.html', style='margin-left:490px')
@@ -385,36 +277,12 @@ html
                   h3.header
                   .description
                   .description
-                    .pad
-                      span.item_name この商品を
-                      select.ui.right.big.label(name='10003935_0_0_12960')
-                        option(selected='') 数量
-                        option(value='1') 1
-                        option(value='2') 2
-                      | 個
-                      label
-                        .ui.primary.tiny.button.cartAddBtn
-                          input(type='checkbox', name='chk', value='1')
-                          |  買い物カゴに追加する
+                    +pad('この商品を', '10003935_0_0_12960')
                   img(src='img/awfm_t_pri.jpg')
                   .description
-                    .pad
-                      span.item_name この商品を
-                      select.ui.right.big.label(name='10003934_0_0_8600')
-                        option(selected='') 数量
-                        option(value='1') 1
-                        option(value='2') 2
-                      | 個
-                      label
-                        .ui.primary.tiny.button.cartAddBtn
-                          input(type='checkbox', name='chk', value='1')
-                          |  買い物かごに追加する
-                    hr
-                    .supec_btn
-                      a.modal-awfm.arrow_01(href='#') > 商品内容はこちら
-                      a.modal-sinpin.arrow_01(href='#') > 新品同様/特価良品とは
-                //div
-            // 1つめ分完了 
+                    +pad('この商品を', '10003934_0_0_8600')
+                    +specBtn()(class='modal-'+ itemName)
+              // 1つめ分完了 
             //go_cart loading 
             .item.displayNone
               button#go_cart.ui.sixteen.wide.column.disabled.button
@@ -432,7 +300,6 @@ html
                     img.image(alt='カゴの確認', src='img/btn_watch_cart.gif', width='', height='')
         hr(style='margin-top:370px')
         //==================awfm ==================
-        |  
         img#out(src='img/detail.jpg', style='width:px;margin: 50px 0 50px 15px')
         hr
         img#out(src='img/yokoku.jpg', style='width:px;margin: 50px 0 0 15px')
@@ -454,21 +321,20 @@ html
       img(src='./img/right_bnr2.png', width='105px', height='264px')
       p
     //縦バナー
-    //カウントダウンタイマー
-    //      <div id="timelimit"><div class="timelimit_inner">
-      <div class="timer"><span class="catext">キャンペーン終了まで</span>
-      <div class="timer_1" id="sampleA"></div>
-      </div></div></div>
-    //カウントダウンタイマー
-    //       <script type="text/javascript" src="js/timer.js" charset="UTF-8"></script>
-      <script type="text/javascript" src="js/hour_limited.js"></script> 
-    // <script language="JavaScript" type="text/javascript">
-    //      
-      cdTimer1();  
-        
-      function cdTimer1() {
-        
-      // 設定項目 ここから==================
+    //- //カウントダウンタイマー
+      #timelimit
+        .timelimit_inner
+          .timer
+            span.catext キャンペーン終了まで
+            #sampleA.timer_1
+    //- カウントダウンタイマー
+      script(type='text/javascript', src='js/timer.js', charset='UTF-8')
+      script(type='text/javascript', src='js/hour_limited.js')
+      |  
+      script(language='JavaScript', type='text/javascript').
+        cdTimer1();
+        function cdTimer1() {
+          // 設定項目 ここから==================
           // タグ要素のID名  
           var elemID = 'sampleA';  
         
@@ -483,55 +349,47 @@ html
         
           // メッセージのスタイルクラス名（変更しない場合は空欄）  
           var msgClass = 'msg_1';  
-      // 設定項目 ここまで================== 
+          // 設定項目 ここまで================== 
         
           var timeLimit = new Date( year, month - 1, day , hour );  
           var timer = new CountdownTimer( elemID, timeLimit, limitMessage, msgClass );  
           timer.countDown();  
-      }
-      // 
-    //==================バンブー==================
-    //       <script type="text/javascript">
+        }
+    //-==================バンブー==================
+      script(type='text/javascript').
         var _fout_queue = _fout_queue || {}; if (_fout_queue.segment === void 0) _fout_queue.segment = {};
         if (_fout_queue.segment.queue === void 0) _fout_queue.segment.queue = [];
-      
         _fout_queue.segment.queue.push({
-          'user_id': 15627
+        'user_id': 15627
         });
-      
         (function() {
-          var el = document.createElement('script'); el.type = 'text/javascript'; el.async = true;
-          el.src = (('https:' == document.location.protocol) ? 'https://' : 'http://') + 'js.fout.jp/segmentation.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(el, s);
+        var el = document.createElement('script'); el.type = 'text/javascript'; el.async = true;
+        el.src = (('https:' == document.location.protocol) ? 'https://' : 'http://') + 'js.fout.jp/segmentation.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(el, s);
         })();
-      </script> 
     //==================バンブー==================
     //==================アウトレット==================
-    //       <script>
-      $(".out").click(function () {
+      script.
+        $(".out").click(function () {
         $(".out_info").slideToggle("slow");
-      	$("#down_btn").toggleClass("none");	
-      });
-      
-      </script> 
+        $("#down_btn").toggleClass("none");
+        });
     style.
       .none{
         display:none;
       }
     //==================アウトレット==================
     //==================YTM==================
-    //       <script type="text/javascript">
+      script(type='text/javascript').
         (function () {
-          var tagjs = document.createElement("script");
-          var s = document.getElementsByTagName("script")[0];
-          tagjs.async = true;
-          tagjs.src = "//s.yjtag.jp/tag.js#site=r5x5wBC";
-          s.parentNode.insertBefore(tagjs, s);
+        var tagjs = document.createElement("script");
+        var s = document.getElementsByTagName("script")[0];
+        tagjs.async = true;
+        tagjs.src = "//s.yjtag.jp/tag.js#site=r5x5wBC";
+        s.parentNode.insertBefore(tagjs, s);
         }());
-      </script>
-      <noscript>
-        <iframe src="//b.yjtag.jp/iframe?c=r5x5wBC" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-      </noscript> 
+      noscript
+        iframe(src='//b.yjtag.jp/iframe?c=r5x5wBC', width='1', height='1', frameborder='0', scrolling='no', marginheight='0', marginwidth='0')
     //==================YTM==================
     //フッターフローティング
     #footerFloatingMenu
@@ -541,17 +399,20 @@ html
           | 現在の合計金額は￥
           span#priceAll 0
           | 円(税抜)
-        //           <div id="footer_go_cart" class="compact ui floated large  yellow  button  position">
-                          <span>選択した商品をカートに入れる</span>
-                      </div> 
+        //- #footer_go_cart.compact.ui.floated.large.yellow.button.position
+          span 選択した商品をカートに入れる
         #footer_go_cart.compact.ui.floated.large.yellow.button.disabled.position
           span 選択した商品のレジにすすむ
         p
-        //            <p id="coupon">合計金額
-                      <span id="priceTarget">15000</span>円で50%OFFクーポンGET!!
-                        あと￥
-                      <span id="priceRemain">0</span>円!!</p>
-                    <p id="couponGet" class="displayNone">クーポンがご利用になれます、クーポンはこちら</p>
+        //
+          p#coupon
+            | 合計金額
+            span#priceTarget 15000
+            | 円で50%OFFクーポンGET!!
+            |     あと￥
+            span#priceRemain 0
+            |円!!
+          p#couponGet.displayNone クーポンがご利用になれます、クーポンはこちら
     //フッターフローティング
     style.
       .change_price{
@@ -632,4 +493,4 @@ html
           // User Insight PCDF Code End : shopjapan.co.jp 
     //モーダル
     #target
-//モーダル
+    //モーダル
