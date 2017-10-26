@@ -8,19 +8,33 @@ var convertEncoding = require('gulp-convert-encoding');
 const html2pug = require('gulp-html2pug');
 const html2jade = require('gulp-html2jade');
 const options = {nspaces:2};
+var plumber = require('gulp-plumber');
+var notify = require("gulp-notify");
+var browserSync = require('browser-sync');
 
+/** ディレクトリを指定します。 */
+var src = {
+  // 出力対象は`_`で始まっていない`.pug`ファイル。
+  'html': ['pugorg/**/*.pug', '!' + 'pugorg/**/_*.pug'],
+  // JSONファイルのディレクトリを変数化。
+  'json': 'src/_data/',
+  'css': 'src/**/*.css',
+  'js': 'src/**/*.js',
+};
 
 //pug > html
 gulp.task('pug2html', () => {
 //  return gulp.src(['./pug/**/*.pug', '!./pug/**/_*.pug'])
- return gulp.src(['./pugorg/**/*.pug', '!./pugorg/**/_*.pug'])
- .pipe(convertEncoding({from: "EUC-JP"}))// encode
- .pipe(pug({
-   pretty: true
- }))
- .pipe(convertEncoding({to: "EUC-JP"}))// encode
-//  .pipe(gulp.dest('./html/'));
- .pipe(gulp.dest('./'));
+  return gulp.src(['./pugorg/**/*.pug', '!./pugorg/**/_*.pug'])
+  .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))  // コンパイルエラーを通知します。  
+  .pipe(convertEncoding({from: "EUC-JP"}))// encode
+  .pipe(pug({
+    pretty: true
+  }))
+  .pipe(convertEncoding({to: "EUC-JP"}))// encode
+  //  .pipe(gulp.dest('./html/'));
+  .pipe(gulp.dest('./'))
+  .pipe(browserSync.reload({stream: true}));
 });
 
 // html > pug
@@ -29,9 +43,20 @@ gulp.task('html2pug', function(){
     .pipe(convertEncoding({from: "EUC-JP"}))// encode
     .pipe(html2pug(options))
     .pipe(convertEncoding({to: "EUC-JP"}))// encode
-    .pipe(gulp.dest('./pugorg/'));
+    .pipe(gulp.dest('./pugorg/'))
+    .pipe(browserSync.reload({stream: true}));
 });
 
+
+/** * ローカルサーバーを起動します。 */
+gulp.task('browser-sync', function() {
+  browserSync({
+    server: {
+      baseDir: "./",
+      index: "pc.html"
+    }
+  });
+});
 
 //CSS圧縮
 gulp.task('minify-css', function() {
@@ -56,3 +81,16 @@ gulp.task('minify-css', function() {
 //     .pipe(gulp.dest('./jadeorg/'));
 // });
 
+/** * PugのコンパイルやCSSとjsの出力、browser-syncのリアルタイムプレビューを実行します。 */
+// gulp.task('watch', ['html', 'css', 'js', 'browser-sync'], function() {
+gulp.task('watch', ['pug2html',  'browser-sync'], function() {
+  gulp.watch(src.html, ['pug2html']);
+  // gulp.watch(src.css, ['css']);
+  // gulp.watch(src.js, ['js']);
+});
+
+gulp.task('w', ['pug2html'], function() {
+  gulp.watch(src.html, ['pug2html']);
+  // gulp.watch(src.css, ['css']);
+  // gulp.watch(src.js, ['js']);
+});
