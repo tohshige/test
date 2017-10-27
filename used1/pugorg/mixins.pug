@@ -1,0 +1,41 @@
+//this file UTF-8 ===== MIXINS ==================
+mixin item()
+  // 1つめ分 
+  .item
+    .image
+    .content
+      h3.header
+      .description
+      .description
+
+//item img header
+mixin itemImg(itemName)
+  img.item_title(src='img/'+ itemName +'_title.png')
+  .col_img
+    iframe(scrolling='no', src=''+ itemName +'.html')
+
+//item img header Right
+mixin itemImgRight(itemName)
+  img.item_title(src='img/'+ itemName +'_title.png')
+  .col_img
+    iframe(scrolling='no', src=''+ itemName +'.html', style='margin-left:490px')
+
+//parts of kago
+mixin pad(color,itemcode,padStyle)
+  .pad(style=padStyle)
+    span.item_name= color
+    select.ui.right.big.label(name= itemcode)
+      option 数量
+      option 1
+      option 2
+    | 個
+    label
+      .ui.primary.tiny.button.cartAddBtn
+        input(type='checkbox', name='chk', value='1')
+        |  買い物カゴに追加する
+
+mixin specBtn()
+  hr
+  .supec_btn
+    a(class!=attributes.class href='#').arrow_01 > 商品内容はこちら
+    a.modal-sinpin.arrow_01(href='#') > 新品同様/特価良品とは

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="euc-jp">
+    <title></title>
+    <script src="https://www.rakuten.ne.jp/gold/shopjapan/js/jquery.min2.js"></script>
+    <script>
+      $(function(){
+        $('#thumb_area img').mouseover(function(){
+          $('#main_img img').attr('src', $(this).attr('src'));
+        });
+        $('#thumb_area img').mouseout(function(){
+          $('#main_img img').attr('src', 'https://image.rakuten.co.jp/shopjapan/cabinet/share/used/ngw1.jpg');
+        });
+      });
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="main_img" id="main_img"><img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/used/ngw1.jpg"></div>
+    <ul class="thumb_area" id="thumb_area">
+      <li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/ngw/other1.jpg"></li>
+      <li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/ngw/other3.jpg"></li>
+    </ul>
+  </body>
+</html>
