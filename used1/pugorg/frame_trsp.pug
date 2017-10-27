@@ -1,0 +1,15 @@
+include ./mixins.pug
+- var itemName = 'trsp';
+-
+  //- 1枚目:初期画像  2-5:下部のサムネイル max:5枚
+  images=[ 
+  'https://image.rakuten.co.jp/shopjapan/cabinet/share/used/trsp1.jpg',
+  'https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago01.jpg',
+  'https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago02.jpg',
+  'https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago03.jpg',
+  'https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago04.jpg',
+  'https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago05.jpg'
+  ]
+doctype html
+html
+  +rolloverImage(itemName,images)

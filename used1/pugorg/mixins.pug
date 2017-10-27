@@ -1,4 +1,4 @@
-//this file UTF-8 ===== MIXINS ==================
+//-this file UTF-8 ===== MIXINS ==================
 mixin item()
   // 1つめ分 
   .item
@@ -7,20 +7,19 @@ mixin item()
       h3.header
       .description
       .description
+        block
 
-//item img header
-mixin itemImg(itemName)
+//-item img header
+mixin itemImg(itemName,right)
   img.item_title(src='img/'+ itemName +'_title.png')
   .col_img
-    iframe(scrolling='no', src=''+ itemName +'.html')
+  if right
+    // 右寄せなら 左マージン追加
+    iframe(scrolling='no', src='frame_'+ itemName +'.html', style='margin-left:490px')
+  else
+    iframe(scrolling='no', src='frame_'+ itemName +'.html')
 
-//item img header Right
-mixin itemImgRight(itemName)
-  img.item_title(src='img/'+ itemName +'_title.png')
-  .col_img
-    iframe(scrolling='no', src=''+ itemName +'.html', style='margin-left:490px')
-
-//parts of kago
+//-parts of kago
 mixin pad(color,itemcode,padStyle)
   .pad(style=padStyle)
     span.item_name= color
@@ -34,8 +33,39 @@ mixin pad(color,itemcode,padStyle)
         input(type='checkbox', name='chk', value='1')
         |  買い物カゴに追加する
 
+//- spec modal btn
 mixin specBtn()
   hr
   .supec_btn
     a(class!=attributes.class href='#').arrow_01 > 商品内容はこちら
     a.modal-sinpin.arrow_01(href='#') > 新品同様/特価良品とは
+
+
+//-rollover images
+mixin rolloverImage(itemName,images)
+  // 0:default image  1-5:thumbnail images max:5
+  head
+    meta(charset='euc-jp')
+    title
+    script(src='https://www.rakuten.ne.jp/gold/shopjapan/js/jquery.min2.js')
+    script.
+      var itemName='#{itemName}';
+      $(function(){
+          $('#thumb_area_#{itemName} img').mouseover(function(){
+              $('#main_img_#{itemName} img').attr('src', $(this).attr('src'));
+          });
+          $('#thumb_area_#{itemName} img').mouseout(function(){
+              $('#main_img_#{itemName} img').attr('src', '#{images[0]}');
+          });
+      });
+    link(rel='stylesheet', href='css/style.css')
+  body
+    div(id='main_img_'+itemName, class='main_img')
+      img(src=images[0])
+    ul(id='thumb_area_'+itemName, class='thumb_area')
+      for image, index in images
+        //- 1枚目を飛ばす
+        if index>0
+          li
+            img(src=image)
+
