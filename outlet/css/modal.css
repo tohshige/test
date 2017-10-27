@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* common
+----------------------------------------*/
+/*semantic ui*/
+.ui .modal {
+  width: 950px
+}
+
+.cntModal {
+	width:950px;
+	margin:0 auto;
+}
+.cntModal .read {
+	margin:0 15px 20px 15px;
+}
+.cntModal .block01 {
+	padding-bottom:20px;
+}
+
+.cntModal .block01:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+.cntModal .block01 { display: inline-block; }
+/* \*/
+* html .cntModal .block01 { height: 1%; }
+.cntModal .block01 { display: block; }
+/* */
+
+
+.cntModal .image {
+	clear:both;
+	float:left;
+	width:255px;
+	text-align:center;
+	padding-bottom:10px;
+}
+.cntModal .text {
+	float:left;
+	width:375px;
+
+}
+.cntModal p {
+	padding-bottom:10px;
+}
+
+.cntModal02 {
+	width:880px;
+	margin:0 auto;
+}
+
+.modalframe{padding: 0;margin: 0;width: 950px;height: 600px;border: 0;}
+
+
+
+
+/* #modal-standard
+----------------------------------------*/
+#modal-standard dt {
+	float:left;
+	clear:both;
+	width:55px;
+	padding-bottom:10px;
+}
+
+#modal-standard dd {
+	padding-left:10px;
+}
+
+/* #modal-premium
+----------------------------------------*/
+#modal-premium li {
+	margin:0 12px 15px 12px;
+	padding-bottom:15px;
+	background:url(../img/line_dot_01.gif) left bottom repeat-x;
+}
+#modal-premium li .image {
+	float:right;
+	width:276px;
+}
+#modal-premium li .text {
+	float:left;
+	width:321px;
+}
+#modal-premium li h3 {
+	margin-bottom:10px;
+}
+#modal-premium li p {
+	padding-bottom:0;
+}
+#modal-premium li:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+#modal-premium li { display: inline-block; }
+/* \*/
+* html #modal-premium li { height: 1%; }
+#modal-premium li { display: block; }
+/* */

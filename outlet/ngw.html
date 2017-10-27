@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="euc-jp">
+<title></title>
+
+<script src="https://www.rakuten.ne.jp/gold/shopjapan/js/jquery.min2.js"></script>
+<script>
+$(function(){
+    $('#thumb_area img').mouseover(function(){
+        $('#main_img img').attr('src', $(this).attr('src')).css({width:"346px",paddingLeft:"130px"});
+    });
+    $('#thumb_area img').mouseout(function(){
+        $('#main_img img').attr('src', 'https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/ngw1710_1col_2.jpg').css({width:"100%",paddingLeft:"0"});
+		
+    });
+});
+</script>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div id="main_img" class="main_img">
+<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/ngw1710_1col_2.jpg">
+</div>
+
+<ul id="thumb_area" class="thumb_area">
+<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/ngw_thum01.jpg"></li>
+<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/ngw_thum002.jpg"></li>
+<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/ngw_thum003.jpg"></li>
+<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/ngw_thum02.jpg"></li>
+<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/ngw_thum03.jpg"></li>
+<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/ngw_thum04.jpg"></li>
+</ul>
+
+
+
+</body>
+</html>
