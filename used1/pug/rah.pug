@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta(charset='euc-jp')
+    title
+    script(src='https://www.rakuten.ne.jp/gold/shopjapan/js/jquery.min2.js')
+    script $(function(){
+    $('#thumb_area img').mouseover(function(){
+        $('#main_img img').attr('src', $(this).attr('src'));
+    });
+    $('#thumb_area img').mouseout(function(){
+        $('#main_img img').attr('src', 'https://image.rakuten.co.jp/shopjapan/cabinet/share/used/rah01.jpg');
+		
+    });
+});
+    link(rel='stylesheet', href='css/style.css')
+  body
+    #main_img.main_img
+      img(src='https://image.rakuten.co.jp/shopjapan/cabinet/share/used/rah01.jpg')
+    ul#thumb_area.thumb_area
+      li
+        img(src='https://image.rakuten.co.jp/shopjapan/cabinet/share/used/rah02.jpg')
+      li
+        img(src='https://image.rakuten.co.jp/shopjapan/cabinet/share/used/rah03.jpg')
+      li
+        img(src='https://image.rakuten.co.jp/shopjapan/cabinet/share/used/rah04.jpg')
+      li
+        img(src='https://image.rakuten.co.jp/shopjapan/cabinet/share/used/rah05.jpg')

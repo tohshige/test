@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    meta(charset='euc-jp')
+    title
+    script(src='https://www.rakuten.ne.jp/gold/shopjapan/js/jquery.min2.js')
+    script.
+      $(function(){
+          $('#thumb_area img').mouseover(function(){
+              $('#main_img img').attr('src', $(this).attr('src'));
+          });
+          $('#thumb_area img').mouseout(function(){
+              $('#main_img img').attr('src', 'https://image.rakuten.co.jp/shopjapan/cabinet/share/used/nice1.jpg');
+          });
+      });
+    link(rel='stylesheet', href='css/style.css')
+  body
+    #main_img.main_img
+      img(src='https://image.rakuten.co.jp/shopjapan/cabinet/share/used/nice1.jpg')
+    ul#thumb_area.thumb_area
+      li
+        img(src='https://image.rakuten.co.jp/shopjapan/cabinet/nice/s_0210_4.jpg')
