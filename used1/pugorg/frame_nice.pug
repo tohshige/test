@@ -1,0 +1,11 @@
+include ./mixins.pug
+- var itemName = 'nice';
+-
+  //- 1枚目:初期画像  2-5:下部のサムネイル max:5枚 並べたい順番にcsvカンマ区切を貼り付けると楽
+  images=[ 
+  'https://image.rakuten.co.jp/shopjapan/cabinet/share/used/nice1.jpg',
+  'https://image.rakuten.co.jp/shopjapan/cabinet/nice/s_0210_4.jpg'
+  ]
+doctype html
+html
+  +rolloverImage(itemName,images)
