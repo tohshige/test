@@ -1,0 +1,7 @@
+# default SHIFT-JIS
+*.js diff=sjis
+*.html diff=eucjp
+# *.html encoding=eucjp
+# *.css encoding=eucjp
+*.css diff=eucjp
+*.pug diff=eucjp
