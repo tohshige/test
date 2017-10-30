@@ -37,12 +37,30 @@ gulp.task('pug2html', () => {
   .pipe(browserSync.reload({stream: true}));
 });
 
+gulp.task('pug2htmlSP', () => {
+    return gulp.src(['./pugorg/sp.pug', '!./pugorg/**/_*.pug'])
+    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))  // コンパイルエラーを通知します。  
+    .pipe(pug({
+      pretty: true
+    }))
+    //  .pipe(gulp.dest('./html/'));
+    .pipe(gulp.dest('./'))
+    .pipe(browserSync.reload({stream: true}));
+  });
+
 // html > pug
 gulp.task('html2pug', function(){
-  return gulp.src(['./html/*.html', '!./html_*.html'])
+  return gulp.src(['./html/modal1.html', '!./html_*.html'])
     .pipe(convertEncoding({from: "EUC-JP"}))// encode
     .pipe(html2pug(options))
     .pipe(convertEncoding({to: "EUC-JP"}))// encode
+    .pipe(gulp.dest('./pugorg/'))
+    .pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task('html2pugUtf8SP', function(){
+  return gulp.src(['./html/sp.html', '!./html_*.html'])
+    .pipe(html2pug(options))
     .pipe(gulp.dest('./pugorg/'))
     .pipe(browserSync.reload({stream: true}));
 });
@@ -91,6 +109,12 @@ gulp.task('watch', ['pug2html',  'browser-sync'], function() {
 
 gulp.task('w', ['pug2html'], function() {
   gulp.watch(src.html, ['pug2html']);
+  // gulp.watch(src.css, ['css']);
+  // gulp.watch(src.js, ['js']);
+});
+
+gulp.task('wSP', ['pug2htmlSP'], function() {
+  gulp.watch(src.html, ['pug2htmlSP']);
   // gulp.watch(src.css, ['css']);
   // gulp.watch(src.js, ['js']);
 });
