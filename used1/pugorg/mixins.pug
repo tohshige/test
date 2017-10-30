@@ -1,6 +1,6 @@
-//-this file UTF-8 ===== MIXINS ==================
+//-this file EUC-JP ===== MIXINS ==================
 mixin item()
-  // 1ã¤ã‚åˆ† 
+  // 1¤Ä¤áÊ¬ 
   .item
     .image
     .content
@@ -14,7 +14,7 @@ mixin itemImg(itemName,right)
   img.item_title(src='img/'+ itemName +'_title.png')
   .col_img
   if right
-    // å³å¯„ã›ãªã‚‰ å·¦ãƒãƒ¼ã‚¸ãƒ³è¿½åŠ 
+    // ±¦´ó¤»¤Ê¤é º¸¥Ş¡¼¥¸¥óÄÉ²Ã
     iframe(scrolling='no', src='frame_'+ itemName +'.html', style='margin-left:490px')
   else
     iframe(scrolling='no', src='frame_'+ itemName +'.html')
@@ -24,21 +24,21 @@ mixin pad(color,itemcode,padStyle)
   .pad(style=padStyle)
     span.item_name= color
     select.ui.right.big.label(name= itemcode)
-      option æ•°é‡
+      option ¿ôÎÌ
       option 1
       option 2
-    | å€‹
+    | ¸Ä
     label
       .ui.primary.tiny.button.cartAddBtn
         input(type='checkbox', name='chk', value='1')
-        |  è²·ã„ç‰©ã‚«ã‚´ã«è¿½åŠ ã™ã‚‹
+        |  Çã¤¤Êª¥«¥´¤ËÄÉ²Ã¤¹¤ë
 
 //- spec modal btn
 mixin specBtn()
   hr
   .supec_btn
-    a(class!=attributes.class href='#').arrow_01 > å•†å“å†…å®¹ã¯ã“ã¡ã‚‰
-    a.modal-sinpin.arrow_01(href='#') > æ–°å“åŒæ§˜/ç‰¹ä¾¡è‰¯å“ã¨ã¯
+    a(class!=attributes.class href='#').arrow_01 > ¾¦ÉÊÆâÍÆ¤Ï¤³¤Á¤é
+    a.modal-sinpin.arrow_01(href='#') > ¿·ÉÊÆ±ÍÍ/ÆÃ²ÁÎÉÉÊ¤È¤Ï
 
 
 //-rollover images
@@ -64,7 +64,7 @@ mixin rolloverImage(itemName,images)
       img(src=images[0])
     ul(id='thumb_area_'+itemName, class='thumb_area')
       for image, index in images
-        //- 1æšç›®ã‚’é£›ã°ã™
+        //- 1ËçÌÜ¤òÈô¤Ğ¤¹
         if index>0
           li
             img(src=image)
