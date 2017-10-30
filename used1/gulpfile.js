@@ -50,7 +50,7 @@ gulp.task('pug2htmlSP', () => {
 
 // html > pug
 gulp.task('html2pug', function(){
-  return gulp.src(['./html/modal1.html', '!./html_*.html'])
+  return gulp.src(['./html/modal1.html', '!./html/_*.html'])
     .pipe(convertEncoding({from: "EUC-JP"}))// encode
     .pipe(html2pug(options))
     .pipe(convertEncoding({to: "EUC-JP"}))// encode
@@ -59,7 +59,7 @@ gulp.task('html2pug', function(){
 });
 
 gulp.task('html2pugUtf8SP', function(){
-  return gulp.src(['./html/sp.html', '!./html_*.html'])
+  return gulp.src(['./html/sp.html', '!./html/_*.html'])
     .pipe(html2pug(options))
     .pipe(gulp.dest('./pugorg/'))
     .pipe(browserSync.reload({stream: true}));
