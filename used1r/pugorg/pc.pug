@@ -88,10 +88,10 @@ html
     script(type='text/javascript') _satellite.pageBottom();
   //楽天解析タグ
   body
-    .white
-    .main_bnr
-    img.kv(src='img/kv1_1026.png')
-    .outlet_pc_wrap#top(style='height:5750px')
+    //- .white
+    //- .main_bnr
+    //- img.kv(src='img/kv1_1026.png')
+    //- .outlet_pc_wrap#top(style='height:5750px')
       //==================モッタイナイ市も購入手順 ==================
       br
       .out(style='background-image:url(https://www.rakuten.ne.jp/gold/shopjapan/cp/used/img/down_btn1.jpg);height:70px;margin: 420px auto 0;width:800px;cursor: pointer')
@@ -118,126 +118,173 @@ html
       //-   area(shape='rect', coords='263,4,501,89', href='#lgmc')
       //-   area(shape='rect', coords='505,5,743,88', href='#crf')
       //-   area(shape='rect', coords='748,6,986,91', href='#ngwp')
+    .ui.divided.items.container.segment
+      //- img.ui.fluid.image(src='http://rcart.eek.jp/used/img/sp/kvsp1_1026.jpg')
+      img.ui.fluid.image(src='img/kv1_1026.png')
+      - var itemName = 'nice';
+      img.ui.fluid.image(src='img/'+ itemName +'_title.png')
+      .item
+        //- iframe(scrolling='no', src='frame_'+ itemName +'.html', style='margin-left:490px')
+        iframe(scrolling='no', src='frame_'+ itemName +'.html', )
+        //- .col_img
+        //-   iframe(scrolling='no', src='frame_'+ itemName +'.html', style='margin-left:490px')
+        //- img(src='img/nice_pri.jpg')
+        .image
+          //- img.item_title(src='img/'+ itemName +'_title.png')
+        .content
+          img.ui.fluid.image(src='img/nice_pri.jpg')
+          .description
+            //- img(src='img/nice_pri.jpg')
+            // 1つめ分 
+            +item
+              +pad('　レッドを', '10003922_8864_2_5980')
+              +pad('ブラックを','10003922_8865_2_5980','')
+              +specBtn()(class='modal-'+ itemName)
+            // 1つめ分完了 
+          .extra
+            //- // 1つめ分 
+            //- +item
+            //-   +pad('　レッドを', '10003922_8864_2_5980')
+            //-   +pad('ブラックを','10003922_8865_2_5980','')
+            //-   +specBtn()(class='modal-'+ itemName)
+            //- // 1つめ分完了 
 
-      ul.item_lineup(style='padding-left:0px;height:8650px;width:980px;margin:0 auto;position: relative')
-        //==================trsp2 ==================
-        - var itemName = 'trsp2';
-        li(id=itemName,style='position: relative;margin:200px 0 0px 18px')
-          +itemImg(itemName)
-          .col_cart
-            img(src='img/trsp2_pri.jpg')
-            // 1つめ分 
-            +item
-              +pad('この商品を', '10003933_0_0_5460')
-              +specBtn()(class='modal-'+ itemName)
-            // 1つめ分完了 
-        //==================trsp2 ==================
-        //==================nice ==================
-        - var itemName = 'nice';
-        li(id=itemName,style='position: relative;margin:250px 0 0px 20px')
-          +itemImg(itemName,'migi')
-          div
-            .col_cart_2
-              img(src='img/nice_pri.jpg')
-              // 1つめ分 
-              +item
-                +pad('　レッドを', '10003922_8864_2_5980')
-                +pad('ブラックを','10003922_8865_2_5980','')
-                +specBtn()(class='modal-'+ itemName)
-              // 1つめ分完了 
-        //==================nice ==================
-        //==================trsp ==================
-        - var itemName = 'trsp';
-        li(id=itemName,style='position: relative;margin:270px 0 440px 18px')
-          +itemImg(itemName)
-          .col_cart
-            img(src='img/trsp_pri.jpg')
-            // 1つめ分 
-            +item
-              +pad('　シングルを', '10003918_0_0_15960','width:438px')
-              +pad('セミダブルを', '10003919_0_0_17220','width:438px')
-              +pad('　　ダブルを', '10003920_0_0_18760','width:438px')
-              +specBtn()(class='modal-'+ itemName)
-            // 1つめ分完了 
-        //==================trsp ==================
-        //==================sim ==================
-        - var itemName = 'sim';
-        li(id=itemName,style='position: relative;margin:320px 0 0px 20px')
-          div
-            +itemImg(itemName,'migi')
-            .col_cart_2
-              img(src='img/sim_s_pri.jpg')
-              // 1つめ分 
-              +item
-                +pad('この商品を', '10003923_0_0_5980')
-              img(src='img/sim_t_pri.jpg')
-              .description
-                +pad('この商品を', '10003924_0_0_4980')
-                +specBtn()(class='modal-'+ itemName)
-            // 1つめ分完了 
-        //==================nice ==================
-        //==================rah ==================
-        - var itemName = 'rah';
-        li(id=itemName,style='position: relative;margin:560px 0 0px 18px')
-          +itemImg(itemName)
-          .col_cart
-            img(src='img/rah_s_pri.jpg')
-            // 1つめ分 
-            +item
-              +pad('この商品を', '10003925_0_0_6980')
-            img(src='img/rah_t_pri.jpg')
-            .description
-              +pad('この商品を', '10003926_0_0_5980')
-              +specBtn()(class='modal-'+ itemName)
-            // 1つめ分完了 
-        //==================rah ==================
-        //==================ngw ==================
-        - var itemName = 'ngw';
-        li(id=itemName,style='position: relative;margin:550px 0 680px 20px')
-          +itemImg(itemName,'migi')
-          div
-            .col_cart_2
-              img(src='img/ngw_s_pri.jpg')
-              // 1つめ分 
-              +item
-                +pad('　ピンクを', '10003927_8860_2_6800')
-                +pad('ブラウンを', '10003927_8861_2_6800')
-              img(src='img/ngw_t_pri.jpg')
-              .description
-                +pad('　ピンクを', '10003928_8862_2_5800')
-                +pad('ブラウンを', '10003928_8863_2_5800')
-                +specBtn()(class='modal-'+ itemName)
-              // 1つめ分完了 
+      //==================nice ==================
+      //- - var itemName = 'nice';
+      //- //- li(id=itemName,style='position: relative;margin:250px 0 0px 20px')
+      //- div(id=itemName)
+      //-   img.item_title(src='img/'+ itemName +'_title.png')
+      //-   .col_img
+      //-     iframe(scrolling='no', src='frame_'+ itemName +'.html', style='margin-left:490px')
+      //-   div
+      //-     .col_cart_2
+      //-       img(src='img/nice_pri.jpg')
+      //-       // 1つめ分 
+      //-       +item
+      //-         +pad('　レッドを', '10003922_8864_2_5980')
+      //-         +pad('ブラックを','10003922_8865_2_5980','')
+      //-         +specBtn()(class='modal-'+ itemName)
+      //-       // 1つめ分完了 
+      //==================nice ==================
+      //- ul.item_lineup(style='padding-left:0px;height:8650px;width:980px;margin:0 auto;position: relative')
+      //-   //==================trsp2 ==================
+      //-   - var itemName = 'trsp2';
+      //-   li(id=itemName,style='position: relative;margin:200px 0 0px 18px')
+      //-     +itemImg(itemName)
+      //-     .col_cart
+      //-       img(src='img/trsp2_pri.jpg')
+      //-       // 1つめ分 
+      //-       +item
+      //-         +pad('この商品を', '10003933_0_0_5460')
+      //-         +specBtn()(class='modal-'+ itemName)
+      //-       // 1つめ分完了 
+      //-   //==================trsp2 ==================
+        //- //==================nice ==================
+        //- - var itemName = 'nice';
+        //- li(id=itemName,style='position: relative;margin:250px 0 0px 20px')
+        //-   +itemImg(itemName,'migi')
+        //-   div
+        //-     .col_cart_2
+        //-       img(src='img/nice_pri.jpg')
+        //-       // 1つめ分 
+        //-       +item
+        //-         +pad('　レッドを', '10003922_8864_2_5980')
+        //-         +pad('ブラックを','10003922_8865_2_5980','')
+        //-         +specBtn()(class='modal-'+ itemName)
+        //-       // 1つめ分完了 
+        //- //==================nice ==================
+        //- //==================trsp ==================
+        //- - var itemName = 'trsp';
+        //- li(id=itemName,style='position: relative;margin:270px 0 440px 18px')
+        //-   +itemImg(itemName)
+        //-   .col_cart
+        //-     img(src='img/trsp_pri.jpg')
+        //-     // 1つめ分 
+        //-     +item
+        //-       +pad('　シングルを', '10003918_0_0_15960','width:438px')
+        //-       +pad('セミダブルを', '10003919_0_0_17220','width:438px')
+        //-       +pad('　　ダブルを', '10003920_0_0_18760','width:438px')
+        //-       +specBtn()(class='modal-'+ itemName)
+        //-     // 1つめ分完了 
+        //- //==================trsp ==================
+        //- //==================sim ==================
+        //- - var itemName = 'sim';
+        //- li(id=itemName,style='position: relative;margin:320px 0 0px 20px')
+        //-   div
+        //-     +itemImg(itemName,'migi')
+        //-     .col_cart_2
+        //-       img(src='img/sim_s_pri.jpg')
+        //-       // 1つめ分 
+        //-       +item
+        //-         +pad('この商品を', '10003923_0_0_5980')
+        //-       img(src='img/sim_t_pri.jpg')
+        //-       .description
+        //-         +pad('この商品を', '10003924_0_0_4980')
+        //-         +specBtn()(class='modal-'+ itemName)
+        //-     // 1つめ分完了 
+        //- //==================nice ==================
+        //- //==================rah ==================
+        //- - var itemName = 'rah';
+        //- li(id=itemName,style='position: relative;margin:560px 0 0px 18px')
+        //-   +itemImg(itemName)
+        //-   .col_cart
+        //-     img(src='img/rah_s_pri.jpg')
+        //-     // 1つめ分 
+        //-     +item
+        //-       +pad('この商品を', '10003925_0_0_6980')
+        //-     img(src='img/rah_t_pri.jpg')
+        //-     .description
+        //-       +pad('この商品を', '10003926_0_0_5980')
+        //-       +specBtn()(class='modal-'+ itemName)
+        //-     // 1つめ分完了 
+        //- //==================rah ==================
+        //- //==================ngw ==================
+        //- - var itemName = 'ngw';
+        //- li(id=itemName,style='position: relative;margin:550px 0 680px 20px')
+        //-   +itemImg(itemName,'migi')
+        //-   div
+        //-     .col_cart_2
+        //-       img(src='img/ngw_s_pri.jpg')
+        //-       // 1つめ分 
+        //-       +item
+        //-         +pad('　ピンクを', '10003927_8860_2_6800')
+        //-         +pad('ブラウンを', '10003927_8861_2_6800')
+        //-       img(src='img/ngw_t_pri.jpg')
+        //-       .description
+        //-         +pad('　ピンクを', '10003928_8862_2_5800')
+        //-         +pad('ブラウンを', '10003928_8863_2_5800')
+        //-         +specBtn()(class='modal-'+ itemName)
+        //-       // 1つめ分完了 
         //==================ngw ==================
         //==================rvt ==================
-        - var itemName = 'ngw';
-        li(id=itemName,style='position: relative;margin:560px 0 0px 18px')
-          +itemImg(itemName,'')
-          .col_cart
-            img(src='img/rvt_s_pri.jpg')
-            // 1つめ分 
-            +item
-              +pad('この商品を', '10003929_0_0_9800')
-            img(src='img/rvt_t_pri.jpg')
-            .description
-              +pad('この商品を', '10003930_0_0_8800')
-              +specBtn()(class='modal-'+ itemName)
-            // 1つめ分完了 
+        //- - var itemName = 'ngw';
+        //- li(id=itemName,style='position: relative;margin:560px 0 0px 18px')
+        //-   +itemImg(itemName,'')
+        //-   .col_cart
+        //-     img(src='img/rvt_s_pri.jpg')
+        //-     // 1つめ分 
+        //-     +item
+        //-       +pad('この商品を', '10003929_0_0_9800')
+        //-     img(src='img/rvt_t_pri.jpg')
+        //-     .description
+        //-       +pad('この商品を', '10003930_0_0_8800')
+        //-       +specBtn()(class='modal-'+ itemName)
+        //-     // 1つめ分完了 
         //==================rvt ==================
-        - var itemName = 'awfm';
-        li(id=itemName,style='position: relative;margin:550px 0 0px 20px')
-          +itemImg(itemName,'migi')
-          div
-            .col_cart_2
-              img(src='img/awfm_s_pri.jpg')
-              // 1つめ分 
-              +item
-                +pad('この商品を', '10003935_0_0_12960')
-              img(src='img/awfm_t_pri.jpg')
-              .description
-                +pad('この商品を', '10003934_0_0_8600')
-                +specBtn()(class='modal-'+ itemName)
-              // 1つめ分完了 
+        //- - var itemName = 'awfm';
+        //- li(id=itemName,style='position: relative;margin:550px 0 0px 20px')
+        //-   +itemImg(itemName,'migi')
+        //-   div
+        //-     .col_cart_2
+        //-       img(src='img/awfm_s_pri.jpg')
+        //-       // 1つめ分 
+        //-       +item
+        //-         +pad('この商品を', '10003935_0_0_12960')
+        //-       img(src='img/awfm_t_pri.jpg')
+        //-       .description
+        //-         +pad('この商品を', '10003934_0_0_8600')
+        //-         +specBtn()(class='modal-'+ itemName)
+        //-       // 1つめ分完了 
         //==================awfm ==================
         //go_cart loading 
         .item.displayNone
