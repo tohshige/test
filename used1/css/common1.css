@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "EUC-JP";
 /* CSS Document */
 
 *{outline: none;}
@@ -31,7 +31,7 @@ body{
     margin: 0 auto ;
     padding: 25px;
     background: #fff;
-    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+    font-family: "�ҥ饮�γѥ� Pro W3", "Hiragino Kaku Gothic Pro", "�ᥤ�ꥪ", Meiryo, Osaka, "�ͣ� �Х����å�", "MS PGothic", "sans-serif";
 
 }
 
@@ -279,7 +279,7 @@ v
 
 .outlet_pc_wrap form{position: relative;}
 .outlet_pc_wrap form select.select_btn{
-    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+    font-family: "�ҥ饮�γѥ� Pro W3", "Hiragino Kaku Gothic Pro", "�ᥤ�ꥪ", Meiryo, Osaka, "�ͣ� �Х����å�", "MS PGothic", "sans-serif";
     display: block;
     width: 210px;
     height: 51px;
@@ -366,7 +366,7 @@ v
 
 
 #timelimit{
-	font-family: "ヒラギノ角ゴ Pro W3", Hiragino Kaku Gothic Pro," メイリオ", Meiryo, Osaka," ＭＳ Ｐゴシック", MS PGothic," sans-serif";
+	font-family: "�ҥ饮�γѥ� Pro W3", Hiragino Kaku Gothic Pro," �ᥤ�ꥪ", Meiryo, Osaka," �ͣ� �Х����å�", MS PGothic," sans-serif";
 	background:#cc0000;
 	display:none;
 	height:80px;
