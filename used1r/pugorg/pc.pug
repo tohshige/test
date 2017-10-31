@@ -1,4 +1,5 @@
-include ./mixins.pug
+include ./_mixins.pug
+include ./_item_images.pug
 doctype html
 html
   head
@@ -143,10 +144,10 @@ html
       img.ui.fluid.image.bgRed.pcNone(src='img/sp/kvsp1_1026.jpg')
       - var itemName = 'nice';
       img.ui.fluid.image(src='img/'+ itemName +'_title.png')
-      +slider()
+      +itemImages(itemName,'slider')
       .item
         //- iframe(scrolling='no', src='frame_'+ itemName +'.html', style='margin-left:490px')
-        iframe.itemFrame.ui.grid.image(scrolling='no', src='frame_'+ itemName +'.html', )
+        iframe.itemFrame.ui.grid.image.spNone(scrolling='no', src='frame_'+ itemName +'.html', )
         .image
           //- img.item_title(src='img/'+ itemName +'_title.png')
         .content
@@ -160,7 +161,7 @@ html
               +specBtn()(class='modal-'+ itemName)
             // 1つめ分完了 
           .extra
-            +slider()
+            +slider(itemName,images)
             +specBtn()(class='modal-'+ itemName)
             //- // 1つめ分 
             //- +item
