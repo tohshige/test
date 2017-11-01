@@ -5,3 +5,5 @@
 # *.css encoding=eucjp
 *.css diff=eucjp
 *.pug diff=eucjp
+*.pug diff=uft8
+

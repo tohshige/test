@@ -7,7 +7,11 @@ $("a[href='#btnBuy']").click(function() {
 });
 
 $("[id$='go_cart']").click(function() {
-  $("html,body").animate({scrollTop:$('#go_cart_view').offset().top});
+  // $("html,body").animate({scrollTop:$('#go_cart_view').offset().top});
+
+  // segment lock
+  $('#footerFloatingMenu').dimmer('show');
+  
   return false;
 });
 
@@ -112,11 +116,13 @@ function addCart(itemid, units) {
             console.log(json);
             var message='itemid:'+itemid+' units:'+units+' '+json.dialogTitle + json.resultMessage;
             console.log(message);
+            // alert(message);
             $('#result1').append(message+'\n');
         },
         error: function (result) {
             alltext = JSON.stringify(result); //to string
             console.log(alltext);
+            // alert(alltext);
             // return result;
         }
     });

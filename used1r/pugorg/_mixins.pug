@@ -1,0 +1,108 @@
+//-変換で文字化ける -this file UTF8!!文字化ける ===== MIXINS ==================
+mixin item()
+  // 1つめ分 
+  .item
+    .image
+    .content
+      h3.header
+      .description
+      .description
+        block
+
+//-item img header
+mixin itemImg(itemName,right)
+  img.item_title(src='img/'+ itemName +'_title.png')
+  .col_img
+  if right
+    // 右寄せなら 左マージン追加
+    iframe(scrolling='no', src='frame_'+ itemName +'.html', style='margin-left:490px')
+  else
+    iframe(scrolling='no', src='frame_'+ itemName +'.html')
+
+//-parts of kago
+mixin pad(color,itemcode,padStyle)
+  .ui.stackable.doubling.three.column.grid
+    //- .column
+    .three.wide.column
+      span.item_name= color
+    //- .column
+    .three.wide.column
+      select.ui.fluid.dropdown.right.big.label(name= itemcode)
+        option 数量
+        option 1
+        option 2
+      | 個
+    //- .column
+    .eight.wide.column
+      label
+        .ui.primary.tiny.button.cartAddBtn
+          input(type='checkbox', name='chk', value='1')
+          |  買い物カゴに追加する
+  .pad(style=padStyle).ui.two.column.stackable.grid
+    .three.column.row
+      //- .three.wide.column
+      .column
+        span.item_name= color
+      //- .three.wide.column
+      .column
+        select.ui.fluid.dropdown.right.big.label(name= itemcode)
+          option 数量
+          option 1
+          option 2
+        | 個
+      //- .eight.wide.column
+      .column
+        label
+          .ui.primary.tiny.button.cartAddBtn
+            input(type='checkbox', name='chk', value='1')
+            |  買い物カゴに追加する
+
+//- spec modal btn
+mixin specBtn()
+  hr
+  .supec_btn
+    a(class!=attributes.class href='#').arrow_01 > 商品内容はこちら
+    a.modal-sinpin.arrow_01(href='#') > 新品同様/特価良品とは
+
+
+//-rollover images
+mixin rolloverImage(itemName,images)
+  // 0:default image  1-5:thumbnail images max:5
+  head
+    meta(charset='euc-jp')
+    title
+    script(src='https://www.rakuten.ne.jp/gold/shopjapan/js/jquery.min2.js')
+    script.
+      var itemName='#{itemName}';
+      $(function(){
+          $('#thumb_area_#{itemName} img').mouseover(function(){
+              $('#main_img_#{itemName} img').attr('src', $(this).attr('src'));
+          });
+          $('#thumb_area_#{itemName} img').mouseout(function(){
+              $('#main_img_#{itemName} img').attr('src', '#{images[0]}');
+          });
+      });
+    link(rel='stylesheet', href='css/style.css')
+  body
+    div(id='main_img_'+itemName, class='main_img')
+      img(src=images[0])
+    ul(id='thumb_area_'+itemName, class='thumb_area')
+      for image, index in images
+        //- 1枚目を飛ばす
+        if index>0
+          li
+            img(src=image)
+
+mixin slider(itemName,images)
+  style.
+    .sliderImg{
+      width: 100%;
+      margin: 0 auto;
+    }
+
+  ul.slider.single-item.pcNone(style='margin:0 0 10px')
+    for image, index in images
+      li
+        //- a(href=image, rel='lightbox[#{itemName}-group]')
+        a(href=image, rel='lightbox['+itemName+'-group]')
+          img(src=image,class='sliderImg')
