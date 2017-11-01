@@ -1,4 +1,4 @@
-//-this file UTF8!!文字化ける ===== MIXINS ==================
+//-変換で文字化ける -this file UTF8!!文字化ける ===== MIXINS ==================
 mixin item()
   // 1つめ分 
   .item
@@ -21,17 +21,41 @@ mixin itemImg(itemName,right)
 
 //-parts of kago
 mixin pad(color,itemcode,padStyle)
-  .pad(style=padStyle)
-    span.item_name= color
-    select.ui.right.big.label(name= itemcode)
-      option 数量
-      option 1
-      option 2
-    | 個
-    label
-      .ui.primary.tiny.button.cartAddBtn
-        input(type='checkbox', name='chk', value='1')
-        |  買い物カゴに追加する
+  .ui.stackable.doubling.three.column.grid
+    //- .column
+    .three.wide.column
+      span.item_name= color
+    //- .column
+    .three.wide.column
+      select.ui.fluid.dropdown.right.big.label(name= itemcode)
+        option 数量
+        option 1
+        option 2
+      | 個
+    //- .column
+    .eight.wide.column
+      label
+        .ui.primary.tiny.button.cartAddBtn
+          input(type='checkbox', name='chk', value='1')
+          |  買い物カゴに追加する
+  .pad(style=padStyle).ui.two.column.stackable.grid
+    .three.column.row
+      //- .three.wide.column
+      .column
+        span.item_name= color
+      //- .three.wide.column
+      .column
+        select.ui.fluid.dropdown.right.big.label(name= itemcode)
+          option 数量
+          option 1
+          option 2
+        | 個
+      //- .eight.wide.column
+      .column
+        label
+          .ui.primary.tiny.button.cartAddBtn
+            input(type='checkbox', name='chk', value='1')
+            |  買い物カゴに追加する
 
 //- spec modal btn
 mixin specBtn()

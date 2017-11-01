@@ -2,12 +2,13 @@
 <html>
   <head>
     <meta charset="euc-jp">
+    <meta name="viewport" content="width=749,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <title>MAX60%OFF！｜ショップジャパン楽天市場店</title>
     <!-- 楽天TOP解析タグ -->
     <script src="//assets.adobedtm.com/fde17e0362c40547334f4e041add368f158b4119/satelliteLib-e346cd8edc0ac640d3ce7c060b5a38f5169d4add.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
-    <script src="https://www.rakuten.ne.jp/gold/shopjapan/trs/iframe/matome/semantic.min.js"></script>
-    <link rel="stylesheet" href="css/semantic.min.css">
+    <script src="https://www.rakuten.ne.jp/gold/shopjapan/trs/iframe/matome/semantic.min.js" charset="UTF-8"></script>
+    <link rel="stylesheet" href="css/semantic.min.css" charset="UTF-8">
     <link rel="stylesheet" href="https://www.rakuten.ne.jp/gold/shopjapan/css/normalize.css">
     <link rel="stylesheet" href="css/common1.css">
     <link rel="stylesheet" href="css/style.css">
@@ -15,6 +16,41 @@
     <link rel="stylesheet" href="css/lightbox.css">
     <link rel="SHORTCUT ICON" href="https://www.rakuten.ne.jp/gold/shopjapan/images/favicon.ico">
     <script type="text/javascript">
+      var pc_width = 1080;
+      var sp_width = 749;
+      //- var device = (window.screen.width < 749 ? 'sp' : 'pc');
+      var device = (window.outerWidth < 749 ? 'sp' : 'pc');
+      console.log(window.outerWidth);
+      var view_mode = (device == 'pc' || document.cookie.indexOf('view_mode=pc') != -1 ? 'pc' : 'sp');
+      //- if (device == 'sp' && view_mode == 'pc') {
+      //-     document.getElementById('viewport').setAttribute('content', 'width=' + pc_width + ',initial-scale=1');
+      //- }
+      if (device == 'pc' ) {
+        //pc表示ならviewportを変更
+        $('meta[name="viewport"]').attr('content', 'width=1080,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no');
+      }else{
+        $('meta[name="viewport"]').attr('content', 'width=550, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no');
+      }
+      
+      $(function () {
+          if (device == 'sp') {
+              if (view_mode == 'pc') {
+                  $('.sp-mode').on('click', function () {
+                      var date = new Date();
+                      date.setTime(0);
+                      document.cookie = 'view_mode=;expires='+date.toGMTString();
+                      location.reload(false);
+                  }).show();
+              } else {
+                  $('.pc-mode').on('click', function () {
+                      document.cookie = 'view_mode=pc';
+                      location.reload(false);
+                  }).show();
+              }
+          }
+      });
+      
+      
       $(document).ready(function() {
         //modal用HTMLを読み込み
         $('#target').load('modal1.html');//temp disable
@@ -127,29 +163,77 @@
                 <h3 class="header"></h3>
                 <div class="description"></div>
                 <div class="description">
-                  <div class="pad"><span class="item_name">　レッドを</span>
-                    <select class="ui right big label" name="10003922_8864_2_5980">
-                      <option>数量</option>
-                      <option>1</option>
-                      <option>2</option>
-                    </select>個
-                    <label>
-                      <div class="ui primary tiny button cartAddBtn">
-                        <input type="checkbox" name="chk" value="1"/> 買い物カゴに追加する
-                      </div>
-                    </label>
+                  <div class="ui stackable doubling three column grid">
+                    <div class="three wide column"><span class="item_name">　レッドを</span></div>
+                    <div class="three wide column">
+                      <select class="ui fluid dropdown right big label" name="10003922_8864_2_5980">
+                        <option>数量</option>
+                        <option>1</option>
+                        <option>2</option>
+                      </select>個
+                    </div>
+                    <div class="eight wide column">
+                      <label>
+                        <div class="ui primary tiny button cartAddBtn">
+                          <input type="checkbox" name="chk" value="1"/> 買い物カゴに追加する
+                        </div>
+                      </label>
+                    </div>
                   </div>
-                  <div class="pad"><span class="item_name">ブラックを</span>
-                    <select class="ui right big label" name="10003922_8865_2_5980">
-                      <option>数量</option>
-                      <option>1</option>
-                      <option>2</option>
-                    </select>個
-                    <label>
-                      <div class="ui primary tiny button cartAddBtn">
-                        <input type="checkbox" name="chk" value="1"/> 買い物カゴに追加する
+                  <div class="pad ui two column stackable grid">
+                    <div class="three column row">
+                      <div class="column"><span class="item_name">　レッドを</span></div>
+                      <div class="column">
+                        <select class="ui fluid dropdown right big label" name="10003922_8864_2_5980">
+                          <option>数量</option>
+                          <option>1</option>
+                          <option>2</option>
+                        </select>個
                       </div>
-                    </label>
+                      <div class="column">
+                        <label>
+                          <div class="ui primary tiny button cartAddBtn">
+                            <input type="checkbox" name="chk" value="1"/> 買い物カゴに追加する
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ui stackable doubling three column grid">
+                    <div class="three wide column"><span class="item_name">ブラックを</span></div>
+                    <div class="three wide column">
+                      <select class="ui fluid dropdown right big label" name="10003922_8865_2_5980">
+                        <option>数量</option>
+                        <option>1</option>
+                        <option>2</option>
+                      </select>個
+                    </div>
+                    <div class="eight wide column">
+                      <label>
+                        <div class="ui primary tiny button cartAddBtn">
+                          <input type="checkbox" name="chk" value="1"/> 買い物カゴに追加する
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="pad ui two column stackable grid">
+                    <div class="three column row">
+                      <div class="column"><span class="item_name">ブラックを</span></div>
+                      <div class="column">
+                        <select class="ui fluid dropdown right big label" name="10003922_8865_2_5980">
+                          <option>数量</option>
+                          <option>1</option>
+                          <option>2</option>
+                        </select>個
+                      </div>
+                      <div class="column">
+                        <label>
+                          <div class="ui primary tiny button cartAddBtn">
+                            <input type="checkbox" name="chk" value="1"/> 買い物カゴに追加する
+                          </div>
+                        </label>
+                      </div>
+                    </div>
                   </div>
                   <hr/>
                   <div class="supec_btn"><a class="modal-nice arrow_01" href="#">> 商品内容はこちら</a><a class="modal-sinpin arrow_01" href="#">> 新品同様/特価良品とは</a></div>
@@ -222,7 +306,7 @@
     -->
     <!--==================YTM==================-->
     <!--フッターフローティング-->
-    <div id="footerFloatingMenu">
+    <div class="blurring" id="footerFloatingMenu">
       <div class="ui segment" style="width:950px;margin: 0 auto; border: none;">
         <p class="textYellow"></p>
         <div class="change_price">現在の合計金額は￥<span id="priceAll">0</span>円(税抜)</div>
@@ -238,6 +322,13 @@
           |円!!
         p#couponGet.displayNone クーポンがご利用になれます、クーポンはこちら
         -->
+      </div>
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <h2 class="ui inverted icon header">しばらくお待ちください。</h2>
+          </div>
+        </div>
       </div>
     </div>
     <!--フッターフローティング-->

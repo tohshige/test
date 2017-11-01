@@ -27,6 +27,7 @@ gulp.task('pug2html', () => {
 //  return gulp.src(['./pug/**/*.pug', '!./pug/**/_*.pug'])
   return gulp.src(['./pugorg/**/*.pug', '!./pugorg/**/_*.pug'])
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))  // コンパイルエラーを通知します。  
+  // .pipe(convertEncoding({from: "UTF8"}))// from utf8 だと化けるe
   .pipe(convertEncoding({from: "EUC-JP"}))// encode
   .pipe(pug({
     pretty: true
