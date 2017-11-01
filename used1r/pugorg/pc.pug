@@ -11,9 +11,15 @@ html
     script(src='//assets.adobedtm.com/fde17e0362c40547334f4e041add368f158b4119/satelliteLib-e346cd8edc0ac640d3ce7c060b5a38f5169d4add.js')
     //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js')
     script(src='//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js')
-    script(src='https://www.rakuten.ne.jp/gold/shopjapan/trs/iframe/matome/semantic.min.js' , charset='UTF-8')
+
+    //- script(src='https://www.rakuten.ne.jp/gold/shopjapan/trs/iframe/matome/semantic.min.js' , charset='UTF-8')
+    script(src='js/semantic.js' , charset='UTF-8')
+
     //- script(src='js/smoothscroll.js')
-    link(rel='stylesheet', href='css/semantic.min.css' , charset='UTF-8')
+
+    //- link(rel='stylesheet', href='css/semantic.min.css' , charset='UTF-8')
+    link(rel='stylesheet', href='css/semantic.css' , charset='UTF-8')
+
     link(rel='stylesheet', href='https://www.rakuten.ne.jp/gold/shopjapan/css/normalize.css')
     link(rel='stylesheet', href='css/common1.css')
     link(rel='stylesheet', href='css/style.css')
@@ -33,8 +39,11 @@ html
       if (device == 'pc' ) {
         //pc表示ならviewportを変更
         $('meta[name="viewport"]').attr('content', 'width=1080,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no');
+        //- $('html,body').width(1250);
+        $('#forceWidth').width(1250);
       }else{
         $('meta[name="viewport"]').attr('content', 'width=550, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no');
+        $('#forceWidth').width(550);
       }
 
       $(function () {
@@ -54,6 +63,7 @@ html
               }
           }
       });
+
 
 
       $(document).ready(function() {
@@ -126,6 +136,25 @@ html
       .itemFrame{
 
       }
+      /*  semantic ui  Icon      **/
+      @font-face {
+        font-family: 'Icons';
+        src: url("./css/semantic/icons.eot");
+        src: url("./css/semantic/icons.eot?#iefix") format('embedded-opentype'), url("./css/semantic/icons.woff2") format('woff2'), url("./css/semantic/icons.woff") format('woff'), url("./css/semantic/icons.ttf") format('truetype'), url("./css/semantic/icons.svg#icons") format('svg');
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-decoration: inherit;
+        text-transform: none;
+      }
+      /* modal close btn */
+      i.icon.close:before {
+        content: "\f00d";
+      }
+      .column{
+        padding-left: 3px !important;
+        padding-right: 3px !important;
+      }
       /*      メディアクエリ      サンプルのcssの代わりに簡易表示      */
       @media (max-width: 749px) {
         .spNone {
@@ -136,7 +165,21 @@ html
         .pcNone {
           display:none !important;
         }
-      }      
+      }
+      @media only screen and (max-width: 749px) and (min-width: 250px){
+        .ui.container,body {
+          width: 550px!important;
+          margin-left: auto!important;
+          margin-right: auto!important;
+        }
+      }
+      @media only screen and (max-width: 1899px) and (min-width: 750px){
+        .ui.container,body {
+          width: 1050px!important;
+          margin-left: auto!important;
+          margin-right: auto!important;
+        }
+      }
     //- script(type='text/javascript').
       if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {{
       location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
@@ -175,7 +218,7 @@ html
       //-   area(shape='rect', coords='263,4,501,89', href='#lgmc')
       //-   area(shape='rect', coords='505,5,743,88', href='#crf')
       //-   area(shape='rect', coords='748,6,986,91', href='#ngwp')
-    .ui.divided.items.container.segment
+    .ui.divided.items.container.segment#forceWidth
       //- img.ui.fluid.image(src='http://rcart.eek.jp/used/img/sp/kvsp1_1026.jpg')
       img.ui.fluid.image.bgRed.spNone(src='img/kv1_1026.png')
       img.ui.fluid.image.bgRed.pcNone(src='img/sp/kvsp1_1026.jpg')
@@ -197,10 +240,8 @@ html
             +item
               +pad('　レッドを', '10003922_8864_2_5980')
               +pad('ブラックを','10003922_8865_2_5980','')
-              +specBtn()(class='modal-'+ itemName)
             // 1つめ分完了 
           .extra
-            +slider(itemName,images)
             +specBtn()(class='modal-'+ itemName)
             //- // 1つめ分 
             //- +item
@@ -456,6 +497,31 @@ html
     //==================YTM==================
     //フッターフローティング
     #footerFloatingMenu.blurring
+      div(style='width:950px;margin: 0 auto; border: none;display:block;')
+        .ui.button.large.white
+          | 現在の合計金額は￥
+          span#priceAll 0
+          | 円(税抜)
+        .ui.button.yellow 選択した商品のレジにすすむ
+    #footerFloatingMenu.blurring
+      div(style='width:950px;margin: 0 auto; border: none')
+        .ui.button.large.white
+          | 現在の合計金額は￥
+          span#priceAll 0
+          | 円(税抜)
+        .ui.button.yellow 選択した商品のレジにすすむ
+
+      .ui.segment(style='width:950px;margin: 0 auto; border: none')
+        p.textYellow.ui.fluid
+        .change_price
+          | 現在の合計金額は￥
+          span#priceAll 0
+          | 円(税抜)
+        //- #footer_go_cart.compact.ui.floated.large.yellow.button.position
+          span 選択した商品をカートに入れる
+        #footer_go_cart.compact.ui.fluid.large.yellow.button.disabled.position
+          span 選択した商品のレジにすすむ
+        p
       .ui.segment(style='width:950px;margin: 0 auto; border: none')
         p.textYellow
         .change_price
