@@ -1,5 +1,90 @@
 @charset "EUC-JP";
 /* CSS Document */
+.pcNone img {
+  width: 100%;
+  vertical-align: bottom;
+  outline: none;
+}
+#spTitleImg {
+  width: 96%;
+  /* margin: 0 2% 4%;
+  padding: 0; */
+  /* border: 1px #ccc solid;
+  list-style: none;
+  background: #fff;
+  box-shadow: 5px 5px 10px 0px #ccc; */
+  position: relative;
+  text-align: center;
+}
+#spTitleImg1 {
+  z-index: 9;
+  transform: scale(2.0);
+  margin-top: 20px;
+}
+
+
+/* INFO modal sinpin tokka toha */
+.about_trs{
+  width: 90%;
+  margin: 0 auto;
+  border: 2px solid #000;
+}
+.about_trs p{
+  padding: 15px 15px 0 30px;
+  font-size: 12px;
+  margin: 0 0 1% 0;
+}
+.about_trs p span{
+  display: block;
+  font-weight: bold;
+  margin: 0 0 1% -12px;
+  padding: 0;
+}
+.about_trs p.cutomor_number{
+  padding-bottom: 15px;
+}
+.about_trs p.cutomor_number span{
+  font-weight: normal;
+  margin: 0 0 0 -20px;
+}
+.about_trs .trs_ttl{
+  text-align: center;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: #000;
+  margin: 0;
+}
+
+
+/*body background image */
+.out_back {
+  width:3000px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  margin-left: -1500px;
+  background-image: url(../img/out_back.png);
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.to_top{text-align: center; padding-top: 50px;margin: 50px auto 35px;border-top: 2px solid #000;}
+.to_top a{padding: 0 0 8px; color: #000;border-bottom: 2px dotted #ccc;font-weight: bold;vertical-align: top;}
+.to_top a:before{content: url(../img/totop.jpg);font-family: "slick"; padding-right: 10px;padding-top: 20px;}
+
+.item_title{
+	position: absolute;
+	width: 1600px;
+	top:-220px;
+	left:-325px;
+	margin: 0 auto;
+	z-index: 999;
+}
+
+
 .displayNone{display: none;}
 
 .textYellow{
@@ -11,12 +96,13 @@
   /* opacity: 0.85; */
   padding: 5px;
   color: white;
-  height: 80px;
+  /* height: 80px; */
   box-shadow: none;
   /* margin: 1rem 0em;
   padding: 1em 1em; */
   border-radius: none;
   border: none;
+
 }
 
 #footerFloatingMenu {
@@ -47,23 +133,29 @@
   top: -1px;
   background-color: #82b63a;
 }
+/* .ui.dimmer  */
+/* .ui.dimmer > .content {
+  background-color: green;
+  color:black;
+} */
 /* フッターフローティング */
 /* .change_price{ */
 #footerNowPrice{
   /* /* display: block; */
   position: relative;
-  width: 500px;
+  width: 429px;
+  height: 50px;
   background-color: #fff;
   background: #fff;
   color:#000;
   border-radius: 5px;
-  height: 50px;
   /* line-height: 50px; */
   font-size: 18px;
   font-weight: bold;
   /* left:0px; */
   /* top:-5px; */
   /*border:3px solid #555;*/
+  margin-top: 10px;
 }
 /* .position{ */
 #footer_go_cart{
@@ -121,3 +213,52 @@ i.icon.close:before {
   padding-left: 3px !important;
   padding-right: 3px !important;
 }
+
+
+/*      メディアクエリ      サンプルのcssの代わりに簡易表示      */
+/* SP *****************/
+@media (max-width: 749px) {
+  .spNone {
+    display:none !important;
+  }
+  #footer_go_cart{
+    margin-top:5px!important;
+    width: 100%;
+    height: 30px;
+    font-size: 12px;
+  }
+  #footerNowPrice{
+    width: 100%;
+    height: 30px;
+    font-size: 12px;
+    /* left:0px; */
+    /* top:-5px; */
+    /*border:3px solid #555;*/
+    margin-top: 10px;
+  }
+}
+
+/* PC *****************/
+@media (min-width:750px) {
+  .pcNone {
+    display:none !important;
+  }
+
+}
+
+/*一旦オフ
+@media only screen and (max-width: 749px) and (min-width: 250px){
+  .ui.container,body {
+    width: 550px!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+  }
+}
+@media only screen and (max-width: 1899px) and (min-width: 750px){
+  .ui.container,body {
+    width: 1050px!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+  }
+}
+*/

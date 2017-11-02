@@ -31,7 +31,7 @@ mixin pad(color,itemcode,padStyle)
         option 数量
         option 1
         option 2
-      | 個
+      //- | 個
     //- .column
     .eight.wide.column
       label
@@ -49,7 +49,7 @@ mixin pad(color,itemcode,padStyle)
           option 数量
           option 1
           option 2
-        | 個
+        //- | 個
       //- .eight.wide.column
       .column
         label
@@ -58,11 +58,11 @@ mixin pad(color,itemcode,padStyle)
             |  買い物カゴに追加する
 
 //- spec modal btn
-mixin specBtn()
+mixin specBtn(itemNameModal)
   hr
   .supec_btn
-    a(class!=attributes.class href='#').arrow_01 > 商品内容はこちら
-    a.modal-sinpin.arrow_01(href='#') > 新品同様/特価良品とは
+    a(class=itemNameModal href='#').arrow_01.ui.fluid.blue.button > 商品内容はこちら
+    a.modal-sinpin.arrow_01(href='#').ui.fluid.olive.button > 新品同様/特価良品とは
 
 
 //-rollover images

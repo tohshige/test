@@ -4,4 +4,5 @@
 # *.html encoding=eucjp
 # *.css encoding=eucjp
 *.css diff=eucjp
-*.pug diff=eucjp
+*.pug diff=eucjp,utf8
+# *.pug diff=utf8

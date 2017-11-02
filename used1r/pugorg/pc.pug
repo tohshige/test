@@ -4,8 +4,8 @@ doctype html
 html
   head
     meta(charset='euc-jp')
-    //- meta(name='viewport', content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no')
-    meta(name='viewport', content='width=749,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no')
+    meta(name='viewport', content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no')
+    //- meta(name='viewport', content='width=749,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no')
     title MAX60%OFF！｜ショップジャパン楽天市場店
     // 楽天TOP解析タグ 
     script(src='//assets.adobedtm.com/fde17e0362c40547334f4e041add368f158b4119/satelliteLib-e346cd8edc0ac640d3ce7c060b5a38f5169d4add.js')
@@ -21,8 +21,11 @@ html
     link(rel='stylesheet', href='css/semantic.css' , charset='UTF-8')
 
     link(rel='stylesheet', href='https://www.rakuten.ne.jp/gold/shopjapan/css/normalize.css')
-    link(rel='stylesheet', href='css/common1.css')
-    link(rel='stylesheet', href='css/style.css')
+    //-  CSSファイル1つに統合
+    //- link(rel='stylesheet', href='css/common1.css')
+    //- link(rel='stylesheet', href='css/style.css')
+    link(rel='stylesheet', href='css/responsive.css')
+
     link(rel='stylesheet', href='css/slick.css')
     link(rel='stylesheet', href='css/lightbox.css')
     link(rel='SHORTCUT ICON', href='https://www.rakuten.ne.jp/gold/shopjapan/images/favicon.ico')
@@ -36,15 +39,16 @@ html
       //- if (device == 'sp' && view_mode == 'pc') {
       //-     document.getElementById('viewport').setAttribute('content', 'width=' + pc_width + ',initial-scale=1');
       //- }
-      if (device == 'pc' ) {
-        //pc表示ならviewportを変更
-        $('meta[name="viewport"]').attr('content', 'width=1080,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no');
-        //- $('html,body').width(1250);
-        $('#forceWidth').width(1250);
-      }else{
-        $('meta[name="viewport"]').attr('content', 'width=550, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no');
-        $('#forceWidth').width(550);
-      }
+
+      //- 一旦オフ
+      //- if (device == 'pc' ) {
+      //-   //pc表示ならviewportを変更
+      //-   $('meta[name="viewport"]').attr('content', 'width=1080,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no');
+      //-   $('#forceWidth').width(1250);
+      //- }else{
+      //-   $('meta[name="viewport"]').attr('content', 'width=550, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no');
+      //-   $('#forceWidth').width(550);
+      //- }
 
       $(function () {
           if (device == 'sp') {
@@ -101,85 +105,9 @@ html
           })
       });
     style.
-      .displayNone{display: none;}
 
-      .textYellow{
-        color: yellow;
-      }
-      /* footerFloating */
-      #footerFloatingMenu .ui.segment {
-        background: #82b63a;
-        /* opacity: 0.85; */
-        padding: 5px;
-        color: white;
-        height: 80px;
-      }
 
-      #footerFloatingMenu {
-        background: #82b63a;
-        /*display: block;*/
-        width: 100%;
-        position: fixed;
-        left: 0px;
-        bottom: 0px;
-        z-index: 999;
-        text-align: center;
-        padding: 0 auto;
-      }
 
-      #footerFloatingMenu img {
-        max-width: 99%;
-      }
-      .bgRed{
-        background:red !important;
-      }
-      .itemFrame{
-
-      }
-      /*  semantic ui  Icon      **/
-      @font-face {
-        font-family: 'Icons';
-        src: url("./css/semantic/icons.eot");
-        src: url("./css/semantic/icons.eot?#iefix") format('embedded-opentype'), url("./css/semantic/icons.woff2") format('woff2'), url("./css/semantic/icons.woff") format('woff'), url("./css/semantic/icons.ttf") format('truetype'), url("./css/semantic/icons.svg#icons") format('svg');
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        text-decoration: inherit;
-        text-transform: none;
-      }
-      /* modal close btn */
-      i.icon.close:before {
-        content: "\f00d";
-      }
-      .column{
-        padding-left: 3px !important;
-        padding-right: 3px !important;
-      }
-      /*      メディアクエリ      サンプルのcssの代わりに簡易表示      */
-      @media (max-width: 749px) {
-        .spNone {
-          display:none !important;
-        }
-      }      
-      @media (min-width:750px) {
-        .pcNone {
-          display:none !important;
-        }
-      }
-      @media only screen and (max-width: 749px) and (min-width: 250px){
-        .ui.container,body {
-          width: 550px!important;
-          margin-left: auto!important;
-          margin-right: auto!important;
-        }
-      }
-      @media only screen and (max-width: 1899px) and (min-width: 750px){
-        .ui.container,body {
-          width: 1050px!important;
-          margin-left: auto!important;
-          margin-right: auto!important;
-        }
-      }
     //- script(type='text/javascript').
       if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {{
       location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
@@ -218,13 +146,22 @@ html
       //-   area(shape='rect', coords='263,4,501,89', href='#lgmc')
       //-   area(shape='rect', coords='505,5,743,88', href='#crf')
       //-   area(shape='rect', coords='748,6,986,91', href='#ngwp')
+    //- img.ui.fluid.image.item_title(src='img/nice_title.png', style='top:490px')
+    img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
+    img.item_title.spNone(src='img/nice_title.png', style='top:200%')
     .ui.divided.items.container.segment#forceWidth
       //- img.ui.fluid.image(src='http://rcart.eek.jp/used/img/sp/kvsp1_1026.jpg')
       img.ui.fluid.image.bgRed.spNone(src='img/kv1_1026.png')
       img.ui.fluid.image.bgRed.pcNone(src='img/sp/kvsp1_1026.jpg')
       - var itemName = 'nice';
-      img.ui.fluid.image(src='img/'+ itemName +'_title.png')
+      img#spTitleImg1.ui.fluid.image.pcNone(src='img/'+ itemName +'_title.png')
+      //- #spTitleImg.pcNone
+        img(src='img/sp/nice_bak.png',style='width:35%;position: absolute;z-index: 9;top:-1%;left:-2.5%')
+        |  
+        img(src='img/sp/nice_1.jpg', style='width:92%;margin:4% auto 0;position: relative')
+
       +itemImages(itemName,'slider')
+      div.topMarginPConly(style="position: relative;margin-top:320px;").spNone
       .item
         //- iframe(scrolling='no', src='frame_'+ itemName +'.html', style='margin-left:490px')
         iframe.itemFrame.ui.grid.image.spNone(scrolling='no', src='frame_'+ itemName +'.html', )
@@ -242,7 +179,7 @@ html
               +pad('ブラックを','10003922_8865_2_5980','')
             // 1つめ分完了 
           .extra
-            +specBtn()(class='modal-'+ itemName)
+            +specBtn('modal-'+ itemName)
             //- // 1つめ分 
             //- +item
             //-   +pad('　レッドを', '10003922_8864_2_5980')
@@ -250,22 +187,22 @@ html
             //-   +specBtn()(class='modal-'+ itemName)
             //- // 1つめ分完了 
 
-      //==================nice ==================
+      //================== no responsive nice ==================
       //- - var itemName = 'nice';
-      //- //- li(id=itemName,style='position: relative;margin:250px 0 0px 20px')
+      //- li(id=itemName,style='position: relative;margin:250px 0 0px 20px')
       //- div(id=itemName)
-      //-   img.item_title(src='img/'+ itemName +'_title.png')
-      //-   .col_img
-      //-     iframe(scrolling='no', src='frame_'+ itemName +'.html', style='margin-left:490px')
-      //-   div
-      //-     .col_cart_2
-      //-       img(src='img/nice_pri.jpg')
-      //-       // 1つめ分 
-      //-       +item
-      //-         +pad('　レッドを', '10003922_8864_2_5980')
-      //-         +pad('ブラックを','10003922_8865_2_5980','')
-      //-         +specBtn()(class='modal-'+ itemName)
-      //-       // 1つめ分完了 
+        img.item_title(src='img/'+ itemName +'_title.png')
+        .col_img
+          iframe(scrolling='no', src='frame_'+ itemName +'.html', style='margin-left:490px')
+        div
+          .col_cart_2
+            img(src='img/nice_pri.jpg')
+            // 1つめ分 
+            +item
+              +pad('　レッドを', '10003922_8864_2_5980')
+              +pad('ブラックを','10003922_8865_2_5980','')
+              +specBtn()(class='modal-'+ itemName)
+            // 1つめ分完了 
       //==================nice ==================
       //- ul.item_lineup(style='padding-left:0px;height:8650px;width:980px;margin:0 auto;position: relative')
       //-   //==================trsp2 ==================
@@ -416,15 +353,20 @@ html
     // <div class="left_bnr" style="display:none;">
     // <a href="https://coupon.rakuten.co.jp/getCoupon?getkey=TUpFUS1ITjdGLVNOMlMtSERORQ--&rt=" target="_blank"><img src="img/left_bnr.png?20170627"></a> 
     //縦バナー
-    //縦バナー
-    .right_bnr(style='position: fixed;right: 0; top: 105px;z-index: 999')
+
+    //縦バナーPC
+    .right_bnr.spNone(style='position: fixed;right: 0; top: 105px;z-index: 999')
       a(href='#out')
         img(src='./img/left_bnr.png', width='105px', height='200px')
       p
-    div(style='position: fixed;left: 0; top: 105px;z-index: 999')
+    div.spNone(style='position: fixed;left: 0; top: 105px;z-index: 999')
       img(src='./img/right_bnr2.png', width='105px', height='264px')
       p
-    //縦バナー
+    //縦バナーSP
+    .right_bnr_sp.pcNone
+      a(href='#out')
+        img(src='img/sp/right_bnr1_sp.png', style='width:25% ;    position: fixed ;    bottom: 0px;    right: 0;    z-index: 2147480000')
+    
     //- //カウントダウンタイマー
       #timelimit
         .timelimit_inner
@@ -497,21 +439,24 @@ html
     //==================YTM==================
     //フッターフローティング
     #footerFloatingMenu.blurring
-      div(style='width:950px;margin: 0 auto; border: none;display:block;')
-        .ui.button.large.white
+      //- div(style='width:950px;margin: 0 auto; border: none;display:block;')
+      .ui.segment
+        #footerNowPrice.ui.button.large.change_price
           | 現在の合計金額は￥
           span#priceAll 0
           | 円(税抜)
-        .ui.button.yellow 選択した商品のレジにすすむ
-    #footerFloatingMenu.blurring
-      div(style='width:950px;margin: 0 auto; border: none')
+        //- #footer_go_cart.ui.button.yellow.disabled
+        #footer_go_cart.ui.button.yellow
+          span 選択した商品のレジにすすむ
+
+      //- div(style='width:950px;margin: 0 auto; border: none')
         .ui.button.large.white
           | 現在の合計金額は￥
           span#priceAll 0
           | 円(税抜)
         .ui.button.yellow 選択した商品のレジにすすむ
 
-      .ui.segment(style='width:950px;margin: 0 auto; border: none')
+      //- .ui.segment(style='width:950px;margin: 0 auto; border: none')
         p.textYellow.ui.fluid
         .change_price
           | 現在の合計金額は￥
@@ -522,7 +467,9 @@ html
         #footer_go_cart.compact.ui.fluid.large.yellow.button.disabled.position
           span 選択した商品のレジにすすむ
         p
-      .ui.segment(style='width:950px;margin: 0 auto; border: none')
+
+      //- original 
+      //- .ui.segment(style='width:950px;margin: 0 auto; border: none')
         p.textYellow
         .change_price
           | 現在の合計金額は￥
@@ -542,63 +489,14 @@ html
             span#priceRemain 0
             |円!!
           p#couponGet.displayNone クーポンがご利用になれます、クーポンはこちら
-      .ui.dimmer
+      //- original 
+
+      .ui.inverted.dimmer
         .content
           .center
-            h2.ui.inverted.icon.header
+            h2.ui.inverted.icon.header.red
               | しばらくお待ちください。
-    //フッターフローティング
-    style.
-      .change_price{
-        display: block;
-        position: relative;
-        width: 500px;
-        background-color: #fff;
-        color:#000;
-        border-radius: 5px;
-        height: 50px;
-        line-height: 50px;
-        font-size: 18px;
-        font-weight: bold;
-        left:0px;
-        top:-5px;
-        /*border:3px solid #555;*/
-      }
-      .position{
-        position: relative;
-        left: 270px;
-        top: -54px;
-        width: 429px;
-        height: 50px;
-        line-height: 50px;
-        background-color: #ff0000;
-      }
-      
-      .position span{
-        line-height: 30px;
-      }
-      
-      .pad{
-        width: 420px;
-        margin: 0 auto 15px;
-      }
-      
-      .arrow_01{
-        display: block;
-        width: 165px;
-        margin: 20px auto;
-        text-decoration: underline;
-        font-weight: bold;
-      }
-      
-      .item_name{
-        font-size:17px;
-        font-weight:bold;
-      }
-      
-      .green{
-        background-color: #82b63a;
-      }
+
     //もったい無い
     a(name='btnBuy')
     script(type='text/javascript', src='js/rcart.js', charset='SHIFT-JIS')
@@ -619,6 +517,16 @@ html
             topBtn.fadeIn();
           } else {
             topBtn.fadeOut();
+          }
+        });
+        var topBtnSP = $('.right_bnr_sp');
+        topBtnSP.hide();
+        $(window).scroll(function() {
+          // 200pxで表示
+          if ($(this).scrollTop() < 200) {
+            topBtnSP.fadeIn();
+          } else {
+            topBtnSP.fadeOut();
           }
         });
       });
