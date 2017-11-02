@@ -1,0 +1,123 @@
+@charset "EUC-JP";
+/* CSS Document */
+.displayNone{display: none;}
+
+.textYellow{
+  color: yellow;
+}
+/* footerFloating */
+#footerFloatingMenu .ui.segment {
+  background: #82b63a;
+  /* opacity: 0.85; */
+  padding: 5px;
+  color: white;
+  height: 80px;
+  box-shadow: none;
+  /* margin: 1rem 0em;
+  padding: 1em 1em; */
+  border-radius: none;
+  border: none;
+}
+
+#footerFloatingMenu {
+  background: #82b63a;
+  /*display: block;*/
+  width: 100%;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  z-index: 999;
+  text-align: center;
+  padding: 0 auto;
+}
+
+#footerFloatingMenu img {
+   /* max-width: 99%; */
+}
+.bgRed{
+  background:red !important;
+}
+.itemFrame{
+
+}
+/*** for new css file ***/
+.ui.primary.tiny.button.cartAddBtn {
+  font-size: 15px;
+  position: relative;
+  top: -1px;
+  background-color: #82b63a;
+}
+/* フッターフローティング */
+/* .change_price{ */
+#footerNowPrice{
+  /* /* display: block; */
+  position: relative;
+  width: 500px;
+  background-color: #fff;
+  background: #fff;
+  color:#000;
+  border-radius: 5px;
+  height: 50px;
+  /* line-height: 50px; */
+  font-size: 18px;
+  font-weight: bold;
+  /* left:0px; */
+  /* top:-5px; */
+  /*border:3px solid #555;*/
+}
+/* .position{ */
+#footer_go_cart{
+  position: relative;
+  /* left: 270px;
+  top: -54px; */
+  width: 429px;
+  height: 50px;
+  /* line-height: 50px; */
+  /* background-color: #ff0000; */
+  font-size: 18px;
+  font-weight: bold;
+}
+#footer_go_cart span{
+  /* line-height: 30px; */
+}
+
+.pad{
+  width: 420px;
+  margin: 0 auto 15px;
+}
+
+.arrow_01{
+  display: block;
+  width: 165px;
+  margin: 20px auto;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.item_name{
+  font-size:17px;
+  font-weight:bold;
+}
+
+.green{
+  background-color: #82b63a;
+}
+/*  semantic ui  Icon      **/
+@font-face {
+  font-family: 'Icons';
+  src:  url("./css/semantic/icons.eot");
+  src:  url("./css/semantic/icons.eot?#iefix") format('embedded-opentype'),url("./css/semantic/icons.woff2") format('woff2'),url("./css/semantic/icons.woff") format('woff'),url("./css/semantic/icons.ttf") format('truetype'),url("./css/semantic/icons.svg#icons") format('svg');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+}
+/* modal close btn */
+i.icon.close:before {
+  content: "\f00d";
+}
+.column{
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+}
