@@ -38,19 +38,16 @@ mixin pad(color,itemcode,padStyle)
         .ui.primary.tiny.button.cartAddBtn
           input(type='checkbox', name='chk', value='1')
           |  買い物カゴに追加する
-  .pad(style=padStyle).ui.two.column.stackable.grid
+  //- .pad(style=padStyle).ui.two.column.stackable.grid
     .three.column.row
-      //- .three.wide.column
       .column
         span.item_name= color
-      //- .three.wide.column
       .column
         select.ui.fluid.dropdown.right.big.label(name= itemcode)
           option 数量
           option 1
           option 2
         //- | 個
-      //- .eight.wide.column
       .column
         label
           .ui.primary.tiny.button.cartAddBtn

@@ -21,6 +21,11 @@
   transform: scale(2.0);
   margin-top: 20px;
 }
+/* .item_title.spNone {
+  z-index: 9;
+  transform: scale(1.2) !important;
+  margin-top: 20px;
+} */
 
 
 /* INFO modal sinpin tokka toha */
@@ -262,3 +267,33 @@ i.icon.close:before {
   }
 }
 */
+@media only screen and (max-width: 767px) {
+  .ui.stackable.grid > .wide.column {
+    padding:0.5rem 0.5rem !important;
+  }
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 992px){
+  .ui.container {
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px){
+  .ui[class*="three column"].doubling.grid > .column:not(.row),
+  .ui.container {
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+/* 
+@media only screen and (max-width: 991px) and (min-width: 768px){
+.ui[class*="three column"].doubling.grid > .row > .column,
+ .ui[class*="three column"].doubling.grid > .column:not(.row),
+ .ui.grid > [class*="three column"].doubling.row.row > .column {
+    width: 50% !important;
+}
+} */
