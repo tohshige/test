@@ -20,7 +20,7 @@ html
     //- link(rel='stylesheet', href='css/semantic.min.css' , charset='UTF-8')
     link(rel='stylesheet', href='css/semantic.css' , charset='UTF-8')
 
-    link(rel='stylesheet', href='https://www.rakuten.ne.jp/gold/shopjapan/css/normalize.css')
+    //- link(rel='stylesheet', href='https://www.rakuten.ne.jp/gold/shopjapan/css/normalize.css')
     //-  CSSファイル1つに統合
     //- link(rel='stylesheet', href='css/common1.css')
     //- link(rel='stylesheet', href='css/style.css')
@@ -29,6 +29,67 @@ html
     link(rel='stylesheet', href='css/slick.css')
     link(rel='stylesheet', href='css/lightbox.css')
     link(rel='SHORTCUT ICON', href='https://www.rakuten.ne.jp/gold/shopjapan/images/favicon.ico')
+    style.
+      /* Mobile */
+      @media only screen and (max-width: 767px) {
+        [class*="mobile hidden"],
+        [class*="tablet only"]:not(.mobile),
+        [class*="computer only"]:not(.mobile),
+        [class*="large monitor only"]:not(.mobile),
+        [class*="widescreen monitor only"]:not(.mobile),
+        [class*="or lower hidden"] {
+          display: none !important;
+        }
+      }
+
+      /* Tablet / iPad Portrait */
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        [class*="mobile only"]:not(.tablet),
+        [class*="tablet hidden"],
+        [class*="computer only"]:not(.tablet),
+        [class*="large monitor only"]:not(.tablet),
+        [class*="widescreen monitor only"]:not(.tablet),
+        [class*="or lower hidden"]:not(.mobile) {
+          display: none !important;
+        }
+      }
+
+      /* Computer / Desktop / iPad Landscape */
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        [class*="mobile only"]:not(.computer),
+        [class*="tablet only"]:not(.computer),
+        [class*="computer hidden"],
+        [class*="large monitor only"]:not(.computer),
+        [class*="widescreen monitor only"]:not(.computer),
+        [class*="or lower hidden"]:not(.tablet):not(.mobile) {
+          display: none !important;
+        }
+      }
+
+      /* Large Monitor */
+      @media only screen and (min-width: 1200px) and (max-width: 1919px) {
+        [class*="mobile only"]:not([class*="large monitor"]),
+        [class*="tablet only"]:not([class*="large monitor"]),
+        [class*="computer only"]:not([class*="large monitor"]),
+        [class*="large monitor hidden"],
+        [class*="widescreen monitor only"]:not([class*="large monitor"]),
+        [class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
+          display: none !important;
+        }
+      }
+
+      /* Widescreen Monitor */
+      @media only screen and (min-width: 1920px) {
+        [class*="mobile only"]:not([class*="widescreen monitor"]),
+        [class*="tablet only"]:not([class*="widescreen monitor"]),
+        [class*="computer only"]:not([class*="widescreen monitor"]),
+        [class*="large monitor only"]:not([class*="widescreen monitor"]),
+        [class*="widescreen monitor hidden"],
+        [class*="widescreen monitor or lower hidden"] {
+          display: none !important;
+        }
+      }
+    
     script(type='text/javascript').
       var pc_width = 1080;
       var sp_width = 749;
@@ -104,7 +165,6 @@ html
               return false;
           })
       });
-    style.
 
 
 
@@ -147,6 +207,14 @@ html
       //-   area(shape='rect', coords='505,5,743,88', href='#crf')
       //-   area(shape='rect', coords='748,6,986,91', href='#ngwp')
     //- img.ui.fluid.image.item_title(src='img/nice_title.png', style='top:490px')
+    .ui.black.stacked.compact.segment
+        | Current device:
+        .ui.mobile.only.red.label Mobile 0-767px
+        //- .ui.mobile.only.tablet.only.red.label Mobile tablet
+        .ui.tablet.only.blue.label Tablet 768-991px
+        .ui.computer.only.yellow.label Computer 992-1199px
+        .ui.large.monitor.only.medium.green.label Large Monitor 1200-1919px
+        .ui.widescreen.monitor.only.purple.label Widescreen over 1920px
     img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
     img.item_title.spNone(src='img/nice_title.png', style='top:200%')
     .ui.divided.items.container.segment#forceWidth
@@ -155,6 +223,7 @@ html
       img.ui.fluid.image.bgRed.pcNone(src='img/sp/kvsp1_1026.jpg')
       - var itemName = 'nice';
       img#spTitleImg1.ui.fluid.image.pcNone(src='img/'+ itemName +'_title.png')
+      img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
       //- #spTitleImg.pcNone
         img(src='img/sp/nice_bak.png',style='width:35%;position: absolute;z-index: 9;top:-1%;left:-2.5%')
         |  
@@ -164,10 +233,11 @@ html
       div.topMarginPConly(style="position: relative;margin-top:320px;").spNone
       .item
         //- iframe(scrolling='no', src='frame_'+ itemName +'.html', style='margin-left:490px')
-        iframe.itemFrame.ui.grid.image.spNone(scrolling='no', src='frame_'+ itemName +'.html', )
+        iframe.itemFrame.ui.grid.image.spNone(scrolling='no', src='frame_'+ itemName +'.html', width=438)
         //- +itemImages(itemName,'slider')
         //- +itemImages(itemName,'iframe')
-        .image
+        //- .image
+
           //- img.item_title(src='img/'+ itemName +'_title.png')
         .content
           img.ui.fluid.image(src='img/nice_pri.jpg')
