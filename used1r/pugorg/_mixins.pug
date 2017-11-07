@@ -92,7 +92,8 @@ mixin rolloverImage(itemName,images)
               $('#main_img_#{itemName} img').attr('src', '#{images[0]}');
           });
       });
-    link(rel='stylesheet', href='css/style.css')
+    //- link(rel='stylesheet', href='css/style.css')
+    link(rel='stylesheet', href='css/frame.css')
   body
     div(id='main_img_'+itemName, class='main_img')
       img(src=images[0])
@@ -116,3 +117,10 @@ mixin slider(itemName,images)
         //- a(href=image, rel='lightbox[#{itemName}-group]')
         a(href=image, rel='lightbox['+itemName+'-group]')
           img(src=image,class='sliderImg')
+
+mixin modal(itemName,title,description)
+  .ui.modal(id='modal-'+itemName)
+    i.close.icon
+    h2 #{title}
+    hr
+    pre.spec #{description}
