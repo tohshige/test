@@ -16,7 +16,7 @@ var csscss = require('gulp-csscss');
 
 var sass        = require('gulp-sass');
 var sourcemaps  = require('gulp-sourcemaps');
- 
+
 gulp.task('sass', function() {
   gulp.src('sass/*.scss')
   .pipe(convertEncoding({from: "EUC-JP"}))// encode
@@ -28,7 +28,9 @@ gulp.task('sass', function() {
 });
 
 gulp.task('css', function() {
-  gulp.src('css/responsive.css')
+  // gulp.src('css/responsive.css')
+  gulp.src( ['css/responsive.css'],
+            ['css/frame.css'] )
   .pipe(convertEncoding({from: "EUC-JP"}))// encode
   .pipe(csscss())
   .pipe(convertEncoding({to: "EUC-JP"}))// encode
@@ -40,6 +42,7 @@ var src = {
   'html': ['pugorg/**/*.pug', '!' + 'pugorg/**/_*.pug'],
   // JSONファイルのディレクトリを変数化。
   'json': 'src/_data/',
+  'scss': 'sass/**/*.scss',
   'css': 'src/**/*.css',
   'js': 'src/**/*.js',
 };
@@ -123,7 +126,7 @@ gulp.task('w', ['pug2html'], function() {
 // Generate pug to html, scss to css
 gulp.task('wsass', ['pug2html','sass'], function() {
   gulp.watch(src.html, ['pug2html']);
-  gulp.watch(src.css, ['sass']);
+  gulp.watch(src.scss, ['sass']);
   // gulp.watch(src.css, ['css']);
   // gulp.watch(src.js, ['js']);
 });
