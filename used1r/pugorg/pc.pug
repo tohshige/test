@@ -207,45 +207,33 @@ html
       //-   area(shape='rect', coords='505,5,743,88', href='#crf')
       //-   area(shape='rect', coords='748,6,986,91', href='#ngwp')
     //- img.ui.fluid.image.item_title(src='img/nice_title.png', style='top:490px')
-    .ui.black.stacked.compact.segment
+    //- .ui.black.stacked.compact.segment
         | Current device:
         .ui.mobile.only.red.label Mobile 0-767px
-        //- .ui.mobile.only.tablet.only.red.label Mobile tablet
         .ui.tablet.only.blue.label Tablet 768-991px
         .ui.computer.only.yellow.label Computer 992-1199px
         .ui.large.monitor.only.medium.green.label Large Monitor 1200-1919px
         .ui.widescreen.monitor.only.purple.label Widescreen over 1920px
-    img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
-    img.item_title.spNone(src='img/nice_title.png', style='top:200%')
+    //- img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
+    //- img.item_title.spNone(src='img/nice_title.png', style='top:200%')
     .ui.divided.items.container.segment#forceWidth
       //- img.ui.fluid.image(src='http://rcart.eek.jp/used/img/sp/kvsp1_1026.jpg')
       img.ui.fluid.image.bgRed.spNone(src='img/kv1_1026.png')
       img.ui.fluid.image.bgRed.pcNone(src='img/sp/kvsp1_1026.jpg')
       - var itemName = 'nice';
-      img#spTitleImg1.ui.fluid.image.pcNone(src='img/'+ itemName +'_title.png')
-      img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
-      //- #spTitleImg.pcNone
-        img(src='img/sp/nice_bak.png',style='width:35%;position: absolute;z-index: 9;top:-1%;left:-2.5%')
-        |  
-        img(src='img/sp/nice_1.jpg', style='width:92%;margin:4% auto 0;position: relative')
-
+      img#spTitleImg1.ui.fluid.image(src='img/'+ itemName +'_title.png')
+      //- img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
       +itemImages(itemName,'slider')
-      div.topMarginPConly(style="position: relative;margin-top:320px;").spNone
+      //- div.topMarginPConly(style="position: relative;margin-top:220px;").spNone
       .item
-        //- iframe(scrolling='no', src='frame_'+ itemName +'.html', style='margin-left:490px')
-        iframe.itemFrame.ui.grid.image.spNone(scrolling='no', src='frame_'+ itemName +'.html', width=438)
-        //- +itemImages(itemName,'slider')
-        //- +itemImages(itemName,'iframe')
-        //- .image
-
-          //- img.item_title(src='img/'+ itemName +'_title.png')
+        iframe.itemFrame.ui.grid.image.spNone(scrolling='no', src='frame_'+ itemName +'.html',)
         .content
           img.ui.fluid.image(src='img/nice_pri.jpg')
           .description
-            //- img(src='img/nice_pri.jpg')
             // 1つめ分 
             +item
               +pad('　レッドを', '10003922_8864_2_5980')
+              .ui.section.divider
               +pad('ブラックを','10003922_8865_2_5980','')
             // 1つめ分完了 
           .extra
@@ -255,7 +243,28 @@ html
             //-   +pad('　レッドを', '10003922_8864_2_5980')
             //-   +pad('ブラックを','10003922_8865_2_5980','')
             //-   +specBtn()(class='modal-'+ itemName)
-            //- // 1つめ分完了 
+            //- // 1つめ分完了
+
+          
+      //================== no responsive nice ==================
+      - var itemName = 'trsp2';
+      img#spTitleImg1.ui.fluid.image(src='img/'+ itemName +'_title.png')
+      //- img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
+      +itemImages(itemName,'slider')
+      //- div.topMarginPConly(style="position: relative;margin-top:220px;").spNone
+      .item
+        iframe.itemFrame.ui.grid.image.spNone(scrolling='no', src='frame_'+ itemName +'.html',)
+        .content
+          img.ui.fluid.image(src='img/nice_pri.jpg')
+          .description
+            // 1つめ分 
+            +item
+              +pad('　レッドを', '10003922_8864_2_5980')
+              +pad('ブラックを','10003922_8865_2_5980','')
+            // 1つめ分完了 
+          .extra
+            +specBtn('modal-'+ itemName)
+
 
       //================== no responsive nice ==================
       //- - var itemName = 'nice';
