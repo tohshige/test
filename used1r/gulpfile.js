@@ -12,6 +12,28 @@ var plumber = require('gulp-plumber');
 var notify = require("gulp-notify");
 var browserSync = require('browser-sync');
 
+var csscss = require('gulp-csscss');
+
+var sass        = require('gulp-sass');
+var sourcemaps  = require('gulp-sourcemaps');
+ 
+gulp.task('sass', function() {
+  gulp.src('sass/*.scss')
+  .pipe(convertEncoding({from: "EUC-JP"}))// encode
+  .pipe(sourcemaps.init())
+    .pipe(sass())
+  .pipe(sourcemaps.write())
+  .pipe(convertEncoding({to: "EUC-JP"}))// encode
+  .pipe(gulp.dest('css/'));
+});
+
+gulp.task('css', function() {
+  gulp.src('css/responsive.css')
+  .pipe(convertEncoding({from: "EUC-JP"}))// encode
+  .pipe(csscss())
+  .pipe(convertEncoding({to: "EUC-JP"}))// encode
+});
+
 /** ディレクトリを指定します。 */
 var src = {
   // 出力対象は`_`で始まっていない`.pug`ファイル。
@@ -68,7 +90,8 @@ gulp.task('html2pugUtf8SP', function(){
 
 
 /** * ローカルサーバーを起動します。 */
-gulp.task('browser-sync', function() {
+// gulp.task('browser-sync', function() {
+gulp.task('bs', function() {
   browserSync({
     server: {
       baseDir: "./",
@@ -84,22 +107,6 @@ gulp.task('minify-css', function() {
     .pipe(gulp.dest('dist/css/'));
 });
 
-//jade > html
-// gulp.task('jade', () => {
-//  return gulp.src(['./jade/**/*.jade', '!./jade/**/_*.jade'])
-//  .pipe(jade({
-//    pretty: true
-//  }))
-//  .pipe(gulp.dest('./html/'));
-// });
-
-
-// gulp.task('html2jade', function(){
-//   return gulp.src(['./*.html', '!./_*.html'])
-//     .pipe(html2jade(options))
-//     .pipe(gulp.dest('./jadeorg/'));
-// });
-
 /** * PugのコンパイルやCSSとjsの出力、browser-syncのリアルタイムプレビューを実行します。 */
 // gulp.task('watch', ['html', 'css', 'js', 'browser-sync'], function() {
 gulp.task('watch', ['pug2html',  'browser-sync'], function() {
@@ -110,6 +117,13 @@ gulp.task('watch', ['pug2html',  'browser-sync'], function() {
 
 gulp.task('w', ['pug2html'], function() {
   gulp.watch(src.html, ['pug2html']);
+  // gulp.watch(src.css, ['css']);
+  // gulp.watch(src.js, ['js']);
+});
+// Generate pug to html, scss to css
+gulp.task('wsass', ['pug2html','sass'], function() {
+  gulp.watch(src.html, ['pug2html']);
+  gulp.watch(src.css, ['sass']);
   // gulp.watch(src.css, ['css']);
   // gulp.watch(src.js, ['js']);
 });
