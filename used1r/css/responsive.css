@@ -130,15 +130,15 @@ iframe{
   padding: 0 auto;
 }
 
-#footerFloatingMenu img {
-   /* max-width: 99%; */
-}
+/* #footerFloatingMenu img {
+   max-width: 99%;
+} */
 .bgRed{
   background:red !important;
 }
-.itemFrame{
+/* .itemFrame{
 
-}
+} */
 /*** for new css file ***/
 .ui.primary.tiny.button.cartAddBtn {
   font-size: 15px;
@@ -182,9 +182,9 @@ iframe{
   font-size: 18px;
   font-weight: bold;
 }
-#footer_go_cart span{
-  /* line-height: 30px; */
-}
+/* #footer_go_cart span{
+  line-height: 30px;
+} */
 
 .pad{
   width: 420px;
@@ -210,8 +210,8 @@ iframe{
 /*  semantic ui  Icon      **/
 @font-face {
   font-family: 'Icons';
-  src:  url("./css/semantic/icons.eot");
-  src:  url("./css/semantic/icons.eot?#iefix") format('embedded-opentype'),url("./css/semantic/icons.woff2") format('woff2'),url("./css/semantic/icons.woff") format('woff'),url("./css/semantic/icons.ttf") format('truetype'),url("./css/semantic/icons.svg#icons") format('svg');
+  src:  url("./semantic/icons.eot");
+  src:  url("./semantic/icons.eot?#iefix") format('embedded-opentype'),url("./semantic/icons.woff2") format('woff2'),url("./semantic/icons.woff") format('woff'),url("./semantic/icons.ttf") format('truetype'),url("./semantic/icons.svg#icons") format('svg');
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -219,9 +219,9 @@ iframe{
   text-transform: none;
 }
 /* modal close btn */
-i.icon.close:before {
+/* i.icon.close:before {
   content: "\f00d";
-}
+} */
 .column{
   padding-left: 3px !important;
   padding-right: 3px !important;
