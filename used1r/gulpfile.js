@@ -17,6 +17,10 @@ var csscss = require('gulp-csscss');
 var sass        = require('gulp-sass');
 var sourcemaps  = require('gulp-sourcemaps');
 
+var data = require( 'gulp-data' ); //json-data
+var fs = require( "fs" );
+var path = require('path'); //path
+
 gulp.task('sass', function() {
   gulp.src('sass/*.scss')
   .pipe(convertEncoding({from: "EUC-JP"}))// encode
@@ -42,9 +46,10 @@ var src = {
   'html': ['pugorg/**/*.pug', '!' + 'pugorg/**/_*.pug'],
   // JSONファイルのディレクトリを変数化。
   'json': 'src/_data/',
-  'scss': 'sass/**/*.scss',
+  scss: 'sass/**/*.scss',
   'css': 'src/**/*.css',
   'js': 'src/**/*.js',
+  json : '_data'
 };
 
 //pug > html
@@ -54,6 +59,11 @@ gulp.task('pug2html', () => {
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))  // コンパイルエラーを通知します。  
   // .pipe(convertEncoding({from: "UTF8"}))// from utf8 だと化けるe
   .pipe(convertEncoding({from: "EUC-JP"}))// encode
+  .pipe( data( function( file ) {
+    var locals  = JSON.parse( fs.readFileSync( src.json + '/site.json' ) );
+    locals.relativePath = path.relative( file.base, file.path.replace( /.pug$/, '.html' ) );
+    return { 'site' : locals };
+  } ) )
   .pipe(pug({
     pretty: true
   }))
@@ -118,8 +128,9 @@ gulp.task('watch', ['pug2html',  'browser-sync'], function() {
   // gulp.watch(src.js, ['js']);
 });
 
-gulp.task('w', ['pug2html'], function() {
+gulp.task('w', ['pug2html','sass'], function() {
   gulp.watch(src.html, ['pug2html']);
+  gulp.watch(src.scss, ['sass']);
   // gulp.watch(src.css, ['css']);
   // gulp.watch(src.js, ['js']);
 });
