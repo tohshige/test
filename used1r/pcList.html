@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="euc-jp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>MAX60%OFF！｜ショップジャパン楽天市場店</title>
+    <!-- 楽天TOP解析タグ -->
+    <script src="//assets.adobedtm.com/fde17e0362c40547334f4e041add368f158b4119/satelliteLib-e346cd8edc0ac640d3ce7c060b5a38f5169d4add.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+    <script src="//www.appelsiini.net/projects/lazyload/jquery.lazyload.js?v=3"></script>
+    <script src="js/semantic.js" charset="UTF-8"></script>
+    <link rel="stylesheet" href="css/semantic.css" charset="UTF-8">
+    <link rel="stylesheet" href="css/responsiveEucjp.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="SHORTCUT ICON" href="https://www.rakuten.ne.jp/gold/shopjapan/images/favicon.ico">
+  </head>
+  <body>
+    <div class="ui divided items container segment" id="forceWidth">
+      <script>
+        //- $('.items .image img')
+        //-   .visibility({
+        //-     type       : 'image',
+        //-     transition : 'fade in',
+        //-     duration   : 1000
+        //-   });
+        //- $(function() {
+        //-     $("img").lazyload();
+        //- });
+        $(function() {
+            $('img').lazyload({
+                effect : 'fadeIn',
+                //- threshold : 200, //before scroll 200px  
+                effect_speed: 2000
+            });
+        });  
+        
+        
+      </script>
+      <pre> 以下のような楽天Cabinetの画像のサムネリンクを生成
+'http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/trsp2/111020_trsp_kago.jpg?_ex=200x200'
+share/used/awfm と指定するとそれにマッチしたURLの画像リストを作成
+200、300，400 でサイズを指定
+_data フォルダへRCabinetからダウンロードしたCSVファイルを放り込む、複数ファイルでもOK
+するとすべてのCSVが結合され、all.csv ができ Gulp取り込み用のall.json ができる</pre>
+      <h2>200x200px</h2>
+      <!--サムネ対象サイズ-->
+      <pre>fromCSV : https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm1.jpg</pre>
+      <pre>toThumb : http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm1.jpg?_ex=200x200</pre><img class="image" src="" data-original="http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm1.jpg?_ex=200x200"/>
+      <pre>fromCSV : https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm_s1_s.jpg</pre>
+      <pre>toThumb : http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm_s1_s.jpg?_ex=200x200</pre><img class="image" src="" data-original="http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm_s1_s.jpg?_ex=200x200"/>
+      <pre>fromCSV : https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm_s1_t.jpg</pre>
+      <pre>toThumb : http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm_s1_t.jpg?_ex=200x200</pre><img class="image" src="" data-original="http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm_s1_t.jpg?_ex=200x200"/>
+      <h2>300x300px</h2>
+      <!--サムネ対象サイズ-->
+      <pre>fromCSV : https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm1.jpg</pre>
+      <pre>toThumb : http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm1.jpg?_ex=300x300</pre><img class="image" src="" data-original="http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm1.jpg?_ex=300x300"/>
+      <pre>fromCSV : https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm_s1_s.jpg</pre>
+      <pre>toThumb : http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm_s1_s.jpg?_ex=300x300</pre><img class="image" src="" data-original="http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm_s1_s.jpg?_ex=300x300"/>
+      <pre>fromCSV : https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm_s1_t.jpg</pre>
+      <pre>toThumb : http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm_s1_t.jpg?_ex=300x300</pre><img class="image" src="" data-original="http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm_s1_t.jpg?_ex=300x300"/>
+      <h2>400x400px</h2>
+      <!--サムネ対象サイズ-->
+      <pre>fromCSV : https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm1.jpg</pre>
+      <pre>toThumb : http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm1.jpg?_ex=400x400</pre><img class="image" src="" data-original="http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm1.jpg?_ex=400x400"/>
+      <pre>fromCSV : https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm_s1_s.jpg</pre>
+      <pre>toThumb : http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm_s1_s.jpg?_ex=400x400</pre><img class="image" src="" data-original="http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm_s1_s.jpg?_ex=400x400"/>
+      <pre>fromCSV : https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm_s1_t.jpg</pre>
+      <pre>toThumb : http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm_s1_t.jpg?_ex=400x400</pre><img class="image" src="" data-original="http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/share/used/awfm_s1_t.jpg?_ex=400x400"/>
+      <h2>Original size</h2>
+      <!--サムネ対象サイズ-->
+      <pre>fromCSV : https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm1.jpg</pre><img class="image" src="" data-original="https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm1.jpg"/>
+      <pre>fromCSV : https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm_s1_s.jpg</pre><img class="image" src="" data-original="https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm_s1_s.jpg"/>
+      <pre>fromCSV : https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm_s1_t.jpg</pre><img class="image" src="" data-original="https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm_s1_t.jpg"/>
+      <script>var siteAR = '[object Object]';
+        console.log(JSON.stringify(siteAR));
+      </script>
+    </div>
+  </body>
+</html>
