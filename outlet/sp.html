@@ -108,7 +108,7 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
 <img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/trss1710_sp1.jpg" style="width:92%;margin:4% auto 0;">
 <ul class="slider single-item" style="margin:-3px 0;">
 
-<li><a href="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/trss_sp11_2_kan.jpg" rel="lightbox[trss-group]"><img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/trss_sp11_2_kan.jpg"></a></li>
+<li><a href="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/trss_sp11_2_kan2.jpg" rel="lightbox[trss-group]"><img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/trss_sp11_2_kan2.jpg"></a></li>
 <li><a href="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/trs_thum_01.jpg" rel="lightbox[trss-group]"><img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/trs_thum_01.jpg" style="width: 69%;margin: 0 auto;"></a></li>
 <li><a href="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/trs_thum_02.jpg" rel="lightbox[trss-group]"><img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/trs_thum_02.jpg" style="width: 69%;margin: 0 auto;"></a></li>
 <li><a href="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/trs_thum_03.jpg" rel="lightbox[trss-group]"><img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/trs_thum_03.jpg" style="width: 69%;margin: 0 auto;"></a></li>
@@ -122,7 +122,8 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
 <option value="https://item.rakuten.co.jp/shopjapan/trspm_out17/#itemModelNumber">セミダブル</option>
 <option  value="https://item.rakuten.co.jp/shopjapan/trspw_out17/#itemModelNumber">ダブル</option>
 </select>
-<input value="ご購入はこちら" class="cart_btn" type="button" onClick="top.location.href=item_id.value">
+<div class="cart_btn" style="background-color: #aaa;">完売しました</div>
+<!--<input value="ご購入はこちら" class="cart_btn" type="button" onClick="top.location.href=item_id.value">-->
 </form>
 <div class="info"><a href="#" class="modal-trss sp_btn">商品内容はこちら</a></div>
 </li>
@@ -245,7 +246,7 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
 <div class="out_info_sp">
 <div class="about_outlet" id="out" style="width: 90%;margin: 0 auto 10px;">
 <img src="img/sp_ttl.jpg" style="width: 100%;margin-bottom:10px;">
-<p>外箱に凹みや傷がある場合がございますが、商品自体は未使用のため、使用に問題はございません。<br>ご理解いただけるお客様だけにご奉仕させていただきます！</p><div style="font-size: 12px;font-weight: bold;">※アウトレット商品は「つかって納得保証（返品保証）」対象外となります。</div>
+<p>外箱に凹みや傷がある場合がございますが、商品自体は未使用のため、使用に問題はございません。<br>ご理解いただけるお客様だけにご奉仕させていただきます！</p><div style="font-size: 12px;font-weight: bold;">※アウトレット商品は「つかって納得保証（返品保証）」対象外となります。<br>※商品発送の都合上、同時にご注文頂きました商品を別々のお届け先へお送りすることができかねますので予めご了承下さい。</div>
 </div>
 
 <div class="about_trs">
@@ -289,13 +290,13 @@ $(function() {
 
 
 <!--カウントダウンタイマー-->
-<!--<div id="timelimit"><div class="timelimit_inner">
+<div id="timelimit"><div class="timelimit_inner">
 <div class="timer"><span class="catext">キャンペーン終了まで</span>
 <div class="timer_1" id="sampleA"></div>
-</div></div></div>-->
+</div></div></div>
 <!--カウントダウンタイマー-->
 
-<script type="text/javascript" src="js/timer.js"></script>
+<script type="text/javascript" src="js/timer.js" charset="UTF-8"></script>
 <script type="text/javascript" src="js/hour_limited.js"></script>
 
 <script language="JavaScript" type="text/javascript">
@@ -310,7 +311,7 @@ function cdTimer1() {
   
     // 期限日を設定  
     var year    =   2017;           // 年  
-    var month   =   10;              // 月  
+    var month   =   11;              // 月  
     var day     =   13;             // 日
     var hour     =   10;             // 時 
   
