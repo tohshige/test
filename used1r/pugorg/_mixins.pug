@@ -124,3 +124,40 @@ mixin modal(itemName,title,description)
     h2 #{title}
     hr
     pre.spec #{description}
+
+
+//- mixin cabinetImage(images,reqImagePath)
+mixin cabinetImage(reqImagePath,thumWidthHeight)
+  - var sentou ='https://image.rakuten.co.jp/shopjapan/cabinet/' //削除文字
+  - var thumurl= 'http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/';//thumnail url
+  //サムネ対象サイズ
+  - var size200= '?_ex=200x200';
+  - var size300= '?_ex=300x300';
+  - var size400= '?_ex=400x400';
+
+  case thumWidthHeight
+    when 200
+      -var size =size200
+    when 300
+      -var size =size300
+    when 400
+      -var size =size400
+    default
+      -var size =size200
+
+  each i in images
+    //-  "画像パス": "share/used/how_to01.jpg",
+    - var imagePath = i['画像パス'] //cabinet url from csv
+    - var dmy = imagePath.split('/');
+    //- /cabinet/ 以下のPathで前方一致
+    if(imagePath.indexOf(reqImagePath) === 0)
+      - var imageurl = i['画像URL'] //cabinet url from csv
+      - var shorturl=imageurl.replace( sentou , "" );
+      - var thum = thumurl+shorturl+size; //thumbnail 用リンク完成
+
+      pre fromCSV : #{imageurl}
+      if (thumWidthHeight === 'original')
+        img.image(src='' data-original=imageurl)
+      else
+        pre toThumb : #{thum}
+        img.image(src='' data-original=thum)

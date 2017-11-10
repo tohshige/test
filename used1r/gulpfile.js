@@ -21,6 +21,18 @@ var data = require( 'gulp-data' ); //json-data
 var fs = require( "fs" );
 var path = require('path'); //path
 
+var csv2json = require('gulp-csv2json');
+var rename = require('gulp-rename');
+var concat = require("gulp-concat");
+
+// ファイルの結合
+gulp.task('concat', function() {
+  return gulp.src(['_data/*.csv','!_data/all.csv'])
+  .pipe(plumber())
+  .pipe(concat('all.csv'))
+  .pipe(gulp.dest('_data'));
+});
+
 gulp.task('sass', function() {
   gulp.src('sass/*.scss')
   .pipe(convertEncoding({from: "EUC-JP"}))// encode
@@ -43,12 +55,12 @@ gulp.task('css', function() {
 /** ディレクトリを指定します。 */
 var src = {
   // 出力対象は`_`で始まっていない`.pug`ファイル。
-  'html': ['pugorg/**/*.pug', '!' + 'pugorg/**/_*.pug'],
+  html: ['pugorg/**/*.pug', '!' + 'pugorg/**/_*.pug'],
   // JSONファイルのディレクトリを変数化。
-  'json': 'src/_data/',
+  csv: '_data/',
   scss: 'sass/**/*.scss',
-  'css': 'src/**/*.css',
-  'js': 'src/**/*.js',
+  css: 'src/**/*.css',
+  js: 'src/**/*.js',
   json : '_data'
 };
 
@@ -62,7 +74,10 @@ gulp.task('pug2html', () => {
   .pipe( data( function( file ) {
     var locals  = JSON.parse( fs.readFileSync( src.json + '/site.json' ) );
     locals.relativePath = path.relative( file.base, file.path.replace( /.pug$/, '.html' ) );
-    return { 'site' : locals };
+    // return { 'site' : locals };
+    var images  = JSON.parse( fs.readFileSync( src.json + '/all.json'));
+    return {  'site' : locals, 'images' : images };
+    // 199614_20171109_20171109_1.csv
   } ) )
   .pipe(pug({
     pretty: true
@@ -72,6 +87,19 @@ gulp.task('pug2html', () => {
   .pipe(gulp.dest('./'))
   .pipe(browserSync.reload({stream: true}));
 });
+
+gulp.task('csv2json', function () {
+  var columns =['1','2','url','4','5'];
+  var csvParseOptions = {'columns':columns}; //based on options specified here : http://csv.adaltas.com/parse/ 
+  var csvParseOptions = {columns:false}; //based on options specified here : http://csv.adaltas.com/parse/ 
+    gulp.src('_data/**/*.csv')
+      .pipe(convertEncoding({from: "SHIFT-JIS"}))// encode
+      .pipe(csv2json(csvParseOptions))
+      .pipe(rename({extname: '.json'}))
+
+      .pipe(convertEncoding({to: "UTF-8"}))// encode
+      .pipe(gulp.dest('_data'));
+ });
 
 gulp.task('pug2htmlSP', () => {
     return gulp.src(['./pugorg/sp.pug', '!./pugorg/**/_*.pug'])
