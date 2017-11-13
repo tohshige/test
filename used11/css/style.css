@@ -2,8 +2,8 @@
 /* CSS Document */
 
 .main_img{
-	width:438px;
-	height:438px;
+	width:300px;
+	height:300px;
 	display:block;
 	position:absolute;
 	top:0px;
@@ -12,8 +12,8 @@
 }
 
 .main_img img{
-	width:438px;
-	height:438px;
+	width:300px;
+	height:300px;
 }
 
 .main_img_two{
@@ -64,11 +64,11 @@
 }
 
 .thumb_area{
-	width:438px;
+	width:300px;
 	height:80px;
 	display:block;
 	position:absolute;
-	top:430px;
+	top:290px;
 	left:-39px;
 	padding-top:0px;
 	z-index: 999999999;
@@ -77,11 +77,11 @@
 .thumb_area li{
 	display:block;
 	background:#fff;
-	margin-right:5px;
+	margin-right:24px;
 	float: left;
     border: 1px solid #ccc;
-	width:81px;
-	height:81px;
+	width:35px;
+	height:35px;
 }
 
 .thumb_area li:last-child{
@@ -89,7 +89,7 @@
 }
 
 .thumb_area li img{
-    width: 80px;
+    width: 55px;
 	cursor:pointer;
 }
 
@@ -216,17 +216,17 @@
 
 .col_cart{
 	height:437px;
-	width: 438px;
+	width: 600px;
 	position: absolute;
-	top:5px;
+	top:0px;
 	right:20px;
 }
 
 .col_cart_2{
 	height:437px;
-	width: 438px;
+	width: 600px;
 	position: absolute;
-	top:5px;
+	top:0px;
 }
 
 
@@ -252,4 +252,19 @@
 .switch{
 	width:346px;
 	margin:0 auto;
+}
+
+
+.item{
+	margin-top: -10px;
+}
+
+.quantity{
+	    border-width: 1px;
+    border-style: solid;
+    border-color: initial;
+    border-image: initial;
+    display: inline-block;
+    margin: 0em 0em 0em 0em;
+    font-size: 13px;
 }
