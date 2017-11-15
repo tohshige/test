@@ -77,11 +77,11 @@
 .thumb_area li{
 	display:block;
 	background:#fff;
-	margin-right:24px;
+	margin-right:5px;
 	float: left;
     border: 1px solid #ccc;
-	width:35px;
-	height:35px;
+	width:55px;
+	height:55px;
 }
 
 .thumb_area li:last-child{
