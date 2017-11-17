@@ -46,9 +46,11 @@ mixin itemImages(itemName,mode)
         ]
     default
       p 0でも1でもありません
+  //- - var images= site.itemImagesJson.trsp2;
   if mode == 'slider'
     //- スライド、スライダー
     +slider(itemName,images)
+    +slider(itemName,site.itemImages.trsp2)
   else if mode == 'genFrame'
     //- iframe用のHTMLを生成 サムネイルロールオーバ
     +rolloverImage(itemName,images)

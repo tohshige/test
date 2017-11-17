@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/lightbox.css">
     <link rel="SHORTCUT ICON" href="https://www.rakuten.ne.jp/gold/shopjapan/images/favicon.ico">
+    <!-- #{pageTitle}-->
+    <p>サイト名 site.name</p>
+    <script> var siteAR = '[object Object]';
+      console.log(JSON.stringify(siteAR));
+    </script>
     <style>
       /* Mobile */
       @media only screen and (max-width: 767px) {
@@ -28,12 +33,23 @@
       
       /* Tablet / iPad Portrait */
       @media only screen and (min-width: 768px) and (max-width: 991px) {
-        [class*="mobile only"]:not(.tablet),
-        [class*="tablet hidden"],
-        [class*="computer only"]:not(.tablet),
-        [class*="large monitor only"]:not(.tablet),
-        [class*="widescreen monitor only"]:not(.tablet),
-        [class*="or lower hidden"]:not(.mobile) {
+       /*
+          [class*="mobile only"]:not(.tablet),
+          [class*="tablet hidden"],
+          [class*="computer only"]:not(.tablet),
+          [class*="large monitor only"]:not(.tablet),
+          [class*="widescreen monitor only"]:not(.tablet),
+          [class*="or lower hidden"]:not(.mobile) {
+            display: none !important;
+          }
+        */
+      
+        [class*="mobile only"],
+        [class*="tablet hidden"]:not(.mobile),
+        [class*="computer only"]:not(.mobile),
+        [class*="large monitor only"]:not(.mobile),
+        [class*="widescreen monitor only"]:not(.mobile),
+        [class*="or lower hidden"] {
           display: none !important;
         }
       }
@@ -151,8 +167,6 @@
           })
       });
       
-      
-      
     </script>
     <script type="text/javascript">_satellite.pageBottom();</script>
   </head>
@@ -169,6 +183,18 @@
       <ul class="slider single-item pcNone" style="margin:0 0 10px;">
         <li><a href="https://image.rakuten.co.jp/shopjapan/cabinet/share/used/nice1.jpg" rel="lightbox[nice-group]"><img class="sliderImg" src="https://image.rakuten.co.jp/shopjapan/cabinet/share/used/nice1.jpg"/></a></li>
         <li><a href="https://image.rakuten.co.jp/shopjapan/cabinet/nice/s_0210_4.jpg" rel="lightbox[nice-group]"><img class="sliderImg" src="https://image.rakuten.co.jp/shopjapan/cabinet/nice/s_0210_4.jpg"/></a></li>
+      </ul>
+      <style>
+        .sliderImg{
+          width: 100%;
+          margin: 0 auto;
+        }
+        
+      </style>
+      <ul class="slider single-item pcNone" style="margin:0 0 10px;">
+        <li><a href="img/sp/trsp2_2.jpg" rel="lightbox[nice-group]"><img class="sliderImg" src="img/sp/trsp2_2.jpg"/></a></li>
+        <li><a href="img/sp/trsp2_s2.jpg" rel="lightbox[nice-group]"><img class="sliderImg" src="img/sp/trsp2_s2.jpg"/></a></li>
+        <li><a href="img/sp/trsp2_s3.jpg" rel="lightbox[nice-group]"><img class="sliderImg" src="img/sp/trsp2_s3.jpg"/></a></li>
       </ul>
       <div class="item">
         <iframe class="itemFrame ui grid image spNone" scrolling="no" src="frame_nice.html"></iframe>
@@ -233,6 +259,18 @@
         </div>
       </div>
       <!--================== no responsive nice ==================--><img class="ui fluid image" id="spTitleImg1" src="img/trsp2_title.png">
+      <style>
+        .sliderImg{
+          width: 100%;
+          margin: 0 auto;
+        }
+        
+      </style>
+      <ul class="slider single-item pcNone" style="margin:0 0 10px;">
+        <li><a href="img/sp/trsp2_2.jpg" rel="lightbox[trsp2-group]"><img class="sliderImg" src="img/sp/trsp2_2.jpg"/></a></li>
+        <li><a href="img/sp/trsp2_s2.jpg" rel="lightbox[trsp2-group]"><img class="sliderImg" src="img/sp/trsp2_s2.jpg"/></a></li>
+        <li><a href="img/sp/trsp2_s3.jpg" rel="lightbox[trsp2-group]"><img class="sliderImg" src="img/sp/trsp2_s3.jpg"/></a></li>
+      </ul>
       <style>
         .sliderImg{
           width: 100%;
@@ -363,6 +401,7 @@
         <div class="content">
           <div class="center">
             <h2 class="ui inverted icon header red">しばらくお待ちください。</h2>
+            <div class="ui text loader"></div>
           </div>
         </div>
       </div>

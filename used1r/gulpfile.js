@@ -24,14 +24,55 @@ var path = require('path'); //path
 var csv2json = require('gulp-csv2json');
 var rename = require('gulp-rename');
 var concat = require("gulp-concat");
+var sortJSON = require('gulp-json-sort').default;
+
+var gutil = require('gulp-util');
+
+const reorder = require('csv-reorder');
+var replace = require('gulp-replace');
 
 // ファイルの結合
 gulp.task('concat', function() {
   return gulp.src(['_data/*.csv','!_data/all.csv'])
+  .pipe(convertEncoding({from: "SHIFT-JIS"}))// encode
   .pipe(plumber())
   .pipe(concat('all.csv'))
+  .pipe(convertEncoding({to: "UTF-8"}))// encode
   .pipe(gulp.dest('_data'));
 });
+
+// ファイルの結合
+gulp.task('concatest', function() {
+  return gulp.src(['_data/0*.csv','_data/19*_1.csv','!_data/all.csv'])
+  .pipe(convertEncoding({from: "SHIFT-JIS"}))// encode
+  .pipe(plumber())
+  .pipe(concat('all.csv'))
+  .pipe(convertEncoding({to: "UTF-8"}))// encode
+  .pipe(gulp.dest('_data'));
+});
+
+// 正規表現でも文字列置換ができる
+gulp.task('replace', function(){
+  gulp.src(['dl-item201711170707-1.csv'])
+    .pipe(convertEncoding({from: "SHIFT-JIS"}))// encode
+    .pipe(convertEncoding({to: "UTF-8"}))// encode
+    .pipe(gulp.dest('dist'));
+    
+  gulp.src(['dist/dl-item201711170707-1.csv'])
+    .pipe(replace(/([^\"|\n])(\n)+/g, ''))
+    .pipe(gulp.dest('dist'));
+
+  // ファイルの結合 with header column
+  gulp.src(['dist/*.csv','!dist/all.csv'])
+    .pipe(concat('all.csv'))
+    .pipe(gulp.dest('dist'));
+
+  // gulp.src(['dist/dl-item201711170707-1.csv'])
+  //   .pipe(replace(/([^\"|\n])(\n)+/g, '$1'))
+  //   .pipe(gulp.dest('dist'));
+
+  });
+
 
 gulp.task('sass', function() {
   gulp.src('sass/*.scss')
@@ -92,14 +133,45 @@ gulp.task('csv2json', function () {
   var columns =['1','2','url','4','5'];
   var csvParseOptions = {'columns':columns}; //based on options specified here : http://csv.adaltas.com/parse/ 
   var csvParseOptions = {columns:false}; //based on options specified here : http://csv.adaltas.com/parse/ 
-    gulp.src('_data/**/*.csv')
-      .pipe(convertEncoding({from: "SHIFT-JIS"}))// encode
+  // var sortColumn = [1];
+  
+
+    // gulp.src('_data/**/*.csv')
+    gulp.src('_data/all.csv')
+      // .pipe(convertEncoding({from: "SHIFT-JIS"}))// encode
       .pipe(csv2json(csvParseOptions))
       .pipe(rename({extname: '.json'}))
 
-      .pipe(convertEncoding({to: "UTF-8"}))// encode
+      // .pipe(convertEncoding({to: "UTF-8"}))// encode
+      .pipe(sortJSON({ space: 2 }))
       .pipe(gulp.dest('_data'));
- });
+      //test of sort jasonnpm install csv-reorder
+    // gulp.src('_data/all1.json')
+    //   .pipe(mysort())
+    //   .pipe(gulp.dest('_data1'));
+
+    reorder({
+      input: './_data/all.csv',
+      output:'./_data/all.csv',
+      sort: 'path',
+      // sort: '画像パス',
+      // sort: '%e7%94%bb%e5%83%8f%e3%83%91%e3%82%b9',
+      // sort: sortColumn,
+      type: 'string',
+      descending: false,
+      remove: true,
+      metadata: false
+    })
+    .then(metadata => {
+      var green = '\u001b[32m';
+      console.info(green + 'complete reorder!')
+    })
+    .catch(error => {
+      var red = '\u001b[31m';
+      console.error(red + 'error reorder')
+      console.error(sortColumn)
+    });
+});
 
 gulp.task('pug2htmlSP', () => {
     return gulp.src(['./pugorg/sp.pug', '!./pugorg/**/_*.pug'])
@@ -119,7 +191,10 @@ gulp.task('html2pug', function(){
     .pipe(html2pug(options))
     .pipe(convertEncoding({to: "EUC-JP"}))// encode
     .pipe(gulp.dest('./pugorg/'))
-    .pipe(browserSync.reload({stream: true}));
+    .pipe(browserSync.reload({
+      stream: true,
+      once : true
+    }));
 });
 
 gulp.task('html2pugUtf8SP', function(){
@@ -134,10 +209,25 @@ gulp.task('html2pugUtf8SP', function(){
 // gulp.task('browser-sync', function() {
 gulp.task('bs', function() {
   browserSync({
-    server: {
-      baseDir: "./",
-      index: "pc.html"
-    }
+    // server: {
+    //   baseDir: "./",
+    //   index: "pcList.html",
+    //   directory: false
+    // },
+    init: {
+      // proxy: "localhost:8888/test/used1r/pcList.html",
+      proxy: "localhost:8888",
+      files: [
+        // "./dist/styles/**/*.css",
+        // "./dist/scripts/**/*.js",
+        "./**/*.html",
+      ]
+    },
+
+    // open  :true,
+    // // open  :false,
+    // notify:true,
+    // xip   :false
   });
 });
 
@@ -150,16 +240,22 @@ gulp.task('minify-css', function() {
 
 /** * PugのコンパイルやCSSとjsの出力、browser-syncのリアルタイムプレビューを実行します。 */
 // gulp.task('watch', ['html', 'css', 'js', 'browser-sync'], function() {
-gulp.task('watch', ['pug2html',  'browser-sync'], function() {
-  gulp.watch(src.html, ['pug2html']);
-  // gulp.watch(src.css, ['css']);
-  // gulp.watch(src.js, ['js']);
+// gulp.task('watch', ['pug2html',  'browser-sync'], function() {
+//   gulp.watch(src.html, ['pug2html']);
+//   // gulp.watch(src.css, ['css']);
+//   // gulp.watch(src.js, ['js']);
+// });
+var reload = browserSync.reload;
+gulp.task("watch", function () {
+  gulp.watch('./*.html', reload);
 });
 
-gulp.task('w', ['pug2html','sass'], function() {
+
+// gulp.task('w', ['pug2html','sass'], function() {
+gulp.task('w', ['bs','pug2html','sass','watch'], function() { //browser-sync
   gulp.watch(src.html, ['pug2html']);
   gulp.watch(src.scss, ['sass']);
-  // gulp.watch(src.css, ['css']);
+  gulp.watch('_data/site.json', ['pug2html']);
   // gulp.watch(src.js, ['js']);
 });
 // Generate pug to html, scss to css

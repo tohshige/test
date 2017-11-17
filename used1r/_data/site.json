@@ -1,46 +1,43 @@
 {
-	"このJsonファイルについて": [
+  "このJsonファイルについて": [
     "gulp があるため文字コードはutf8",
     "// のようなコメントを入れるとエラーになる"
   ],
-	"name": "サイト名//",
-	"description": "サイト概要",
-	"keywords": "キーワード1, キーワード2",
-	"rootUrl": "//example.com/",
-	"ogpImage": "//example.com/images/og-image.jpg",
-	"favicon": "//example.com/images/favicon.ico",
-
-"itemImages":{
-"trsp2": [
-"img/sp/trsp2_2.jpg", 
-"img/sp/trsp2_s2.jpg",
-"img/sp/trsp2_s3.jpg"
-],
-"trsp": [
-"https://image.rakuten.co.jp/shopjapan/cabinet/share/used/trsp1.jpg",
-"https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago01.jpg",
-"https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago02.jpg",
-"https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago03.jpg",
-"https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago04.jpg",
-"https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago05.jpg"
-],
-"awfm": [
-"https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm1.jpg",
-"https://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/awfm/awfm_reshipi01.jpg",
-"https://image.rakuten.co.jp/shopjapan/cabinet/awfm/awfm_s3.jpg",
-"https://image.rakuten.co.jp/shopjapan/cabinet/awfm/awfm_s4.jpg"
-],
-"nice": [
-"https://image.rakuten.co.jp/shopjapan/cabinet/share/used/nice1.jpg",
-"https://image.rakuten.co.jp/shopjapan/cabinet/nice/s_0210_4.jpg"
-],
-"ngw": [
-"https://image.rakuten.co.jp/shopjapan/cabinet/share/used/ngw1.jpg",
-"https://image.rakuten.co.jp/shopjapan/cabinet/ngw/other1.jpg",
-"https://image.rakuten.co.jp/shopjapan/cabinet/ngw/other3.jpg"
-]
-
-},
-"endof site.json":"end"
+  "name": "サイト名 site.name",
+  "description": "サイト概要",
+  "keywords": "キーワード1, キーワード2",
+  "rootUrl": "//example.com/",
+  "ogpImage": "//example.com/images/og-image.jpg",
+  "favicon": "//example.com/images/favicon.ico",
+  "itemImages": {
+    "trsp2": [
+      "img/sp/trsp2_2.jpg",
+      "img/sp/trsp2_s2.jpg",
+      "img/sp/trsp2_s3.jpg"
+    ],
+    "trsp": [
+      "https://image.rakuten.co.jp/shopjapan/cabinet/share/used/trsp1.jpg",
+      "https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago01.jpg",
+      "https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago02.jpg",
+      "https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago03.jpg",
+      "https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago04.jpg",
+      "https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago05.jpg"
+    ],
+    "awfm": [
+      "https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm1.jpg",
+      "https://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/awfm/awfm_reshipi01.jpg",
+      "https://image.rakuten.co.jp/shopjapan/cabinet/awfm/awfm_s3.jpg",
+      "https://image.rakuten.co.jp/shopjapan/cabinet/awfm/awfm_s4.jpg"
+    ],
+    "nice": [
+      "https://image.rakuten.co.jp/shopjapan/cabinet/share/used/nice1.jpg",
+      "https://image.rakuten.co.jp/shopjapan/cabinet/nice/s_0210_4.jpg"
+    ],
+    "ngw": [
+      "https://image.rakuten.co.jp/shopjapan/cabinet/share/used/ngw1.jpg",
+      "https://image.rakuten.co.jp/shopjapan/cabinet/ngw/other1.jpg",
+      "https://image.rakuten.co.jp/shopjapan/cabinet/ngw/other3.jpg"
+    ]
+  },
+  "endof site.json": "end"
 }
-

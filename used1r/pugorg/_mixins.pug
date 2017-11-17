@@ -104,6 +104,30 @@ mixin rolloverImage(itemName,images)
           li
             img(src=image)
 
+//-rollover images for no frame
+mixin rolloverImage2(itemName,images)
+  // 0:default image  1-5:thumbnail images max:5
+  script.
+    var itemName='#{itemName}';
+    $(function(){
+        $('#thumb_area_#{itemName} img').mouseover(function(){
+            $('#main_img_#{itemName} img').attr('src', $(this).attr('src'));
+        });
+        $('#thumb_area_#{itemName} img').mouseout(function(){
+            $('#main_img_#{itemName} img').attr('src', '#{images[0]}');
+        });
+    });
+  //- link(rel='stylesheet', href='css/style.css')
+  //- link(rel='stylesheet', href='css/frame.css')
+  div(id='main_img_'+itemName, class='main_img' style="position:relative")
+    img(src=images[0])
+  ul(id='thumb_area_'+itemName, class='thumb_area')
+    for image, index in images
+      //- 1枚目を飛ばす
+      if index>0
+        li
+          img(src=image)
+
 mixin slider(itemName,images)
   style.
     .sliderImg{
@@ -127,37 +151,68 @@ mixin modal(itemName,title,description)
 
 
 //- mixin cabinetImage(images,reqImagePath)
-mixin cabinetImage(reqImagePath,thumWidthHeight)
+mixin cabinetImage(itemName,reqImagePath,type,thumWidthHeight)
   - var sentou ='https://image.rakuten.co.jp/shopjapan/cabinet/' //削除文字
   - var thumurl= 'http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/';//thumnail url
   //サムネ対象サイズ
-  - var size200= '?_ex=200x200';
-  - var size300= '?_ex=300x300';
-  - var size400= '?_ex=400x400';
+  - var size   = '?_ex='+thumWidthHeight+'x'+thumWidthHeight;
 
-  case thumWidthHeight
-    when 200
-      -var size =size200
-    when 300
-      -var size =size300
-    when 400
-      -var size =size400
-    default
-      -var size =size200
+  if (thumWidthHeight === 200 ||  thumWidthHeight === 300 || thumWidthHeight === 400 || thumWidthHeight === '')
+    case thumWidthHeight
+      when 200
+        - var size= '?_ex=200x200';
+      when 300
+        - var size= '?_ex=300x300';
+      when 400
+        - var size= '?_ex=400x400';
+      when ''
+        - var size= '?_ex=200x200';
 
-  each i in images
+  - var oneItemImages=[]
+  - var imageLength = images.length
+  //- each i in images
+  for i, index in images
     //-  "画像パス": "share/used/how_to01.jpg",
-    - var imagePath = i['画像パス'] //cabinet url from csv
+    - var imagePath = i['path'] //cabinet url from csv
     - var dmy = imagePath.split('/');
     //- /cabinet/ 以下のPathで前方一致
     if(imagePath.indexOf(reqImagePath) === 0)
-      - var imageurl = i['画像URL'] //cabinet url from csv
+      - var imageurl = i['url'] //cabinet url from csv
       - var shorturl=imageurl.replace( sentou , "" );
       - var thum = thumurl+shorturl+size; //thumbnail 用リンク完成
 
-      pre fromCSV : #{imageurl}
-      if (thumWidthHeight === 'original')
-        img.image(src='' data-original=imageurl)
-      else
-        pre toThumb : #{thum}
-        img.image(src='' data-original=thum)
+      //- スライダーなどの指定なしはリスト表示
+      if type === ''
+        p.text.small オリジナルURL :
+          a(href=imageurl, target='_blank') 
+            span #{imageurl}
+        if (thumWidthHeight === 'original')
+          a(href=imageurl, target='_blank') 
+            img.image(src='' data-original=imageurl)
+        else
+          p サムネ生成URL :
+            a(href=thum, target='_blank') 
+              span #{thum}
+          a(href=imageurl, target='_blank') 
+            img.image(src='' data-original=thum)
+
+
+      - oneItemImages.push(thum)
+
+    //- - var tempPath = "ngw/other"
+    //- if(imagePath.indexOf(tempPath) === 0)
+    //-   - var flg = true
+    //-   - oneItemImages.push(thum)
+    //- else if (flg)
+    //-   - flg = false
+      //- iframe用のHTMLを生成 サムネイルロールオーバ
+      //- +rolloverImage(itemName,oneItemImages)
+      //- +rolloverImage('nice',oneItemImages)
+    //- if (imageLength === index )
+
+  if type === 'rollover'
+    +rolloverImage2( itemName ,oneItemImages)
+  if type === 'slider'
+    +slider( itemName ,oneItemImages)
+
+  h3 #{oneItemImages.length} 枚発見

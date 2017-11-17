@@ -29,6 +29,42 @@ html
     link(rel='stylesheet', href='css/slick.css')
     link(rel='stylesheet', href='css/lightbox.css')
     link(rel='SHORTCUT ICON', href='https://www.rakuten.ne.jp/gold/shopjapan/images/favicon.ico')
+
+    //- Required
+    //- - var pageTitle= "";
+    //- - var pageDescription= site.description;
+    //- - var pageKeywords= site.keywords;
+    //- //- Optional
+    //- - var pageOgpTitle= "";
+    //- - var pageOgpImage= site.ogpImage
+    //- - var pageLang= "ja";
+    //- - var pageOgpType= "website";
+    //- //- Not modified
+    //- - var pageUrl= site.relativePath;
+    // #{pageTitle}
+    p #{site.name}
+    //- p #{site.itemImagesJson.trsp2}
+    //- p #{site.itemImagesJson}
+
+    //- span #{site.description}
+    - var image1 = site.trsp2;
+    - var siteAr = site;
+    //- ul
+    //-   each i in site.itemImages.trsp2
+    //-     li: p # !{i}
+
+
+    //- ul
+    //-   each i in images
+    //-     - var imageurl = i['画像URL']
+    //-     li: p #{imageurl}
+    //-     //- img(src=i['画像URL'] )
+    //-     img(src=imageurl )
+
+
+    script.
+      var siteAR = '#{site}';
+     console.log(JSON.stringify(siteAR));
     style.
       /* Mobile */
       @media only screen and (max-width: 767px) {
@@ -44,12 +80,23 @@ html
 
       /* Tablet / iPad Portrait */
       @media only screen and (min-width: 768px) and (max-width: 991px) {
-        [class*="mobile only"]:not(.tablet),
-        [class*="tablet hidden"],
-        [class*="computer only"]:not(.tablet),
-        [class*="large monitor only"]:not(.tablet),
-        [class*="widescreen monitor only"]:not(.tablet),
-        [class*="or lower hidden"]:not(.mobile) {
+       /*
+          [class*="mobile only"]:not(.tablet),
+          [class*="tablet hidden"],
+          [class*="computer only"]:not(.tablet),
+          [class*="large monitor only"]:not(.tablet),
+          [class*="widescreen monitor only"]:not(.tablet),
+          [class*="or lower hidden"]:not(.mobile) {
+            display: none !important;
+          }
+        */
+
+        [class*="mobile only"],
+        [class*="tablet hidden"]:not(.mobile),
+        [class*="computer only"]:not(.mobile),
+        [class*="large monitor only"]:not(.mobile),
+        [class*="widescreen monitor only"]:not(.mobile),
+        [class*="or lower hidden"] {
           display: none !important;
         }
       }
@@ -165,8 +212,6 @@ html
               return false;
           })
       });
-
-
 
     //- script(type='text/javascript').
       if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {{
@@ -575,6 +620,7 @@ html
           .center
             h2.ui.inverted.icon.header.red
               | しばらくお待ちください。
+            .ui.text.loader
 
     //もったい無い
     a(name='btnBuy')
