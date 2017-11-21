@@ -53,22 +53,18 @@ gulp.task('concatest', function() {
 
 // 正規表現でも文字列置換ができる
 gulp.task('replace', function(){
-  gulp.src(['dl-item201711170707-1.csv'])
+  gulp.src(['./dl-item201711171358-1.csv','!./all.csv'])
     .pipe(convertEncoding({from: "SHIFT-JIS"}))// encode
     .pipe(convertEncoding({to: "UTF-8"}))// encode
     .pipe(gulp.dest('dist'));
     
-  gulp.src(['dist/dl-item201711170707-1.csv'])
-    .pipe(replace(/([^\"|\n])(\n)+/g, ''))
-    .pipe(gulp.dest('dist'));
-
-  // ファイルの結合 with header column
-  gulp.src(['dist/*.csv','!dist/all.csv'])
-    .pipe(concat('all.csv'))
-    .pipe(gulp.dest('dist'));
-
-  // gulp.src(['dist/dl-item201711170707-1.csv'])
+  // gulp.src(['dist/dl-item201711171358-1.csv','!dist/all.csv'])
   //   .pipe(replace(/([^\"|\n])(\n)+/g, '$1'))
+  //   .pipe(gulp.dest('dist'));
+
+  // // ファイルの結合 with header column
+  // gulp.src(['dist/*.csv','!dist/all.csv'])
+  //   .pipe(concat('all.csv'))
   //   .pipe(gulp.dest('dist'));
 
   });
@@ -123,7 +119,10 @@ gulp.task('pug2html', () => {
   .pipe(pug({
     pretty: true
   }))
-  .pipe(convertEncoding({to: "EUC-JP"}))// encode
+  // .pipe(convertEncoding({to: "EUC-JP"}))// encode
+  // .pipe(gulp.dest('./nohin'))
+  .pipe(replace('euc-jp', 'UTF-8'))// for bs
+  .pipe(convertEncoding({to: "UTF-8"}))// for bs
   //  .pipe(gulp.dest('./html/'));
   .pipe(gulp.dest('./'))
   .pipe(browserSync.reload({stream: true}));
@@ -231,6 +230,21 @@ gulp.task('bs', function() {
   });
 });
 
+gulp.task('bsutf8', function() {
+  browserSync({
+    server: {
+      baseDir: "./",
+      // index: "pcList.html",
+      directory: true
+    },
+    open  :true,
+    // open  :false,
+    notify:true,
+    xip   :false
+  });
+});
+
+
 //CSS圧縮
 gulp.task('minify-css', function() {
   return gulp.src("css/*.css")
@@ -252,7 +266,7 @@ gulp.task("watch", function () {
 
 
 // gulp.task('w', ['pug2html','sass'], function() {
-gulp.task('w', ['bs','pug2html','sass','watch'], function() { //browser-sync
+gulp.task('w', ['bsutf8','pug2html','sass','watch'], function() { //browser-sync
   gulp.watch(src.html, ['pug2html']);
   gulp.watch(src.scss, ['sass']);
   gulp.watch('_data/site.json', ['pug2html']);
