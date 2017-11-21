@@ -51,15 +51,34 @@ gulp.task('concatest', function() {
   .pipe(gulp.dest('_data'));
 });
 
-// 正規表現でも文字列置換ができる
-gulp.task('replace', function(){
+// CSV Shiftjis To Utf8
+gulp.task('shift2utf8', function(){
   gulp.src(['./dl-item201711171358-1.csv','!./all.csv'])
     .pipe(convertEncoding({from: "SHIFT-JIS"}))// encode
     .pipe(convertEncoding({to: "UTF-8"}))// encode
+    .pipe(rename({  extname: '.uft8.csv'  }))
     .pipe(gulp.dest('dist'));
-    
+});
+
+// 正規表現でも文字列置換
+gulp.task('replace', function(){
+      gulp.src(['dist/*.uft8.csv','!dist/all.csv'])
+    .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
+    // ダブルクオーテーション + 複数改行 を削除 
+    .pipe(replace(/([^\"|\n])(\n)+/g, '$1')) // org
+    // ダブルクオーテーション + 単数改行 を削除 
+    .pipe(replace(/(\"\n)/g, '')) // org
+
+    .pipe(replace(/(\"\")(\u3000)+/g, '$1'))
+
+    // .pipe(replace(/(\"\n)(\n)+|(\"\n)|([^\"|\n])(\n)+/g, '$1')) // org
+              //  "+複数改行  "+改行  "+複数改行 複数改行 "+全角スペース
+    // .pipe(replace(/(\"\n)(\n)+|(\"\n)|([^\"|\n])(\n)+|(\"\")(\u3000)+/g, '$1')) // org
+    // .pipe(replace(/(\"\n)(\n)+|(\"\n)|([^\"|\n])(\n)+/g, '$1')) // org
+    .pipe(gulp.dest('dist'));
+
   // gulp.src(['dist/dl-item201711171358-1.csv','!dist/all.csv'])
-  //   .pipe(replace(/([^\"|\n])(\n)+/g, '$1'))
+  //   .pipe(replace(/(\"\n)/g, '$1')) // // "の次すぐ改行文字
   //   .pipe(gulp.dest('dist'));
 
   // // ファイルの結合 with header column
@@ -67,7 +86,7 @@ gulp.task('replace', function(){
   //   .pipe(concat('all.csv'))
   //   .pipe(gulp.dest('dist'));
 
-  });
+});
 
 
 gulp.task('sass', function() {
@@ -262,6 +281,7 @@ gulp.task('minify-css', function() {
 var reload = browserSync.reload;
 gulp.task("watch", function () {
   gulp.watch('./*.html', reload);
+  gulp.watch('./css/*.css.', reload);
 });
 
 
@@ -269,6 +289,7 @@ gulp.task("watch", function () {
 gulp.task('w', ['bsutf8','pug2html','sass','watch'], function() { //browser-sync
   gulp.watch(src.html, ['pug2html']);
   gulp.watch(src.scss, ['sass']);
+  gulp.watch('css/**/*.css', ['sass']);
   gulp.watch('_data/site.json', ['pug2html']);
   // gulp.watch(src.js, ['js']);
 });
