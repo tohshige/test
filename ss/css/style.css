@@ -2,8 +2,8 @@
 /* CSS Document */
 
 .main_img{
-	width:300px;
-	height:300px;
+	width:320px;
+	height:320px;
 	display:block;
 	position:absolute;
 	top:0px;
@@ -12,8 +12,8 @@
 }
 
 .main_img img{
-	width:300px;
-	height:300px;
+	width:320px;
+	height:320px;
 }
 
 .main_img_two{
@@ -64,11 +64,11 @@
 }
 
 .thumb_area{
-	width:300px;
+	width:320px;
 	height:80px;
 	display:block;
 	position:absolute;
-	top:290px;
+	top:310px;
 	left:-39px;
 	padding-top:0px;
 	z-index: 999999999;
@@ -80,8 +80,8 @@
 	margin-right:5px;
 	float: left;
     border: 1px solid #ccc;
-	width:55px;
-	height:55px;
+	width:58px;
+	height:58px;
 }
 
 .thumb_area li:last-child{
@@ -216,9 +216,9 @@
 
 .col_cart{
 	height:437px;
-	width: 600px;
+	width: 580px;
 	position: absolute;
-	top:0px;
+	top:-8px;
 	right:20px;
 }
 
@@ -226,7 +226,7 @@
 	height:437px;
 	width: 600px;
 	position: absolute;
-	top:0px;
+	top:-8px;
 }
 
 
@@ -286,8 +286,8 @@
 	}
 	.position{
 		position: relative;
-		left: 270px;
-		top: -54px;
+		left: 263px;
+        top: -55px;
 		width: 429px;
 			height: 50px;
 		line-height: 50px;
@@ -307,8 +307,8 @@
 	
 	.arrow_01{
 		display: block;
-		    width: 170px;
-    margin: 15px 4px;
+		      width: 171px;
+    margin-top: 10px;
 		text-decoration: underline;
 		font-weight: bold;
 	}

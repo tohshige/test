@@ -7,7 +7,7 @@
   font-size: 15px;
   position: relative;
   top:0px;
-  background-color: #82b63a;
+  background-color: #e20000;
 }
 
 body{
@@ -423,10 +423,9 @@ v
 
 .kv{
 	position: absolute;
-	width: 1020px;
-	left:0;
-	right:0;
-	margin: 0 auto;
+	width: 2500px;
+	left: 50%;
+    margin-left: -1250px;
 	z-index: 999;
 }
 .white{
@@ -486,4 +485,39 @@ v
 	margin: 0 auto;
 }
 
+.ui.label{
+	background-color: #fff;
+	border-width: 1px;
+    border-style: solid;
+    border-color: initial;
+    border-image: initial;
+    font-size: 14px;
+	padding: .300em .800em;
+} 
+
+body{
+    font-family: 游ゴシック, "Yu Gothic", 游ゴシック体, YuGothic, "ヒラギノ角ゴ Pro W3", HiraKakuProN-W3, メイリオ, Meiryo, sans-serif;
+}
+
+.price{
+	font-size: 30px;
+	position: relative;
+	top:2px;
+}
+
+.ui.yellow.button, .ui.yellow.buttons .button {
+    background-color: #f6c400;
+	color:#e20000;
+}
+
+.chou_icon{
+	position: absolute;
+	    left: -28px;
+    top: 6px;
+    width: 180px;
+}
+
+.modal-sinpin{
+	
+}
 
