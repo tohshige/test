@@ -36,5 +36,8 @@
     "pug-lint": "^2.5.0",
     "sanitize.css": "^5.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "csvtojson": "^1.1.9",
+    "run-sequence": "^2.2.0"
+  }
 }
