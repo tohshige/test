@@ -22,6 +22,7 @@ var fs = require( "fs" );
 var path = require('path'); //path
 
 var csv2json = require('gulp-csv2json');
+var csvtojson = require('csvtojson').csvtojson;
 var rename = require('gulp-rename');
 var concat = require("gulp-concat");
 var sortJSON = require('gulp-json-sort').default;
@@ -51,23 +52,50 @@ gulp.task('concatest', function() {
   .pipe(gulp.dest('_data'));
 });
 
-// 正規表現でも文字列置換ができる
-gulp.task('replace', function(){
-  gulp.src(['./dl-item201711171358-1.csv','!./all.csv'])
+// CSV Shiftjis To Utf8
+gulp.task('shift2utf8', function(){
+  // gulp.src(['./dl-item201711171358-1.csv','!./all.csv'])
+  return gulp.src(['./dist/dl-item20*-1.csv','!./all.csv'])
     .pipe(convertEncoding({from: "SHIFT-JIS"}))// encode
     .pipe(convertEncoding({to: "UTF-8"}))// encode
+    .pipe(rename({  extname: '.utf8.csv'  }))
     .pipe(gulp.dest('dist'));
+    // callback();
     
+});
+// 正規表現でも文字列置換
+gulp.task('replace', function(){
+  return gulp.src(['dist/dl-item20*.utf8.csv','!dist/all.csv'])
+    .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
+    // ダブルクオーテーション + 複数改行 を削除 
+    .pipe(replace(/([^\"|\n])(\n)+/g, '$1')) // org
+    // ダブルクオーテーション + 単数改行 を削除 
+    .pipe(replace(/(\"\n)/g, '')) // org
+
+    // .pipe(replace(/(\"\")(\u3000)+/g, '$1'))
+    .pipe(replace(/(\,)(?!\")/g,  ',"'))  // ," となってないのを修正
+    // .pipe(replace(/(?<!\")(\,)/g,  '",')) // ", となってないのを修正
+
+    // .pipe(replace(/(\"\n)(\n)+|(\"\n)|([^\"|\n])(\n)+/g, '$1')) // org
+              //  "+複数改行  "+改行  "+複数改行 複数改行 "+全角スペース
+    // .pipe(replace(/(\"\n)(\n)+|(\"\n)|([^\"|\n])(\n)+|(\"\")(\u3000)+/g, '$1')) // org
+    // .pipe(replace(/(\"\n)(\n)+|(\"\n)|([^\"|\n])(\n)+/g, '$1')) // org
+    .pipe(gulp.dest('dist'));
+
   // gulp.src(['dist/dl-item201711171358-1.csv','!dist/all.csv'])
-  //   .pipe(replace(/([^\"|\n])(\n)+/g, '$1'))
+  //   .pipe(replace(/(\"\n)/g, '$1')) // // "の次すぐ改行文字
   //   .pipe(gulp.dest('dist'));
 
-  // // ファイルの結合 with header column
-  // gulp.src(['dist/*.csv','!dist/all.csv'])
-  //   .pipe(concat('all.csv'))
-  //   .pipe(gulp.dest('dist'));
+});
 
-  });
+// // ファイルの結合 with header column
+gulp.task('concat2', function(){
+  return gulp.src(['dist/0dl-itemHeader*.utf8.csv','dist/dl-*.utf8.csv','!dist/all.utf8.csv'])
+    .pipe(concat('all.utf8.csv'))
+    .pipe(gulp.dest('dist'));
+});
+
+// 'shift2utf8','replace', 'concat2', 'csvjson2'
 
 
 gulp.task('sass', function() {
@@ -113,7 +141,8 @@ gulp.task('pug2html', () => {
     locals.relativePath = path.relative( file.base, file.path.replace( /.pug$/, '.html' ) );
     // return { 'site' : locals };
     var images  = JSON.parse( fs.readFileSync( src.json + '/all.json'));
-    return {  'site' : locals, 'images' : images };
+    var images2 = JSON.parse( fs.readFileSync( 'dist/all.utf8.json'));
+    return {  'site' : locals , 'images' : images, 'images2' : images2 };
     // 199614_20171109_20171109_1.csv
   } ) )
   .pipe(pug({
@@ -170,6 +199,35 @@ gulp.task('csv2json', function () {
       console.error(red + 'error reorder')
       console.error(sortColumn)
     });
+});
+
+
+// version2
+gulp.task('csv2json2', function (callback) {
+  var Converter = require("csvtojson").Converter;
+  var converter = new Converter({});
+  var indentSpace = '  ';
+  
+  converter.on("end_parsed", function (jsonArray) {
+      fs.writeFile('dist/all.utf8.json', JSON.stringify(jsonArray, null, indentSpace));
+      // console.log("JSON形式で出力されました");
+      console.log("complete JSON!!");
+      callback();
+  });
+
+  require("fs").createReadStream("dist/all.utf8.csv").pipe(converter);
+
+
+  // var columns =['1','2','url','4','5'];
+  // var csvParseOptions = {'columns':columns}; //based on options specified here : http://csv.adaltas.com/parse/ 
+  // var csvParseOptions = {columns:false }; //based on options specified here : http://csv.adaltas.com/parse/ 
+  //   gulp.src('dist/all.utf8.csv')
+  //     .pipe(csv2json(csvParseOptions))
+  //     .pipe(rename({extname: '.json'}))
+
+  //     .pipe(sortJSON({ space: 2 }))
+  //     .pipe(gulp.dest('dist'));
+
 });
 
 gulp.task('pug2htmlSP', () => {
@@ -262,6 +320,7 @@ gulp.task('minify-css', function() {
 var reload = browserSync.reload;
 gulp.task("watch", function () {
   gulp.watch('./*.html', reload);
+  gulp.watch('./css/*.css.', reload);
 });
 
 
@@ -269,9 +328,34 @@ gulp.task("watch", function () {
 gulp.task('w', ['bsutf8','pug2html','sass','watch'], function() { //browser-sync
   gulp.watch(src.html, ['pug2html']);
   gulp.watch(src.scss, ['sass']);
+  gulp.watch('css/**/*.css', ['sass']);
   gulp.watch('_data/site.json', ['pug2html']);
   // gulp.watch(src.js, ['js']);
 });
+
+gulp.task('csvjson-help', function(callback) {
+  var comment = '\
+  check dist/dl-item2017xxxx.csv  \n\
+  now convert to dist/all.utf8.json ! \n\
+  end of line \n\
+  ';
+  console.log(comment);
+  callback();
+});
+// input : @upload.rakuten.ne.jp /ritem/download/ のCSV dl-item2017xxxx.csv
+// output: dist/all.utf8.json
+// run-sequence 順番に処理
+var runSequence = require('run-sequence');
+gulp.task('csvjson', function(callback) {
+  runSequence(
+  'csvjson-help',// help massage
+  'shift2utf8',  // csv ファイルを shift-jis to utf8
+  'replace',     // csv 内のHTML改行を置換、削除
+  'concat2',     // csv header 行を結合
+  'csv2json2',   // pug 用にJSON化
+  callback);
+});
+
 // Generate pug to html, scss to css
 gulp.task('wsass', ['pug2html','sass'], function() {
   gulp.watch(src.html, ['pug2html']);

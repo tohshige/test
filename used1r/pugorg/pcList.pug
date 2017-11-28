@@ -133,6 +133,44 @@ html
       //- 1st item
 
 
+      - var imageLength = images2.length
+      - console.log(imageLength);
+      - var onelineCount = 0;
+      h3 #{imageLength} lines
+        for i, index in images2
+          - var oneline  = i['itemImgURL'];
+          - var oneline1 = i['itemImgName'];
+          - var oneline2 = i['movie'];
+          - var oneline3 = i['販売期間指定'];
+          -
+            var line = ''; //reset
+            //- var oneline = JSON.parse(JSON.stringify(i), function(key, value){
+            JSON.parse(JSON.stringify(i), function(key, value){
+              if( value.length > 0){
+                var hikaku = value.substring(0, 21);
+                if ('https://image.rakuten' === hikaku){
+                  onelineCount ++;
+                  line = value;
+                  return value;
+                }
+              }
+            });
+            
+          if line 
+            - var itemURL  = i['itemURL'];
+            - var itemNo   = i['itemNo'];
+            - var itemName = i['itemName'];
+            - var price = i['price'];
+            pre(style=' border-top: 1px dotted silver;')
+             code.prettyprint.code
+              | itemURL  #{itemURL}
+              | itemNo   #{itemNo}
+              | itemName #{itemName}
+              | price    #{price}
+              | #{line}
+        p #{onelineCount}
+      - console.log(onelineCount);
+
       a#slider
         h2 400x400pxのサムネリンクを生成、スライダーに埋め込む
         p (ウィンドウ幅を狭めるとスライダーに切り替え表示されます)

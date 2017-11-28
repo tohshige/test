@@ -1,4 +1,4 @@
-@charset "EUC-JP";
+@charset "UTF-8";
 
 /* Icons */
 @font-face
@@ -82,11 +82,11 @@
 }
 .slick-prev:before
 {
-    content: '¢«';
+    content: 'â†';
 }
 [dir='rtl'] .slick-prev:before
 {
-    content: '¢ª';
+    content: 'â†’';
 	
 }
 
@@ -102,11 +102,11 @@
 }
 .slick-next:before
 {
-    content: '¢ª';
+    content: 'â†’';
 }
 [dir='rtl'] .slick-next:before
 {
-    content: '¢«';
+    content: 'â†';
 }
 
 .single-item .slick-prev::before,
