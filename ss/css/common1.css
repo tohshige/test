@@ -427,6 +427,7 @@ v
 	left: 50%;
     margin-left: -1250px;
 	z-index: 999;
+	/*position: relative;*/
 }
 .white{
 	position: absolute;
@@ -449,7 +450,7 @@ v
 
 .supec_btn{
 	display: flex;
-	padding-left: 120px;
+	padding-left: 100px;
 }
 
 .size{
@@ -512,7 +513,7 @@ body{
 
 .chou_icon{
 	position: absolute;
-	    left: -28px;
+	   left: -34px;
     top: 6px;
     width: 180px;
 }

@@ -114,10 +114,22 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 	.mg{
 		height: 500px;
 	}
+	#knt{
+	position: absolute;
+	top:398px;
+	width: 129px;
+    left: 50%;
+    margin-left: 256px;
+    z-index:1000;
+	display: none;
+		cursor: pointer;
+	}
+	
 </style>
 
+<img src="img/knt.png" id="knt">
+<img src="img/kv_1.png" class="kv" usemap="#atk_nav">
 
-<img src="img/kv1.png" class="kv" usemap="#atk_nav">
 <div class="outlet_pc_wrap" id="top" style="height:5000px;">
  
 <!--==================モッタイナイ市も購入手順 ==================-->
@@ -128,10 +140,6 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 <area shape="rect" coords="1074,390,1204,543" href="#sin">
 <area shape="rect" coords="1300,397,1420,550" href="#kmw">
 <area shape="rect" coords="1503,397,1640,550" href="#kt" id="kt_btn">
-	
-	
-	
-	
 </map>
 
 
@@ -177,7 +185,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
   
  <!-- <ul class="item_lineup" style="display:flex;flex-wrap: wrap;padding-left:0px;height:5000px;width:980px;margin:0 auto;justify-content: space-between;position: relative;">-->
   
-    <ul class="item_lineup" style="padding-left:0px;height: 7900px;width:980px;margin:0 auto;position: relative;" id="takasa">
+    <ul class="item_lineup" style="padding-left:0px;height: 8100px;width:980px;margin:0 auto;position: relative;" id="takasa">
     
     
     
@@ -186,14 +194,16 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
     <div class="mg"></div>
     <div style="width:860px;padding-left: 50px;display: none;" id="kt_info">
     <img src="img/how_to01.jpg"></div>
-    <img src="img/coupon.jpg" style="margin: 0px 0 0px 10px;width:950px;">
+    <img src="img/coupon.jpg" style="margin: 0px 0 0px 10px;width:950px;" usemap="#coupon">
     <img src="img/chou_ttl1.jpg" style="margin: 10px 0 10px -13px;">
 	<ul class="medama_wrap">
 	
 	
-	
-
-	
+	<map name="coupon">
+<area shape="rect" coords="50,0,460,100" href="https://coupon.rakuten.co.jp/getCoupon?getkey=Tk9QSS1WWVlaLTNURDItRlVJSA--&rt=
+http://m.coupon.rakuten.co.jp/getCoupon?getkey=Tk9QSS1WWVlaLTNURDItRlVJSA--&rt=" target="_blank">
+<area shape="rect" coords="490,0,900,100" href="https://coupon.rakuten.co.jp/getCoupon?getkey=OFpXWi1YVkhZLVhaRU0tQUE1SA--&rt=
+http://m.coupon.rakuten.co.jp/getCoupon?getkey=OFpXWi1YVkhZLVhaRU0tQUE1SA--&rt=" target="_blank">	</map>
 	
 	
 	
@@ -203,7 +213,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 <li id="awfm" class="medama_tan">
 <div class="medama_item">
 <img src="img/chou.png" class="chou_icon">
-<img src="img/wdc2_s2.jpg">
+<img src="img/wdc2_s4.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -236,7 +246,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
       <hr style="margin-top: 5px;">
       <div class="kaimawari_supec_btn3" style="display: flex;">
           <a href="#" class="modal-wdc2 arrow_01">> 商品内容はこちら</a>
-          <a href="#" class="modal-sinpin arrow_01">> 中古品・ワケあり品とは</a>
+          <a href="#" class="modal-sinpin arrow_01">> 中古品・処分品・<br>キャンセル品とは</a>
       </div>
     </div>
 
@@ -284,7 +294,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
       <hr style="margin-top: 5px;">
       <div class="kaimawari_supec_btn3">
           <a href="#" class="modal-sim arrow_01">> 商品内容はこちら</a>
-        <a href="#" class="modal-sinpin arrow_01">> 中古品・ワケあり品とは</a>
+        <a href="#" class="modal-sinpin arrow_01">> 中古品・処分品・<br>キャンセル品とは</a>
       </div>
     </div>
 
@@ -317,7 +327,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 <li id="crf" class="medama_tan">
 <div class="medama_item">
 <img src="img/mdm.png" class="chou_icon">
-<img src="img/crf_s2.jpg">
+<img src="img/crf_s4.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -350,7 +360,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
       <hr style="margin-top: 5px;">
       <div class="kaimawari_supec_btn3">
           <a href="#" class="modal-crf arrow_01">> 商品内容はこちら</a>
-         <a href="#" class="modal-sinpin arrow_01">> 中古品・ワケあり品とは</a>
+         <a href="#" class="modal-sinpin arrow_01">> 中古品・処分品・<br>キャンセル品とは</a>
       </div>
     </div>
 
@@ -361,11 +371,12 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 </div>
 </li>
 <!--==================crf ==================-->
+
 <!--==================crff ==================-->
 <li id="crff" class="medama_tan">
 <div class="medama_item">
 <img src="img/mdm.png" class="chou_icon">
-<img src="img/crff_s2.jpg">
+<img src="img/crff_s4.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -398,7 +409,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
       <hr style="margin-top: 5px;">
       <div class="kaimawari_supec_btn3">
           <a href="#" class="modal-crff arrow_01">> 商品内容はこちら</a>
-          <a href="#" class="modal-sinpin arrow_01">> 中古品・ワケあり品とは</a>
+          <a href="#" class="modal-sinpin arrow_01">> 中古品・処分品・<br>キャンセル品とは</a>
       </div>
     </div>
 
@@ -409,8 +420,9 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 </div>
 </li>
 <!--==================crff ==================-->
+
 <!--==================AWFM ==================-->
-<li id="awfm" class="medama_tan">
+<li id="awfm" class="medama_tan" style="margin-top: 10px;">
 <div class="medama_item">
 <img src="img/mdm.png" class="chou_icon">
 <img src="img/awfm_s2.jpg">
@@ -446,7 +458,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
       <hr style="margin-top: 5px;">
       <div class="kaimawari_supec_btn3">
           <a href="#" class="modal-awfm arrow_01">> 商品内容はこちら</a>
-         <a href="#" class="modal-sinpin arrow_01">> 中古品・ワケあり品とは</a>
+         <a href="#" class="modal-sinpin arrow_01">> 中古品・処分品・<br>キャンセル品とは</a>
       </div>
     </div>
 
@@ -458,7 +470,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 </li>
 <!--==================AWFM ==================-->
 <!--==================stpb ==================-->
-<li id="stpb" class="medama_tan">
+<li id="stpb" class="medama_tan" style="margin-top: 10px;">
 <div class="medama_item">
 <img src="img/mdm.png" class="chou_icon">
 <img src="img/stpb_s2.jpg">
@@ -494,7 +506,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
       <hr style="margin-top: 5px;">
       <div class="kaimawari_supec_btn3">
           <a href="#" class="modal-stpb arrow_01">> 商品内容はこちら</a>
-          <a href="#" class="modal-sinpin arrow_01">> 中古品・ワケあり品とは</a>
+          <a href="#" class="modal-sinpin arrow_01">> 中古品・処分品・<br>キャンセル品とは</a>
       </div>
     </div>
 
@@ -506,10 +518,10 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 </li>
 <!--==================stpb ==================-->
 <!--==================CRFF ==================-->
-<li id="crff" class="medama_tan">
+<li id="crff" class="medama_tan" style="margin-top: 10px;">
 <div class="medama_item">
 <img src="img/mdm.png" class="chou_icon">
-<img src="img/trcs_s2.jpg">
+<img src="img/trcs_s3.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -542,7 +554,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
       <hr style="margin-top: 5px;">
       <div class="kaimawari_supec_btn3">
           <a href="#" class="modal-trcs arrow_01">> 商品内容はこちら</a>
-          <a href="#" class="modal-sinpin arrow_01">> 中古品・ワケあり品とは</a>
+          <a href="#" class="modal-sinpin arrow_01">> 中古品・処分品・<br>キャンセル品とは</a>
       </div>
     </div>
 
@@ -555,7 +567,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 <!--==================CRFF ==================-->
 
 <!--==================AWFM ==================-->
-<li id="awfm" class="medama_tan">
+<li id="awfm" class="medama_tan" style="margin-top: 10px;">
 <div class="medama_item">
 <img src="img/mdm.png" class="chou_icon">
 <img src="img/ncdm_s2.jpg">
@@ -591,7 +603,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
       <hr style="margin-top: 5px;">
       <div class="kaimawari_supec_btn3">
           <a href="#" class="modal-ncdm arrow_01">> 商品内容はこちら</a>
-         <a href="#" class="modal-sinpin arrow_01">> 中古品・ワケあり品とは</a>
+         <a href="#" class="modal-sinpin arrow_01">> 中古品・処分品・<br>キャンセル品とは</a>
       </div>
     </div>
 
@@ -603,10 +615,10 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 </li>
 <!--==================AWFM ==================-->
 <!--==================CRF ==================-->
-<li id="crf" class="medama_tan">
+<li id="crf" class="medama_tan" style="margin-top: 10px;">
 <div class="medama_item">
 <img src="img/mdm.png" class="chou_icon">
-<img src="img/wcc_s2.jpg">
+<img src="img/wcc_s4.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -639,7 +651,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
       <hr style="margin-top: 5px;">
       <div class="kaimawari_supec_btn3">
           <a href="#" class="modal-wcc arrow_01">> 商品内容はこちら</a>
-         <a href="#" class="modal-sinpin arrow_01">> 中古品・ワケあり品とは</a>
+         <a href="#" class="modal-sinpin arrow_01">> 中古品・処分品・<br>キャンセル品とは</a>
       </div>
     </div>
 
@@ -705,7 +717,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
       <div class="description">
       <div class="pad" style="margin:10px 0 10px 0;">
       <span class="item_name">　　　　　　　　この商品を</span>
-        <select class="ui right big label suu" name="10003955_0_0_9990" >
+        <select class="ui right big label suu" name="10004065_0_0_9990" >
            
           <option selected="selected" style=""><span class="size">数量</span></option>
           <option value="1">1</option>
@@ -722,7 +734,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
       <hr style="margin-top: 10px;">
       <div class="supec_btn">
           <a href="#" class="modal-stmp arrow_01">> 商品内容はこちら</a>
-          <a href="#" class="modal-sinpin arrow_01">> 中古品・ワケあり品とは</a>
+          <a href="#" class="modal-sinpin arrow_01">> 中古品・処分品・<br>キャンセル品とは</a>
       </div>
     </div>
 
@@ -770,7 +782,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
       <hr style="margin-top: 10px;">
      <div class="supec_btn">
           <a href="#" class="modal-kln arrow_01">> 商品内容はこちら</a>
-          <a href="#" class="modal-sinpin arrow_01">> 中古品・ワケあり品とは</a>
+          <a href="#" class="modal-sinpin arrow_01">> 中古品・処分品・<br>キャンセル品とは</a>
       </div>
     </div>
  </div><!--div-->
@@ -849,7 +861,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
       <hr style="margin-top: 10px;">
       <div class="supec_btn">
           <a href="#" class="modal-sqm arrow_01">> 商品内容はこちら</a>
-          <a href="#" class="modal-sinpin arrow_01">> 中古品・ワケあり品とは</a>
+          <a href="#" class="modal-sinpin arrow_01">> 中古品・処分品・<br>キャンセル品とは</a>
       </div>
     </div>
 
@@ -875,7 +887,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 <!--==================TRF ==================-->
 <li id="trf" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/trf_s.jpg">
+<img src="img/trf1.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -922,7 +934,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 <!--==================DSN ==================-->
 <li id="trf" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/dsn_s.jpg">
+<img src="img/dsn1.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -970,7 +982,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 <!--==================UFC ==================-->
 <li id="trf" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/ufc_s.jpg">
+<img src="img/ufc1.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -1018,7 +1030,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 	<!--==================ZBZ ==================-->
 <li id="dsn" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/zbz_s.jpg">
+<img src="img/zbz1.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -1065,7 +1077,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 <!--==================kka ==================-->
 <li id="ufc" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/kka_s.jpg">
+<img src="img/kka.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -1113,7 +1125,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 <!--==================han ==================-->
 <li id="zbz" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/han_s.jpg">
+<img src="img/han.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -1161,7 +1173,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 <!--==================btn ==================-->
 <li id="pc1" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/btn_s.jpg">
+<img src="img/btn.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -1208,7 +1220,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 <!--==================kbn ==================-->
 <li id="pc2" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/kbn_s.jpg">
+<img src="img/kbn.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -1256,7 +1268,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 <!--==================bird ==================-->
 <li id="pc3" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/bird_s.jpg">
+<img src="img/bird.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -1305,7 +1317,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 <li id="kake_w" class="kaimawari_tan">
 <img src="" class="item_title">
 <div class="kaimawari_item">
-<img src="img/kake_w.jpg">
+<img src="img/kake_w2.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -1353,7 +1365,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 	<!--==================kake_i ==================-->
 <li id="kake_i" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/kake_i.jpg">
+<img src="img/kake_i2.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -1401,7 +1413,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 	<!--==================kake_g ==================-->
 <li id="kake_g" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/kake_g.jpg">
+<img src="img/kake_g2.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -1453,7 +1465,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 	<!--==================box_w ==================-->
 <li id="box_w" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/box_w.jpg">
+<img src="img/box_w2.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -1501,7 +1513,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 	<!--==================box_i ==================-->
 <li id="box_i" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/box_i.jpg">
+<img src="img/box_i2.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -1549,7 +1561,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 	<!--==================box_g ==================-->
 <li id="box_g" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/box_g.jpg">
+<img src="img/box_g2.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -1597,7 +1609,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 	<!--==================ori_w ==================-->
 <li id="ori_w" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/ori_w.jpg">
+<img src="img/ori_w2.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -1645,7 +1657,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 	<!--==================ori_i ==================-->
 <li id="ori_i" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/ori_i.jpg">
+<img src="img/ori_i2.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -1693,7 +1705,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 	<!--==================ori_g ==================-->
 <li id="ori_g" class="kaimawari_tan">
 <div class="kaimawari_item">
-<img src="img/ori_g.jpg">
+<img src="img/ori_g2.jpg">
 <!-- 1つめ分 -->
 <div class="item">
   <div class="image">
@@ -1953,8 +1965,8 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 
 <hr style="margin-top: 0px;">
 <!--==================awfm ==================-->
- <img src="img/coupon.jpg" style="margin: 50px 0 0px 10px;width:950px;">
-<img src="img/atk.jpg" style="margin: 50px 0 50px 15px;" id="out">
+ <img src="img/coupon.jpg" style="margin: 50px 0 0px 10px;width:950px;" usemap="#coupon">
+<img src="img/atk2.jpg" style="margin: 50px 0 50px 15px;" id="out">
 
 </ul>
 
@@ -2071,7 +2083,14 @@ $(".out").click(function () {
  <script>
 $("#kt_btn").click(function () {
   $("#kt_info").fadeIn(2000);
-  $("#takasa").css({height:'9000px'});
+  $("#takasa").css({height:'9200px'});
+  $("#knt").fadeIn(0);	
+});
+	 
+$("#knt").click(function () {
+  $("#kt_info").fadeOut(50);
+  $("#takasa").css({height:'8100px'});
+  $("#knt").fadeOut(0);	
 });
 
 </script> 
