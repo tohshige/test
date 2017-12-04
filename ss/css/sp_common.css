@@ -336,5 +336,20 @@ body {
 }
 
 
+	.r_sj_top{
+		text-align: center;
+		padding-top: 2%;
+		margin: 8% auto 12%;
+		font-weight: bold;
+		padding-bottom: 10%;
+	}
+	
+	.r_sj_top a{
+	    font-weight: bold;
+		border-bottom: 1px dotted;
+		color: #000;
+		line-height: 1.8rem;
+	}
+
 
 

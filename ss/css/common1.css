@@ -518,7 +518,115 @@ body{
     width: 180px;
 }
 
-.modal-sinpin{
+.kaimawari_item{
+		width: 296px;
+	}
 	
-}
+	.medama_item{
+		width: 460px;
+	}
+	
+	.kaimawari_item2{
+		width: 215px;
+	}
+	
+	
+	.kaimawari.medama{
+		width:950px;
+		margin: 0 auto;
+	}
+	
+	.kaimawari li{
+		
+	}
+	.btn_zone{
+		width:296px;
+		text-align: center;
+		padding-left: 5px;
+	}
+	
+	.btn_zone3{
+		width:460px;
+		text-align: center;
+		padding-left: 5px;
+	}
+	
+	.btn2_zone{
+		width:220px;
+		text-align: center;
+		padding-left: 0px;
+	}
+	
+	.kaimawari_supec_btn{
+		padding-left:75px;
+	}
+	
+	.kaimawari_supec_btn3{
+		    padding-left: 54px;
+		display: flex;
+	}
+	
+	.kaimawari_supec_btn2{
+		padding-left:36px;
+	}
+	.number{
+		position: relative;
+		left: 2px;
+     line-height: 55px;
+	}
+	
+	.kaimawari_tan{
+		position: relative;
+		width:296px;
+	}
+	.kaimawari_wrap{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding-left: 0;
+		width: 950px;
+    margin: 0 auto;
+	}
+	
+	.medama_wrap{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding-left: 0px;
+		width:950px;
+		margin: 0 auto;
+	}
+	
+	.kaimawari_tan2{
+		width: 215px;
+	}
+	
+	.medama_spec{
+		width: 460px;
+	}
+	
+	.medama_tan{
+		position: relative;
+		width:460px;
+		margin-bottom: 70px;
+	}
+
+
+	.r_sj_top {
+	color: #000;
+	font-weight: bold;
+	text-align: center; 
+	margin: -100px auto 170px;
+	
+	}	
+	
+	
+	
+	
+	.r_sj_top a{
+		color: #000;
+		border-bottom: 2px dotted #ccc;
+		font-weight: bold；
+	}
+	
 
