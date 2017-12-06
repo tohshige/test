@@ -1,5 +1,7 @@
 //plug-in
 var gulp = require('gulp');
+var changed = require('gulp-changed');//変更されたファイルのみを渡す?イマイチ
+var cached = require('gulp-cached');//キャッシュして、変更されたファイルのみを渡す?イマイチ
 var minifycss = require('gulp-minify-css');
 var pug = require('gulp-pug');
 var jade = require('gulp-jade');
@@ -55,7 +57,7 @@ gulp.task('concatest', function() {
 // CSV Shiftjis To Utf8
 gulp.task('shift2utf8', function(){
   // gulp.src(['./dl-item201711171358-1.csv','!./all.csv'])
-  return gulp.src(['./dist/dl-item20*-1.csv','!./all.csv'])
+  return gulp.src(['./dist/dl-*20*-1.csv','!./all.csv'])
     .pipe(convertEncoding({from: "SHIFT-JIS"}))// encode
     .pipe(convertEncoding({to: "UTF-8"}))// encode
     .pipe(rename({  extname: '.utf8.csv'  }))
@@ -74,6 +76,7 @@ gulp.task('replace', function(){
 
     // .pipe(replace(/(\"\")(\u3000)+/g, '$1'))
     .pipe(replace(/(\,)(?!\")/g,  ',"'))  // ," となってないのを修正
+    
     // .pipe(replace(/(?<!\")(\,)/g,  '",')) // ", となってないのを修正
 
     // .pipe(replace(/(\"\n)(\n)+|(\"\n)|([^\"|\n])(\n)+/g, '$1')) // org
@@ -120,7 +123,7 @@ gulp.task('css', function() {
 /** ディレクトリを指定します。 */
 var src = {
   // 出力対象は`_`で始まっていない`.pug`ファイル。
-  html: ['pugorg/**/*.pug', '!' + 'pugorg/**/_*.pug'],
+  html: ['pugorg/**/*.pug', '!' + 'pugorg/**/_item*.pug'],
   // JSONファイルのディレクトリを変数化。
   csv: '_data/',
   scss: 'sass/**/*.scss',
@@ -131,8 +134,11 @@ var src = {
 
 //pug > html
 gulp.task('pug2html', () => {
-//  return gulp.src(['./pug/**/*.pug', '!./pug/**/_*.pug'])
+var DEST = './' ;
+  //  return gulp.src(['./pug/**/*.pug', '!./pug/**/_*.pug'])
   return gulp.src(['./pugorg/**/*.pug', '!./pugorg/**/_*.pug'])
+  .pipe(cached( 'pug2html' )) // キャッシュ処理
+  // .pipe(changed(DEST))
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))  // コンパイルエラーを通知します。  
   // .pipe(convertEncoding({from: "UTF8"}))// from utf8 だと化けるe
   .pipe(convertEncoding({from: "EUC-JP"}))// encode
@@ -142,7 +148,8 @@ gulp.task('pug2html', () => {
     // return { 'site' : locals };
     var images  = JSON.parse( fs.readFileSync( src.json + '/all.json'));
     var images2 = JSON.parse( fs.readFileSync( 'dist/all.utf8.json'));
-    return {  'site' : locals , 'images' : images, 'images2' : images2 };
+    var selects = JSON.parse( fs.readFileSync( 'dist/all-select.utf8.json'));
+    return {  'site' : locals , 'images' : images, 'images2' : images2 , 'selects' : selects };
     // 199614_20171109_20171109_1.csv
   } ) )
   .pipe(pug({
@@ -153,8 +160,9 @@ gulp.task('pug2html', () => {
   .pipe(replace('euc-jp', 'UTF-8'))// for bs
   .pipe(convertEncoding({to: "UTF-8"}))// for bs
   //  .pipe(gulp.dest('./html/'));
-  .pipe(gulp.dest('./'))
-  .pipe(browserSync.reload({stream: true}));
+  .pipe(gulp.dest(DEST))
+  // .pipe(browserSync.reload({stream: true}));
+  .pipe(browserSync.stream());
 });
 
 gulp.task('csv2json', function () {
@@ -206,16 +214,24 @@ gulp.task('csv2json', function () {
 gulp.task('csv2json2', function (callback) {
   var Converter = require("csvtojson").Converter;
   var converter = new Converter({});
+  var converter1 = new Converter({});
   var indentSpace = '  ';
   
   converter.on("end_parsed", function (jsonArray) {
       fs.writeFile('dist/all.utf8.json', JSON.stringify(jsonArray, null, indentSpace));
       // console.log("JSON形式で出力されました");
       console.log("complete JSON!!");
+      // callback();
+  });
+  require("fs").createReadStream("dist/all.utf8.csv").pipe(converter);
+  // dl-selectxxxx.csv
+  converter1.on("end_parsed", function (jsonArray) {
+      fs.writeFile('dist/all-select.utf8.json', JSON.stringify(jsonArray, null, indentSpace));
+      // console.log("JSON形式で出力されました");
+      console.log("complete JSON!!");
       callback();
   });
-
-  require("fs").createReadStream("dist/all.utf8.csv").pipe(converter);
+  require("fs").createReadStream("dist/dl-select201711300659-1.utf8.csv").pipe(converter1);
 
 
   // var columns =['1','2','url','4','5'];
@@ -352,6 +368,7 @@ gulp.task('csvjson', function(callback) {
   'shift2utf8',  // csv ファイルを shift-jis to utf8
   'replace',     // csv 内のHTML改行を置換、削除
   'concat2',     // csv header 行を結合
+  'replace',     // csv 内のHTML改行を置換、削除
   'csv2json2',   // pug 用にJSON化
   callback);
 });

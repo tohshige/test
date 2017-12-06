@@ -263,6 +263,8 @@ html
     //- img.item_title.spNone(src='img/nice_title.png', style='top:200%')
     .ui.divided.items.container.segment#forceWidth
       //- img.ui.fluid.image(src='http://rcart.eek.jp/used/img/sp/kvsp1_1026.jpg')
+
+      //- Nice /////////////////////////////////////////////
       img.ui.fluid.image.bgRed.spNone(src='img/kv1_1026.png')
       img.ui.fluid.image.bgRed.pcNone(src='img/sp/kvsp1_1026.jpg')
       - var itemName = 'nice';
@@ -271,7 +273,7 @@ html
       +itemImages(itemName,'slider')
       //- div.topMarginPConly(style="position: relative;margin-top:220px;").spNone
       .item
-        iframe.itemFrame.ui.grid.image.spNone(scrolling='no', src='frame_'+ itemName +'.html',)
+        //- iframe.itemFrame.ui.grid.image.spNone(scrolling='no', src='frame_'+ itemName +'.html',)
         .content
           img.ui.fluid.image(src='img/nice_pri.jpg')
           .description
@@ -280,18 +282,9 @@ html
               +pad('　レッドを', '10003922_8864_2_5980')
               .ui.section.divider
               +pad('ブラックを','10003922_8865_2_5980','')
-
-
             // 1つめ分完了 
           .extra
             +specBtn('modal-'+ itemName)
-            //- // 1つめ分
-
-            //- +item
-            //-   +pad('　レッドを', '10003922_8864_2_5980')
-            //-   +pad('ブラックを','10003922_8865_2_5980','')
-            //-   +specBtn()(class='modal-'+ itemName)
-            //- // 1つめ分完了
 
 
       //================== no responsive nice ==================

@@ -135,7 +135,7 @@ mixin slider(itemName,images)
       margin: 0 auto;
     }
 
-  ul.slider.single-item.pcNone(style='margin:0 0 10px')
+  ul.slider.single-item(style='margin:0 0 10px')
     for image, index in images
       li
         //- a(href=image, rel='lightbox[#{itemName}-group]')
@@ -170,7 +170,13 @@ mixin cabinetImage(itemName,reqImagePath,type,thumWidthHeight)
 
   - var oneItemImages=[]
   - var imageLength = images.length
-  //- each i in images
+    //- each i in images
+  //- script.
+  //-   if (reqImagePath.length > 0){
+  //-     imagesArray = reqImagePath;
+  //-   } else {
+  //-     imagesArray = images;
+  //-   }
   for i, index in images
     //-  "画像パス": "share/used/how_to01.jpg",
     - var imagePath = i['path'] //cabinet url from csv
@@ -216,3 +222,116 @@ mixin cabinetImage(itemName,reqImagePath,type,thumWidthHeight)
     +slider( itemName ,oneItemImages)
 
   h3 #{oneItemImages.length} 枚発見
+
+
+//- seek dl-item20xxxx.csv
+mixin dlItemImage(argitemURL)
+  - var imageLength = images2.length
+  - console.log(imageLength);
+  - var onelineCount = 0;
+  h3 #{imageLength} lines
+    for i, index in images2
+      if argitemURL === i['itemURL'] 
+        - var oneline  = i['itemImgURL'];
+        - var oneline1 = i['itemImgName'];
+        - var oneline2 = i['movie'];
+        - var oneline3 = i['販売期間指定'];
+        -
+          var itemURLs = []; //reset
+          var itemURLslengh = '';
+          //- var oneline = JSON.parse(JSON.stringify(i), function(key, value){
+          // 1 Item の 横軸 列の検索 約60列
+          JSON.parse(JSON.stringify(i), function(key, value){
+            if( value.length > 0){
+              var hikaku = value.substring(0, 21);
+              if ('https://image.rakuten' === hikaku){
+                onelineCount ++ ;
+                itemURLs = value;
+                itemURLs = itemURLs.split(' ');
+                itemURLslength = itemURLs.length;
+                return value;
+              }
+            }
+          });
+        if itemURLslength > 0  
+          - var itemURL  = i['itemURL'];
+          - var itemNo   = i['itemNo'];
+          - var itemName = i['itemName'];
+          - var price = i['price'];
+          a(href='#' + itemURL, id=itemURL) 
+            span #{onelineCount} 件目 
+          //- ループを抜ける
+          if (onelineCount === 20)
+            p #{itemURLs} countbreak
+            - break
+
+          if i['在庫数'] > 0
+            span 在庫数: #{i['在庫数']} : 
+            a(href='https://item.rakuten.co.jp/' + site.shopName + '/' + itemURL , target='_blank')
+              span 新規ウインドウで商品ページを開く
+
+          pre.code(style=' border-top: 1px dotted silver;')
+           code.prettyprint.code
+            | itemURL    #{itemURL}
+            | itemNo     #{itemNo}
+            | itemName   #{itemName}
+            | price      #{price}
+            | 画像枚数    #{itemURLs.length}
+
+          pre.code(style=' border-top: 1px dotted silver;')
+            code.prettyprint.code
+              span itemImgURL "商品画像URL"
+              br 
+              each oneURL in itemURLs
+                span #{oneURL}
+                br
+                //- - oneURLAll.push(oneURL);
+          //- pre #{oneURLAll}
+            //- "shopName": "https://item.rakuten.co.jp/shopjapan/crfp-148/",
+
+          #rollover(style='position:relative;margin-bottom:190px;')
+            +rolloverImage2( itemURL ,itemURLs)
+
+          +selectAndBtn
+
+          #topMarginPConly(style="position: relative;margin-top:190px;")
+            +slider( itemURL ,itemURLs)
+
+          //- yotei 1つめ分 
+          - var RACNo = i['RAC番号'];
+          - var racArray = RACNo.split('-');
+          //- - var RACNoItem = racArray[1].value;
+          - var RACNoItem = parseInt(racArray[1], 10);  // 123（10進数の整数）racArray[1].value;
+          -   console.log(RACNoItem);
+          //- console.log(racArray);
+
+          //- inventry 結合したIDを呼び出す  
+          +selectAndBtn
+          //- +item
+          //-   +pad('　レッドを', '10003922_8864_2_5980')
+          //-   .ui.section.divider
+          //-   +pad('ブラックを','10003922_8865_2_5980','')
+
+
+          h3 #{itemURLslength} 枚発見
+
+
+mixin selectAndBtn(argitemURL)
+          +item
+            +pad('　レッドを', '10003922_8864_2_5980')
+            .ui.section.divider
+            +pad('ブラックを','10003922_8865_2_5980','')
+
+//- あとで分離
+  - console.log('selects length ' + selects.length)
+  - var OneitemURL = 'nice_ma1';
+  for i, index in selects
+    p #{i['商品管理番号（商品URL）']} 
+    if ( i['商品管理番号（商品URL）'] === OneitemURL)
+      - console.log(i);
+        //- ループを抜ける
+    //- if (index === 20)
+      p #{itemURLs} countbreak
+      - break
+
+

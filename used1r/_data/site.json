@@ -3,6 +3,7 @@
     "gulp があるため文字コードはutf8",
     "// のようなコメントを入れるとエラーになる"
   ],
+  "shopName": "shopjapan",
   "name": "サイト名 site.name",
   "description": "サイト概要",
   "keywords": "キーワード1, キーワード2",
