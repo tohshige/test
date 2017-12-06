@@ -335,6 +335,7 @@ body {
     z-index: 2147480000;
 }
 
-
+.to_rsj{text-align: center; padding-top: 4%;margin: 8% auto 12%;font-weight: bold;color: #000;}
+.to_rsj a{color: #000;border-bottom: 1px dotted;}
 
 

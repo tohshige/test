@@ -7,7 +7,7 @@
   font-size: 15px;
   position: relative;
   top:0px;
-  background-color: #82b63a;
+  background-color: #38a13d;
 }
 
 body{
@@ -442,10 +442,10 @@ v
 .item_title{
 	position: absolute;
 	width: 1600px;
-	top:-180px;
+	top:-150px;
 	left:-325px;
 	margin: 0 auto;
-	z-index: 999;
+	z-index: 998;
 }
 
 .supec_btn{
@@ -486,3 +486,90 @@ v
 	margin: 0 auto;
 }
 
+.bk_k{
+	position: absolute;
+	top:-180px;
+	z-index: 999;
+}
+
+.name_k{
+	position: absolute;
+	top:-120px;
+	left: 510px;
+	z-index: 999;
+}
+
+.bk_g{
+	position: absolute;
+	top:-180px;
+	left: 630px;
+	z-index: 999;
+}
+
+.name_g{
+	position: absolute;
+	top:-120px;
+	left: 200px;
+	z-index: 999;
+}
+
+.to_rsj{text-align: center; padding-top: 0px;margin: 50px auto 35px;}
+.to_rsj a{
+	color: #000;
+	font-weight: bold;
+	border-bottom: 2px dotted;
+}
+
+.price {
+    font-size: 26px;
+    position: relative;
+    top: 1px;
+}
+
+.change_price{
+		display: block;
+		position: relative;
+		width: 500px;
+		background-color: #fff;
+		color:#000;
+		border-radius: 5px;
+		height: 50px;
+		line-height: 50px;
+		font-size: 18px;
+		font-weight: bold;
+		left:0px;
+		top:-5px;
+	}
+	.position{
+		position: relative;
+		left: 258px;
+        top: -55px;
+        width: 439px;
+        height: 50px;
+		line-height: 50px;
+		background-color: #ff0000;
+	}
+	
+	.position span{
+		
+		line-height: 30px;
+	}
+	
+	.pad{
+	width: 550px;
+	margin: 0 50px 5px 50px;
+	
+	}
+	
+	.arrow_01{
+		display: block;
+		    width: 170px;
+    margin: 15px 4px;
+		text-decoration: underline;
+		font-weight: bold;
+	}
+	
+	.item_name{
+		font-size:15px;
+		font-weight:bold;
+	}
