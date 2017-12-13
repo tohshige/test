@@ -21,20 +21,6 @@ mixin itemImg(itemName,right)
 
 //-parts of kago
 mixin pad(color,itemcode,padStyle)
-  //- .ui.stackable.doubling.three.column.grid
-  //-   .three.wide.column
-  //-     span.item_name= color
-  //-   .three.wide.column
-  //-     select.ui.fluid.dropdown.right.big.label(name= itemcode)
-  //-       option 数量
-  //-       option 1
-  //-       option 2
-  //-     //- | 個
-  //-   .eight.wide.column
-  //-     label
-  //-       .ui.primary.tiny.button.cartAddBtn
-  //-         input(type='checkbox', name='chk', value='1')
-  //-         |  買い物カゴに追加する
   .ui.stackable.three.column.vertically.divided.grid
     .row
       .three.wide.column
@@ -51,21 +37,7 @@ mixin pad(color,itemcode,padStyle)
             input(type='checkbox', name='chk', value='1')
             |  買い物カゴに追加する
 
-  //- .pad(style=padStyle).ui.two.column.stackable.grid
-    .three.column.row
-      .column
-        span.item_name= color
-      .column
-        select.ui.fluid.dropdown.right.big.label(name= itemcode)
-          option 数量
-          option 1
-          option 2
-        //- | 個
-      .column
-        label
-          .ui.primary.tiny.button.cartAddBtn
-            input(type='checkbox', name='chk', value='1')
-            |  買い物カゴに追加する
+
 
 //- spec modal btn
 mixin specBtn(itemNameModal)
@@ -83,7 +55,7 @@ mixin rolloverImage(itemName,images)
     title
     script(src='https://www.rakuten.ne.jp/gold/shopjapan/js/jquery.min2.js')
     script.
-      var itemName='#{itemName}';
+      //- var itemName='#{itemName}';
       $(function(){
           $('#thumb_area_#{itemName} img').mouseover(function(){
               $('#main_img_#{itemName} img').attr('src', $(this).attr('src'));
@@ -108,7 +80,6 @@ mixin rolloverImage(itemName,images)
 mixin rolloverImage2(itemName,images)
   // 0:default image  1-5:thumbnail images max:5
   script.
-    var itemName='#{itemName}';
     $(function(){
         $('#thumb_area_#{itemName} img').mouseover(function(){
             $('#main_img_#{itemName} img').attr('src', $(this).attr('src'));
@@ -225,7 +196,7 @@ mixin cabinetImage(itemName,reqImagePath,type,thumWidthHeight)
 
 
 //- seek dl-item20xxxx.csv
-mixin dlItemImage(argitemURL)
+mixin dlItemImage(argitemURL, descFlg)
   - var imageLength = images2.length
   - console.log(imageLength);
   - var onelineCount = 0;
@@ -258,69 +229,90 @@ mixin dlItemImage(argitemURL)
           - var itemNo   = i['itemNo'];
           - var itemName = i['itemName'];
           - var price = i['price'];
-          a(href='#' + itemURL, id=itemURL) 
+          - var zaiko = i['在庫数'];
+          if descFlg
+            style.
+              pre.code{
+                overflow-x:'auto';
+                white-space:'pre';
+                font-family: Consolas, "Courier New", Courier, Monaco, monospace;
+                font-size: 14px;
+                line-height: 1.2;          
+              }
+              pre em {
+                background-color: pink;
+              }
+            a(href='#' + itemURL, id=itemURL) 
             span #{onelineCount} 件目 
-          //- ループを抜ける
-          if (onelineCount === 20)
-            p #{itemURLs} countbreak
-            - break
+            //- ループを抜ける
+            if (onelineCount === 20)
+              p #{itemURLs} countbreak
+              - break
 
-          if i['在庫数'] > 0
-            span 在庫数: #{i['在庫数']} : 
-            a(href='https://item.rakuten.co.jp/' + site.shopName + '/' + itemURL , target='_blank')
-              span 新規ウインドウで商品ページを開く
 
-          pre.code(style=' border-top: 1px dotted silver;')
-           code.prettyprint.code
-            | itemURL    #{itemURL}
-            | itemNo     #{itemNo}
-            | itemName   #{itemName}
-            | price      #{price}
-            | 画像枚数    #{itemURLs.length}
+            if i['在庫数'] > 0
+              span 在庫数は: #{zaiko} : 
+              a(href='https://item.rakuten.co.jp/' + site.shopName + '/' + itemURL , target='_blank')
+                span 新規ウインドウで商品ページを開く
 
-          pre.code(style=' border-top: 1px dotted silver;')
-            code.prettyprint.code
+            pre.code(style=' border-top: 1px dotted silver;')
+              | itemURL  #{itemURL}
+              | itemNo   #{itemNo}
+              | itemName #{itemName}
+              | price    #{price}
+              | 画像枚数　 #{itemURLs.length}
+
+            pre.code(style=' border-top: 1px dotted silver;')
               span itemImgURL "商品画像URL"
               br 
               each oneURL in itemURLs
                 span #{oneURL}
                 br
-                //- - oneURLAll.push(oneURL);
-          //- pre #{oneURLAll}
-            //- "shopName": "https://item.rakuten.co.jp/shopjapan/crfp-148/",
 
-          #rollover(style='position:relative;margin-bottom:190px;')
-            +rolloverImage2( itemURL ,itemURLs)
-
-          +selectAndBtn
-
-          #topMarginPConly(style="position: relative;margin-top:190px;")
+          #topMarginPConly(style="position: relative;margin-top:190px;").pcNone
             +slider( itemURL ,itemURLs)
+          .item
+            #rollover(style='position:relative;margin-bottom:190px;').spNone
+              +rolloverImage2( itemURL ,itemURLs)
+            .content
+              img.ui.fluid.image(src='img/nice_pri.jpg')
+              .description
+                // 1つめ分 
+                //- inventry 結合したIDを呼び出す  
+                +selectAndBtn
+                // 1つめ分完了 
+              .extra
+                +specBtn('modal-'+ itemName)
 
           //- yotei 1つめ分 
           - var RACNo = i['RAC番号'];
           - var racArray = RACNo.split('-');
           //- - var RACNoItem = racArray[1].value;
           - var RACNoItem = parseInt(racArray[1], 10);  // 123（10進数の整数）racArray[1].value;
-          -   console.log(RACNoItem);
+          -   console.log('RACNoItem:' + RACNoItem);
+          - var selNoDummy = '0';//dummy あとでSelect.csvより検索して持ってくる
+          - var padValue = RACNoItem +'_'+ selNoDummy +'_'+ selNoDummy +'_'+ price;
+          -   console.log('padValue:' + padValue);
+
           //- console.log(racArray);
 
           //- inventry 結合したIDを呼び出す  
-          +selectAndBtn
+          //- +selectAndBtn
           //- +item
           //-   +pad('　レッドを', '10003922_8864_2_5980')
           //-   .ui.section.divider
           //-   +pad('ブラックを','10003922_8865_2_5980','')
 
 
-          h3 #{itemURLslength} 枚発見
+          h3 画像 #{itemURLslength} 枚発見
 
 
 mixin selectAndBtn(argitemURL)
-          +item
-            +pad('　レッドを', '10003922_8864_2_5980')
-            .ui.section.divider
-            +pad('ブラックを','10003922_8865_2_5980','')
+  +item
+    +pad('　レッドを', '10003922_8864_2_5980')
+    .ui.section.divider
+    +pad('ブラックを','10003922_8865_2_5980','')
+
 
 //- あとで分離
   - console.log('selects length ' + selects.length)
