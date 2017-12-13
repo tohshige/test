@@ -15,12 +15,16 @@ html
     script(src="//www.appelsiini.net/projects/lazyload/jquery.lazyload.js?v=3")
 
     //- script(src='https://www.rakuten.ne.jp/gold/shopjapan/trs/iframe/matome/semantic.min.js' , charset='UTF-8')
-    script(src='js/semantic.js' , charset='UTF-8')
+
+    //- script(src='js/semantic.js' , charset='UTF-8')
+    script(src='../semantic/semantic.js' , charset='UTF-8')
 
     //- script(src='js/smoothscroll.js')
 
     //- link(rel='stylesheet', href='css/semantic.min.css' , charset='UTF-8')
-    link(rel='stylesheet', href='css/semantic.css' , charset='UTF-8')
+
+    //- link(rel='stylesheet', href='css/semantic.css' , charset='UTF-8')
+    link(rel='stylesheet', href='../semantic/semantic.css' , charset='UTF-8')
 
     //- link(rel='stylesheet', href='https://www.rakuten.ne.jp/gold/shopjapan/css/normalize.css')
     //-  CSSファイル1つに統合
@@ -47,7 +51,7 @@ html
 
 
   body
-    .ui.divided.items.container.segment#forceWidth
+    .ui.divided.items.container.segment#forceWidth 
       //- p #{site.itemImagesJson.trsp2}
       //- p #{site.itemImagesJson}
 
@@ -75,7 +79,16 @@ html
             });
         });
       style.
+        body{background: gray;}
+        .ui.segment{background: silver;}
         code.code{
+          overflow-x:'auto';
+          white-space:'pre';
+          font-family: Consolas, "Courier New", Courier, Monaco, monospace;
+          font-size: 14px;
+          line-height: 1.2;          
+        }
+        .code{
           overflow-x:'auto';
           white-space:'pre';
           font-family: Consolas, "Courier New", Courier, Monaco, monospace;
@@ -86,7 +99,7 @@ html
           background-color: pink;
         }
 
-      script(src='//cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js')
+      //- script(src='//cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js')
       pre
        code.prettyprint.code
         //- | - 以下のような楽天Cabinetの画像のサムネリンクを生成
@@ -100,6 +113,14 @@ html
         |  +cabinetImage(itemName, cabinetPath , 'slider' ,400)
         |  指定例)        nice      share/outlet  <em>rollover</em>  サムネサイズ
         |                                                  (original で元画像を使用)
+      a( href="javascript:void(window.open('./pcList.html', 'SUMAHOwindow', ' \
+               width=580,height=900, \
+               left=10, \
+               status=yes, \
+               resizable=no, \
+               scrollbars=yes, \
+               menubar=yes '));")
+        span スマホサイズで新しいウィンドウを開く
       .to_top(style='margin-bottom:10px')
         a(href='#slider') slider とサムネロールオーバー　
         //- a(href='#usedAll') used all
@@ -132,10 +153,22 @@ html
       //-       +specBtn('modal-'+ itemName)
       //- 1st item
 
+      +dlItemImage('chg')
+   
+      +dlItemImage('nof')
+      +dlItemImage('nice_ma1')
+      +dlItemImage('abb')
+      +dlItemImage('abc_out17_smple')
+      +dlItemImage('abcx-mat')
+      +dlItemImage('adrobot_shopjapan')
+      +dlItemImage('awfm-hngk')
+      +dlItemImage('bgv-soft1')
+      +dlItemImage('crf-3d02')
 
       - var imageLength = images2.length
       - console.log(imageLength);
       - var onelineCount = 0;
+      - var countbreak = 10 ; //roop break
       h3 #{imageLength} lines
         for i, index in images2
           - var oneline  = i['itemImgURL'];
@@ -143,31 +176,57 @@ html
           - var oneline2 = i['movie'];
           - var oneline3 = i['販売期間指定'];
           -
-            var line = ''; //reset
+            var itemURLs = []; //reset
+            var itemURLslengh = '';
             //- var oneline = JSON.parse(JSON.stringify(i), function(key, value){
             JSON.parse(JSON.stringify(i), function(key, value){
               if( value.length > 0){
                 var hikaku = value.substring(0, 21);
                 if ('https://image.rakuten' === hikaku){
-                  onelineCount ++;
-                  line = value;
+                  onelineCount ++ ;
+                  itemURLs = value;
+                  itemURLs = itemURLs.split(' ');
+                  itemURLslength = itemURLs.length;
                   return value;
                 }
               }
             });
-            
-          if line 
+          if itemURLslength > 0  
             - var itemURL  = i['itemURL'];
             - var itemNo   = i['itemNo'];
             - var itemName = i['itemName'];
             - var price = i['price'];
+            a(href='#' + itemURL, id=itemURL) 
+              span #{onelineCount} 件目 
+            //- ループを抜ける
+            if (onelineCount === countbreak)
+              p #{itemURLs} countbreak
+              - break
+
+            if i['在庫数'] > 0
+              span 在庫数: #{i['在庫数']} : 
+              a(href='https://item.rakuten.co.jp/' + site.shopName + '/' + itemURL , target='_blank')
+                span 新規ウインドウで商品ページを開く
+
             pre(style=' border-top: 1px dotted silver;')
              code.prettyprint.code
-              | itemURL  #{itemURL}
-              | itemNo   #{itemNo}
-              | itemName #{itemName}
-              | price    #{price}
-              | #{line}
+              | itemURL    #{itemURL}
+              | itemNo     #{itemNo}
+              | itemName   #{itemName}
+              | price      #{price}
+              | 画像枚数    #{itemURLs.length}
+              | #{itemURLs}
+            each oneURL in itemURLs
+              span #{oneURL}
+              br
+              //- "shopName": "https://item.rakuten.co.jp/shopjapan/crfp-148/",
+
+            #rollover(style='position:relative;margin-bottom:190px;')
+              +rolloverImage2( itemURL ,itemURLs)
+            #topMarginPConly(style="position: relative;margin-top:190px;")
+              +slider( itemURL ,itemURLs)
+            h3 #{itemURLslength} 枚発見
+
         p #{onelineCount}
       - console.log(onelineCount);
 
@@ -243,8 +302,9 @@ html
       - var itemName    = 'outletAll';
       - var cabinetPath = 'share/outlet'
       h3 #{cabinetPath} と指定して それ以下のフォルダに有る画像を一気に表示
-      +cabinetImage(itemName, 'awfm' , '' ,200)
-      +cabinetImage(itemName, cabinetPath , '' ,200)
+      h4 一旦、重いので非表示
+      //- +cabinetImage(itemName, 'awfm' , '' ,200)
+      //- +cabinetImage(itemName, cabinetPath , '' ,200)
 
       script.
         var siteAR = '#{site}';

@@ -326,12 +326,7 @@ gulp.task('minify-css', function() {
 });
 
 /** * PugのコンパイルやCSSとjsの出力、browser-syncのリアルタイムプレビューを実行します。 */
-// gulp.task('watch', ['html', 'css', 'js', 'browser-sync'], function() {
-// gulp.task('watch', ['pug2html',  'browser-sync'], function() {
-//   gulp.watch(src.html, ['pug2html']);
-//   // gulp.watch(src.css, ['css']);
-//   // gulp.watch(src.js, ['js']);
-// });
+
 var reload = browserSync.reload;
 gulp.task("watch", function () {
   gulp.watch('./*.html', reload);

@@ -6,7 +6,9 @@ html
     meta(charset='euc-jp')
     meta(name='viewport', content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no')
     //- meta(name='viewport', content='width=749,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no')
-    title MAX60%OFF！｜ショップジャパン楽天市場店
+    //- title MAX60%OFF！｜ショップジャパン楽天市場店
+    title #{site.title}
+    
     // 楽天TOP解析タグ 
     script(src='//assets.adobedtm.com/fde17e0362c40547334f4e041add368f158b4119/satelliteLib-e346cd8edc0ac640d3ce7c060b5a38f5169d4add.js')
     script(src='//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js')
@@ -27,7 +29,7 @@ html
     link(rel='stylesheet', href='css/frame.css')
 
     link(rel='SHORTCUT ICON', href='https://www.rakuten.ne.jp/gold/shopjapan/images/favicon.ico')
-    //- Required
+    //- /_data/site.json より
     //- - var pageTitle= "";
     //- - var pageDescription= site.description;
     //- - var pageKeywords= site.keywords;
@@ -38,8 +40,6 @@ html
     //- - var pageOgpType= "website";
     //- //- Not modified
     //- - var pageUrl= site.relativePath;
-    // #{pageTitle}
-    p #{site.name}
     //- p #{site.itemImagesJson.trsp2}
     //- p #{site.itemImagesJson}
 
@@ -49,7 +49,6 @@ html
     //- ul
     //-   each i in site.itemImages.trsp2
     //-     li: p # !{i}
-
 
     //- ul
     //-   each i in images
@@ -72,9 +71,6 @@ html
       var device = (window.outerWidth < 749 ? 'sp' : 'pc');
       console.log(window.outerWidth);
       var view_mode = (device == 'pc' || document.cookie.indexOf('view_mode=pc') != -1 ? 'pc' : 'sp');
-
-
-
 
       $(document).ready(function() {
         //modal用HTMLを読み込み
@@ -120,11 +116,15 @@ html
       img.ui.fluid.image.bgRed.pcNone(src='img/sp/kvsp1_1026.jpg')
 
       - var itemURL = 'sim';
-      img#spTitleImg1(src='img/'+ itemURL +'_title.png')
+      img#spTitleImg1.ui.fluid.image(src='img/'+ itemURL +'_title.png')
       +dlItemImage(itemURL)
+      //- - var title ='２枚合わせ掛け布団';
+      //- - var description ='セット内容／2枚合わせ掛け布団（肌掛け布団×1、合い掛け布団×1）\nサイズ／（シングルサイズ）幅1500×長さ2100mm \n重量／（シングルサイズ）[肌掛け布団]約0.8kg、[合い掛け布団]約1.3kg \n材質／[側地]ポリエステル100%、[詰め綿]ポリエステル100% \n製造国／中国製 \n保証期間／なし \n送料／0円（税抜）';
+      //- +modal(itemURL,title,description)
+
 
       - var itemName = 'crff';
-      img#spTitleImg1(src='img/'+ itemURL +'_title.png')
+      img#spTitleImg1.ui.fluid.image(src='img/'+ itemURL +'_title.png')
       // syousai ON
       +dlItemImage(itemURL,'jouhouON')
 
@@ -292,3 +292,4 @@ html
 
     #target
     //モーダル
+    

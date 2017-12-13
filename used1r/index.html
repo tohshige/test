@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="css/lightbox.css">
     <link rel="stylesheet" href="css/frame.css">
     <link rel="SHORTCUT ICON" href="https://www.rakuten.ne.jp/gold/shopjapan/images/favicon.ico">
-    <!-- #{pageTitle}-->
-    <p>サイト名 site.name</p>
     <script> var siteAR = '[object Object]';
       console.log(JSON.stringify(siteAR));
     </script>
@@ -29,12 +27,9 @@
       console.log(window.outerWidth);
       var view_mode = (device == 'pc' || document.cookie.indexOf('view_mode=pc') != -1 ? 'pc' : 'sp');
       
-      
-      
-      
       $(document).ready(function() {
         //modal用HTMLを読み込み
-        $('#target').load('modal1.html');//temp disable
+        $('#targetModal').load('modal1.html');//temp disable
       });
       //click modal 
       $('.modal-not-migration').on('click',function(){
@@ -73,7 +68,7 @@
   </head>
   <!--楽天解析タグ-->
   <body>
-    <div class="ui divided items container segment" id="forceWidth"><img class="ui fluid image bgRed spNone" src="img/kv1_1026.png"><img class="ui fluid image bgRed pcNone" src="img/sp/kvsp1_1026.jpg"><img id="spTitleImg1" src="img/sim_title.png">
+    <div class="ui divided items container segment" id="forceWidth"><img class="ui fluid image bgRed spNone" src="img/kv1_1026.png"><img class="ui fluid image bgRed pcNone" src="img/sp/kvsp1_1026.jpg"><img class="ui fluid image" id="spTitleImg1" src="img/sim_title.png">
       <h3>1577 lines
         <div class="pcNone" id="topMarginPConly" style="position: relative;margin-top:190px;">
           <style>
@@ -172,12 +167,12 @@
             </div>
             <div class="extra">
               <hr/>
-              <div class="supec_btn"><a class="modal-【期間限定】デタングルブラシ付き！話題のヘアアイロン★シンプリーストレート【送料無料】&lt;br&gt;楽天ランキング1位獲得！39日間返品保証は当店だけ！正規品 ショップジャパン（SHOPJAPAN）ヘアアイロン ストレートアイロン ヘアブラシ ヘアケア　縮毛矯正 arrow_01 ui fluid blue button" href="#">> 商品内容はこちら</a><a class="modal-sinpin arrow_01 ui fluid olive button" href="#">> 新品同様/特価良品とは</a></div>
+              <div class="supec_btn"><a class="modal-sim arrow_01 ui fluid blue button" href="#">> 商品内容はこちら</a><a class="modal-sinpin arrow_01 ui fluid olive button" href="#">> 新品同様/特価良品とは</a></div>
             </div>
           </div>
         </div>
         <h3>画像 7 枚発見</h3>
-      </h3><img id="spTitleImg1" src="img/sim_title.png">
+      </h3><img class="ui fluid image" id="spTitleImg1" src="img/sim_title.png">
       <!-- syousai ON-->
       <h3>1577 lines
         <style>
@@ -295,7 +290,7 @@ price    7980
             </div>
             <div class="extra">
               <hr/>
-              <div class="supec_btn"><a class="modal-【期間限定】デタングルブラシ付き！話題のヘアアイロン★シンプリーストレート【送料無料】&lt;br&gt;楽天ランキング1位獲得！39日間返品保証は当店だけ！正規品 ショップジャパン（SHOPJAPAN）ヘアアイロン ストレートアイロン ヘアブラシ ヘアケア　縮毛矯正 arrow_01 ui fluid blue button" href="#">> 商品内容はこちら</a><a class="modal-sinpin arrow_01 ui fluid olive button" href="#">> 新品同様/特価良品とは</a></div>
+              <div class="supec_btn"><a class="modal-sim arrow_01 ui fluid blue button" href="#">> 商品内容はこちら</a><a class="modal-sinpin arrow_01 ui fluid olive button" href="#">> 新品同様/特価良品とは</a></div>
             </div>
           </div>
         </div>
@@ -413,7 +408,7 @@ price    7980
         //]]>    //モーダル
       
     </script>
-    <div id="target"></div>
+    <div id="targetModal"></div>
     <!--モーダル-->
   </body>
 </html>

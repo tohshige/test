@@ -2,6 +2,16 @@
 
 used1/node_modules
 used1r/node_modules
+
+# use only build
+used1r/semantic
+semantic
+
+
 express/node_modules
 express/view/node_modules
 
+semantic/node_modules/*
+!semantic/node_modules/semantic-ui
+
+webpack/node_modules
