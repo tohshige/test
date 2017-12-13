@@ -135,10 +135,9 @@ var src = {
 //pug > html
 gulp.task('pug2html', () => {
 var DEST = './' ;
-  //  return gulp.src(['./pug/**/*.pug', '!./pug/**/_*.pug'])
-  return gulp.src(['./pugorg/**/*.pug', '!./pugorg/**/_*.pug'])
-  .pipe(cached( 'pug2html' )) // キャッシュ処理
-  // .pipe(changed(DEST))
+  // return gulp.src(['./pugorg/**/*.pug', '!./pugorg/**/_*.pug']) //
+  return gulp.src(['./pugorg/**/*.pug'])
+  // .pipe(cached( 'pug2html' )) // キャッシュ処理 変更のあったファイルのみ実行される
   .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))  // コンパイルエラーを通知します。  
   // .pipe(convertEncoding({from: "UTF8"}))// from utf8 だと化けるe
   .pipe(convertEncoding({from: "EUC-JP"}))// encode
