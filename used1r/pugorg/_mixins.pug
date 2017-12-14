@@ -254,6 +254,9 @@ mixin dlItemImage(argitemURL, descFlg)
               span 在庫数は: #{zaiko} : 
               a(href='https://item.rakuten.co.jp/' + site.shopName + '/' + itemURL , target='_blank')
                 span 新規ウインドウで商品ページを開く
+            else
+              span 在庫数はゼロ : 
+              
 
             pre.code(style=' border-top: 1px dotted silver;')
               | itemURL  #{itemURL}
@@ -269,21 +272,6 @@ mixin dlItemImage(argitemURL, descFlg)
                 span #{oneURL}
                 br
 
-          #topMarginPConly(style="position: relative;margin-top:190px;").pcNone
-            +slider( itemURL ,itemURLs)
-          .item
-            #rollover(style='position:relative;margin-bottom:190px;').spNone
-              +rolloverImage2( itemURL ,itemURLs)
-            .content
-              img.ui.fluid.image(src='img/nice_pri.jpg')
-              .description
-                // 1つめ分 
-                //- inventry 結合したIDを呼び出す  
-                +selectAndBtn
-                // 1つめ分完了 
-              .extra
-                +specBtn('modal-'+ itemURL)
-
           //- yotei 1つめ分 
           - var RACNo = i['RAC番号'];
           - var racArray = RACNo.split('-');
@@ -293,6 +281,22 @@ mixin dlItemImage(argitemURL, descFlg)
           - var selNoDummy = '0';//dummy あとでSelect.csvより検索して持ってくる
           - var padValue = RACNoItem +'_'+ selNoDummy +'_'+ selNoDummy +'_'+ price;
           -   console.log('padValue:' + padValue);
+
+          #topMarginPConly(style="position: relative;margin-top:190px;").pcNone
+            +slider( itemURL ,itemURLs)
+          .item
+            #rollover(style='position:relative;margin-bottom:190px;').spNone
+              +rolloverImage2( itemURL ,itemURLs)
+            .content
+              img.ui.fluid.image(src='img/'+ itemURL +'_pri.jpg')
+              .description
+                // 1つめ分 
+                //- inventry 結合したIDを呼び出す  
+                +selectAndBtn(itemURL, padValue)
+                // 1つめ分完了 
+              .extra
+                +specBtn('modal-'+ itemURL)
+
 
           //- console.log(racArray);
 
@@ -307,11 +311,28 @@ mixin dlItemImage(argitemURL, descFlg)
           h3 画像 #{itemURLslength} 枚発見
 
 
-mixin selectAndBtn(argitemURL)
+mixin selectAndBtn(itemURL, padValue)
   +item
-    +pad('　レッドを', '10003922_8864_2_5980')
-    .ui.section.divider
-    +pad('ブラックを','10003922_8865_2_5980','')
+  - var count = 0
+  for i, index in selects
+    if itemURL === i['商品管理番号（商品URL）']
+      - count ++ ;
+      - var yokoSentakuSi = i['項目選択肢別在庫用横軸選択肢']; // カラーをお選びください
+      - var tateSentakuSi = i['項目選択肢別在庫用縦軸選択肢']; // ブルー Or レッド 等
+
+      +pad(tateSentakuSi, padValue)
+      //- .ui.section.divider
+
+  if count === 0
+    +pad('', padValue)
+    //- .ui.section.divider
+  
+
+
+  //- +item
+  //-   +pad('　レッドを', '10003922_8864_2_5980')
+  //-   .ui.section.divider
+  //-   +pad('ブラックを','10003922_8865_2_5980','')
 
 
 //- あとで分離
