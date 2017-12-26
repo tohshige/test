@@ -218,19 +218,18 @@ gulp.task('csv2json2', function (callback) {
   
   converter.on("end_parsed", function (jsonArray) {
       fs.writeFile('dist/all.utf8.json', JSON.stringify(jsonArray, null, indentSpace));
-      // console.log("JSON形式で出力されました");
-      console.log("complete JSON!!");
-      // callback();
-  });
-  require("fs").createReadStream("dist/all.utf8.csv").pipe(converter);
-  // dl-selectxxxx.csv
-  converter1.on("end_parsed", function (jsonArray) {
-      fs.writeFile('dist/all-select.utf8.json', JSON.stringify(jsonArray, null, indentSpace));
-      // console.log("JSON形式で出力されました");
       console.log("complete JSON!!");
       callback();
   });
-  require("fs").createReadStream("dist/dl-select201711300659-1.utf8.csv").pipe(converter1);
+  require("fs").createReadStream("dist/all.utf8.csv").pipe(converter);
+
+  // dl-selectxxxx.csv
+  // converter1.on("end_parsed", function (jsonArray) {
+  //     fs.writeFile('dist/all-select.utf8.json', JSON.stringify(jsonArray, null, indentSpace));
+  //     console.log("complete JSON!!");
+  //     callback();
+  // });
+  // require("fs").createReadStream("dist/dl-select201712261320-1.utf8.csv").pipe(converter1);
 
 
   // var columns =['1','2','url','4','5'];
