@@ -10,8 +10,11 @@ semantic
 
 express/node_modules
 express/view/node_modules
+express/example/cred2.js
 
 semantic/node_modules/*
 !semantic/node_modules/semantic-ui
 
 webpack/node_modules
+
+ftpFileGet.sh
