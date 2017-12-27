@@ -1,39 +1,29 @@
 module.exports = {
-  // メインとなるJavaScriptファイル（エントリーポイント）
-  entry: './src/main.ts',
-  // ファイルの出力設定
-  output: {
-    //  出力ファイルのディレクトリ名
-    path: `${__dirname}/build`,
-    // 出力ファイル名
-    filename: 'bundle.js'
+  entry: './src/main.ts',  // メインとなるJavaScriptファイル（エントリーポイント）
+  output: {  // ファイルの出力設定
+    path: `${__dirname}/build`,    //  出力ファイルのディレクトリ名
+    filename: 'bundle.js'    // 出力ファイル名
   },
   module: {
     rules: [
       {
-        // 拡張子 .ts の場合
-        test: /\.ts$/,
-        // TypeScript をコンパイルする
-        use: 'awesome-typescript-loader'
+        test: /\.ts$/,        // 拡張子 .ts の場合
+        use: 'awesome-typescript-loader'        // TypeScript をコンパイルする
       },
-      // ソースマップファイルの処理
-      {
+      {      // ソースマップファイルの処理
         enforce: 'pre',
         test: /\.js$/,
         loader: 'source-map-loader'
       }
     ]
   },
-  // import 文で .ts ファイルを解決するため
-  resolve: {
+  resolve: {  // import 文で .ts ファイルを解決するため
     extensions: [
       '.ts'
     ],
-    // Webpackで利用するときの設定
-    alias: {
+    alias: {    // Webpackで利用するときの設定
       vue: 'vue/dist/vue.js'
     }
   },
-  // ソースマップを有効に
-  devtool: 'source-map'
+  devtool: 'source-map'  // ソースマップを有効に
 };

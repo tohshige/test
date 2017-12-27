@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTMLファイルからPOSTでJSONデータを送信する</title>
+  <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>-->
+  <!--mixed error 対策 httpのページはhttpになるしhttpsのページならhttpsになります-->
+  <script type="text/javascript">
+    var jsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cscript src='" + jsHost + "ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+
+  <script type="text/javascript">
+    //cokkie 書き込み
+    document.cookie = 'data=123;'
+    //全クッキー表示
+    //alert(document.cookie);
+    var cookies = document.cookie;
+    //      var cookieItem = cookies.split(";");
+    //      var cookieValue = "";
+
+
+    $(function () {
+      $("#response").html("Response Values");
+
+
+      $("#button").click(function () {
+        //radio ボタンのValueをゲット
+        radioVal = $("input[name='RadioGroup1']:checked").val();
+        //          alert(radioVal);
+        if (radioVal == 1) {
+          //form から読み取り
+          var url = $("#url_post").val();
+        } else {
+          //test ファイルから読み取り
+          var url = 'sample.json'
+        }
+
+        //リクエスト(POST)するためのデータをFormから読み取る
+        var JSONdata = {
+          business_service_id: $("#business_service_id").val(),
+          apiVersion: $("#apiVersion").val(),
+          Store_Id: $("#Store_Id").val(),
+          NeedNextMonthsInformation: $("#NeedNextMonthsInformation").val()
+        };
+        //読み込んだデータを表示 
+        alert(JSON.stringify(JSONdata));
+
+        //Ajax非同期で送信する
+        $.ajax({
+          type: 'post',
+          url: url,
+          data: JSON.stringify(JSONdata),
+          contentType: 'application/JSON',
+          dataType: 'JSON',
+          scriptCharset: 'utf-8',
+          success: function (data) {
+
+            // Success 成功
+            //                    alert("success");
+            //                    alert(JSON.stringify(data));
+            data_persed = JSON.parse(JSON.stringify(data));
+            alert("画像" + data_persed.UserInformation.StageRankImageUrl);
+            img_url = data_persed.UserInformation.StageRankImageUrl;
+            $("#image-box").children("img").attr({ 'src': img_url });
+            $("#image-box").append('<br>ゲットした画像ファイルURL<br>jqueryでIMG #image-box をキーに要素書き換え<br>' + img_url + '<br>');
+            document.cookie = 'img_url=' + img_url + ';'//クッキーに保存
+            //                    alert("画像をクッキーに保存しました");
+
+            getugaku = data_persed.UserInformation.ContractStateInformation[0].monthlyFee;
+            $("#image-box").append('<b>月額 ￥' + getugaku + '円</b><br><hr>');
+            $("#response").html(JSON.stringify(data));
+
+            tDraw1(getugaku);
+
+          },
+          error: function (data) {
+            // Error 失敗
+            alert("error");
+            alert(JSON.stringify(data));
+            $("#response").html(JSON.stringify(data));
+          }
+        });
+      })
+    })
+
+
+
+    function tDraw1(getugaku) {
+      var ctx1 = document.getElementById('canvas1').getContext('2d');
+      /*画像テキスト描画の基本*/
+      ctx1.font = '28px Century Gothic';
+      ctx1.fillText('あなたは月額 ￥' + getugaku + '円です', 10, 30);
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <div id="image-box">
+    <img />
+  </div>
+  <pre>リクエストサンプル
+{"business_service_id":"HC01",
+"apiVersion":"1.0",
+"Store_Id":"36",
+"NeedNextMonthsInformation":"1"
+}
+
+1	HTTPメソッド	POST
+2	リクエストURI（商用）	https://service.smt.docomo.ne.jp/r4d/ap/auth/lpbasisif/1.0/lpbasisif_UserInfo_GX/list
+3	リクエストURI（検証）	https://ve.m.service.smt.docomo.ne.jp/r4d/ap/auth/lpbasisif/1.0/lpbasisif_UserInfo_GX/list
+4	入力形式	JSON	
+5	Content-Type	application/json	
+6	文字コード	UTF-8	
+</pre>
+  <canvas id="canvas1" width="400" height="50" style=" border:solid 1px #ccc;">
+    <p>お使いのブラウザはcanvas要素に対応していないので描画できませんでした</p>
+  </canvas>
+
+  <h3>HTMLファイルからPOSTでJSONデータを送信する</h3>
+  <input id="Radio1" name="RadioGroup1" type="radio" value="1" />
+  <label for="Radio1">URLより 12/6 クロスサイトスクリプティング 対策のためエラー</label>
+  <br/>
+  <input id="Radio2" name="RadioGroup1" type="radio" value="2" checked/>
+  <label for="Radio2">ローカルJSONファイル ./sample.json </label>
+  <br />
+
+  <p>URL:
+    <input type="text" id="url_post" name="url" size="100" value="https://ve.m.service.smt.docomo.ne.jp/r4d/ap/auth/lpbasisif/1.0/lpbasisif_UserInfo_GX/list">
+  </p>
+  <p>business_service_id:
+    <input type="text" id="business_service_id" size="30" value="HC01">
+  </p>
+  <p>apiVersion:
+    <input type="text" id="apiVersion" size="30" value="1.0">
+  </p>
+  <p>Store_Id:
+    <input type="text" id="Store_Id" size="30" value="36">
+  </p>
+  <p>NeedNextMonthsInformation:
+    <input type="text" id="NeedNextMonthsInformation" size="30" value="1">
+  </p>
+  <p>
+    <button id="button" type="button">submit</button>
+  </p>
+  <textarea id="response" cols=120 rows=10 disabled></textarea>
+
+
+
+
+</body>
+
+
+</html>
