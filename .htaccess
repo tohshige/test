@@ -62,3 +62,11 @@ BrowserMatch ";\s?yoozBot\-2\.2[ /;\+\)]" bad_bot
     </RequireAll>
   </IfModule>
 </IfModule>
+
+
+
+# 一覧表示を禁止する場合
+#Options -Indexes 
+ 
+# 一覧表示を許可する場合
+Options Indexes
