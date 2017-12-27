@@ -14,5 +14,11 @@
     "moduleResolution": "node",
     // デコレーターを有効に設定
     "experimentalDecorators": true
+
   }
+
+
+
 }
+
+

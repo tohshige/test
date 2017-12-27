@@ -24,12 +24,23 @@
       続いてindex.htmlに「Hello World」を書いてみます。
       index.html
 
+      # アプリケーションを配布する      
       npm install -g electron-prebuild
 
       #現在のディレクトリで起動
       electron .
 
-      $ npm install -g asar
+      npm i electron-packager -g
+
+      npm install -g asar
+
+      $ # electron-packager <sourcedir> <appname> --platform=<platform> --arch=<arch> --version=<version>
+      electron-packager ./sample sample --platform=darwin,win32 --arch=x64 --electronVersion=0.36.1
+
+      platform ･･･ all, linux, win32, darwin のいずれかを選択。複数入れる場合はカンマ区切りで。
+      arch ･･･ all, ia32, x64 のいずれかを選択。
+      electronVersion ･･･ Electronのバージョンを指定します。(0.36.1はElectronの最新バージョンです　※2015/12/23現在)
+
 
     </pre>
 </body>

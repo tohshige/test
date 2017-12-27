@@ -65,18 +65,33 @@ client.fetch('https://item.rakuten.co.jp/shopjapan/trsf-cwe')
   var $ = result.$;
   // リンク一覧を表示
   $('span.inventory_choice_name').each(function (idx) {
-    // console.log($(this).attr('href'));
     console.log($(this).text());
   });
-  console.info( resultLength);
   var resultForm = result.$('input[type=radio][name=inventory_id]');
   var resultLength = resultForm.length;
   // console.info( resultForm);
   // console.info( resultForm[0]);
-  console.log( resultForm[0].attribs.value) ;
-  console.log( resultForm[1].attribs.value) ;
-  console.log( resultForm[2].attribs.value) ;
-  
+  for(var i = 0; i < resultForm.length; i++) {
+      console.log( resultForm[i].attribs.value) ;
+  }
+
+  // var resultForm = result.$('form');
+  // var resultLength = resultForm.length;
+  // // console.info( resultForm);
+  // // console.info( resultForm[0]);
+  // for(var i = 0; i < resultForm.length; i++) {
+
+  //   if (resultForm[i].attribs['data-timesale-id']){
+  //     console.log( resultForm[i].attribs) ;
+  //     // console.log( resultForm[i]) ;
+  //     console.log( resultForm[i].children) ;
+  //     console.log( resultForm[i].children.next) ;
+  //     if( resultForm[i].$('input[type=radio][name=inventory_id]')){
+  //     console.log( resultForm[i].$('input[type=radio][name=inventory_id]'));
+  //     }
+  //   }
+  // }
+
 // $('form').each(function (idx) {
 //     console.info('<then>', result.$('input[type=radio][name=inventory_id]').val());
 //     // console.info('<then>', result.$('input[type=radio][name=inventory_id]')[2].val());
