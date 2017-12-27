@@ -47,7 +47,7 @@ body {
     background: #cc0000;
     margin: 0 auto 3%;
     padding: 0 0 0;
-    border-bottom: 1px solid #ccc;
+  
 }
 
 .outlet_sp_wrap .slide_btn{
@@ -350,6 +350,12 @@ body {
 		color: #000;
 		line-height: 1.8rem;
 	}
+
+.cp_wrap{
+	width:95%;
+	margin: 0 auto;
+}
+
 
 
 
