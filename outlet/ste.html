@@ -8,10 +8,10 @@
 <script>
 $(function(){
     $('#thumb_area img').mouseover(function(){
-        $('#main_img img').attr('src', $(this).attr('src')).css({width:"346px",paddingLeft:"130px"});
+        $('#main_img img').attr('src', $(this).attr('src')).css({width:"350px",height:"350px"});
     });
     $('#thumb_area img').mouseout(function(){
-        $('#main_img img').attr('src', 'https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/lgms_11_2.jpg').css({width:"100%",paddingLeft:"0"});
+        $('#main_img img').attr('src', 'img/thum/ste_main1.jpg').css({width:"100%",paddingLeft:"0"});
 		
     });
 });
@@ -23,13 +23,13 @@ $(function(){
 
 <body>
 
-<div id="main_img" class="main_img">
-<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/lgms_11_2.jpg">
+<div id="main_img" class="main_img_one">
+<img src="img/thum/ste_main1.jpg">
 </div>
 
-<ul id="thumb_area" class="thumb_area">
+<ul id="thumb_area" class="thumb_area_one">
 <li><img src="img/thum/ste_thum_01.jpg"></li>
-
+<li><img src="img/thum/out_thum.jpg"></li>
 
 </ul>
 

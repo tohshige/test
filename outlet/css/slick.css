@@ -73,7 +73,7 @@
 .slick-prev
 {
     left: 0%;
-	    margin-top: 20% !important;
+	    margin-top: 31% !important;
 }
 [dir='rtl'] .slick-prev
 {
@@ -94,7 +94,7 @@
 .slick-next
 {
     right: 0%;
-	margin-top: -43% !important;
+	margin-top: -46% !important;
 }
 [dir='rtl'] .slick-next
 {
