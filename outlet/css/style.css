@@ -277,7 +277,7 @@
 	/*height:437px;*/
 	width: 600px;
 	position: absolute;
-	top:59px;
+	top:70px;
 	right:-10px;
 }
 
@@ -312,4 +312,13 @@
 .cart_btn_2col{
 	margin:-5px 0;
 	cursor: pointer;
+}
+
+.item_wrap{
+	display:flex;
+	flex-wrap: wrap;
+	padding-left:0px;
+	width:980px;
+	margin:0 auto;
+	justify-content: space-between;
 }

@@ -67,7 +67,7 @@ body {
 .outlet_sp_wrap .item_lineup{
     width: 100%;
     overflow: hidden;
-    margin:0 auto;
+    margin:-10px auto;
     padding: 4% 0 0;
     /*background:url(../img/item_back.png);*/
 }
@@ -324,3 +324,9 @@ body {
 	
 
 *{outline: none;}
+
+
+.single-item img{
+	width: 85%;
+	margin: 0 auto;
+}
