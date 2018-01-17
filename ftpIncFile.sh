@@ -2,7 +2,7 @@
 ## search array from json file ##
 #         1        2            3                    4
 # usage : thisFile jsonFilePath -usernameoOrPassword account
-# $ ./includeFile.sh ../ryLogin/cred2.json -p test
+# $ ./ftpIncFile.sh ../ryLogin/cred2.json -p test
 
 if [ $2 = '-p' ]; then #p@ssw0rd
  arryNumber=8
