@@ -1,3 +1,4 @@
 ./ftpFileGet2.sh: not found
 /home/mono-96/www/mono-96.jp/tmp/test/ftpFileGet2.sh: not found
 /home/mono-96/www/mono-96.jp/tmp/test/ftpFileGet2.sh: not found
+-bash: /home/mono-96/www/mono-96.jp/tmp/test/ftpFileGet2.sh: /bin/bash: bad interpreter: No such file or directory
