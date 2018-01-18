@@ -10,7 +10,7 @@ elif [ $(uname) = "FreeBSD" ]; then  #sakura Server
 else
   exit
 fi
-
+echo $homePath
 cd $homePath
 # Load username and P@assw0rd
 user=`./ftpIncFile.sh $jsonPath -u $1Ftp`
@@ -59,3 +59,4 @@ echo $today
 echo $homePath
 echo $user
 echo $pass
+
