@@ -53,10 +53,13 @@ if [ $(uname) = "FreeBSD" ]; then
   mv dl*`date -v -"3"d +%Y%m%d`*.csv /home/mono-96/www/mono-96.jp/dlFiles
 
   rm dl*`date -v -"5"d +%Y%m%d`*.csv
-  # copy am1:00 file for sabun #
+
+  # copy am1:00 file for sabun #差分用に1時台のファイルだけをコピー
   cd dlFiles
   cp dl-item${today}01*.csv ../dl-item20180Day.csv
   cd ..
+  iconv -f sjis -t utf-8 dl-item20180Day.csv > dl-item20180Day.utf8.csv
+  
 fi
 # cp dl-item`date "+%Y%m%d"`*.csv ../dl-item2018Day.csv
 
