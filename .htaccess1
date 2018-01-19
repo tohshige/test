@@ -1,9 +1,9 @@
 <IfModule mod_setenvif.c>
 # 主要検索エンジンの拒否
 
-SetEnvIf User-Agent "Googlebot" bad_bot
-SetEnvIf User-Agent "Slurp" bad_bot
-SetEnvIf User-Agent "msnbot" bad_bot
+SetEnvIf User-Agent "Googlebot" bad_bot1
+SetEnvIf User-Agent "Slurp" bad_bot1
+SetEnvIf User-Agent "msnbot" bad_bot1
 
 BrowserMatch "\s360Spider$" bad_bot
 BrowserMatch "https?://(www\.)?cognitiveseo[\./]" bad_bot
@@ -51,14 +51,14 @@ BrowserMatch ";\s?yoozBot\-2\.2[ /;\+\)]" bad_bot
   <IfModule !mod_authz_core.c>
     Order Allow,Deny
     Allow from all
-    Deny from env=bad_bot
+    Deny from env=bad_bot1
   </IfModule>
 
   # Apache >= 2.3
   <IfModule mod_authz_core.c>
     <RequireAll>
-      Require all Granted
-      Require not env bad_bot
+#      Require all Granted
+      Require not env bad_bot1
     </RequireAll>
   </IfModule>
 </IfModule>
