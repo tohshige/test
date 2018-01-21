@@ -36,7 +36,7 @@ git log --numstat --pretty="%H" --since=2017-01-17 --until=2017-01-31 --no-merge
 git log --numstat --pretty="%H" --since="1 days ago" -- dl-item20180Day.csv | awk 'NF==3 {plus+=$1; minus+=$2} END {printf("合計%d行 (追加+%d, 削除-%d)\n", plus+minus, plus, minus)}'
 git log --numstat --pretty="%H" --since="2 days ago" --no-merges -- dl-item20180Day.csv | awk 'NF==3 {plus+=$1; minus+=$2} END {printf("合計%d行 (追加+%d, 削除-%d)\n", plus+minus, plus, minus)}'
 
-git log --numstat --pretty="%H" --since="1 days ago" -- dl-item20180Day.csv | awk 'NF==3 {plus+=$1; minus+=$2} END {printf("合計%d行 (追加+%d, 削除-%d)\n", plus+minus, plus, minus)}'
+git log --numstat --pretty="%H" --since="1 days ago" -- dl-item20180Day.csv | awk 'NF==3 {plus+=$1; minus+=$2} END {printf(" 合計%d行 (追加+%d, 削除-%d)\n", plus+minus, plus, minus)}'
 
 
 git log --numstat --pretty="%H" --since="1 days ago" --no-merges -- ./dlFiles | awk 'NF==3 {plus+=$1; minus+=$2} END {printf("合計%d行 (追加+%d, 削除-%d)\n", plus+minus, plus, minus)}'
