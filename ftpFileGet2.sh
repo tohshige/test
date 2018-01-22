@@ -56,7 +56,10 @@ if [ $(uname) = "FreeBSD" ]; then
 
   # copy am1:00 file for sabun #差分用に1時台のファイルだけをコピー
   cd dlFiles
-  cp dl-item${today}01*.csv ../dl-item20180Day.csv
+
+#  cp dl-item${today}01*.csv ../dl-item20180Day.csv
+  cp dl-item${today}*.csv ../dl-item20180Day.csv
+
   cd ..
   iconv -f sjis -t utf-8 dl-item20180Day.csv > dl-item20180Day.utf8.csv
   
