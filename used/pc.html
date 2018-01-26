@@ -960,28 +960,26 @@ $(".out").click(function () {
 
 
 
-<!--フッターフローティング-->
- <div id="footerFloatingMenu">
-      <div class="ui segment" style="width:950px;margin: 0 auto; border: none;">
-          <p id="" class="textYellow"><div class="change_price">現在の合計金額は￥
-            <span id="priceAll">0</span>円(税抜)</div>
-            <!-- <div id="footer_go_cart" class="compact ui floated large  yellow  button  position">
-                <span>選択した商品をカートに入れる</span>
-            </div> -->
-            <div id="footer_go_cart" class="compact ui floated large  yellow  button disabled position">
-                <span>選択した商品のレジにすすむ
-             </span>
+      <!--フッターフローティング-->
+      <div class="blurring" id="footerFloatingMenu">
+        <div class="ui segment" style="width:950px;margin: 0 auto; border: none;">
+          <div class="change_price">現在の合計金額は￥
+            <span id="priceAll">0</span>円(税抜)
+          </div>
+          <div id="footer_go_cart" class="compact ui floated large  yellow  button disabled position">
+            <span>選択した商品のレジにすすむ</span>
+          </div>
+        </div>
+        <div class="ui inverted dimmer">
+          <div class="content">
+            <div class="center">
+              <h2 class="ui inverted icon header red">カートに追加中</h2>
+              <div class="ui text loader"></div>
             </div>
-          </p>
-        <!--  <p id="coupon">合計金額
-            <span id="priceTarget">15000</span>円で50%OFFクーポンGET!!
-              あと￥
-            <span id="priceRemain">0</span>円!!</p>
-          <p id="couponGet" class="displayNone">クーポンがご利用になれます、クーポンはこちら</p>-->
+          </div>
+        </div>
       </div>
-  </div>
-
-<!--フッターフローティング-->
+      <!--フッターフローティング-->
 
 <style>
 	.change_price{
