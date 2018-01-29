@@ -9,6 +9,7 @@ mixin item()
       .description
         block
 
+
 //-item img header
 mixin itemImg(itemName,right)
   img.item_title(src='img/'+ itemName +'_title.png')
@@ -274,13 +275,13 @@ mixin dlItemImage(argitemURL, descFlg)
 
           //- yotei 1つめ分 
           - var RACNo = i['RAC番号'];
-          - var racArray = RACNo.split('-');
+          //- - var racArray = RACNo.split('-');
           //- - var RACNoItem = racArray[1].value;
-          - var RACNoItem = parseInt(racArray[1], 10);  // 123（10進数の整数）racArray[1].value;
-          -   console.log('RACNoItem:' + RACNoItem);
-          - var selNoDummy = '0';//dummy あとでSelect.csvより検索して持ってくる
-          - var padValue = RACNoItem +'_'+ selNoDummy +'_'+ selNoDummy +'_'+ price;
-          -   console.log('padValue:' + padValue);
+          //- - var RACNoItem = parseInt(racArray[1], 10);  // 123（10進数の整数）racArray[1].value;
+          //- -   console.log('RACNoItem:' + RACNoItem);
+          //- - var selNoDummy = '0';//dummy あとでSelect.csvより検索して持ってくる
+          //- - var padValue = RACNoItem +'_'+ selNoDummy +'_'+ selNoDummy +'_'+ price;
+          //- -   console.log('padValue:' + padValue);
 
           #topMarginPConly(style="position: relative;margin-top:190px;").pcNone
             +slider( itemURL ,itemURLs)
@@ -292,7 +293,7 @@ mixin dlItemImage(argitemURL, descFlg)
               .description
                 // 1つめ分 
                 //- inventry 結合したIDを呼び出す  
-                +selectAndBtn(itemURL, padValue)
+                //- +selectAndBtn(itemURL, padValue)
                 // 1つめ分完了 
               .extra
                 +specBtn('modal-'+ itemURL)
