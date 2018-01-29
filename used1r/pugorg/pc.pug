@@ -4,6 +4,7 @@ doctype html
 html
   head
     meta(charset='euc-jp')
+    
     meta(name='viewport', content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no')
     //- meta(name='viewport', content='width=749,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no')
     title MAX60%OFF！｜ショップジャパン楽天市場店
@@ -304,6 +305,7 @@ html
               +pad('ブラックを','10003922_8865_2_5980','')
             // 1つめ分完了 
           .extra
+            +specBtn('modal-'+ itemName)
             +specBtn('modal-'+ itemName)
 
 
@@ -663,7 +665,7 @@ html
 
 
     // for browse-sync 以下はさくじょしてもOK 
-    script#__bs_script__.
+    //- script#__bs_script__.
         //<![CDATA[
           document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\\/script>".replace("HOST", location.hostname));
           //]]>    //モーダル
