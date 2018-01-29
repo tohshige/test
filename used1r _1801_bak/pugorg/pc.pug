@@ -1,0 +1,672 @@
+include ./_mixins.pug
+include ./_item_images.pug
+doctype html
+html
+  head
+    meta(charset='euc-jp')
+    meta(name='viewport', content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no')
+    //- meta(name='viewport', content='width=749,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no')
+    title MAX60%OFF！｜ショップジャパン楽天市場店
+    // 楽天TOP解析タグ 
+    script(src='//assets.adobedtm.com/fde17e0362c40547334f4e041add368f158b4119/satelliteLib-e346cd8edc0ac640d3ce7c060b5a38f5169d4add.js')
+    //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js')
+
+    //- script(src='https://www.rakuten.ne.jp/gold/shopjapan/trs/iframe/matome/semantic.min.js' , charset='UTF-8')
+    script(src='js/semantic.js' , charset='UTF-8')
+
+    //- script(src='js/smoothscroll.js')
+
+    //- link(rel='stylesheet', href='css/semantic.min.css' , charset='UTF-8')
+    link(rel='stylesheet', href='css/semantic.css' , charset='UTF-8')
+
+    //- link(rel='stylesheet', href='https://www.rakuten.ne.jp/gold/shopjapan/css/normalize.css')
+    //-  CSSファイル1つに統合
+    //- link(rel='stylesheet', href='css/common1.css')
+    //- link(rel='stylesheet', href='css/style.css')
+    link(rel='stylesheet', href='css/responsiveEucjp.css', charset='EUC-JP')
+
+    link(rel='stylesheet', href='css/slick.css')
+    link(rel='stylesheet', href='css/lightbox.css')
+    link(rel='SHORTCUT ICON', href='https://www.rakuten.ne.jp/gold/shopjapan/images/favicon.ico')
+
+    //- Required
+    //- - var pageTitle= "";
+    //- - var pageDescription= site.description;
+    //- - var pageKeywords= site.keywords;
+    //- //- Optional
+    //- - var pageOgpTitle= "";
+    //- - var pageOgpImage= site.ogpImage
+    //- - var pageLang= "ja";
+    //- - var pageOgpType= "website";
+    //- //- Not modified
+    //- - var pageUrl= site.relativePath;
+    // #{pageTitle}
+    p #{site.name}
+    //- p #{site.itemImagesJson.trsp2}
+    //- p #{site.itemImagesJson}
+
+    //- span #{site.description}
+    - var image1 = site.trsp2;
+    - var siteAr = site;
+    //- ul
+    //-   each i in site.itemImages.trsp2
+    //-     li: p # !{i}
+
+
+    //- ul
+    //-   each i in images
+    //-     - var imageurl = i['画像URL']
+    //-     li: p #{imageurl}
+    //-     //- img(src=i['画像URL'] )
+    //-     img(src=imageurl )
+
+
+    script.
+      var siteAR = '#{site}';
+     console.log(JSON.stringify(siteAR));
+    style.
+      /* Mobile */
+      @media only screen and (max-width: 767px) {
+        [class*="mobile hidden"],
+        [class*="tablet only"]:not(.mobile),
+        [class*="computer only"]:not(.mobile),
+        [class*="large monitor only"]:not(.mobile),
+        [class*="widescreen monitor only"]:not(.mobile),
+        [class*="or lower hidden"] {
+          display: none !important;
+        }
+      }
+
+      /* Tablet / iPad Portrait */
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+       /*
+          [class*="mobile only"]:not(.tablet),
+          [class*="tablet hidden"],
+          [class*="computer only"]:not(.tablet),
+          [class*="large monitor only"]:not(.tablet),
+          [class*="widescreen monitor only"]:not(.tablet),
+          [class*="or lower hidden"]:not(.mobile) {
+            display: none !important;
+          }
+        */
+
+        [class*="mobile only"],
+        [class*="tablet hidden"]:not(.mobile),
+        [class*="computer only"]:not(.mobile),
+        [class*="large monitor only"]:not(.mobile),
+        [class*="widescreen monitor only"]:not(.mobile),
+        [class*="or lower hidden"] {
+          display: none !important;
+        }
+      }
+
+      /* Computer / Desktop / iPad Landscape */
+      @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        [class*="mobile only"]:not(.computer),
+        [class*="tablet only"]:not(.computer),
+        [class*="computer hidden"],
+        [class*="large monitor only"]:not(.computer),
+        [class*="widescreen monitor only"]:not(.computer),
+        [class*="or lower hidden"]:not(.tablet):not(.mobile) {
+          display: none !important;
+        }
+      }
+
+      /* Large Monitor */
+      @media only screen and (min-width: 1200px) and (max-width: 1919px) {
+        [class*="mobile only"]:not([class*="large monitor"]),
+        [class*="tablet only"]:not([class*="large monitor"]),
+        [class*="computer only"]:not([class*="large monitor"]),
+        [class*="large monitor hidden"],
+        [class*="widescreen monitor only"]:not([class*="large monitor"]),
+        [class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
+          display: none !important;
+        }
+      }
+
+      /* Widescreen Monitor */
+      @media only screen and (min-width: 1920px) {
+        [class*="mobile only"]:not([class*="widescreen monitor"]),
+        [class*="tablet only"]:not([class*="widescreen monitor"]),
+        [class*="computer only"]:not([class*="widescreen monitor"]),
+        [class*="large monitor only"]:not([class*="widescreen monitor"]),
+        [class*="widescreen monitor hidden"],
+        [class*="widescreen monitor or lower hidden"] {
+          display: none !important;
+        }
+      }
+    
+    script(type='text/javascript').
+      var pc_width = 1080;
+      var sp_width = 749;
+      //- var device = (window.screen.width < 749 ? 'sp' : 'pc');
+      var device = (window.outerWidth < 749 ? 'sp' : 'pc');
+      console.log(window.outerWidth);
+      var view_mode = (device == 'pc' || document.cookie.indexOf('view_mode=pc') != -1 ? 'pc' : 'sp');
+      //- if (device == 'sp' && view_mode == 'pc') {
+      //-     document.getElementById('viewport').setAttribute('content', 'width=' + pc_width + ',initial-scale=1');
+      //- }
+
+      //- 一旦オフ
+      //- if (device == 'pc' ) {
+      //-   //pc表示ならviewportを変更
+      //-   $('meta[name="viewport"]').attr('content', 'width=1080,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no');
+      //-   $('#forceWidth').width(1250);
+      //- }else{
+      //-   $('meta[name="viewport"]').attr('content', 'width=550, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no');
+      //-   $('#forceWidth').width(550);
+      //- }
+
+      $(function () {
+          if (device == 'sp') {
+              if (view_mode == 'pc') {
+                  $('.sp-mode').on('click', function () {
+                      var date = new Date();
+                      date.setTime(0);
+                      document.cookie = 'view_mode=;expires='+date.toGMTString();
+                      location.reload(false);
+                  }).show();
+              } else {
+                  $('.pc-mode').on('click', function () {
+                      document.cookie = 'view_mode=pc';
+                      location.reload(false);
+                  }).show();
+              }
+          }
+      });
+
+
+
+      $(document).ready(function() {
+        //modal用HTMLを読み込み
+        $('#target').load('modal1.html');//temp disable
+      });
+      //click modal 
+      $('.modal-not-migration').on('click',function(){
+          $('#modal-not-migration').modal('show');
+      });
+
+      $('#allform').submit(function(event) {
+      // ここでsubmitをキャンセルします。
+          event.preventDefault();
+      });
+      // # link 無効 
+      $(function() {
+          // クラス名からModal内IDに変換
+          // $('a[href="#"].modal-cero').click(function() {
+          $('a[href="#"]').click(function(e) {
+              var modalId=e.target.className.split( ' ' );
+              if(modalId.lastIndexOf('modal')){
+                  // $('#modal-cero').modal('show');
+                  $('#'+modalId[0]).modal('show');
+                  return false;
+              }
+          })
+      });
+
+      // # link 無効
+      $(function() {
+        $('a[href="#"].modal-not-migration').click(function() {
+              $('#modal-not-migration').modal('show');
+              return false;
+          })
+      });
+
+    //- script(type='text/javascript').
+      if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {{
+      location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
+      }}
+    //- script(type='text/javascript', src='js/jquery-1.11.1.min.js', charset='UTF-8')
+    script(type='text/javascript') _satellite.pageBottom();
+  //楽天解析タグ
+  body
+    //- .white
+    //- .main_bnr
+    //- img.kv(src='img/kv1_1026.png')
+    //- .outlet_pc_wrap#top(style='height:5750px')
+      //==================モッタイナイ市も購入手順 ==================
+      br
+      .out(style='background-image:url(https://www.rakuten.ne.jp/gold/shopjapan/cp/used/img/down_btn1.jpg);height:70px;margin: 420px auto 0;width:800px;cursor: pointer')
+        img#down_btn(src='https://www.rakuten.ne.jp/gold/shopjapan/cp/used/img/up_btn1.jpg')
+      br
+      br
+      .out_info(style='display:none;width: 860px;margin: 0 auto')
+        img(src='https://image.rakuten.co.jp/shopjapan/cabinet/share/used/how_to01.jpg', style='width: 860px;margin:0  auto')
+      //==================モッタイナイ市も購入手順 ==================
+      //==================モッタイナイ市も購入手順==================
+      script.
+        $(".out").click(function () {
+          $(".out_info").slideToggle("slow");
+          $("#down_btn").toggleClass("none");	
+        });
+      style.
+       .none{  display:none;}
+      //==================モッタイナイ市も購入手順==================
+      //- img(src='https://image.rakuten.co.jp/shopjapan/cabinet/share/beauty/nav171020.jpg', usemap='#nav')
+      //- br
+      //- br
+      //- map(name='nav')
+      //-   area(shape='rect', coords='22,5,260,90', href='#awfm')
+      //-   area(shape='rect', coords='263,4,501,89', href='#lgmc')
+      //-   area(shape='rect', coords='505,5,743,88', href='#crf')
+      //-   area(shape='rect', coords='748,6,986,91', href='#ngwp')
+    //- img.ui.fluid.image.item_title(src='img/nice_title.png', style='top:490px')
+    //- .ui.black.stacked.compact.segment
+        | Current device:
+        .ui.mobile.only.red.label Mobile 0-767px
+        .ui.tablet.only.blue.label Tablet 768-991px
+        .ui.computer.only.yellow.label Computer 992-1199px
+        .ui.large.monitor.only.medium.green.label Large Monitor 1200-1919px
+        .ui.widescreen.monitor.only.purple.label Widescreen over 1920px
+    //- img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
+    //- img.item_title.spNone(src='img/nice_title.png', style='top:200%')
+    .ui.divided.items.container.segment#forceWidth
+      //- img.ui.fluid.image(src='http://rcart.eek.jp/used/img/sp/kvsp1_1026.jpg')
+
+      //- Nice /////////////////////////////////////////////
+      img.ui.fluid.image.bgRed.spNone(src='img/kv1_1026.png')
+      img.ui.fluid.image.bgRed.pcNone(src='img/sp/kvsp1_1026.jpg')
+      - var itemName = 'nice';
+      img#spTitleImg1.ui.fluid.image(src='img/'+ itemName +'_title.png')
+      //- img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
+      +itemImages(itemName,'slider')
+      //- div.topMarginPConly(style="position: relative;margin-top:220px;").spNone
+      .item
+        //- iframe.itemFrame.ui.grid.image.spNone(scrolling='no', src='frame_'+ itemName +'.html',)
+        .content
+          img.ui.fluid.image(src='img/nice_pri.jpg')
+          .description
+            // 1つめ分 
+            +item
+              +pad('　レッドを', '10003922_8864_2_5980')
+              .ui.section.divider
+              +pad('ブラックを','10003922_8865_2_5980','')
+            // 1つめ分完了 
+          .extra
+            +specBtn('modal-'+ itemName)
+
+
+      //================== no responsive nice ==================
+      - var itemName = 'trsp2';
+      img#spTitleImg1.ui.fluid.image(src='img/'+ itemName +'_title.png')
+      //- img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
+      +itemImages(itemName,'slider')
+      //- div.topMarginPConly(style="position: relative;margin-top:220px;").spNone
+      .item
+        iframe.itemFrame.ui.grid.image.spNone(scrolling='no', src='frame_'+ itemName +'.html',)
+        .content
+          img.ui.fluid.image(src='img/nice_pri.jpg')
+          .description
+            // 1つめ分 
+            +item
+              +pad('　レッドを', '10003922_8864_2_5980')
+              +pad('ブラックを','10003922_8865_2_5980','')
+            // 1つめ分完了 
+          .extra
+            +specBtn('modal-'+ itemName)
+
+
+
+      //================== no responsive nice ==================
+      //- - var itemName = 'nice';
+      //- li(id=itemName,style='position: relative;margin:250px 0 0px 20px')
+      //- div(id=itemName)
+        img.item_title(src='img/'+ itemName +'_title.png')
+        .col_img
+          iframe(scrolling='no', src='frame_'+ itemName +'.html', style='margin-left:490px')
+        div
+          .col_cart_2
+            img(src='img/nice_pri.jpg')
+            // 1つめ分 
+            +item
+              +pad('　レッドを', '10003922_8864_2_5980')
+              +pad('ブラックを','10003922_8865_2_5980','')
+              +specBtn()(class='modal-'+ itemName)
+            // 1つめ分完了 
+      //==================nice ==================
+      //- ul.item_lineup(style='padding-left:0px;height:8650px;width:980px;margin:0 auto;position: relative')
+      //-   //==================trsp2 ==================
+      //-   - var itemName = 'trsp2';
+      //-   li(id=itemName,style='position: relative;margin:200px 0 0px 18px')
+      //-     +itemImg(itemName)
+      //-     .col_cart
+      //-       img(src='img/trsp2_pri.jpg')
+      //-       // 1つめ分 
+      //-       +item
+      //-         +pad('この商品を', '10003933_0_0_5460')
+      //-         +specBtn()(class='modal-'+ itemName)
+      //-       // 1つめ分完了 
+      //-   //==================trsp2 ==================
+        //- //==================nice ==================
+        //- - var itemName = 'nice';
+        //- li(id=itemName,style='position: relative;margin:250px 0 0px 20px')
+        //-   +itemImg(itemName,'migi')
+        //-   div
+        //-     .col_cart_2
+        //-       img(src='img/nice_pri.jpg')
+        //-       // 1つめ分 
+        //-       +item
+        //-         +pad('　レッドを', '10003922_8864_2_5980')
+        //-         +pad('ブラックを','10003922_8865_2_5980','')
+        //-         +specBtn()(class='modal-'+ itemName)
+        //-       // 1つめ分完了 
+        //- //==================nice ==================
+        //- //==================trsp ==================
+        //- - var itemName = 'trsp';
+        //- li(id=itemName,style='position: relative;margin:270px 0 440px 18px')
+        //-   +itemImg(itemName)
+        //-   .col_cart
+        //-     img(src='img/trsp_pri.jpg')
+        //-     // 1つめ分 
+        //-     +item
+        //-       +pad('　シングルを', '10003918_0_0_15960','width:438px')
+        //-       +pad('セミダブルを', '10003919_0_0_17220','width:438px')
+        //-       +pad('　　ダブルを', '10003920_0_0_18760','width:438px')
+        //-       +specBtn()(class='modal-'+ itemName)
+        //-     // 1つめ分完了 
+        //- //==================trsp ==================
+        //- //==================sim ==================
+        //- - var itemName = 'sim';
+        //- li(id=itemName,style='position: relative;margin:320px 0 0px 20px')
+        //-   div
+        //-     +itemImg(itemName,'migi')
+        //-     .col_cart_2
+        //-       img(src='img/sim_s_pri.jpg')
+        //-       // 1つめ分 
+        //-       +item
+        //-         +pad('この商品を', '10003923_0_0_5980')
+        //-       img(src='img/sim_t_pri.jpg')
+        //-       .description
+        //-         +pad('この商品を', '10003924_0_0_4980')
+        //-         +specBtn()(class='modal-'+ itemName)
+        //-     // 1つめ分完了 
+        //- //==================nice ==================
+        //- //==================rah ==================
+        //- - var itemName = 'rah';
+        //- li(id=itemName,style='position: relative;margin:560px 0 0px 18px')
+        //-   +itemImg(itemName)
+        //-   .col_cart
+        //-     img(src='img/rah_s_pri.jpg')
+        //-     // 1つめ分 
+        //-     +item
+        //-       +pad('この商品を', '10003925_0_0_6980')
+        //-     img(src='img/rah_t_pri.jpg')
+        //-     .description
+        //-       +pad('この商品を', '10003926_0_0_5980')
+        //-       +specBtn()(class='modal-'+ itemName)
+        //-     // 1つめ分完了 
+        //- //==================rah ==================
+        //- //==================ngw ==================
+        //- - var itemName = 'ngw';
+        //- li(id=itemName,style='position: relative;margin:550px 0 680px 20px')
+        //-   +itemImg(itemName,'migi')
+        //-   div
+        //-     .col_cart_2
+        //-       img(src='img/ngw_s_pri.jpg')
+        //-       // 1つめ分 
+        //-       +item
+        //-         +pad('　ピンクを', '10003927_8860_2_6800')
+        //-         +pad('ブラウンを', '10003927_8861_2_6800')
+        //-       img(src='img/ngw_t_pri.jpg')
+        //-       .description
+        //-         +pad('　ピンクを', '10003928_8862_2_5800')
+        //-         +pad('ブラウンを', '10003928_8863_2_5800')
+        //-         +specBtn()(class='modal-'+ itemName)
+        //-       // 1つめ分完了 
+        //==================ngw ==================
+        //==================rvt ==================
+        //- - var itemName = 'ngw';
+        //- li(id=itemName,style='position: relative;margin:560px 0 0px 18px')
+        //-   +itemImg(itemName,'')
+        //-   .col_cart
+        //-     img(src='img/rvt_s_pri.jpg')
+        //-     // 1つめ分 
+        //-     +item
+        //-       +pad('この商品を', '10003929_0_0_9800')
+        //-     img(src='img/rvt_t_pri.jpg')
+        //-     .description
+        //-       +pad('この商品を', '10003930_0_0_8800')
+        //-       +specBtn()(class='modal-'+ itemName)
+        //-     // 1つめ分完了 
+        //==================rvt ==================
+        //- - var itemName = 'awfm';
+        //- li(id=itemName,style='position: relative;margin:550px 0 0px 20px')
+        //-   +itemImg(itemName,'migi')
+        //-   div
+        //-     .col_cart_2
+        //-       img(src='img/awfm_s_pri.jpg')
+        //-       // 1つめ分 
+        //-       +item
+        //-         +pad('この商品を', '10003935_0_0_12960')
+        //-       img(src='img/awfm_t_pri.jpg')
+        //-       .description
+        //-         +pad('この商品を', '10003934_0_0_8600')
+        //-         +specBtn()(class='modal-'+ itemName)
+        //-       // 1つめ分完了 
+        //==================awfm ==================
+        //go_cart loading 
+        .item.displayNone
+          button#go_cart.ui.sixteen.wide.column.disabled.button
+            p.btn
+              img(alt='購入ボタン', src='img/btn_buy_selected.gif', width='', height='')
+        .item.displayNone
+          button#go_cart_view.ui.sixteen.wide.column.disabled.button
+            .ui.segment
+              #loader.ui.dimmer
+                //<div class="ui text inverted loader">処理をしてますので、少々お待ちください</div>
+                .ui.text.loader 処理をしていますので、少々お待ちください。
+            p 選択した商品と合計金額はお買物カゴでご確認いただけます。
+            .image
+              a(href='https://basket.step.rakuten.co.jp/rms/mall/bs/cart/', target='_blank')
+                img.image(alt='カゴの確認', src='img/btn_watch_cart.gif', width='', height='')
+        hr(style='margin-top:370px')
+        //==================awfm ==================
+        img#out(src='img/detail.jpg', style='width:px;margin: 50px 0 50px 15px')
+        hr
+        img#out(src='img/yokoku.jpg', style='width:px;margin: 50px 0 0 15px')
+      .to_top(style='margin-bottom:170px')
+        a#pageTop(href='') このページのTOPへ
+    //縦バナー
+    .out_back
+    //縦バナー
+    //縦バナー
+    // <div class="left_bnr" style="display:none;">
+    // <a href="https://coupon.rakuten.co.jp/getCoupon?getkey=TUpFUS1ITjdGLVNOMlMtSERORQ--&rt=" target="_blank"><img src="img/left_bnr.png?20170627"></a> 
+    //縦バナー
+
+    //縦バナーPC
+    .right_bnr.spNone(style='position: fixed;right: 0; top: 105px;z-index: 999')
+      a(href='#out')
+        img(src='./img/left_bnr.png', width='105px', height='200px')
+      p
+    div.spNone(style='position: fixed;left: 0; top: 105px;z-index: 999')
+      img(src='./img/right_bnr2.png', width='105px', height='264px')
+      p
+    //縦バナーSP
+    .right_bnr_sp.pcNone
+      a(href='#out')
+        img(src='img/sp/right_bnr1_sp.png', style='width:25% ;    position: fixed ;    bottom: 0px;    right: 0;    z-index: 2147480000')
+    
+    //- //カウントダウンタイマー
+      #timelimit
+        .timelimit_inner
+          .timer
+            span.catext キャンペーン終了まで
+            #sampleA.timer_1
+    //- カウントダウンタイマー
+      script(type='text/javascript', src='js/timer.js', charset='UTF-8')
+      script(type='text/javascript', src='js/hour_limited.js')
+      |  
+      script(language='JavaScript', type='text/javascript').
+        cdTimer1();
+        function cdTimer1() {
+          // 設定項目 ここから==================
+          // タグ要素のID名  
+          var elemID = 'sampleA';  
+        
+          // 期限日を設定  
+          var year    =   2017;           // 年  
+          var month   =   9;              // 月  
+          var day     =   11;             // 日
+          var hour     =   10;             // 時 
+        
+          // 期限終了後のメッセージ  
+          var limitMessage    =   '<span class="end_camp">終了致しました。</span>';  
+        
+          // メッセージのスタイルクラス名（変更しない場合は空欄）  
+          var msgClass = 'msg_1';  
+          // 設定項目 ここまで================== 
+        
+          var timeLimit = new Date( year, month - 1, day , hour );  
+          var timer = new CountdownTimer( elemID, timeLimit, limitMessage, msgClass );  
+          timer.countDown();  
+        }
+    //-==================バンブー==================
+      script(type='text/javascript').
+        var _fout_queue = _fout_queue || {}; if (_fout_queue.segment === void 0) _fout_queue.segment = {};
+        if (_fout_queue.segment.queue === void 0) _fout_queue.segment.queue = [];
+        _fout_queue.segment.queue.push({
+        'user_id': 15627
+        });
+        (function() {
+        var el = document.createElement('script'); el.type = 'text/javascript'; el.async = true;
+        el.src = (('https:' == document.location.protocol) ? 'https://' : 'http://') + 'js.fout.jp/segmentation.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(el, s);
+        })();
+    //==================バンブー==================
+    //==================アウトレット==================
+      script.
+        $(".out").click(function () {
+        $(".out_info").slideToggle("slow");
+        $("#down_btn").toggleClass("none");
+        });
+    style.
+      .none{
+        display:none;
+      }
+    //==================アウトレット==================
+    //==================YTM==================
+      script(type='text/javascript').
+        (function () {
+        var tagjs = document.createElement("script");
+        var s = document.getElementsByTagName("script")[0];
+        tagjs.async = true;
+        tagjs.src = "//s.yjtag.jp/tag.js#site=r5x5wBC";
+        s.parentNode.insertBefore(tagjs, s);
+        }());
+      noscript
+        iframe(src='//b.yjtag.jp/iframe?c=r5x5wBC', width='1', height='1', frameborder='0', scrolling='no', marginheight='0', marginwidth='0')
+    //==================YTM==================
+    //フッターフローティング
+    #footerFloatingMenu.blurring
+      //- div(style='width:950px;margin: 0 auto; border: none;display:block;')
+      .ui.segment
+        #footerNowPrice.ui.button.large.change_price
+          | 現在の合計金額は￥
+          span#priceAll 0
+          | 円(税抜)
+        //- #footer_go_cart.ui.button.yellow.disabled
+        #footer_go_cart.ui.button.yellow
+          span 選択した商品のレジにすすむ
+
+      //- div(style='width:950px;margin: 0 auto; border: none')
+        .ui.button.large.white
+          | 現在の合計金額は￥
+          span#priceAll 0
+          | 円(税抜)
+        .ui.button.yellow 選択した商品のレジにすすむ
+
+      //- .ui.segment(style='width:950px;margin: 0 auto; border: none')
+        p.textYellow.ui.fluid
+        .change_price
+          | 現在の合計金額は￥
+          span#priceAll 0
+          | 円(税抜)
+        //- #footer_go_cart.compact.ui.floated.large.yellow.button.position
+          span 選択した商品をカートに入れる
+        #footer_go_cart.compact.ui.fluid.large.yellow.button.disabled.position
+          span 選択した商品のレジにすすむ
+        p
+
+      //- original 
+      //- .ui.segment(style='width:950px;margin: 0 auto; border: none')
+        p.textYellow
+        .change_price
+          | 現在の合計金額は￥
+          span#priceAll 0
+          | 円(税抜)
+        //- #footer_go_cart.compact.ui.floated.large.yellow.button.position
+          span 選択した商品をカートに入れる
+        #footer_go_cart.compact.ui.floated.large.yellow.button.disabled.position
+          span 選択した商品のレジにすすむ
+        p
+        //
+          p#coupon
+            | 合計金額
+            span#priceTarget 15000
+            | 円で50%OFFクーポンGET!!
+            |     あと￥
+            span#priceRemain 0
+            |円!!
+          p#couponGet.displayNone クーポンがご利用になれます、クーポンはこちら
+      //- original 
+
+      .ui.inverted.dimmer
+        .content
+          .center
+            h2.ui.inverted.icon.header.red
+              | しばらくお待ちください。
+            .ui.text.loader
+
+    //もったい無い
+    a(name='btnBuy')
+    script(type='text/javascript', src='js/rcart.js', charset='SHIFT-JIS')
+    script(src='js/lightbox.js', type='text/javascript')
+    script(src='js/slick.min.js')
+    script.
+      $(function() {
+        $('.single-item').slick();
+      });    //もったい無い
+    script.
+      // スクロールしたらじわっとフッター表示
+      $(function() {
+        var topBtn = $('#footerFloatingMenu');
+        topBtn.hide();
+        $(window).scroll(function() {
+          // 200pxで表示
+          if ($(this).scrollTop() > 200) {
+            topBtn.fadeIn();
+          } else {
+            topBtn.fadeOut();
+          }
+        });
+        var topBtnSP = $('.right_bnr_sp');
+        topBtnSP.hide();
+        $(window).scroll(function() {
+          // 200pxで表示
+          if ($(this).scrollTop() < 200) {
+            topBtnSP.fadeIn();
+          } else {
+            topBtnSP.fadeOut();
+          }
+        });
+      });
+    // User Insight PCDF Code Start : shopjapan.co.jp 
+    script(type='text/javascript').
+     var _uic = _uic ||{}; var _uih = _uih ||{};_uih['id'] = 50185; _uih['lg_id'] = ''; _uih['fb_id'] = ''; _uih['tw_id'] = ''; _uih['uigr_1'] = ''; _uih['uigr_2'] = ''; _uih['uigr_3'] = ''; _uih['uigr_4'] = ''; _uih['uigr_5'] = ''; _uih['uigr_6'] = ''; _uih['uigr_7'] = ''; _uih['uigr_8'] = ''; _uih['uigr_9'] = ''; _uih['uigr_10'] = '';
+      /* DO NOT ALTER BELOW THIS LINE */
+      /* WITH FIRST PARTY COOKIE */
+      (function() {
+      var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.async = true; bi.src = ('https:' == document.location.protocol ? 'https://bs' : 'http://c') + '.nakanohito.jp/b3/bi.js'; var s = document.getElementsByTagName('scri'+'pt')[0];s.parentNode.insertBefore(bi, s); })();
+          // User Insight PCDF Code End : shopjapan.co.jp 
+
+
+    // for browse-sync 以下はさくじょしてもOK 
+    script#__bs_script__.
+        //<![CDATA[
+          document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\\/script>".replace("HOST", location.hostname));
+          //]]>    //モーダル
+
+    #target
+    //モーダル

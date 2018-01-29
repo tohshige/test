@@ -1,0 +1,350 @@
+//-変換で文字化ける -this file UTF8!!文字化ける ===== MIXINS ==================
+mixin item()
+  // 1つめ分 
+  .item
+    .image
+    .content
+      h3.header
+      .description
+      .description
+        block
+
+//-item img header
+mixin itemImg(itemName,right)
+  img.item_title(src='img/'+ itemName +'_title.png')
+  .col_img
+  if right
+    // 右寄せなら 左マージン追加
+    iframe(scrolling='no', src='frame_'+ itemName +'.html', style='margin-left:490px')
+  else
+    iframe(scrolling='no', src='frame_'+ itemName +'.html')
+
+//-parts of kago
+mixin pad(color,itemcode,padStyle)
+  .ui.stackable.three.column.vertically.divided.grid
+    .row
+      .three.wide.column
+        span.item_name= color
+      .three.wide.column
+        select.ui.fluid.dropdown.right.big.label(name= itemcode)
+          option 数量
+          option 1
+          option 2
+        //- | 個
+      .eight.wide.column
+        label
+          .ui.primary.tiny.button.cartAddBtn
+            input(type='checkbox', name='chk', value='1')
+            |  買い物カゴに追加する
+
+
+
+//- spec modal btn
+mixin specBtn(itemNameModal)
+  hr
+  .supec_btn
+    a(class=itemNameModal href='#').arrow_01.ui.fluid.blue.button > 商品内容はこちら
+    a.modal-sinpin.arrow_01(href='#').ui.fluid.olive.button > 新品同様/特価良品とは
+
+
+//-rollover images
+mixin rolloverImage(itemName,images)
+  // 0:default image  1-5:thumbnail images max:5
+  head
+    meta(charset='euc-jp')
+    title
+    script(src='https://www.rakuten.ne.jp/gold/shopjapan/js/jquery.min2.js')
+    script.
+      //- var itemName='#{itemName}';
+      $(function(){
+          $('#thumb_area_#{itemName} img').mouseover(function(){
+              $('#main_img_#{itemName} img').attr('src', $(this).attr('src'));
+          });
+          $('#thumb_area_#{itemName} img').mouseout(function(){
+              $('#main_img_#{itemName} img').attr('src', '#{images[0]}');
+          });
+      });
+    //- link(rel='stylesheet', href='css/style.css')
+    link(rel='stylesheet', href='css/frame.css')
+  body
+    div(id='main_img_'+itemName, class='main_img')
+      img(src=images[0])
+    ul(id='thumb_area_'+itemName, class='thumb_area')
+      for image, index in images
+        //- 1枚目を飛ばす
+        if index>0
+          li
+            img(src=image)
+
+//-rollover images for no frame
+mixin rolloverImage2(itemName,images)
+  // 0:default image  1-5:thumbnail images max:5
+  script.
+    $(function(){
+        $('#thumb_area_#{itemName} img').mouseover(function(){
+            $('#main_img_#{itemName} img').attr('src', $(this).attr('src'));
+        });
+        $('#thumb_area_#{itemName} img').mouseout(function(){
+            $('#main_img_#{itemName} img').attr('src', '#{images[0]}');
+        });
+    });
+  //- link(rel='stylesheet', href='css/style.css')
+  //- link(rel='stylesheet', href='css/frame.css')
+  div(id='main_img_'+itemName, class='main_img' style="position:relative")
+    img(src=images[0])
+  ul(id='thumb_area_'+itemName, class='thumb_area')
+    for image, index in images
+      //- 1枚目を飛ばす
+      if index>0
+        li
+          img(src=image)
+
+mixin slider(itemName,images)
+  style.
+    .sliderImg{
+      width: 100%;
+      margin: 0 auto;
+    }
+
+  ul.slider.single-item(style='margin:0 0 10px')
+    for image, index in images
+      li
+        //- a(href=image, rel='lightbox[#{itemName}-group]')
+        a(href=image, rel='lightbox['+itemName+'-group]')
+          img(src=image,class='sliderImg')
+
+mixin modal(itemName,title,description)
+  .ui.modal(id='modal-'+itemName)
+    i.close.icon
+    h2 #{title}
+    hr
+    pre.spec #{description}
+
+
+//- mixin cabinetImage(images,reqImagePath)
+mixin cabinetImage(itemName,reqImagePath,type,thumWidthHeight)
+  - var sentou ='https://image.rakuten.co.jp/shopjapan/cabinet/' //削除文字
+  - var thumurl= 'http://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/';//thumnail url
+  //サムネ対象サイズ
+  - var size   = '?_ex='+thumWidthHeight+'x'+thumWidthHeight;
+
+  if (thumWidthHeight === 200 ||  thumWidthHeight === 300 || thumWidthHeight === 400 || thumWidthHeight === '')
+    case thumWidthHeight
+      when 200
+        - var size= '?_ex=200x200';
+      when 300
+        - var size= '?_ex=300x300';
+      when 400
+        - var size= '?_ex=400x400';
+      when ''
+        - var size= '?_ex=200x200';
+
+  - var oneItemImages=[]
+  - var imageLength = images.length
+    //- each i in images
+  //- script.
+  //-   if (reqImagePath.length > 0){
+  //-     imagesArray = reqImagePath;
+  //-   } else {
+  //-     imagesArray = images;
+  //-   }
+  for i, index in images
+    //-  "画像パス": "share/used/how_to01.jpg",
+    - var imagePath = i['path'] //cabinet url from csv
+    - var dmy = imagePath.split('/');
+    //- /cabinet/ 以下のPathで前方一致
+    if(imagePath.indexOf(reqImagePath) === 0)
+      - var imageurl = i['url'] //cabinet url from csv
+      - var shorturl=imageurl.replace( sentou , "" );
+      - var thum = thumurl+shorturl+size; //thumbnail 用リンク完成
+
+      //- スライダーなどの指定なしはリスト表示
+      if type === ''
+        p.text.small オリジナルURL :
+          a(href=imageurl, target='_blank') 
+            span #{imageurl}
+        if (thumWidthHeight === 'original')
+          a(href=imageurl, target='_blank') 
+            img.image(src='' data-original=imageurl)
+        else
+          p サムネ生成URL :
+            a(href=thum, target='_blank') 
+              span #{thum}
+          a(href=imageurl, target='_blank') 
+            img.image(src='' data-original=thum)
+
+
+      - oneItemImages.push(thum)
+
+    //- - var tempPath = "ngw/other"
+    //- if(imagePath.indexOf(tempPath) === 0)
+    //-   - var flg = true
+    //-   - oneItemImages.push(thum)
+    //- else if (flg)
+    //-   - flg = false
+      //- iframe用のHTMLを生成 サムネイルロールオーバ
+      //- +rolloverImage(itemName,oneItemImages)
+      //- +rolloverImage('nice',oneItemImages)
+    //- if (imageLength === index )
+
+  if type === 'rollover'
+    +rolloverImage2( itemName ,oneItemImages)
+  if type === 'slider'
+    +slider( itemName ,oneItemImages)
+
+  h3 #{oneItemImages.length} 枚発見
+
+
+//- seek dl-item20xxxx.csv
+mixin dlItemImage(argitemURL, descFlg)
+  - var imageLength = images2.length
+  - console.log(imageLength);
+  - var onelineCount = 0;
+  h3 #{imageLength} lines
+    for i, index in images2
+      if argitemURL === i['itemURL'] 
+        - var oneline  = i['itemImgURL'];
+        - var oneline1 = i['itemImgName'];
+        - var oneline2 = i['movie'];
+        - var oneline3 = i['販売期間指定'];
+        -
+          var itemURLs = []; //reset
+          var itemURLslengh = '';
+          //- var oneline = JSON.parse(JSON.stringify(i), function(key, value){
+          // 1 Item の 横軸 列の検索 約60列
+          JSON.parse(JSON.stringify(i), function(key, value){
+            if( value.length > 0){
+              var hikaku = value.substring(0, 21);
+              if ('https://image.rakuten' === hikaku){
+                onelineCount ++ ;
+                itemURLs = value;
+                itemURLs = itemURLs.split(' ');
+                itemURLslength = itemURLs.length;
+                return value;
+              }
+            }
+          });
+        if itemURLslength > 0  
+          - var itemURL  = i['itemURL'];
+          - var itemNo   = i['itemNo'];
+          - var itemName = i['itemName'];
+          - var price = i['price'];
+          - var zaiko = i['在庫数'];
+          if descFlg
+            style.
+              pre.code{
+                overflow-x:'auto';
+                white-space:'pre';
+                font-family: Consolas, "Courier New", Courier, Monaco, monospace;
+                font-size: 14px;
+                line-height: 1.2;          
+              }
+              pre em {
+                background-color: pink;
+              }
+            a(href='#' + itemURL, id=itemURL) 
+            span #{onelineCount} 件目 
+            //- ループを抜ける
+            if (onelineCount === 20)
+              p #{itemURLs} countbreak
+              - break
+
+
+            if i['在庫数'] > 0
+              span 在庫数は: #{zaiko} : 
+              a(href='https://item.rakuten.co.jp/' + site.shopName + '/' + itemURL , target='_blank')
+                span 新規ウインドウで商品ページを開く
+            else
+              span 在庫数はゼロ : 
+              
+
+            pre.code(style=' border-top: 1px dotted silver;')
+              | itemURL  #{itemURL}
+              | itemNo   #{itemNo}
+              | itemName #{itemName}
+              | price    #{price}
+              | 画像枚数　 #{itemURLs.length}
+
+            pre.code(style=' border-top: 1px dotted silver;')
+              span itemImgURL "商品画像URL"
+              br 
+              each oneURL in itemURLs
+                span #{oneURL}
+                br
+
+          //- yotei 1つめ分 
+          - var RACNo = i['RAC番号'];
+          - var racArray = RACNo.split('-');
+          //- - var RACNoItem = racArray[1].value;
+          - var RACNoItem = parseInt(racArray[1], 10);  // 123（10進数の整数）racArray[1].value;
+          -   console.log('RACNoItem:' + RACNoItem);
+          - var selNoDummy = '0';//dummy あとでSelect.csvより検索して持ってくる
+          - var padValue = RACNoItem +'_'+ selNoDummy +'_'+ selNoDummy +'_'+ price;
+          -   console.log('padValue:' + padValue);
+
+          #topMarginPConly(style="position: relative;margin-top:190px;").pcNone
+            +slider( itemURL ,itemURLs)
+          .item
+            #rollover(style='position:relative;margin-bottom:190px;').spNone
+              +rolloverImage2( itemURL ,itemURLs)
+            .content
+              img.ui.fluid.image(src='img/'+ itemURL +'_pri.jpg')
+              .description
+                // 1つめ分 
+                //- inventry 結合したIDを呼び出す  
+                +selectAndBtn(itemURL, padValue)
+                // 1つめ分完了 
+              .extra
+                +specBtn('modal-'+ itemURL)
+
+
+          //- console.log(racArray);
+
+          //- inventry 結合したIDを呼び出す  
+          //- +selectAndBtn
+          //- +item
+          //-   +pad('　レッドを', '10003922_8864_2_5980')
+          //-   .ui.section.divider
+          //-   +pad('ブラックを','10003922_8865_2_5980','')
+
+
+          h3 画像 #{itemURLslength} 枚発見
+
+
+mixin selectAndBtn(itemURL, padValue)
+  +item
+  - var count = 0
+  for i, index in selects
+    if itemURL === i['商品管理番号（商品URL）']
+      - count ++ ;
+      - var yokoSentakuSi = i['項目選択肢別在庫用横軸選択肢']; // カラーをお選びください
+      - var tateSentakuSi = i['項目選択肢別在庫用縦軸選択肢']; // ブルー Or レッド 等
+
+      +pad(tateSentakuSi, padValue)
+      //- .ui.section.divider
+
+  if count === 0
+    +pad('', padValue)
+    //- .ui.section.divider
+  
+
+
+  //- +item
+  //-   +pad('　レッドを', '10003922_8864_2_5980')
+  //-   .ui.section.divider
+  //-   +pad('ブラックを','10003922_8865_2_5980','')
+
+
+//- あとで分離
+  - console.log('selects length ' + selects.length)
+  - var OneitemURL = 'nice_ma1';
+  for i, index in selects
+    p #{i['商品管理番号（商品URL）']} 
+    if ( i['商品管理番号（商品URL）'] === OneitemURL)
+      - console.log(i);
+        //- ループを抜ける
+    //- if (index === 20)
+      p #{itemURLs} countbreak
+      - break
+
+
