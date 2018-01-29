@@ -154,8 +154,7 @@ var DEST = './' ;
   .pipe(pug({
     pretty: true
   }))
-  // .pipe(convertEncoding({to: "EUC-JP"}))// encode
-  // .pipe(gulp.dest('./nohin'))
+
   .pipe(replace('euc-jp', 'UTF-8'))// for bs
   .pipe(convertEncoding({to: "UTF-8"}))// for bs
   //  .pipe(gulp.dest('./html/'));
@@ -163,6 +162,36 @@ var DEST = './' ;
   // .pipe(browserSync.reload({stream: true}));
   .pipe(browserSync.stream());
 });
+
+//pug > html
+gulp.task('pug2htmlKSK', () => {
+  var DEST = './' ;
+    // return gulp.src(['./pugorg/**/*.pug', '!./pugorg/**/_*.pug']) //
+    return gulp.src(['./pugorg/**/*.pug'])
+    // .pipe(cached( 'pug2html' )) // キャッシュ処理 変更のあったファイルのみ実行される
+    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))  // コンパイルエラーを通知します。  
+    // .pipe(convertEncoding({from: "UTF8"}))// from utf8 だと化けるe
+    .pipe(convertEncoding({from: "EUC-JP"}))// encode
+    .pipe( data( function( file ) {
+      var locals  = JSON.parse( fs.readFileSync( src.json + '/site.json' ) );
+      locals.relativePath = path.relative( file.base, file.path.replace( /.pug$/, '.html' ) );
+      // return { 'site' : locals };
+      var images  = JSON.parse( fs.readFileSync( src.json + '/all.json'));
+      var images2 = JSON.parse( fs.readFileSync( 'dist/all.utf8.json'));
+      // var selects = JSON.parse( fs.readFileSync( 'dist/all-select.utf8.json'));
+      // return {  'site' : locals , 'images' : images, 'images2' : images2 , 'selects' : selects };
+      return {  'site' : locals , 'images' : images, 'images2' : images2  };
+        } ) )
+    .pipe(pug({
+      pretty: true
+    }))
+    .pipe(convertEncoding({to: "EUC-JP"}))// encode
+    .pipe(gulp.dest('./nohin'))
+    .pipe(gulp.dest(DEST))
+    // .pipe(browserSync.reload({stream: true}));
+    .pipe(browserSync.stream());
+  });
+  
 
 gulp.task('csv2json', function () {
   var columns =['1','2','url','4','5'];
@@ -372,6 +401,11 @@ gulp.task('wsass', ['pug2html','sass'], function() {
   gulp.watch(src.scss, ['sass']);
   // gulp.watch(src.css, ['css']);
   // gulp.watch(src.js, ['js']);
+});
+// Generate pug to html, scss to css
+gulp.task('wsassKSK', ['pug2htmlKSK','sass'], function() {
+  gulp.watch(src.html, ['pug2htmlKSK']);
+  gulp.watch(src.scss, ['sass']);
 });
 
 gulp.task('wSP', ['pug2htmlSP'], function() {
