@@ -441,9 +441,9 @@ v
 
 .item_title{
 	position: absolute;
-	width: 1600px;
+	width: 1000px;
 	top:-150px;
-	left:-325px;
+	left:-35px;
 	margin: 0 auto;
 	z-index: 998;
 }
@@ -538,12 +538,12 @@ v
 		font-size: 18px;
 		font-weight: bold;
 		left:0px;
-		top:-5px;
+		top:6px;
 	}
 	.position{
 		position: relative;
 		left: 258px;
-        top: -55px;
+        top: -44px;
         width: 439px;
         height: 50px;
 		line-height: 50px;
@@ -563,7 +563,7 @@ v
 	
 	.arrow_01{
 		display: block;
-		    width: 170px;
+		    width: 180px;
     margin: 15px 4px;
 		text-decoration: underline;
 		font-weight: bold;
@@ -573,3 +573,11 @@ v
 		font-size:15px;
 		font-weight:bold;
 	}
+    
+    .add{
+    top:8px;
+    position: relative;
+    color:#38a13d;
+}
+
+

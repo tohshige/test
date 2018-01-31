@@ -8,12 +8,15 @@ $("a[href='#btnBuy']").click(function() {
 
 $("[id$='go_cart']").click(function() {
   $("html,body").animate({scrollTop:$('#go_cart_view').offset().top});
+  // dimmer semantic ui
+  $('#footerFloatingMenu').dimmer('show');
   return false;
 });
 
 // set all selectbox default value
 $("select").val(1);// 2banme
 // $('select').val(0);//1”Ô–Ú
+
 
 // $("#pageTop").click(function() {
 //   $("html, body").animate({ scrollTop: $(document).height() }, "slow");
