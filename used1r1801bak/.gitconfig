@@ -1,0 +1,17 @@
+# diff.sjis.textconv=iconv -f sjis
+# diff.eucjp.textconv=iconv -f eucjp
+# i18n.commitencoding UTF-8
+
+[diff "eucjp"]
+        textconv = iconv -f EUCJP -t UTF8
+        # diff = iconv -f EUC-JP -t UTF-8
+        # diff = iconv -f EUC-JP -t UTF-8
+        # diff = nkf -w | LESS=-R less
+
+
+[color]
+        ui = true
+[pager]
+        diff = nkf -w | LESS=-R less
+        log =  nkf -w | LESS=-R less
+        show = nkf -w | LESS=-R less

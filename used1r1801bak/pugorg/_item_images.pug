@@ -1,0 +1,59 @@
+//-this file UTF8!!文字化ける ===== ITEM IMAGES ==================
+
+include ./_mixins.pug
+mixin itemImages(itemName,mode)
+  //- mode: slider or genFrame or modal
+  - var flag = 1
+  case itemName
+    when 'nice'
+      -
+        //- 1枚目:初期画像  2-5:下部のサムネイル max:5枚 並べたい順番にcsvカンマ区切を貼り付けると楽
+        images=[ 
+        'https://image.rakuten.co.jp/shopjapan/cabinet/share/used/nice1.jpg',
+        'https://image.rakuten.co.jp/shopjapan/cabinet/nice/s_0210_4.jpg'
+        ]
+    when 'trsp'
+      -
+        images=[ 
+        'https://image.rakuten.co.jp/shopjapan/cabinet/share/used/trsp1.jpg',
+        'https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago01.jpg',
+        'https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago02.jpg',
+        'https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago03.jpg',
+        'https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago04.jpg',
+        'https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago05.jpg'
+        ]
+    when 'trsp2'
+      -
+        images=[ 
+        'img/sp/trsp2_2.jpg', 
+        'img/sp/trsp2_s2.jpg',
+        'img/sp/trsp2_s3.jpg'
+        ]
+    when 'awfm'
+      -
+        images=[ 
+        'https://image.rakuten.co.jp/shopjapan/cabinet/share/used/awfm1.jpg',
+        'https://thumbnail.image.rakuten.co.jp/@0_mall/shopjapan/cabinet/awfm/awfm_reshipi01.jpg',
+        'https://image.rakuten.co.jp/shopjapan/cabinet/awfm/awfm_s3.jpg',
+        'https://image.rakuten.co.jp/shopjapan/cabinet/awfm/awfm_s4.jpg'
+        ]
+    when 'ngw'
+      -
+        images=[ 
+        'https://image.rakuten.co.jp/shopjapan/cabinet/share/used/ngw1.jpg',
+        'https://image.rakuten.co.jp/shopjapan/cabinet/ngw/other1.jpg',
+        'https://image.rakuten.co.jp/shopjapan/cabinet/ngw/other3.jpg'
+        ]
+    default
+      p 0でも1でもありません
+  //- - var images= site.itemImagesJson.trsp2;
+  if mode == 'slider'
+    //- スライド、スライダー
+    +slider(itemName,images)
+    +slider(itemName,site.itemImages.trsp2)
+  else if mode == 'genFrame'
+    //- iframe用のHTMLを生成 サムネイルロールオーバ
+    +rolloverImage(itemName,images)
+  else
+    //- iframeフレーム  表示
+    +itemImg(itemName)
