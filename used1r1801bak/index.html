@@ -20,13 +20,25 @@
     </script>
     <style></style>
     <script type="text/javascript">
-      var pc_width = 1080;
-      var sp_width = 749;
-      //- var device = (window.screen.width < 749 ? 'sp' : 'pc');
-      var device = (window.outerWidth < 749 ? 'sp' : 'pc');
-      console.log(window.outerWidth);
-      var view_mode = (device == 'pc' || document.cookie.indexOf('view_mode=pc') != -1 ? 'pc' : 'sp');
-      
+      var breakPoint = 750; //ブレイクポイントは一箇所で
+      var isSp = function(){
+        if (!window.innerWidth){
+          return false;
+        }
+        // IE9以下 or メディアクエリメソッドが使えない場合はinnerWidthで判定
+        if(!window.matchMedia){
+          return (window.innerWidth <= breakPoint) ? true : false;
+        }
+        // メディアクエリメソッドで判定
+        if(window.matchMedia('(max-width:'+breakPoint+'px)').matches){
+          return true;
+        } else {
+          return false;
+        }
+      }
+      if(isSp){ //SPなら書き換え
+      $("meta[name='viewport']").attr('content', 'width=375');
+      }
       $(document).ready(function() {
         //modal用HTMLを読み込み
         $('#target').load('modal1.html');//temp disable
