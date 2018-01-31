@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="euc-jp">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
 <title>衝撃価格！｜ショップジャパン楽天市場店</title>
 
 <!-- 楽天TOP解析タグ -->
@@ -52,6 +53,27 @@ $(function() {
 
 
 
+//Header,Metaのviewport content 'width=1024を画面幅で書き換える
+
+var breakPoint = 750; //ブレイクポイントは一箇所で
+var isSp = function(){
+  if (!window.innerWidth){
+    return false;
+  }
+  // IE9以下 or メディアクエリメソッドが使えない場合はinnerWidthで判定
+  if(!window.matchMedia){
+    return (window.innerWidth <= breakPoint) ? true : false;
+  }
+  // メディアクエリメソッドで判定
+  if(window.matchMedia('(max-width:'+breakPoint+'px)').matches){
+    return true;
+  } else {
+    return false;
+  }
+}
+if(isSp){ //SPなら書き換え
+ $("meta[name='viewport']").attr('content', 'width=375');
+}
 
 
 
