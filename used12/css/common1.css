@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "EUC-JP";
 /* CSS Document */
 
 *{outline: none;}
@@ -6,8 +6,8 @@
 .ui.primary.tiny.button.cartAddBtn{
   font-size: 15px;
   position: relative;
-  top:0px;
-  background-color: #38a13d;
+  top:-1px;
+  background-color: #82b63a;
 }
 
 body{
@@ -31,7 +31,7 @@ body{
     margin: 0 auto ;
     padding: 25px;
     background: #fff;
-    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+    font-family: "�ҥ饮�γѥ� Pro W3", "Hiragino Kaku Gothic Pro", "�ᥤ�ꥪ", Meiryo, Osaka, "�ͣ� �Х����å�", "MS PGothic", "sans-serif";
 
 }
 
@@ -57,7 +57,8 @@ body{
     text-align: center;
 }
 
-trsp_thum_tit1trsp_thum_tit1trsp_thum_tit1trsp_thum_tit1trsp_thum_tit1trsp_thum_tit1trsp_thum_tit1/*.outlet_pc_wrap .slide_btn img{
+/* trsp_thum_tit1trsp_thum_tit1trsp_thum_tit1trsp_thum_tit1trsp_thum_tit1trsp_thum_tit1trsp_thum_tit1 */
+/*.outlet_pc_wrap .slide_btn img{
     display: block;
     width: 950px;
     height: 204px;
@@ -144,13 +145,14 @@ trsp_thum_tit1trsp_thum_tit1trsp_thum_tit1trsp_thum_tit1trsp_thum_tit1trsp_thum_
 	}
 
 
-.outlet_pc_wrap .item_lineup li .btn:after {
-/*    content: url(https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/1col_arrow.jpg);
+/* .outlet_pc_wrap .item_lineup li .btn:after {
+   content: url(https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/1col_arrow.jpg);
     margin-left: 50px;
     position: absolute;
     top: 405px;
-    right: 35px;*/
+    right: 35px;
 }
+ */
 
 .outlet_pc_wrap .item_lineup li .sel_btn:after{
  content: url(https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/1col_arrow.jpg);
@@ -277,7 +279,7 @@ v
 
 .outlet_pc_wrap form{position: relative;}
 .outlet_pc_wrap form select.select_btn{
-    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+    font-family: "�ҥ饮�γѥ� Pro W3", "Hiragino Kaku Gothic Pro", "�ᥤ�ꥪ", Meiryo, Osaka, "�ͣ� �Х����å�", "MS PGothic", "sans-serif";
     display: block;
     width: 210px;
     height: 51px;
@@ -351,7 +353,7 @@ v
 
 .left_bnr{position:fixed;left:0;top:105px;padding: 0;margin: 0;box-shadow:5px 5px 10px 0px rgba(0,0,0,0.2);border-radius:5px;background: #fff;}
 
-<!--<!--<!--<script type="text/javascript" src="js/jquery-1.11.1.min.js" charset="UTF-8"></script><script type="text/javascript" src="js/jquery-1.11.1.min.js" charset="UTF-8"></script><script type="text/javascript" src="js/jquery-1.11.1.min.js" charset="UTF-8"></script><script type="text/javascript" src="js/jquery-1.11.1.min.js" charset="UTF-8"></script>-->-->-->.right_bnr{position:fixed;right:0;top:105px;padding: 0;margin: 0;box-shadow:5px 5px 10px 0px rgba(0,0,0,0.2);border-radius:5px;background: #fff;}
+.right_bnr{position:fixed;right:0;top:105px;padding: 0;margin: 0;box-shadow:5px 5px 10px 0px rgba(0,0,0,0.2);border-radius:5px;background: #fff;}
 
 .right_bnr a,.right_bnr a img,.left_bnr a,.left_bnr a img{display: block;}
 .left_bnr a:hover,.right_bnr a:hover{opacity: .5;-webkit-opacity: .5;-moz-opacity: .5;filter: alpha(opacity=50);-ms-filter: "alpha(opacity=50)";-webkit-transition: opacity 0.3s ease-out;-moz-transition: opacity 0.3s ease-out;-ms-transition: opacity 0.3s ease-out;transition: opacity 0.3s ease-out;}
@@ -364,7 +366,7 @@ v
 
 
 #timelimit{
-	font-family: "ヒラギノ角ゴ Pro W3", Hiragino Kaku Gothic Pro," メイリオ", Meiryo, Osaka," ＭＳ Ｐゴシック", MS PGothic," sans-serif";
+	font-family: "�ҥ饮�γѥ� Pro W3", Hiragino Kaku Gothic Pro," �ᥤ�ꥪ", Meiryo, Osaka," �ͣ� �Х����å�", MS PGothic," sans-serif";
 	background:#cc0000;
 	display:none;
 	height:80px;
@@ -441,143 +443,19 @@ v
 
 .item_title{
 	position: absolute;
-	width: 1000px;
-	top:-150px;
-	left:-35px;
+	width: 1600px;
+	top:-220px;
+	left:-325px;
 	margin: 0 auto;
-	z-index: 998;
+	z-index: 999;
 }
 
 .supec_btn{
 	display: flex;
-	padding-left: 120px;
 }
 
-.size{
-	font-size: 14px;
-	margin: 0 10px;
- 
-}
 
-.bold{
-	position: relative;
-	top:2px;
-	font-size: 16px;
-	font-weight: bold;
-	
-}
 
-.price_bottom{
-	margin-top: -15px;
-}
 
-.rime{
-	position:relative;
-	left: 3px;
-}
-
-.coupon{
-	width:800px;
-	margin: 440px auto 0;
-}
-
-.coupon img{
-	width:800px;
-	margin: 0 auto;
-}
-
-.bk_k{
-	position: absolute;
-	top:-180px;
-	z-index: 999;
-}
-
-.name_k{
-	position: absolute;
-	top:-120px;
-	left: 510px;
-	z-index: 999;
-}
-
-.bk_g{
-	position: absolute;
-	top:-180px;
-	left: 630px;
-	z-index: 999;
-}
-
-.name_g{
-	position: absolute;
-	top:-120px;
-	left: 200px;
-	z-index: 999;
-}
-
-.to_rsj{text-align: center; padding-top: 0px;margin: 50px auto 35px;}
-.to_rsj a{
-	color: #000;
-	font-weight: bold;
-	border-bottom: 2px dotted;
-}
-
-.price {
-    font-size: 26px;
-    position: relative;
-    top: 1px;
-}
-
-.change_price{
-		display: block;
-		position: relative;
-		width: 500px;
-		background-color: #fff;
-		color:#000;
-		border-radius: 5px;
-		height: 50px;
-		line-height: 50px;
-		font-size: 18px;
-		font-weight: bold;
-		left:0px;
-		top:6px;
-	}
-	.position{
-		position: relative;
-		left: 258px;
-        top: -44px;
-        width: 439px;
-        height: 50px;
-		line-height: 50px;
-		background-color: #ff0000;
-	}
-	
-	.position span{
-		
-		line-height: 30px;
-	}
-	
-	.pad{
-	width: 550px;
-	margin: 0 50px 5px 50px;
-	
-	}
-	
-	.arrow_01{
-		display: block;
-		    width: 180px;
-    margin: 15px 4px;
-		text-decoration: underline;
-		font-weight: bold;
-	}
-	
-	.item_name{
-		font-size:15px;
-		font-weight:bold;
-	}
-    
-    .add{
-    top:8px;
-    position: relative;
-    color:#38a13d;
-}
 
 
