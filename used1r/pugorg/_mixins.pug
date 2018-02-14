@@ -283,10 +283,10 @@ mixin dlItemImage(argitemURL, descFlg)
           //- - var padValue = RACNoItem +'_'+ selNoDummy +'_'+ selNoDummy +'_'+ price;
           //- -   console.log('padValue:' + padValue);
 
-          #topMarginPConly(style="position: relative;margin-top:190px;").pcNone
+          .pcNone#topMarginPConly(style="position: relative;margin-top:190px;")
             +slider( itemURL ,itemURLs)
           .item
-            #rollover(style='position:relative;margin-bottom:190px;').spNone
+            .spNone#rollover(style='position:relative;margin-bottom:190px;')
               +rolloverImage2( itemURL ,itemURLs)
             .content
               img.ui.fluid.image(src='img/'+ itemURL +'_pri.jpg')
