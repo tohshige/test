@@ -19,3 +19,5 @@ semantic/node_modules/*
 webpack/node_modules
 
 ftpFileGet.sh
+fuku/package-lock.json
+express/package-lock.json
