@@ -1,7 +1,10 @@
 {
+  "indent": false,
+    "esversion": 6,
   "extends": "../.jshintrc",
   "globals": {
     "jquery": false,
-    "globalstrict": false
-  }
+    "globalstrict": false,
+    "$": false
+    }
 }

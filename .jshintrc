@@ -1,5 +1,8 @@
 {
-  "jquery": false,
-  "globalstrict": false
-
+  "esversion": 6,
+  "globals": {
+    "jquery": false,
+    "globalstrict": false,
+    "$": false
+    }
 }
