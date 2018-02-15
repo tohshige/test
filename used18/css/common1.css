@@ -580,4 +580,13 @@ v
     color:#38a13d;
 }
 
+ .buy_out{
+  background-color: #aaa !important;
+  cursor: default !important;
+  font-size: 17px !important;
+line-height: 12px !important;
+width: 210px;
+ }
+
+
 
