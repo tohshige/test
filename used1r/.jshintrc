@@ -1,0 +1,7 @@
+{
+  "extends": "../.jshintrc",
+  "globals": {
+    "jquery": false,
+    "globalstrict": false
+  }
+}

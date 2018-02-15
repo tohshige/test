@@ -66,85 +66,14 @@ html
     script.
       var siteAR = '#{site}';
      console.log(JSON.stringify(siteAR));
-    style.
-      /* Mobile */
-      @media only screen and (max-width: 767px) {
-        [class*="mobile hidden"],
-        [class*="tablet only"]:not(.mobile),
-        [class*="computer only"]:not(.mobile),
-        [class*="large monitor only"]:not(.mobile),
-        [class*="widescreen monitor only"]:not(.mobile),
-        [class*="or lower hidden"] {
-          display: none !important;
-        }
-      }
-
-      /* Tablet / iPad Portrait */
-      @media only screen and (min-width: 768px) and (max-width: 991px) {
-       /*
-          [class*="mobile only"]:not(.tablet),
-          [class*="tablet hidden"],
-          [class*="computer only"]:not(.tablet),
-          [class*="large monitor only"]:not(.tablet),
-          [class*="widescreen monitor only"]:not(.tablet),
-          [class*="or lower hidden"]:not(.mobile) {
-            display: none !important;
-          }
-        */
-
-        [class*="mobile only"],
-        [class*="tablet hidden"]:not(.mobile),
-        [class*="computer only"]:not(.mobile),
-        [class*="large monitor only"]:not(.mobile),
-        [class*="widescreen monitor only"]:not(.mobile),
-        [class*="or lower hidden"] {
-          display: none !important;
-        }
-      }
-
-      /* Computer / Desktop / iPad Landscape */
-      @media only screen and (min-width: 992px) and (max-width: 1199px) {
-        [class*="mobile only"]:not(.computer),
-        [class*="tablet only"]:not(.computer),
-        [class*="computer hidden"],
-        [class*="large monitor only"]:not(.computer),
-        [class*="widescreen monitor only"]:not(.computer),
-        [class*="or lower hidden"]:not(.tablet):not(.mobile) {
-          display: none !important;
-        }
-      }
-
-      /* Large Monitor */
-      @media only screen and (min-width: 1200px) and (max-width: 1919px) {
-        [class*="mobile only"]:not([class*="large monitor"]),
-        [class*="tablet only"]:not([class*="large monitor"]),
-        [class*="computer only"]:not([class*="large monitor"]),
-        [class*="large monitor hidden"],
-        [class*="widescreen monitor only"]:not([class*="large monitor"]),
-        [class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
-          display: none !important;
-        }
-      }
-
-      /* Widescreen Monitor */
-      @media only screen and (min-width: 1920px) {
-        [class*="mobile only"]:not([class*="widescreen monitor"]),
-        [class*="tablet only"]:not([class*="widescreen monitor"]),
-        [class*="computer only"]:not([class*="widescreen monitor"]),
-        [class*="large monitor only"]:not([class*="widescreen monitor"]),
-        [class*="widescreen monitor hidden"],
-        [class*="widescreen monitor or lower hidden"] {
-          display: none !important;
-        }
-      }
+  
     
     script(type='text/javascript').
-      var pc_width = 1080;
-      var sp_width = 749;
-      //- var device = (window.screen.width < 749 ? 'sp' : 'pc');
-      var device = (window.outerWidth < 749 ? 'sp' : 'pc');
-      console.log(window.outerWidth);
-      var view_mode = (device == 'pc' || document.cookie.indexOf('view_mode=pc') != -1 ? 'pc' : 'sp');
+      //- var pc_width = 1080;
+      //- var sp_width = 749;
+      //- var device = (window.outerWidth < 749 ? 'sp' : 'pc');
+      //- console.log(window.outerWidth);
+      //- var view_mode = (device == 'pc' || document.cookie.indexOf('view_mode=pc') != -1 ? 'pc' : 'sp');
       //- if (device == 'sp' && view_mode == 'pc') {
       //-     document.getElementById('viewport').setAttribute('content', 'width=' + pc_width + ',initial-scale=1');
       //- }
@@ -159,23 +88,23 @@ html
       //-   $('#forceWidth').width(550);
       //- }
 
-      $(function () {
-          if (device == 'sp') {
-              if (view_mode == 'pc') {
-                  $('.sp-mode').on('click', function () {
-                      var date = new Date();
-                      date.setTime(0);
-                      document.cookie = 'view_mode=;expires='+date.toGMTString();
-                      location.reload(false);
-                  }).show();
-              } else {
-                  $('.pc-mode').on('click', function () {
-                      document.cookie = 'view_mode=pc';
-                      location.reload(false);
-                  }).show();
-              }
-          }
-      });
+      //- $(function () {
+      //-     if (device == 'sp') {
+      //-         if (view_mode == 'pc') {
+      //-             $('.sp-mode').on('click', function () {
+      //-                 var date = new Date();
+      //-                 date.setTime(0);
+      //-                 document.cookie = 'view_mode=;expires='+date.toGMTString();
+      //-                 location.reload(false);
+      //-             }).show();
+      //-         } else {
+      //-             $('.pc-mode').on('click', function () {
+      //-                 document.cookie = 'view_mode=pc';
+      //-                 location.reload(false);
+      //-             }).show();
+      //-         }
+      //-     }
+      //- });
 
 
 
@@ -263,34 +192,36 @@ html
     //- img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
     //- img.item_title.spNone(src='img/nice_title.png', style='top:200%')
     .ui.divided.items.container.segment#forceWidth
+
+
       //- img.ui.fluid.image(src='http://rcart.eek.jp/used/img/sp/kvsp1_1026.jpg')
 
       //- Nice /////////////////////////////////////////////
-      img.ui.fluid.image.bgRed.spNone(src='img/kv1_1026.png')
-      img.ui.fluid.image.bgRed.pcNone(src='img/sp/kvsp1_1026.jpg')
-      - var itemName = 'nice';
-      img#spTitleImg1.ui.fluid.image(src='img/'+ itemName +'_title.png')
-      //- img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
-      +itemImages(itemName,'slider')
-      //- div.topMarginPConly(style="position: relative;margin-top:220px;").spNone
-      .item
-        //- iframe.itemFrame.ui.grid.image.spNone(scrolling='no', src='frame_'+ itemName +'.html',)
-        .content
-          img.ui.fluid.image(src='img/nice_pri.jpg')
-          .description
-            // 1つめ分 
-            +item
-              +pad('　レッドを', '10003922_8864_2_5980')
-              .ui.section.divider
-              +pad('ブラックを','10003922_8865_2_5980','')
-            // 1つめ分完了 
-          .extra
-            +specBtn('modal-'+ itemName)
+      //- img.ui.fluid.image.bgRed.spNone(src='img/kv1_1026.png')
+      //- img.ui.fluid.image.bgRed.pcNone(src='img/sp/kvsp1_1026.jpg')
+      //- - var itemName = 'nice';
+      //- img#spTitleImg1.ui.fluid.image(src='img/'+ itemName +'_title.png')
+      //- //- img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
+      //- +itemImages(itemName,'slider')
+      //- //- div.topMarginPConly(style="position: relative;margin-top:220px;").spNone
+      //- .item
+      //-   //- iframe.itemFrame.ui.grid.image.spNone(scrolling='no', src='frame_'+ itemName +'.html',)
+      //-   .content
+      //-     img.ui.fluid.image(src='img/nice_pri.jpg')
+      //-     .description
+      //-       // 1つめ分 
+      //-       +item
+      //-         +pad('　レッドを', '10003922_8864_2_5980')
+      //-         .ui.section.divider
+      //-         +pad('ブラックを','10003922_8865_2_5980','')
+      //-       // 1つめ分完了 
+      //-     .extra
+      //-       +specBtn('modal-'+ itemName)
 
 
       //================== no responsive nice ==================
-      - var itemName = 'trsp2';
-      img#spTitleImg1.ui.fluid.image(src='img/'+ itemName +'_title.png')
+      - var itemName = 'nice';
+      img.ui.fluid.image(src='img/'+ itemName +'_title.png')#spTitleImg1
       //- img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
       +itemImages(itemName,'slider')
       //- div.topMarginPConly(style="position: relative;margin-top:220px;").spNone
@@ -301,12 +232,34 @@ html
           .description
             // 1つめ分 
             +item
-              +pad('　レッドを', '10003922_8864_2_5980')
-              +pad('ブラックを','10003922_8865_2_5980','')
+              +pad('パッドまとめ買いセット（＋3', '10003302_0_0_32184','width:438px')
+              +pad('パッドまとめ買いセット（＋5', '10003303_0_0_36504','width:438px')
+              +pad('アブ＆アームセット',        '10002344_0_0_32184','width:438px')
+              .ui.section.divider
+              +pad('　レッド', '10003922_8864_2_5980')
+              +pad('ブラック','10003922_8865_2_5980','')
+              //- \16200円
+              //- \16200円
+
             // 1つめ分完了 
           .extra
             +specBtn('modal-'+ itemName)
             +specBtn('modal-'+ itemName)
+
+      div.topMarginPConly(style="position: relative;margin-top:220px;").spNone
+      //================== no responsive nice ==================
+
+
+
+    //- .ui.divided.items.container.segment#forceWidth
+      img.ui.fluid.image.bgRed.spNone(src='img/kv1_1026.png')
+      img.ui.fluid.image.bgRed.pcNone(src='img/sp/kvsp1_1026.jpg')
+
+
+      - var itemURL = 'secx_tan';
+      img.ui.fluid.image(src='img/'+ itemURL +'_title.png')#spTitleImg1
+      // syousai ON
+      +dlItemImage(itemURL,'')
 
 
 
@@ -355,18 +308,18 @@ html
         //-       // 1つめ分完了 
         //- //==================nice ==================
         //- //==================trsp ==================
-        //- - var itemName = 'trsp';
-        //- li(id=itemName,style='position: relative;margin:270px 0 440px 18px')
-        //-   +itemImg(itemName)
-        //-   .col_cart
-        //-     img(src='img/trsp_pri.jpg')
-        //-     // 1つめ分 
-        //-     +item
-        //-       +pad('　シングルを', '10003918_0_0_15960','width:438px')
-        //-       +pad('セミダブルを', '10003919_0_0_17220','width:438px')
-        //-       +pad('　　ダブルを', '10003920_0_0_18760','width:438px')
-        //-       +specBtn()(class='modal-'+ itemName)
-        //-     // 1つめ分完了 
+        - var itemName = 'trsp';
+        li(id=itemName,style='position: relative;margin:270px 0 440px 18px')
+          +itemImg(itemName)
+          .col_cart
+            img(src='img/trsp_pri.jpg')
+            // 1つめ分 
+            +item
+              +pad('　シングルを', '10003918_0_0_15960','width:438px')
+              +pad('セミダブルを', '10003919_0_0_17220','width:438px')
+              +pad('　　ダブルを', '10003920_0_0_18760','width:438px')
+              +specBtn()(class='modal-'+ itemName)
+            // 1つめ分完了 
         //- //==================trsp ==================
         //- //==================sim ==================
         //- - var itemName = 'sim';
@@ -468,7 +421,7 @@ html
         hr
         img#out(src='img/yokoku.jpg', style='width:px;margin: 50px 0 0 15px')
       .to_top(style='margin-bottom:170px')
-        a#pageTop(href='') このページのTOPへ
+        a#pageTop(href='') このページのTOPへGo
     //縦バナー
     .out_back
     //縦バナー
@@ -561,16 +514,29 @@ html
         iframe(src='//b.yjtag.jp/iframe?c=r5x5wBC', width='1', height='1', frameborder='0', scrolling='no', marginheight='0', marginwidth='0')
     //==================YTM==================
     //フッターフローティング
-    #footerFloatingMenu.blurring
+    .blurring#footerFloatingMenu
       //- div(style='width:950px;margin: 0 auto; border: none;display:block;')
       .ui.segment
-        #footerNowPrice.ui.button.large.change_price
+        .ui.button.large.change_price#footerNowPrice
           | 現在の合計金額は￥
           span#priceAll 0
           | 円(税抜)
+        .ui.button.large.change_price#footerNowDiscount
+          | 現在の割引金額は￥
+          span#discountAll 0
+          | 円(税抜)
         //- #footer_go_cart.ui.button.yellow.disabled
-        #footer_go_cart.ui.button.yellow
+        .ui.button.yellow#footer_go_cart
           span 選択した商品のレジにすすむ
+
+          //- p#coupon
+          //-   | 合計金額
+          //-   span#priceTarget 15000
+          //-   | 円で50%OFFクーポンGET!!
+          //-   |     あと￥
+          //-   span#priceRemain 0
+          //-   |円!!
+          //- p#couponGet.displayNone クーポンがご利用になれます、クーポンはこちら
 
       //- div(style='width:950px;margin: 0 auto; border: none')
         .ui.button.large.white

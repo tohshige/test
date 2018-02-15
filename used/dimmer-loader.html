@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="euc-jp">
+
+  <title>MAX60%OFF！｜ショップジャパン楽天市場店</title>
+
+  <!-- 楽天TOP解析タグ -->
+  <script src="//assets.adobedtm.com/fde17e0362c40547334f4e041add368f158b4119/satelliteLib-e346cd8edc0ac640d3ce7c060b5a38f5169d4add.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+  <script src="https://www.rakuten.ne.jp/gold/shopjapan/trs/iframe/matome/semantic.min.js"></script>
+  <!-- <script src="js/smoothscroll.js"></script> -->
+  <link rel="stylesheet" href="css/semantic.min.css">
+
+  <link rel="stylesheet" href="https://www.rakuten.ne.jp/gold/shopjapan/css/normalize.css">
+  <link rel="stylesheet" href="css/common1.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="SHORTCUT ICON" href="https://www.rakuten.ne.jp/gold/shopjapan/images/favicon.ico">
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      //modal用HTMLを読み込み
+      $('#target').load('modal1.html'); //temp disable
+    });
+    //click modal 
+    $('.modal-not-migration').on('click', function () {
+      $('#modal-not-migration').modal('show');
+    });
+
+    $('#allform').submit(function (event) {
+      // ここでsubmitをキャンセルします。
+      event.preventDefault();
+    });
+    // # link 無効 
+    $(function () {
+      // クラス名からModal内IDに変換
+      // $('a[href="#"].modal-cero').click(function() {
+      $('a[href="#"]').click(function (e) {
+        var modalId = e.target.className.split(' ');
+        if (modalId.lastIndexOf('modal')) {
+          // $('#modal-cero').modal('show');
+          $('#' + modalId[0]).modal('show');
+          return false;
+        }
+      })
+    });
+
+    // # link 無効
+    $(function () {
+      $('a[href="#"].modal-not-migration').click(function () {
+        $('#modal-not-migration').modal('show');
+        return false;
+      })
+    });
+  </script>
+
+
+  <style>
+    .displayNone {
+      display: none;
+    }
+
+    .textYellow {
+      color: yellow;
+    }
+    /* footerFloating */
+
+    #footerFloatingMenu .ui.segment {
+      background: #82b63a;
+      /* opacity: 0.85; */
+      padding: 5px;
+      color: white;
+      height: 80px;
+    }
+
+    #footerFloatingMenu {
+      background: #82b63a;
+      /*display: block;*/
+      width: 100%;
+      position: fixed;
+      left: 0px;
+      bottom: 0px;
+      z-index: 999;
+      text-align: center;
+      padding: 0 auto;
+    }
+
+    #footerFloatingMenu img {
+      max-width: 99%;
+    }
+  </style>
+
+  <!--<script type="text/javascript">
+if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {{
+location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
+}
+}
+</script>-->
+
+
+
+
+  <!--<script type="text/javascript" src="js/jquery-1.11.1.min.js" charset="UTF-8"></script>-->
+</head>
+
+<!--楽天解析タグ-->
+<script type="text/javascript">
+  _satellite.pageBottom();
+</script>
+
+
+<body>
+
+  -----------------------------------------------------------------------------------------------
+  <div class="ui stackable doubling three column grid">
+
+    <div class="column">
+      <div class="ui segment" id="go_cart">clic this! Content</div>
+    </div>
+  </div>
+
+  <div class="two ui stackable buttons">
+    <button class="ui button large white">現在の合計金額は￥
+      <span id="priceAll">0</span>円(税抜)</button>
+    <button class="ui button yellow">選択した商品のレジにすすむ</button>
+  </div>
+
+  <div class="ui red blurring red segment red">
+    <h3 class="ui header red">
+      Overlayable Section
+    </h3>
+    <div class="change_price">現在の合計金額は￥
+      <span id="priceAll">0</span>円(税抜)</div>
+    <div class="compact ui floated large yellow button disabled position" id="footer_go_cart">
+      <span>選択した商品のレジにすすむ</span>
+    </div>
+    <div class="compact ui floated large yellow button disabled position" id="footer_go_cart">
+      <span>選択した商品のレジにすすむ</span>
+    </div>
+    <div class="ui inverted dimmer">
+      <div class="content">
+        <div class="center">
+          <div class="ui text loader red">
+            <h3>しばらくお待ちください。</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  -----------------------------------------------------------------------------------------------
+
+</body>
+
+</html>
