@@ -178,7 +178,7 @@ iframe {
 /* フッターフローティング */
 /* .change_price{ */
 
-#footerNowPrice {
+#footerNowPrice, #footerNowDiscount {
   /* /* display: block; */
   position: relative;
   width: 429px;
@@ -269,7 +269,7 @@ iframe {
     height: 30px;
     font-size: 12px;
   }
-  #footerNowPrice {
+  #footerNowPrice, #footerNowDiscount {
     width: 100%;
     height: 30px;
     font-size: 12px;

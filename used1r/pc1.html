@@ -6,7 +6,7 @@
     <title>MAX60%OFF！｜ショップジャパン楽天市場店</title>
     <!-- 楽天TOP解析タグ -->
     <script src="//assets.adobedtm.com/fde17e0362c40547334f4e041add368f158b4119/satelliteLib-e346cd8edc0ac640d3ce7c060b5a38f5169d4add.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js" charset="UTF-8"></script>
     <script src="js/semantic.js" charset="UTF-8"></script>
     <link rel="stylesheet" href="css/semantic.css" charset="UTF-8">
     <link rel="stylesheet" href="css/responsiveEucjp.css" charset="EUC-JP">
@@ -18,48 +18,8 @@
     <script> var siteAR = '[object Object]';
       console.log(JSON.stringify(siteAR));
       
-      
     </script>
     <script type="text/javascript">
-      //- var pc_width = 1080;
-      //- var sp_width = 749;
-      //- var device = (window.outerWidth < 749 ? 'sp' : 'pc');
-      //- console.log(window.outerWidth);
-      //- var view_mode = (device == 'pc' || document.cookie.indexOf('view_mode=pc') != -1 ? 'pc' : 'sp');
-      //- if (device == 'sp' && view_mode == 'pc') {
-      //-     document.getElementById('viewport').setAttribute('content', 'width=' + pc_width + ',initial-scale=1');
-      //- }
-      
-      //- 一旦オフ
-      //- if (device == 'pc' ) {
-      //-   //pc表示ならviewportを変更
-      //-   $('meta[name="viewport"]').attr('content', 'width=1080,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no');
-      //-   $('#forceWidth').width(1250);
-      //- }else{
-      //-   $('meta[name="viewport"]').attr('content', 'width=550, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no');
-      //-   $('#forceWidth').width(550);
-      //- }
-      
-      //- $(function () {
-      //-     if (device == 'sp') {
-      //-         if (view_mode == 'pc') {
-      //-             $('.sp-mode').on('click', function () {
-      //-                 var date = new Date();
-      //-                 date.setTime(0);
-      //-                 document.cookie = 'view_mode=;expires='+date.toGMTString();
-      //-                 location.reload(false);
-      //-             }).show();
-      //-         } else {
-      //-             $('.pc-mode').on('click', function () {
-      //-                 document.cookie = 'view_mode=pc';
-      //-                 location.reload(false);
-      //-             }).show();
-      //-         }
-      //-     }
-      //- });
-      
-      
-      
       $(document).ready(function() {
         //modal用HTMLを読み込み
         $('#target').load('modal1.html');//temp disable
@@ -141,7 +101,7 @@
                     <div class="row">
                       <div class="three wide column"><span class="item_name">パッドまとめ買いセット＋3</span></div>
                       <div class="three wide column">
-                        <select class="ui fluid dropdown right big label" name="10003302_0_0_32184">
+                        <select class="ui fluid dropdown right big label" name="10003302_0_0_32184_25">
                           <option>数量</option>
                           <option>1</option>
                           <option>2</option>
@@ -160,7 +120,7 @@
                     <div class="row">
                       <div class="three wide column"><span class="item_name">パッドまとめ買いセット＋5</span></div>
                       <div class="three wide column">
-                        <select class="ui fluid dropdown right big label" name="10003303_0_0_36504">
+                        <select class="ui fluid dropdown right big label" name="10003303_0_0_36504_33">
                           <option>数量</option>
                           <option>1</option>
                           <option>2</option>
@@ -179,7 +139,7 @@
                     <div class="row">
                       <div class="three wide column"><span class="item_name">アブ＆アームセット</span></div>
                       <div class="three wide column">
-                        <select class="ui fluid dropdown right big label" name="10002344_0_0_32184">
+                        <select class="ui fluid dropdown right big label" name="10002344_0_0_32184_25">
                           <option>数量</option>
                           <option>1</option>
                           <option>2</option>
@@ -241,8 +201,6 @@
           <div class="extra">
             <hr/>
             <div class="supec_btn"><a class="modal-nice arrow_01 ui fluid blue button" href="#">> 商品内容はこちら</a><a class="modal-sinpin arrow_01 ui fluid olive button" href="#">> 新品同様/特価良品とは</a></div>
-            <hr/>
-            <div class="supec_btn"><a class="modal-nice arrow_01 ui fluid blue button" href="#">> 商品内容はこちら</a><a class="modal-sinpin arrow_01 ui fluid olive button" href="#">> 新品同様/特価良品とは</a></div>
           </div>
         </div>
       </div>
@@ -296,7 +254,7 @@
     <div class="blurring" id="footerFloatingMenu">
       <div class="ui segment">
         <div class="ui button large change_price" id="footerNowPrice">現在の合計金額は￥<span id="priceAll">0</span>円(税抜)</div>
-        <div class="ui button large change_price" id="footerNowDiscount">現在の割引金額は￥<span id="discountAll">0</span>円(税抜)</div>
+        <div class="ui button large change_price" id="footerNowDiscount">￥<span id="discountAll">0</span>円 お得</div>
         <div class="ui button yellow" id="footer_go_cart"><span>選択した商品のレジにすすむ</span></div>
       </div>
       <div class="ui inverted dimmer">

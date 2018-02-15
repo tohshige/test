@@ -11,7 +11,7 @@ html
     // 楽天TOP解析タグ 
     script(src='//assets.adobedtm.com/fde17e0362c40547334f4e041add368f158b4119/satelliteLib-e346cd8edc0ac640d3ce7c060b5a38f5169d4add.js')
     //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js')
-    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js', charset='UTF-8')
 
     //- script(src='https://www.rakuten.ne.jp/gold/shopjapan/trs/iframe/matome/semantic.min.js' , charset='UTF-8')
     script(src='js/semantic.js' , charset='UTF-8')
@@ -54,7 +54,6 @@ html
     //-   each i in site.itemImages.trsp2
     //-     li: p # !{i}
 
-
     //- ul
     //-   each i in images
     //-     - var imageurl = i['画像URL']
@@ -62,51 +61,11 @@ html
     //-     //- img(src=i['画像URL'] )
     //-     img(src=imageurl )
 
-
     script.
       var siteAR = '#{site}';
      console.log(JSON.stringify(siteAR));
-  
     
     script(type='text/javascript').
-      //- var pc_width = 1080;
-      //- var sp_width = 749;
-      //- var device = (window.outerWidth < 749 ? 'sp' : 'pc');
-      //- console.log(window.outerWidth);
-      //- var view_mode = (device == 'pc' || document.cookie.indexOf('view_mode=pc') != -1 ? 'pc' : 'sp');
-      //- if (device == 'sp' && view_mode == 'pc') {
-      //-     document.getElementById('viewport').setAttribute('content', 'width=' + pc_width + ',initial-scale=1');
-      //- }
-
-      //- 一旦オフ
-      //- if (device == 'pc' ) {
-      //-   //pc表示ならviewportを変更
-      //-   $('meta[name="viewport"]').attr('content', 'width=1080,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no');
-      //-   $('#forceWidth').width(1250);
-      //- }else{
-      //-   $('meta[name="viewport"]').attr('content', 'width=550, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no');
-      //-   $('#forceWidth').width(550);
-      //- }
-
-      //- $(function () {
-      //-     if (device == 'sp') {
-      //-         if (view_mode == 'pc') {
-      //-             $('.sp-mode').on('click', function () {
-      //-                 var date = new Date();
-      //-                 date.setTime(0);
-      //-                 document.cookie = 'view_mode=;expires='+date.toGMTString();
-      //-                 location.reload(false);
-      //-             }).show();
-      //-         } else {
-      //-             $('.pc-mode').on('click', function () {
-      //-                 document.cookie = 'view_mode=pc';
-      //-                 location.reload(false);
-      //-             }).show();
-      //-         }
-      //-     }
-      //- });
-
-
 
       $(document).ready(function() {
         //modal用HTMLを読み込み
@@ -193,7 +152,6 @@ html
     //- img.item_title.spNone(src='img/nice_title.png', style='top:200%')
     .ui.divided.items.container.segment#forceWidth
 
-
       //- img.ui.fluid.image(src='http://rcart.eek.jp/used/img/sp/kvsp1_1026.jpg')
 
       //- Nice /////////////////////////////////////////////
@@ -201,23 +159,22 @@ html
       //- img.ui.fluid.image.bgRed.pcNone(src='img/sp/kvsp1_1026.jpg')
       //- - var itemName = 'nice';
       //- img#spTitleImg1.ui.fluid.image(src='img/'+ itemName +'_title.png')
-      //- //- img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
+      //- img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
       //- +itemImages(itemName,'slider')
       //- //- div.topMarginPConly(style="position: relative;margin-top:220px;").spNone
       //- .item
-      //-   //- iframe.itemFrame.ui.grid.image.spNone(scrolling='no', src='frame_'+ itemName +'.html',)
-      //-   .content
-      //-     img.ui.fluid.image(src='img/nice_pri.jpg')
-      //-     .description
-      //-       // 1つめ分 
-      //-       +item
-      //-         +pad('　レッドを', '10003922_8864_2_5980')
-      //-         .ui.section.divider
-      //-         +pad('ブラックを','10003922_8865_2_5980','')
-      //-       // 1つめ分完了 
-      //-     .extra
-      //-       +specBtn('modal-'+ itemName)
-
+        //- iframe.itemFrame.ui.grid.image.spNone(scrolling='no', src='frame_'+ itemName +'.html',)
+        .content
+          img.ui.fluid.image(src='img/nice_pri.jpg')
+          .description
+            // 1つめ分 
+            +item
+              +pad('　レッドを', '10003922_8864_2_5980')
+              .ui.section.divider
+              +pad('ブラックを','10003922_8865_2_5980','')
+            // 1つめ分完了 
+          .extra
+            +specBtn('modal-'+ itemName)
 
       //================== no responsive nice ==================
       - var itemName = 'nice';
@@ -232,9 +189,9 @@ html
           .description
             // 1つめ分 
             +item
-              +pad('パッドまとめ買いセット＋3', '10003302_0_0_32184','width:538px')
-              +pad('パッドまとめ買いセット＋5', '10003303_0_0_36504','width:438px')
-              +pad('アブ＆アームセット',       '10002344_0_0_32184','width:438px')
+              +pad('パッドまとめ買いセット＋3', '10003302_0_0_32184_25','width:538px')
+              +pad('パッドまとめ買いセット＋5', '10003303_0_0_36504_33','width:438px')
+              +pad('アブ＆アームセット',       '10002344_0_0_32184_25','width:438px')
               .ui.section.divider
               +pad('　レッド', '10003922_8864_2_5980')
               +pad('ブラック','10003922_8865_2_5980','')
@@ -244,12 +201,10 @@ html
             // 1つめ分完了 
           .extra
             +specBtn('modal-'+ itemName)
-            +specBtn('modal-'+ itemName)
+            //- +specBtn('modal-'+ itemName)
 
       div.topMarginPConly(style="position: relative;margin-top:220px;").spNone
       //================== no responsive nice ==================
-
-
 
     //- .ui.divided.items.container.segment#forceWidth
       img.ui.fluid.image.bgRed.spNone(src='img/kv1_1026.png')
@@ -522,9 +477,9 @@ html
           span#priceAll 0
           | 円(税抜)
         .ui.button.large.change_price#footerNowDiscount
-          | 現在の割引金額は￥
+          | ￥
           span#discountAll 0
-          | 円(税抜)
+          | 円 お得
         //- #footer_go_cart.ui.button.yellow.disabled
         .ui.button.yellow#footer_go_cart
           span 選択した商品のレジにすすむ
