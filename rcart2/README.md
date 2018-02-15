@@ -25,6 +25,13 @@ name=10000475_1206
 <select name="10000470_0_0_10000">
 
 ```
+## discount
+ 割引率を指定する  
+```html
+例 33%引きで1000円の商品
+<select name="10003534_0_0_1000_33" >
+割引率から元の価格を求め差額を加算します
+```
 ## チェックボックスタグは固定タグ　select のあとに以下のタグで
 https://github.com/tohshige/test/blob/master/rcart2/index.html#L143
 
