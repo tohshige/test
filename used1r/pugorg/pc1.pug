@@ -176,24 +176,29 @@ html
           .extra
             +specBtn('modal-'+ itemName)
 
-      //================== no responsive nice ==================
+      // ================== responsive ==================
       - var itemName = 'nice';
       img.ui.fluid.image(src='img/'+ itemName +'_title.png')#spTitleImg1
       //- img.item_title.spNone(src='img/nice_title.png', style='top:50%;')
-      +itemImages(itemName,'slider')
+
+      // .pcNone PC時スライダー消す
+      .pcNone
+        +itemImages(itemName,'slider')
       //- div.topMarginPConly(style="position: relative;margin-top:220px;").spNone
       .item
-        iframe.itemFrame.ui.grid.image.spNone(scrolling='no', src='frame_'+ itemName +'.html',)
+        // spNone クラスで sp時はフレーム消す
+        iframe.spNone.itemFrame.ui.grid.image(scrolling='no', src='frame_'+ itemName +'.html',)
         .content
           img.ui.fluid.image(src='img/nice_pri.jpg')
           .description
             // 1つめ分 
             +item
-              +pad('パッドまとめ買いセット＋3', '10003302_0_0_32184_25','width:538px')
-              +pad('パッドまとめ買いセット＋5', '10003303_0_0_36504_33','width:438px')
-              +pad('アブ＆アームセット',       '10002344_0_0_32184_25','width:438px')
+              +pad2('パッドまとめ買いセット＋3', '10003302_0_0_32184_25','')
+              +pad2('パッドまとめ買いセット＋5', '10003303_0_0_36504_33','')
+              +pad2('アブ＆アームセット',       '10002344_0_0_32184_25','')
               .ui.section.divider
-              +pad('　レッド', '10003922_8864_2_5980')
+              // 旧 サンプル
+              +pad('　レッド', '10003922_8864_2_5980','')
               +pad('ブラック','10003922_8865_2_5980','')
               //- \16200円
               //- \16200円
@@ -204,7 +209,7 @@ html
             //- +specBtn('modal-'+ itemName)
 
       div.topMarginPConly(style="position: relative;margin-top:220px;").spNone
-      //================== no responsive nice ==================
+      // ================== responsive nice ==================
 
     //- .ui.divided.items.container.segment#forceWidth
       img.ui.fluid.image.bgRed.spNone(src='img/kv1_1026.png')
@@ -480,8 +485,8 @@ html
           | ￥
           span#discountAll 0
           | 円 お得
-        //- #footer_go_cart.ui.button.yellow.disabled
-        .ui.button.yellow#footer_go_cart
+        #footer_go_cart.ui.button.yellow.disabled
+          //- .ui.button.yellow#footer_go_cart
           span 選択した商品のレジにすすむ
 
           //- p#coupon

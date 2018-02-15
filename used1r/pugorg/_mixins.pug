@@ -20,9 +20,10 @@ mixin itemImg(itemName,right)
   else
     iframe(scrolling='no', src='frame_'+ itemName +'.html')
 
+
 //-parts of kago
 mixin pad(color,itemcode,padStyle)
-  .ui.stackable.three.column.vertically.divided.grid
+  .ui.stackable.three.column.vertically.divided.grid(style = padStyle)
     .row
       .three.wide.column
         span.item_name= color
@@ -33,6 +34,24 @@ mixin pad(color,itemcode,padStyle)
           option 2
         //- | 個
       .eight.wide.column
+        label
+          .ui.primary.tiny.button.cartAddBtn
+            input(type='checkbox', name='chk', value='1')
+            |  買い物カゴに追加する
+
+
+mixin pad2(color,itemcode,padStyle)
+  .ui.stackable.three.column.vertically.divided.grid(style = padStyle)
+    .row
+      .six.wide.column
+        span.item_name= color
+      .two.wide.column
+        select.ui.fluid.dropdown.right.big.label(name= itemcode)
+          option 数量
+          option 1
+          option 2
+        //- | 個
+      .six.wide.column
         label
           .ui.primary.tiny.button.cartAddBtn
             input(type='checkbox', name='chk', value='1')
