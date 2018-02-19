@@ -196,10 +196,15 @@ function showValues (onOff) {
     }
     var chkBox = fields[i + 1] // すぐ隣のcheckbox がチェックされているか
     // select option > cart 前方一致のときの処理
+    var resArray = ''
+    var price = 0
+    var discount = 0 // % percent
+    var originalPrice = 0 // for TEIKA
+    var discountPrice = 0 // originalPrice - price
     if (!field.name.indexOf('1000') && field.value !== '') {
       flgArray.selectFlg = 'on'
-      var resArray = field.name.split('_')
-      var price = Number(resArray[3])
+      resArray = field.name.split('_')
+      price = Number(resArray[3])
       // checked
       if (chkBox) {
         if (chkBox.name === 'chk') {
@@ -207,9 +212,9 @@ function showValues (onOff) {
           priceAll += price * Number(field.value) // unit number
           if (resArray[4]) { // discount 割引率が指定されていたら
             // 33% など割引額、元値を計算して差額を加算 in discount and price : out discountPrice
-            var discount = resArray[4]
-            var originalPrice = price / (1 - (discount / 100))
-            var discountPrice = originalPrice - price
+            discount = resArray[4]
+            originalPrice = price / (1 - (discount / 100))
+            discountPrice = originalPrice - price
             discountPrice = discountPrice * Number(field.value)
             // 切り上げ
             discountPrice = Math.ceil(discountPrice)
@@ -234,8 +239,8 @@ function showValues (onOff) {
     // ver2 select option > cart 前方一致のときの処理
     if (!field.name.indexOf('ver2') && field.value !== '0') {
       flgArray.selectFlg = 'on'
-      var resArray = field.value.split('_')
-      var price = Number(resArray[3])
+      resArray = field.value.split('_')
+      price = Number(resArray[3])
       // checked
       // chkBox.name = 'chk' // checkBox なしでも有効にする
       if (chkBox) {
@@ -246,9 +251,9 @@ function showValues (onOff) {
           if (resArray[4]) { // discount 割引率が指定されていたら
             // 33% など割引額、元値を計算して差額を加算 in discount and price : out discountPrice
             var itemid = resArray[0]
-            var discount = resArray[4]
-            var originalPrice = price / (1 - (discount / 100))
-            var discountPrice = originalPrice - price
+            discount = resArray[4]
+            originalPrice = price / (1 - (discount / 100))
+            discountPrice = originalPrice - price
         //  discountPrice = discountPrice * Number(field.value)
             discountPrice = discountPrice * 1
             // 切り上げ
