@@ -10,8 +10,8 @@
     <script src="js/semantic.js" charset="UTF-8"></script>
     <link rel="stylesheet" href="css/semantic.css" charset="UTF-8">
     <link rel="stylesheet" href="css/responsiveEucjp.css" charset="EUC-JP">
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="stylesheet" href="css/slick.css" charset="UTF-8">
+    <link rel="stylesheet" href="css/lightbox.css" charset="UTF-8">
     <link rel="SHORTCUT ICON" href="https://www.rakuten.ne.jp/gold/shopjapan/images/favicon.ico">
     <!-- #{pageTitle}-->
     <p>サイト名 site.name</p>
@@ -90,20 +90,40 @@
                 <div class="description"></div>
                 <div class="description">
                   <div class="ui section divider"></div>
+                  <!-- 最大横幅が合計で 16 columns.になる eight.column でその要素内 横幅の 50%となる 。-->
                   <div class="ui stackable three column vertically divided grid">
                     <div class="row">
-                      <div class="two wide column"><span class="item_name">1番目</span></div>
+                      <div class="two wide column"><span class="item_name">(1st)</span></div>
                       <div class="nine wide column">
+                        <!-- <select name を ver2から始まる ユニークな文字で指定してください-->
                         <select class="ui fluid dropdown right big label" name="ver2">
-                          <option value="0">商品を選択</option>
+                          <option value="0" selected>商品を選択</option>
                           <option value="10003302_0_0_32184_25">パッドまとめ買いセット＋3</option>
                           <option value="10003303_0_0_36504_33">パッドまとめ買いセット＋5</option>
                         </select>
                       </div>
-                      <div class="five wide column">
+                      <div class="three wide column">
                         <label>
                           <div class="ui primary tiny button cartAddBtn">
-                            <input type="checkbox" name="chk" value="1"> カゴに追加する
+                            <input type="checkbox" name="chk" value="1" checked> 追加
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="two wide column"><span class="item_name">(1st-2)</span></div>
+                      <div class="nine wide column">
+                        <!-- <select name を ver2から始まる ユニークで指定してください-->
+                        <select class="ui fluid dropdown right big label" name="ver21">
+                          <option value="0" selected>商品を選択</option>
+                          <option value="10003302_0_0_32184_25">パッドまとめ買いセット＋3</option>
+                          <option value="10003303_0_0_36504_33">パッドまとめ買いセット＋5</option>
+                        </select><span>display:none でチェックボタン非表示</span>
+                      </div>
+                      <div class="one wide column" style="display: none;">
+                        <label>
+                          <div class="ui primary tiny button cartAddBtn">
+                            <input type="checkbox" name="chk" value="1" checked> 追加
                           </div>
                         </label>
                       </div>
@@ -111,18 +131,19 @@
                   </div>
                   <div class="ui stackable three column vertically divided grid">
                     <div class="row">
-                      <div class="two wide column"><span class="item_name">2番目</span></div>
+                      <div class="two wide column"><span class="item_name">(2nd)</span></div>
                       <div class="nine wide column">
-                        <select class="ui fluid dropdown right big label" name="ver2">
-                          <option>商品を選択</option>
+                        <!-- <select name を ver2から始まる ユニークで指定してください-->
+                        <select class="ui fluid dropdown right big label" name="ver22">
+                          <option value="0">商品を選択</option>
                           <option value="10000824_0_0_1620_25">延長ベルト【EMS】</option>
-                          <option>2</option>
-                        </select>
+                          <option value="10000824_0_0_1620_25">延長ベルト【EMS】</option>
+                        </select><span>display:none でチェックボタン非表示</span>
                       </div>
-                      <div class="five wide column">
+                      <div class="one wide column" style="display: none;">
                         <label>
                           <div class="ui primary tiny button cartAddBtn">
-                            <input type="checkbox" name="chk" value="1"> カゴに追加する
+                            <input type="checkbox" name="chk" value="1" checked> カゴに追加
                           </div>
                         </label>
                       </div>

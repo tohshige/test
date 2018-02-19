@@ -29,8 +29,8 @@ $("[id$='go_cart']").click(function () {
 })
 
 // set all selectbox default value セレクトボックスを決め打ちにする
-// $('select').val(1) // 2banme
-// $('select').val(0);//1番目
+// $('select').val(1) // value = 1
+// $('select').val(0) // value = 0
 
 // $("#pageTop").click(function() {
 //   $("html, body").animate({ scrollTop: $(document).height() }, "slow");
@@ -230,12 +230,14 @@ function showValues (onOff) {
       priceCal(priceAll) // 残高の計算、要素の書き換え
       priceCalDiscount(discountAll) // 残高の計算、要素の書き換え
     } // calc select
+
     // ver2 select option > cart 前方一致のときの処理
-    if (!field.name.indexOf('ver2') && field.value !== '') {
+    if (!field.name.indexOf('ver2') && field.value !== '0') {
       flgArray.selectFlg = 'on'
       var resArray = field.value.split('_')
       var price = Number(resArray[3])
       // checked
+      // chkBox.name = 'chk' // checkBox なしでも有効にする
       if (chkBox) {
         if (chkBox.name === 'chk') {
           console.log(chkBox.name)
