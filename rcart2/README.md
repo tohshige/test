@@ -31,13 +31,18 @@ name=10000475_1206
 
 ## discount
 
- 割引率を指定する
+ 割引率を指定する \
  割引額を計算させる % で指定
 ![discount](https://user-images.githubusercontent.com/15937579/36368523-faa172ac-159a-11e8-9647-1c88e663ff72.png)
 
 ```html
+select name  を ver2から始まる ユニークな文字で指定してください
+option value にITEMCode、割引率やらを指定
+
 例 33%引きで1000円の商品
-<select name="10003534_0_0_1000_33" >
+<select name="ver21">
+  <option value="10003534_0_0_1000_33">商品名</option>
+
 割引率から元の価格を求め差額を加算します
 ```
 
