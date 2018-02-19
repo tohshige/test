@@ -28,8 +28,8 @@ $("[id$='go_cart']").click(function () {
   return false
 })
 
-// set all selectbox default value
-$('select').val(1) // 2banme
+// set all selectbox default value セレクトボックスを決め打ちにする
+// $('select').val(1) // 2banme
 // $('select').val(0);//1番目
 
 // $("#pageTop").click(function() {
@@ -229,7 +229,45 @@ function showValues (onOff) {
       console.log(priceAll)
       priceCal(priceAll) // 残高の計算、要素の書き換え
       priceCalDiscount(discountAll) // 残高の計算、要素の書き換え
-    }
+    } // calc select
+    // ver2 select option > cart 前方一致のときの処理
+    if (!field.name.indexOf('ver2') && field.value !== '') {
+      flgArray.selectFlg = 'on'
+      var resArray = field.value.split('_')
+      var price = Number(resArray[3])
+      // checked
+      if (chkBox) {
+        if (chkBox.name === 'chk') {
+          console.log(chkBox.name)
+      //  priceAll += price * Number(field.value) // unit number
+          priceAll += price * 1 // unit number
+          if (resArray[4]) { // discount 割引率が指定されていたら
+            // 33% など割引額、元値を計算して差額を加算 in discount and price : out discountPrice
+            var itemid = resArray[0]
+            var discount = resArray[4]
+            var originalPrice = price / (1 - (discount / 100))
+            var discountPrice = originalPrice - price
+        //  discountPrice = discountPrice * Number(field.value)
+            discountPrice = discountPrice * 1
+            // 切り上げ
+            discountPrice = Math.ceil(discountPrice)
+            // 切り捨て
+            // discountPrice = Math.floor(discountPrice)
+            discountAll += discountPrice
+            console.log('discountAll ' + discountAll)
+          }
+          if (onOff === 'on') {
+            allCount++
+            setTimeout(function () {
+              addCart(itemid, 1) // order
+            }, 1000 + i * 100)
+          }
+        }
+      }
+      console.log(priceAll)
+      priceCal(priceAll) // 残高の計算、要素の書き換え
+      priceCalDiscount(discountAll) // 残高の計算、要素の書き換え
+    } // calc select
   }) // each({})
   if (flgArray.radioFlg === 'on') { // Each外部に出せない！
     $('select').removeAttr('disabled') // Select hyouji
