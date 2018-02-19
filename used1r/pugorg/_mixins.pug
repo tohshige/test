@@ -40,15 +40,16 @@ mixin pad(color,itemcode,padStyle)
             |  買い物カゴに追加する
 
 
-mixin pad2(color,itemcode,padStyle)
+mixin pad2(desc,itemcode,padStyle)
   .ui.stackable.three.column.vertically.divided.grid(style = padStyle)
     .row
-      .six.wide.column
-        span.item_name= color
       .two.wide.column
+        span.item_name= desc
+      .six.wide.column
         select.ui.fluid.dropdown.right.big.label(name= itemcode)
-          option 数量
-          option 1
+          option 商品を選択
+          option(value='10003302_0_0_32184_25') パッドまとめ買いセット＋3
+          option(value='10003303_0_0_36504_33') パッドまとめ買いセット＋5
           option 2
         //- | 個
       .six.wide.column
