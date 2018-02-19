@@ -17,87 +17,15 @@
     <p>サイト名 site.name</p>
     <script> var siteAR = '[object Object]';
       console.log(JSON.stringify(siteAR));
+      
+      
     </script>
-    <style>
-      /* Mobile */
-      @media only screen and (max-width: 767px) {
-        [class*="mobile hidden"],
-        [class*="tablet only"]:not(.mobile),
-        [class*="computer only"]:not(.mobile),
-        [class*="large monitor only"]:not(.mobile),
-        [class*="widescreen monitor only"]:not(.mobile),
-        [class*="or lower hidden"] {
-          display: none !important;
-        }
-      }
-      
-      /* Tablet / iPad Portrait */
-      @media only screen and (min-width: 768px) and (max-width: 991px) {
-       /*
-          [class*="mobile only"]:not(.tablet),
-          [class*="tablet hidden"],
-          [class*="computer only"]:not(.tablet),
-          [class*="large monitor only"]:not(.tablet),
-          [class*="widescreen monitor only"]:not(.tablet),
-          [class*="or lower hidden"]:not(.mobile) {
-            display: none !important;
-          }
-        */
-      
-        [class*="mobile only"],
-        [class*="tablet hidden"]:not(.mobile),
-        [class*="computer only"]:not(.mobile),
-        [class*="large monitor only"]:not(.mobile),
-        [class*="widescreen monitor only"]:not(.mobile),
-        [class*="or lower hidden"] {
-          display: none !important;
-        }
-      }
-      
-      /* Computer / Desktop / iPad Landscape */
-      @media only screen and (min-width: 992px) and (max-width: 1199px) {
-        [class*="mobile only"]:not(.computer),
-        [class*="tablet only"]:not(.computer),
-        [class*="computer hidden"],
-        [class*="large monitor only"]:not(.computer),
-        [class*="widescreen monitor only"]:not(.computer),
-        [class*="or lower hidden"]:not(.tablet):not(.mobile) {
-          display: none !important;
-        }
-      }
-      
-      /* Large Monitor */
-      @media only screen and (min-width: 1200px) and (max-width: 1919px) {
-        [class*="mobile only"]:not([class*="large monitor"]),
-        [class*="tablet only"]:not([class*="large monitor"]),
-        [class*="computer only"]:not([class*="large monitor"]),
-        [class*="large monitor hidden"],
-        [class*="widescreen monitor only"]:not([class*="large monitor"]),
-        [class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
-          display: none !important;
-        }
-      }
-      
-      /* Widescreen Monitor */
-      @media only screen and (min-width: 1920px) {
-        [class*="mobile only"]:not([class*="widescreen monitor"]),
-        [class*="tablet only"]:not([class*="widescreen monitor"]),
-        [class*="computer only"]:not([class*="widescreen monitor"]),
-        [class*="large monitor only"]:not([class*="widescreen monitor"]),
-        [class*="widescreen monitor hidden"],
-        [class*="widescreen monitor or lower hidden"] {
-          display: none !important;
-        }
-      }
-      
-    </style>
     <script type="text/javascript">
-      var pc_width = 1080;
-      var sp_width = 749;
-      //- var device = (window.screen.width < 749 ? 'sp' : 'pc');
-      var device = (window.outerWidth < 749 ? 'sp' : 'pc');
-      console.log(window.outerWidth);
-      var view_mode = (device == 'pc' || document.cookie.indexOf('view_mode=pc') != -1 ? 'pc' : 'sp');
+      //- var pc_width = 1080;
+      //- var sp_width = 749;
+      //- var device = (window.outerWidth < 749 ? 'sp' : 'pc');
+      //- console.log(window.outerWidth);
+      //- var view_mode = (device == 'pc' || document.cookie.indexOf('view_mode=pc') != -1 ? 'pc' : 'sp');
       //- if (device == 'sp' && view_mode == 'pc') {
       //-     document.getElementById('viewport').setAttribute('content', 'width=' + pc_width + ',initial-scale=1');
       //- }
@@ -112,23 +40,23 @@
       //-   $('#forceWidth').width(550);
       //- }
       
-      $(function () {
-          if (device == 'sp') {
-              if (view_mode == 'pc') {
-                  $('.sp-mode').on('click', function () {
-                      var date = new Date();
-                      date.setTime(0);
-                      document.cookie = 'view_mode=;expires='+date.toGMTString();
-                      location.reload(false);
-                  }).show();
-              } else {
-                  $('.pc-mode').on('click', function () {
-                      document.cookie = 'view_mode=pc';
-                      location.reload(false);
-                  }).show();
-              }
-          }
-      });
+      //- $(function () {
+      //-     if (device == 'sp') {
+      //-         if (view_mode == 'pc') {
+      //-             $('.sp-mode').on('click', function () {
+      //-                 var date = new Date();
+      //-                 date.setTime(0);
+      //-                 document.cookie = 'view_mode=;expires='+date.toGMTString();
+      //-                 location.reload(false);
+      //-             }).show();
+      //-         } else {
+      //-             $('.pc-mode').on('click', function () {
+      //-                 document.cookie = 'view_mode=pc';
+      //-                 location.reload(false);
+      //-             }).show();
+      //-         }
+      //-     }
+      //- });
       
       
       
@@ -172,7 +100,8 @@
   </head>
   <!--楽天解析タグ-->
   <body>
-    <div class="ui divided items container segment" id="forceWidth"><img class="ui fluid image bgRed spNone" src="img/kv1_1026.png"><img class="ui fluid image bgRed pcNone" src="img/sp/kvsp1_1026.jpg"><img class="ui fluid image" id="spTitleImg1" src="img/nice_title.png">
+    <div class="ui divided items container segment" id="forceWidth">
+      <!--================== no responsive nice ==================--><img class="ui fluid image" src="img/nice_title.png" id="spTitleImg1">
       <style>
         .sliderImg{
           width: 100%;
@@ -184,19 +113,8 @@
         <li><a href="https://image.rakuten.co.jp/shopjapan/cabinet/share/used/nice1.jpg" rel="lightbox[nice-group]"><img class="sliderImg" src="https://image.rakuten.co.jp/shopjapan/cabinet/share/used/nice1.jpg"/></a></li>
         <li><a href="https://image.rakuten.co.jp/shopjapan/cabinet/nice/s_0210_4.jpg" rel="lightbox[nice-group]"><img class="sliderImg" src="https://image.rakuten.co.jp/shopjapan/cabinet/nice/s_0210_4.jpg"/></a></li>
       </ul>
-      <style>
-        .sliderImg{
-          width: 100%;
-          margin: 0 auto;
-        }
-        
-      </style>
-      <ul class="slider single-item" style="margin:0 0 10px;">
-        <li><a href="img/sp/trsp2_2.jpg" rel="lightbox[nice-group]"><img class="sliderImg" src="img/sp/trsp2_2.jpg"/></a></li>
-        <li><a href="img/sp/trsp2_s2.jpg" rel="lightbox[nice-group]"><img class="sliderImg" src="img/sp/trsp2_s2.jpg"/></a></li>
-        <li><a href="img/sp/trsp2_s3.jpg" rel="lightbox[nice-group]"><img class="sliderImg" src="img/sp/trsp2_s3.jpg"/></a></li>
-      </ul>
       <div class="item">
+        <iframe class="itemFrame ui grid image spNone" scrolling="no" src="frame_nice.html"></iframe>
         <div class="content"><img class="ui fluid image" src="img/nice_pri.jpg">
           <div class="description">
             <!-- 1つめ分 -->
@@ -207,11 +125,49 @@
                 <h3 class="header"></h3>
                 <div class="description"></div>
                 <div class="description">
-                  <div class="ui stackable three column vertically divided grid">
+                  <div class="ui stackable three column vertically divided grid" style="width:438px;">
                     <div class="row">
-                      <div class="three wide column"><span class="item_name">　レッドを</span></div>
+                      <div class="three wide column"><span class="item_name">パッドまとめ買いセット（＋3</span></div>
                       <div class="three wide column">
-                        <select class="ui fluid dropdown right big label" name="10003922_8864_2_5980">
+                        <select class="ui fluid dropdown right big label" name="10003302_0_0_32184">
+                          <option>数量</option>
+                          <option>1</option>
+                          <option>2</option>
+                        </select>
+                      </div>
+                      <div class="eight wide column">
+                        <label>
+                          <div class="ui primary tiny button cartAddBtn">
+                            <input type="checkbox" name="chk" value="1"/> 買い物カゴに追加する
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ui stackable three column vertically divided grid" style="width:438px;">
+                    <div class="row">
+                      <div class="three wide column"><span class="item_name">パッドまとめ買いセット（＋5</span></div>
+                      <div class="three wide column">
+                        <select class="ui fluid dropdown right big label" name="10003303_0_0_36504">
+                          <option>数量</option>
+                          <option>1</option>
+                          <option>2</option>
+                        </select>
+                      </div>
+                      <div class="eight wide column">
+                        <label>
+                          <div class="ui primary tiny button cartAddBtn">
+                            <input type="checkbox" name="chk" value="1"/> 買い物カゴに追加する
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ui stackable three column vertically divided grid" style="width:438px;">
+                    <div class="row">
+                      <div class="three wide column"><span class="item_name">アブ＆アームセット</span></div>
+                      <div class="three wide column">
+                        <select class="ui fluid dropdown right big label" name="10002344_0_0_32184">
                           <option>数量</option>
                           <option>1</option>
                           <option>2</option>
@@ -229,7 +185,26 @@
                   <div class="ui section divider"></div>
                   <div class="ui stackable three column vertically divided grid">
                     <div class="row">
-                      <div class="three wide column"><span class="item_name">ブラックを</span></div>
+                      <div class="three wide column"><span class="item_name">　レッド</span></div>
+                      <div class="three wide column">
+                        <select class="ui fluid dropdown right big label" name="10003922_8864_2_5980">
+                          <option>数量</option>
+                          <option>1</option>
+                          <option>2</option>
+                        </select>
+                      </div>
+                      <div class="eight wide column">
+                        <label>
+                          <div class="ui primary tiny button cartAddBtn">
+                            <input type="checkbox" name="chk" value="1"/> 買い物カゴに追加する
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ui stackable three column vertically divided grid">
+                    <div class="row">
+                      <div class="three wide column"><span class="item_name">ブラック</span></div>
                       <div class="three wide column">
                         <select class="ui fluid dropdown right big label" name="10003922_8865_2_5980">
                           <option>数量</option>
@@ -254,100 +229,13 @@
           <div class="extra">
             <hr/>
             <div class="supec_btn"><a class="modal-nice arrow_01 ui fluid blue button" href="#">> 商品内容はこちら</a><a class="modal-sinpin arrow_01 ui fluid olive button" href="#">> 新品同様/特価良品とは</a></div>
+            <hr/>
+            <div class="supec_btn"><a class="modal-nice arrow_01 ui fluid blue button" href="#">> 商品内容はこちら</a><a class="modal-sinpin arrow_01 ui fluid olive button" href="#">> 新品同様/特価良品とは</a></div>
           </div>
         </div>
       </div>
-      <!--================== no responsive nice ==================--><img class="ui fluid image" id="spTitleImg1" src="img/trsp2_title.png">
-      <style>
-        .sliderImg{
-          width: 100%;
-          margin: 0 auto;
-        }
-        
-      </style>
-      <ul class="slider single-item" style="margin:0 0 10px;">
-        <li><a href="img/sp/trsp2_2.jpg" rel="lightbox[trsp2-group]"><img class="sliderImg" src="img/sp/trsp2_2.jpg"/></a></li>
-        <li><a href="img/sp/trsp2_s2.jpg" rel="lightbox[trsp2-group]"><img class="sliderImg" src="img/sp/trsp2_s2.jpg"/></a></li>
-        <li><a href="img/sp/trsp2_s3.jpg" rel="lightbox[trsp2-group]"><img class="sliderImg" src="img/sp/trsp2_s3.jpg"/></a></li>
-      </ul>
-      <style>
-        .sliderImg{
-          width: 100%;
-          margin: 0 auto;
-        }
-        
-      </style>
-      <ul class="slider single-item" style="margin:0 0 10px;">
-        <li><a href="img/sp/trsp2_2.jpg" rel="lightbox[trsp2-group]"><img class="sliderImg" src="img/sp/trsp2_2.jpg"/></a></li>
-        <li><a href="img/sp/trsp2_s2.jpg" rel="lightbox[trsp2-group]"><img class="sliderImg" src="img/sp/trsp2_s2.jpg"/></a></li>
-        <li><a href="img/sp/trsp2_s3.jpg" rel="lightbox[trsp2-group]"><img class="sliderImg" src="img/sp/trsp2_s3.jpg"/></a></li>
-      </ul>
-      <div class="item">
-        <iframe class="itemFrame ui grid image spNone" scrolling="no" src="frame_trsp2.html"></iframe>
-        <div class="content"><img class="ui fluid image" src="img/nice_pri.jpg">
-          <div class="description">
-            <!-- 1つめ分 -->
-            <!-- 1つめ分 -->
-            <div class="item">
-              <div class="image"></div>
-              <div class="content">
-                <h3 class="header"></h3>
-                <div class="description"></div>
-                <div class="description">
-                  <div class="ui stackable three column vertically divided grid">
-                    <div class="row">
-                      <div class="three wide column"><span class="item_name">　レッドを</span></div>
-                      <div class="three wide column">
-                        <select class="ui fluid dropdown right big label" name="10003922_8864_2_5980">
-                          <option>数量</option>
-                          <option>1</option>
-                          <option>2</option>
-                        </select>
-                      </div>
-                      <div class="eight wide column">
-                        <label>
-                          <div class="ui primary tiny button cartAddBtn">
-                            <input type="checkbox" name="chk" value="1"/> 買い物カゴに追加する
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="ui stackable three column vertically divided grid">
-                    <div class="row">
-                      <div class="three wide column"><span class="item_name">ブラックを</span></div>
-                      <div class="three wide column">
-                        <select class="ui fluid dropdown right big label" name="10003922_8865_2_5980">
-                          <option>数量</option>
-                          <option>1</option>
-                          <option>2</option>
-                        </select>
-                      </div>
-                      <div class="eight wide column">
-                        <label>
-                          <div class="ui primary tiny button cartAddBtn">
-                            <input type="checkbox" name="chk" value="1"/> 買い物カゴに追加する
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 1つめ分完了 -->
-          </div>
-          <div class="extra">
-            <hr/>
-            <div class="supec_btn"><a class="modal-trsp2 arrow_01 ui fluid blue button" href="#">> 商品内容はこちら</a><a class="modal-sinpin arrow_01 ui fluid olive button" href="#">> 新品同様/特価良品とは</a></div>
-            <hr/>
-            <div class="supec_btn"><a class="modal-trsp2 arrow_01 ui fluid blue button" href="#">> 商品内容はこちら</a><a class="modal-sinpin arrow_01 ui fluid olive button" href="#">> 新品同様/特価良品とは</a></div>
-          </div>
-        </div>
-      </div>
+      <div class="topMarginPConly spNone" style="position: relative;margin-top:220px;"></div>
       <!--================== no responsive nice ==================-->
-      <!--==================nice ==================-->
-      <div class="to_top" style="margin-bottom:170px;"><a id="pageTop" href="">このページのTOPへ</a></div>
     </div>
     <!--縦バナー-->
     <div class="out_back"></div>
@@ -396,6 +284,7 @@
     <div class="blurring" id="footerFloatingMenu">
       <div class="ui segment">
         <div class="ui button large change_price" id="footerNowPrice">現在の合計金額は￥<span id="priceAll">0</span>円(税抜)</div>
+        <div class="ui button large change_price" id="footerNowDiscount">現在の割引金額は￥<span id="discountAll">0</span>円(税抜)</div>
         <div class="ui button yellow" id="footer_go_cart"><span>選択した商品のレジにすすむ</span></div>
       </div>
       <div class="ui inverted dimmer">
