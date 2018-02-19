@@ -92,6 +92,7 @@
                   <div class="ui section divider"></div>
                   <!-- 最大横幅が合計で 16 columns.になる eight.column でその要素内 横幅の 50%となる 。-->
                   <div class="ui stackable three column vertically divided grid">
+                    <div class="row"><span>checkBox 有り</span></div>
                     <div class="row">
                       <div class="two wide column"><span class="item_name">(1st)</span></div>
                       <div class="nine wide column">
@@ -111,6 +112,10 @@
                       </div>
                     </div>
                     <div class="row">
+                      <p>checkBox 無し</p>
+                      <p>css display:none でチェックボタン非表示</p>
+                    </div>
+                    <div class="row">
                       <div class="two wide column"><span class="item_name">(1st-2)</span></div>
                       <div class="nine wide column">
                         <!-- <select name を ver2から始まる ユニークで指定してください-->
@@ -118,9 +123,10 @@
                           <option value="0" selected>商品を選択</option>
                           <option value="10003302_0_0_32184_25">パッドまとめ買いセット＋3</option>
                           <option value="10003303_0_0_36504_33">パッドまとめ買いセット＋5</option>
-                        </select><span>display:none でチェックボタン非表示</span>
+                        </select>
                       </div>
                       <div class="one wide column" style="display: none;">
+                        <!-- display:none でチェックボタン非表示-->
                         <label>
                           <div class="ui primary tiny button cartAddBtn">
                             <input type="checkbox" name="chk" value="1" checked> 追加
@@ -136,14 +142,15 @@
                         <!-- <select name を ver2から始まる ユニークで指定してください-->
                         <select class="ui fluid dropdown right big label" name="ver22">
                           <option value="0">商品を選択</option>
-                          <option value="10000824_0_0_1620_25">延長ベルト【EMS】</option>
-                          <option value="10000824_0_0_1620_25">延長ベルト【EMS】</option>
-                        </select><span>display:none でチェックボタン非表示</span>
+                          <option value="10000824_0_0_1215_25">延長ベルト【EMS】25% OFF</option>
+                          <option value="10000824_0_0_810_50">延長ベルト【EMS】50% OFF</option>
+                        </select>
                       </div>
                       <div class="one wide column" style="display: none;">
+                        <!-- display:none でチェックボタン非表示-->
                         <label>
                           <div class="ui primary tiny button cartAddBtn">
-                            <input type="checkbox" name="chk" value="1" checked> カゴに追加
+                            <input type="checkbox" name="chk" value="1" checked> 追加
                           </div>
                         </label>
                       </div>
