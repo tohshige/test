@@ -15,8 +15,10 @@ https://github.com/tohshige/test/blob/master/rcart2/index.html#L120,L153
 例　エンジェルフィット ピローカバー  
 name=10000475_1206
 
-割引額を計算させる % で指定                              ↓New
-[itemId]_[inventoryId]_[inventoryFlg]_[itemPrice]_[discount]
+割引額を計算させる %パーセント で指定                   ↓New
+[itemId]_[inventoryId]_[inventoryFlg]_[itemPrice]_[discount%]
+割引金額を計算させる ¥円 で指定                                      ↓New
+[itemId]_[inventoryId]_[inventoryFlg]_[itemPrice]_[discount%]_[discountPrice]
 ```
 
 ## カラー別でカートに入れる、値段を指定する
@@ -42,8 +44,12 @@ option value にITEMCode、割引率やらを指定
 例 33%引きで1000円の商品
 <select name="ver21">
   <option value="10003534_0_0_1000_33">商品名</option>
-
 割引率から元の価格を求め差額を加算します
+
+例 ¥200円引きで1000円の商品
+<select name="ver22">
+  <option value="10003534_0_0_1000_0_200">商品名</option>
+指定金額を加算します
 ```
 
 ```html
