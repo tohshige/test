@@ -245,14 +245,14 @@ function showValues (onOff) {
       // checked
       // chkBox.name = 'chk' // checkBox ‚È‚µ‚Å‚à—LŒø‚É‚·‚é
       if (chkBox) {
+        var itemid = field.value // itemid ‚ª‹t“]‚·‚é
         if (chkBox.name === 'chk') {
           console.log(chkBox.name)
       //  priceAll += price * Number(field.value) // unit number
           priceAll += price * 1 // unit number
-          var itemid = '' // itemid for addCart()
           if (resArray[4] > 0) { // discount Š„ˆø—¦‚ªw’è‚³‚ê‚Ä‚¢‚½‚ç
             // 33% ‚È‚ÇŠ„ˆøŠzAŒ³’l‚ğŒvZ‚µ‚Ä·Šz‚ğ‰ÁZ in discount and price : out discountPrice
-            itemid = resArray[0]
+            // itemid = resArray[0]
             discount = resArray[4]
             originalPrice = price / (1 - (discount / 100))
             discountPrice = originalPrice - price
@@ -266,7 +266,7 @@ function showValues (onOff) {
             console.log('discountAll ' + discountAll)
           }
           if (resArray[5] > 0) { // discount Š„ˆøŠz ‚ªw’è‚³‚ê‚Ä‚¢‚½‚ç
-            itemid = resArray[0]
+            // itemid = resArray[0]
             discountPrice = Number(resArray[5])
             originalPrice = price + discountPrice
             originalAll += originalPrice // ŒvZ‚¾‚¯AÀÛ‚ÍDOM‚©‚ç‚à‚Á‚Ä‚­‚é
