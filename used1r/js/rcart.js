@@ -248,9 +248,10 @@ function showValues (onOff) {
           console.log(chkBox.name)
       //  priceAll += price * Number(field.value) // unit number
           priceAll += price * 1 // unit number
-          if (resArray[4]) { // discount Š„ˆø—¦‚ªŽw’è‚³‚ê‚Ä‚¢‚½‚ç
+          var itemid = '' // itemid for addCart()
+          if (resArray[4] > 0) { // discount Š„ˆø—¦‚ªŽw’è‚³‚ê‚Ä‚¢‚½‚ç
             // 33% ‚È‚ÇŠ„ˆøŠzAŒ³’l‚ðŒvŽZ‚µ‚Ä·Šz‚ð‰ÁŽZ in discount and price : out discountPrice
-            var itemid = resArray[0]
+            itemid = resArray[0]
             discount = resArray[4]
             originalPrice = price / (1 - (discount / 100))
             discountPrice = originalPrice - price
@@ -260,6 +261,12 @@ function showValues (onOff) {
             discountPrice = Math.ceil(discountPrice)
             // Ø‚èŽÌ‚Ä
             // discountPrice = Math.floor(discountPrice)
+            discountAll += discountPrice
+            console.log('discountAll ' + discountAll)
+          }
+          if (resArray[5] > 0) { // discount Š„ˆøŠz ‚ªŽw’è‚³‚ê‚Ä‚¢‚½‚ç
+            itemid = resArray[0]
+            discountPrice = Number(resArray[5])
             discountAll += discountPrice
             console.log('discountAll ' + discountAll)
           }
