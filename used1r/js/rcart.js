@@ -198,10 +198,10 @@ function showValues (onOff) {
     var chkBox = fields[i + 1] // すぐ隣のcheckbox がチェックされているか
     // select option > cart 前方一致のときの処理
     var resArray = ''
-    var price = 0
+    var price = 0 // 定価 OR 割引後の価格
     var discount = 0 // % percent
-    // var originalPrice = 0 // for TEIKA
-    var discountPrice = 0 // originalPrice - price
+    var originalPrice = 0 // 定価
+    var discountPrice = 0 // 割引後の価格 originalPrice - price
     if (!field.name.indexOf('1000') && field.value !== '') {
       flgArray.selectFlg = 'on'
       resArray = field.name.split('_')
@@ -268,8 +268,8 @@ function showValues (onOff) {
           if (resArray[5] > 0) { // discount 割引額 が指定されていたら
             itemid = resArray[0]
             discountPrice = Number(resArray[5])
-            // originalPrice = price + discountPrice
-            // originalAll += originalPrice
+            originalPrice = price + discountPrice
+            originalAll += originalPrice // 計算だけ、実際はDOMからもってくる
             discountAll += discountPrice
             console.log('discountAll ' + discountAll)
           }
