@@ -180,11 +180,12 @@ html
                   span checkBox 有り
                 .row
                   .two.wide.column
-                    span.item_name= '(1st)'
+                    span.item_name= '(％指定)'
                   .nine.wide.column
                     // <select name を ver2から始まる ユニークな文字で指定してください
                     select.ui.fluid.dropdown.right.big.label(name= selectBoxType)
                       option(value=0 selected) 商品を選択
+                      //- 割引率 % で指定
                       option(value='10003302_0_0_32184_25') パッドまとめ買いセット＋3
                       option(value='10003303_0_0_36504_33') パッドまとめ買いセット＋5
                   .three.wide.column
@@ -194,14 +195,15 @@ html
                         |  追加
 
                 - var selectBoxName = 'ver21'
+                //-  割引金額 \ で指定 
                 -
                   var selectBoxItems = [
                     {
-                      'value'   :'10003302_0_0_32184_25',
+                      'value'   :'10003302_0_0_32184_0_2000',
                       'itemName':'パッドまとめ買いセット＋3',
                     },
                     {
-                      'value'   :'10003303_0_0_36504_33',
+                      'value'   :'10003303_0_0_36504_0_3000',
                       'itemName':'パッドまとめ買いセット＋5',
                     },
                   ];
@@ -211,7 +213,7 @@ html
                   p css display:none でチェックボタン非表示
                 .row
                   .two.wide.column
-                    span.item_name= '(1st-2)'
+                    span.item_name= '(￥指定)'
                   .nine.wide.column
                     // <select name を ver2から始まる ユニークで指定してください
                     +selBox2(selectBoxName, selectBoxItems,'')
@@ -231,8 +233,8 @@ html
                     // <select name を ver2から始まる ユニークで指定してください
                     select(name= selectBoxType).ui.fluid.dropdown.right.big.label
                       option(value=0) 商品を選択
-                      option(value='10000824_0_0_1215_25') 延長ベルト【EMS】25% OFF
-                      option(value='10000824_0_0_810_50') 延長ベルト【EMS】50% OFF
+                      option(value='10000824_0_0_1215_0_500') 延長ベルト【EMS】25% OFF
+                      option(value='10000824_0_0_810_0_1000') 延長ベルト【EMS】50% OFF
                   .one.wide.column(style='display: none;')
                     // display:none でチェックボタン非表示
                     label
@@ -516,6 +518,10 @@ html
     .blurring#footerFloatingMenu
       //- div(style='width:950px;margin: 0 auto; border: none;display:block;')
       .ui.segment
+        .ui.button.large.change_price#footerNowPrice
+          | OriginalAll ￥
+          span#originalAll 0
+          | 円(税抜)
         .ui.button.large.change_price#footerNowPrice
           | 現在の合計金額は￥
           span#priceAll 0
