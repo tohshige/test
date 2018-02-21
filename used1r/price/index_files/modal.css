@@ -1,0 +1,50 @@
+/* CSS Document */
+@charset "EUC-JP";
+
+.ui .modal {
+  width: 80%;
+  margin-left: -40%;
+  margin-bottom: 5%;
+  padding: 2% 5% 4%;
+  z-index: 999999;
+}
+
+.ui.modal > .close {
+  opacity: 1;
+  color: #000;
+  background: #fff;
+  border-radius: 50px;
+}
+
+pre {
+  line-height: 1.4285em;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+@media only screen and (max-width: 767px) {
+  .ui.modal > .close {
+    opacity: 1;
+    color: #000;
+    background: #fff;
+    border: 1px solid #666;
+    border-radius: 50px;
+    line-height: 1.0rem; }
+}
+
+@media only screen and (max-width: 991px) {
+  .ui.modal > .close {
+    opacity: 1;
+    color: #000;
+    background: #fff;
+    border: 1px solid #666;
+    border-radius: 50px;
+    line-height: 0.5rem;
+    height: 25px;
+    width: 25px; }
+}
+
+/*i.icon.close:before {
+    content:url(../images/close.png);
+}*/
