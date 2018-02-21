@@ -170,6 +170,7 @@ function showValues (onOff) {
   var allCount = 0    // selected item count
   var priceAll = 0    // 合計金額
   var discountAll = 0 // 割引率 から割引額を求める
+  var originalAll = 0 // 定価での合計
   $.each(fields, function (i, field) {
     if (fields.length === i && onOff === 'on') {
       window.alert('finish ' + allCount)
@@ -199,7 +200,7 @@ function showValues (onOff) {
     var resArray = ''
     var price = 0
     var discount = 0 // % percent
-    var originalPrice = 0 // for TEIKA
+    // var originalPrice = 0 // for TEIKA
     var discountPrice = 0 // originalPrice - price
     if (!field.name.indexOf('1000') && field.value !== '') {
       flgArray.selectFlg = 'on'
@@ -267,6 +268,8 @@ function showValues (onOff) {
           if (resArray[5] > 0) { // discount 割引額 が指定されていたら
             itemid = resArray[0]
             discountPrice = Number(resArray[5])
+            // originalPrice = price + discountPrice
+            // originalAll += originalPrice
             discountAll += discountPrice
             console.log('discountAll ' + discountAll)
           }
@@ -338,6 +341,11 @@ function priceCalDiscount (discountAll) {
   //   $('#couponGet').removeClass('displayNone') // 目標ON
   //   $('#coupon').addClass('displayNone') // クーボンボタンOFF
   // }
+
+  // 定価合計
+  var priceAll = Number($('#priceAll').text())
+  var originalAll = priceAll + discountAll
+  $('#originalAll').text(originalAll)
 
   $('#discountAll').fadeOut(500, function () {
     $(this).fadeIn(500)

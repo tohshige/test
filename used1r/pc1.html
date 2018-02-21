@@ -94,7 +94,7 @@
                   <div class="ui stackable three column vertically divided grid">
                     <div class="row"><span>checkBox 有り</span></div>
                     <div class="row">
-                      <div class="two wide column"><span class="item_name">(1st)</span></div>
+                      <div class="two wide column"><span class="item_name">(％指定)</span></div>
                       <div class="nine wide column">
                         <!-- <select name を ver2から始まる ユニークな文字で指定してください-->
                         <select class="ui fluid dropdown right big label" name="ver2">
@@ -116,7 +116,7 @@
                       <p>css display:none でチェックボタン非表示</p>
                     </div>
                     <div class="row">
-                      <div class="two wide column"><span class="item_name">(1st-2)</span></div>
+                      <div class="two wide column"><span class="item_name">(￥指定)</span></div>
                       <div class="nine wide column">
                         <!-- <select name を ver2から始まる ユニークで指定してください-->
                         <select class="ui fluid dropdown right big label" name="ver21">
@@ -216,6 +216,7 @@
     <!--フッターフローティング-->
     <div class="blurring" id="footerFloatingMenu">
       <div class="ui segment">
+        <div class="ui button large change_price" id="footerNowPrice">OriginalAll ￥<span id="originalAll">0</span>円(税抜)</div>
         <div class="ui button large change_price" id="footerNowPrice">現在の合計金額は￥<span id="priceAll">0</span>円(税抜)</div>
         <div class="ui button large change_price" id="footerNowDiscount">￥<span id="discountAll">0</span>円 お得</div>
         <div class="ui button yellow disabled" id="footer_go_cart"><span>選択した商品のレジにすすむ</span></div>
