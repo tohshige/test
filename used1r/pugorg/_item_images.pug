@@ -50,7 +50,7 @@ mixin itemImages(itemName,mode)
   if mode == 'slider'
     //- スライド、スライダー
     +slider(itemName,images)
-    +slider(itemName,site.itemImages.trsp2)
+    //- +slider(itemName,site.itemImages.trsp2)
   else if mode == 'genFrame'
     //- iframe用のHTMLを生成 サムネイルロールオーバ
     +rolloverImage(itemName,images)

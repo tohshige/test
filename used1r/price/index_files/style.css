@@ -1,0 +1,169 @@
+@charset "EUC-JP";
+/* CSS Document */
+
+body,#setcreative,#setcreative p,#setcreative a,#setcreative h2,#footerFloatingMenu .ui,.rw{
+    font-family: "¥Ò¥é¥®¥Î³Ñ¥´ Pro W3", "Hiragino Kaku Gothic Pro", "¥á¥¤¥ê¥ª", Meiryo, Osaka, "£Í£Ó £Ð¥´¥·¥Ã¥¯", "MS PGothic", "sans-serif";
+    font-weight: normal !important;
+    color: #000 !important;
+    /* background-color: #fff !important; */
+    background-color: #5d5959 !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1.5 !important;
+}
+
+#setcreative{
+    width: 950px !important;
+    height: 780px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    background: url(../images/pcsc01.jpg) !important;
+    position: relative !important;
+}
+
+#setcreative .itemselect{
+    width: 380px !important;
+    position: absolute !important;
+    top: 230px !important;
+    left: 500px !important;
+}
+
+#setcreative .itemselect p{
+    display: block !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+}
+
+#setcreative .itemselect p.douitem{
+    margin-top: 50px !important;
+}
+
+#setcreative .itemselect .itemroll{
+    width: 400px !important;
+    padding: 5px 0 5px 10px !important;
+    margin: 0 !important;
+    font-size: 16px !important;
+    background-color: #eee !important;
+    border: 1px solid #ccc !important;
+    border-radius: 3px !important;
+}
+
+#setcreative .itemselect .itemrollwrap{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#setcreative .itemselect a{
+    text-align: right !important;
+    font-weight: bold !important;
+    margin-top: 5px !important;
+    text-decoration: underline !important;
+}
+
+#setcreative .itembuy{
+    width: 870px !important;
+    height: 155px !important;
+    position: absolute !important;
+    top: 500px !important;
+    left: 25px !important;
+    background: none;
+}
+
+#setcreative .itembuy #footerOriPrice,
+#setcreative .itembuy #footerNowPrice,
+#setcreative .itembuy #footerNowDiscount,
+#setcreative .itembuy #footer_go_cart{
+    position: absolute !important;
+}
+
+#setcreative .itembuy #footerOriPrice{
+    width: 500px !important;
+    height: 55px !important;
+    top: 25px !important;
+    left: 190px !important;
+    background: none !important;
+    text-align: left !important;
+    font-size: 22px !important;
+    font-weight: bold !important;
+}
+
+#setcreative .itembuy #footerNowPrice{
+    width: 570px !important;
+    height: 55px !important;
+    top: 75px !important;
+    left: 190px !important;
+    background: none !important;
+    text-align: left !important;
+    font-size: 35px !important;
+    font-weight: bold !important;
+}
+
+#setcreative .itembuy #footerNowPrice span{
+    color: red !important;
+    font-size: 150%;
+    line-height: 48px;
+}
+
+#setcreative .itembuy #footerOriDiscount{
+    width: 268px !important;
+    height: 54px !important;
+    top: 21px !important;
+    left: 628px !important;
+    background: none !important;
+    color: #fff !important;
+    text-align: center !important;
+    font-size: 35px !important;
+    font-weight: bold !important;
+}
+
+#setcreative .itembuy #footerNowDiscount span{
+    color: yellow !important;
+    font-size: 150%;
+    line-height: 48px;
+}
+
+#setcreative .itembuy #footerNowDiscount{
+    width: 268px !important;
+    height: 54px !important;
+    top: 24px !important;
+    left: 628px !important;
+    background: none !important;
+    color: #fff !important;
+    text-align: center !important;
+    font-weight: bold !important;
+}
+
+#setcreative .itembuy #footerNowDiscount span{
+    color: yellow !important;
+    font-size: 150%;
+    line-height: 48px;
+}
+
+#setcreative .itembuy #footer_go_cart{
+    width: 800px !important;
+    height: 60px !important;
+    top: 175px !important;
+    left: 60px !important;
+    background: red !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    color: #fff !important;
+    line-height: 57px !important;
+    border-radius: 5px !important;
+    border:3px red solid !important;
+}
+
+#setcreative .itembuy #footer_go_cart:hover{
+    background: #fff !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    color: red !important;
+    border:3px red solid !important;
+}
+
+#setcreative h2{
+    font-weight: bold !important;
+}

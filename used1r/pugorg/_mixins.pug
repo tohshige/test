@@ -20,9 +20,10 @@ mixin itemImg(itemName,right)
   else
     iframe(scrolling='no', src='frame_'+ itemName +'.html')
 
+
 //-parts of kago
 mixin pad(color,itemcode,padStyle)
-  .ui.stackable.three.column.vertically.divided.grid
+  .ui.stackable.three.column.vertically.divided.grid(style = padStyle)
     .row
       .three.wide.column
         span.item_name= color
@@ -38,6 +39,12 @@ mixin pad(color,itemcode,padStyle)
             input(type='checkbox', name='chk', value='1')
             |  買い物カゴに追加する
 
+
+mixin selBox2(selectBoxName,itemCodes)
+  select.ui.fluid.dropdown.right.big.label(name= selectBoxName)
+    option(value=0 selected) 商品を選択
+    each item in itemCodes
+      option(value=item.value) !{item.itemName}
 
 
 //- spec modal btn

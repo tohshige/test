@@ -4,8 +4,10 @@
 // Shift-JIS
 // 'use strict'
 
-// 「割引後の金額」÷「割引率」×１００。
-// 16200 / 0.33 * 100
+// originalPrice = 「割引後の金額」÷「割引率」×１００
+// 1000円の物を40%引きで購入したら、支払う金額は600円ですが、ここで割引前(1000円)の金額を出すには
+// (600 / (100 - 40)) * 100
+// 16200 / (1 - 0.33)
 $('html, body').animate({ scrollTop: $('#target').scrollTop() }, 2000)
 
 // SmoothScroll
@@ -26,9 +28,9 @@ $("[id$='go_cart']").click(function () {
   return false
 })
 
-// set all selectbox default value
-$('select').val(1) // 2banme
-// $('select').val(0);//1番目
+// set all selectbox default value セレクトボックスを決め打ちにする
+// $('select').val(1) // value = 1
+// $('select').val(0) // value = 0
 
 // $("#pageTop").click(function() {
 //   $("html, body").animate({ scrollTop: $(document).height() }, "slow");
@@ -93,7 +95,7 @@ https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=199614&itemid=1000047
 
 */
 function addCart (itemid, units) {
-  var shop_bid = '199614' // shopjapan id
+  var shopId = '199614' // shopjapan id
   var resArray = itemid.split('_')
   var inventoryid = ''
   var inventoryflg = ''
@@ -116,7 +118,7 @@ function addCart (itemid, units) {
     crossDomain: true,
     async: false,
     //   url: 'https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=' + shop_bid + '&itemid=' + itemid + '&units=' + units + '',
-    url: 'https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=' + shop_bid + '&itemid=' + itemid + '&units=' + units + '&inventory_id=' + inventoryid + '&inventory_flg=' + inventoryflg + '',
+    url: 'https://direct.step.rakuten.co.jp/rms/mall/cartAdd/?shopid=' + shopId + '&itemid=' + itemid + '&units=' + units + '&inventory_id=' + inventoryid + '&inventory_flg=' + inventoryflg + '',
     success: function (result) {
       var alltext = JSON.stringify(result) // to string
       // console.log(alltext);
@@ -153,8 +155,8 @@ function addCart (itemid, units) {
 // }
 
 // 全フィールドを走査して表示。
-function showValues (on_off) {
-  // if (on_off === "on") {
+function showValues (onOff) {
+  // if (onOff === "on") {
   //     confirmCart();
   // }
 
@@ -163,16 +165,14 @@ function showValues (on_off) {
   console.log(fields)
   var fieldsform = $('form').serializeArray()
   console.log(fieldsform)
-  // new on_off = on_off;
-  // fields.push(['on_off:'+on_off ]);
-  // $("#result1").empty();
-  // $('.ui.sidebar').sidebar('toggle');
   // flgArray = new Array();
-  var flgArray = [] // array
-  var allCount = 0 // selected item count
-  var priceAll = 0 // 合計金額
+  var flgArray = []   // array
+  var allCount = 0    // selected item count
+  var priceAll = 0    // 合計金額
+  var discountAll = 0 // 割引率 から割引額を求める
+  var originalAll = 0 // 定価での合計
   $.each(fields, function (i, field) {
-    if (fields.length === i && on_off === 'on') {
+    if (fields.length === i && onOff === 'on') {
       window.alert('finish ' + allCount)
     }
     console.log(i)
@@ -187,25 +187,44 @@ function showValues (on_off) {
       flgArray.radioFlg = 'on'
       // $("#result1").append(field.name + " ");
       // addCart(itemid,units);
-      if (on_off === 'on') {
+      if (onOff === 'on') {
         allCount++
         setTimeout(function () {
-          addCart(field.value, units = 1) // order
+          var units = 1
+          addCart(field.value, units) // order
         }, i * 100)
       }
     }
     var chkBox = fields[i + 1] // すぐ隣のcheckbox がチェックされているか
     // select option > cart 前方一致のときの処理
+    var resArray = ''
+    var price = 0 // 定価 OR 割引後の価格
+    var discount = 0 // % percent
+    var originalPrice = 0 // 定価
+    var discountPrice = 0 // 割引後の価格 originalPrice - price
     if (!field.name.indexOf('1000') && field.value !== '') {
       flgArray.selectFlg = 'on'
-      var resArray = field.name.split('_')
-      var price = Number(resArray[3])
+      resArray = field.name.split('_')
+      price = Number(resArray[3])
       // checked
       if (chkBox) {
         if (chkBox.name === 'chk') {
           console.log(chkBox.name)
-          priceAll += price * Number(field.value)
-          if (on_off === 'on') {
+          priceAll += price * Number(field.value) // unit number
+          if (resArray[4]) { // discount 割引率が指定されていたら
+            // 33% など割引額、元値を計算して差額を加算 in discount and price : out discountPrice
+            discount = resArray[4]
+            originalPrice = price / (1 - (discount / 100))
+            discountPrice = originalPrice - price
+            discountPrice = discountPrice * Number(field.value)
+            // 切り上げ
+            discountPrice = Math.ceil(discountPrice)
+            // 切り捨て
+            // discountPrice = Math.floor(discountPrice)
+            discountAll += discountPrice
+            console.log('discountAll ' + discountAll)
+          }
+          if (onOff === 'on') {
             allCount++
             setTimeout(function () {
               addCart(field.name, field.value) // order
@@ -215,8 +234,58 @@ function showValues (on_off) {
       }
       console.log(priceAll)
       priceCal(priceAll) // 残高の計算、要素の書き換え
-    }
-  })
+      priceCalDiscount(discountAll) // 残高の計算、要素の書き換え
+    } // calc select
+
+    // ver2 select option > cart 前方一致のときの処理
+    if (!field.name.indexOf('ver2') && field.value !== '0') {
+      flgArray.selectFlg = 'on'
+      resArray = field.value.split('_')
+      price = Number(resArray[3])
+      // checked
+      // chkBox.name = 'chk' // checkBox なしでも有効にする
+      if (chkBox) {
+        var itemid = field.value // itemid が逆転する
+        if (chkBox.name === 'chk') {
+          console.log(chkBox.name)
+      //  priceAll += price * Number(field.value) // unit number
+          priceAll += price * 1 // unit number
+          if (resArray[4] > 0) { // discount 割引率が指定されていたら
+            // 33% など割引額、元値を計算して差額を加算 in discount and price : out discountPrice
+            // itemid = resArray[0]
+            discount = resArray[4]
+            originalPrice = price / (1 - (discount / 100))
+            discountPrice = originalPrice - price
+        //  discountPrice = discountPrice * Number(field.value)
+            discountPrice = discountPrice * 1
+            // 切り上げ
+            discountPrice = Math.ceil(discountPrice)
+            // 切り捨て
+            // discountPrice = Math.floor(discountPrice)
+            discountAll += discountPrice
+            console.log('discountAll ' + discountAll)
+          }
+          if (resArray[5] > 0) { // discount 割引額 が指定されていたら
+            // itemid = resArray[0]
+            discountPrice = Number(resArray[5])
+            originalPrice = price + discountPrice
+            originalAll += originalPrice // 計算だけ、実際はDOMからもってくる
+            discountAll += discountPrice
+            console.log('discountAll ' + discountAll)
+          }
+          if (onOff === 'on') {
+            allCount++
+            setTimeout(function () {
+              addCart(itemid, 1) // order
+            }, 1000 + i * 100)
+          }
+        }
+      }
+      console.log(priceAll)
+      priceCal(priceAll) // 残高の計算、要素の書き換え
+      priceCalDiscount(discountAll) // 残高の計算、要素の書き換え
+    } // calc select
+  }) // each({})
   if (flgArray.radioFlg === 'on') { // Each外部に出せない！
     $('select').removeAttr('disabled') // Select hyouji
     $('#reset_radio').removeClass('disabled') // 選び直すボタン 表示
@@ -226,7 +295,7 @@ function showValues (on_off) {
     // $("#go_cart").removeClass("disabled");//購入ボタン 表示
     $("[id$='go_cart']").removeClass('disabled') // 購入ボタン 表示
   }
-  if (on_off === 'on') {
+  if (onOff === 'on') {
     // return confirmCart("カゴ確認ページへ進む");
     return true
     // if(!confirmCart("カゴ確認ページへ進む")){
@@ -237,7 +306,7 @@ function showValues (on_off) {
     // },3000);
   }
   // reset kounyu flg
-  on_off = ''
+  onOff = ''
 }
 
 function priceCal (priceAll) {
@@ -253,12 +322,37 @@ function priceCal (priceAll) {
     $('#coupon').addClass('displayNone') // クーボンボタンOFF
   }
 
-  $('#priceAll').fadeOut(500, function () {
+  $('#priceAll , #discountAll').fadeOut(500, function () {
     $(this).fadeIn(500)
   })
 
   $('#footerFloatingMenu').fadeIn()
-}
+} // priceCal()
+
+function priceCalDiscount (discountAll) {
+  $('#discountAll').text(discountAll)
+  // var priceTarget = $('#priceTarget').text()
+  // var priceRemain = priceTarget - priceAll
+  // if (priceRemain > 0) {
+  //   $('#priceRemain').text(priceRemain)
+  //   $('#couponGet').addClass('displayNone') // 目標OFF
+  //   $('#coupon').removeClass('displayNone') // クーボンボタンON
+  // } else {
+  //   $('#couponGet').removeClass('displayNone') // 目標ON
+  //   $('#coupon').addClass('displayNone') // クーボンボタンOFF
+  // }
+
+  // 定価合計
+  var priceAll = Number($('#priceAll').text())
+  var originalAll = priceAll + discountAll
+  $('#originalAll').text(originalAll)
+
+  $('#discountAll').fadeOut(500, function () {
+    $(this).fadeIn(500)
+  })
+
+  $('#footerFloatingMenu').fadeIn()
+} // priceCal()
 
 function confirmCart (message) {
   if (!message) {
