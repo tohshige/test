@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="euc-jp">
+<title></title>
+
+<script src="https://www.rakuten.ne.jp/gold/shopjapan/js/jquery.min2.js"></script>
+<script>
+$(function(){
+    $('#thumb_area img').mouseover(function(){
+        $('#main_img_two img').attr('src', $(this).attr('src')).css({width:'284px',paddingLeft:'95px'});
+    });
+    $('#thumb_area img').mouseout(function(){
+        $('#main_img_two img').attr('src', 'img/thum/crf_k_main2.jpg').css({width:'100%',paddingLeft:'0'});
+    });
+});
+</script>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+
+
+<div id="main_img_two" class="main_img_two">
+<img src="img/thum/crf_k_main2.jpg">
+</div>
+
+<ul id="thumb_area" class="thumb_area" style="margin-top: -85px;">
+<li><img src="img/thum/crf_thum_01.jpg"></li>
+<li><img src="img/thum/crf_thum_02.jpg"></li>
+<li><img src="img/thum/crf_thum_03.jpg"></li>
+<li><img src="img/thum/out_thum.jpg"></li>
+</ul>
+
+
+</body>
+</html>

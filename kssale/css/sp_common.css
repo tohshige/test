@@ -1,0 +1,332 @@
+@charset "euc-jp";
+/* CSS Document */
+
+/**/
+.spbtnout
+/**/
+
+*{outline: none;}
+
+body {
+    animation: fadeIn 2s ease 0s 1 normal;
+    -webkit-animation: fadeIn 2s ease 0s 1 normal;
+}
+
+/*option, select, input[type="text"], textarea, input[type="submit"]{
+    -webkit-appearance: none;
+}*/
+
+.item_id .select_btn option{
+    border: 1px dotted #ccc;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+.outlet_sp_wrap{
+	width:100%;
+    margin: 0 auto;
+    padding: 0;
+    background: #fff;
+    font-family: "•“•È•Æ•Œ≥—•¥ Pro W3", "Hiragino Kaku Gothic Pro", "•·•§•Í•™", Meiryo, Osaka, "£Õ£” £–•¥•∑•√•Ø", "MS PGothic", "sans-serif";
+}
+
+.outlet_sp_wrap img{
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.outlet_sp_wrap .main_bnr{
+    background: #cc0000;
+    margin: 0 auto;
+    padding: 0 0 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.outlet_sp_wrap .slide_btn{
+    width: 100%;
+    display: block;
+    margin: 5% auto 3%;
+    padding: 3% 0;
+    overflow: hidden;
+}
+
+.outlet_sp_wrap .slide_btn img{
+    display: block;
+    width: 50%;
+    float: left;
+}
+
+.outlet_sp_wrap .item_lineup{
+    width: 100%;
+    overflow: hidden;
+    margin:-10px auto;
+    padding: 4% 0 0;
+    /*background:url(../img/item_back.png);*/
+}
+
+.outlet_sp_wrap .item_lineup:after{
+    display: block;
+    content: "";
+}
+
+.outlet_sp_wrap .item_lineup li.item_id{
+    width: 96%;
+    margin: 0 2% 4%;
+    padding: 0;
+    border: 1px #ccc solid;
+    list-style: none;
+    background: #fff;
+    /*box-shadow:5px 5px 10px 0px #ccc;*/
+    position: relative;
+    text-align: center;
+}
+
+.outlet_sp_wrap .item_lineup li.item_id .btn,.spbtnout a{
+    display: block;
+    padding: 15px 0;
+    margin: 3% auto;
+    text-align: center;
+    width: 90%;
+    height: 18px;
+    border: 3px solid #cc0000;
+    border-radius: 5px;
+    background: #cc0000;
+    color: #fff;
+    font-size: 18px;
+    line-height: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.outlet_sp_wrap .item_lineup li.item_id .cou_btn{
+    display: block;
+    padding: 15px 0;
+    margin: 3% auto;
+    text-align: center;
+    width: 90%;
+    height: 18px;
+    border: 3px solid #00358f;
+    border-radius: 5px;
+    background: #00358f;
+    color: #fff;
+    font-size: 18px;
+    line-height: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/*.outlet_sp_wrap .item_lineup li.item_id .trne{
+    display: block;
+    padding: 15px 0;
+    margin: 0 auto 3%;
+    text-align: center;
+    width: 90%;
+    height: 18px;
+    border: 3px solid #cc0000;
+    border-radius: 5px;
+    background: #cc0000;
+    color: #fff;
+    font-size: 18px;
+    line-height: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}*/
+
+.outlet_sp_wrap .item_lineup li.item_id .info{
+    display: block;
+    width: 90%;
+    color: #000;
+    text-align: center;
+    margin: 10px auto 15px;
+    font-weight: bold;
+    padding: 10px 0;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+	position: relative;
+}
+
+.outlet_sp_wrap .item_lineup li.item_id .info .sp_btn:after{
+ content: url(https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/img/sp_arrow.png);
+    margin-left: 50px;
+    position: absolute;
+    top: 12px;
+	right:20px;
+}
+
+
+
+.outlet_sp_wrap .item_lineup li.item_id .info a{
+    display: block;
+    color: #000;
+    text-decoration: none;
+}
+
+.outlet_sp_wrap .about_outlet{
+    margin: 6.5% 0;
+    padding: 0;
+    text-align: center;
+}
+
+.outlet_sp_wrap .about_outlet img{
+    width: 85%;
+}
+
+.outlet_sp_wrap .about_outlet p{
+    padding: 2% 3% 4%;
+    font-weight: bold;
+    line-height: 21px;
+    font-size: 14px;
+}
+
+.outlet_sp_wrap form select.select_btn{
+    display: block;
+    width: 90%;
+    height: 40px;
+    text-align: center;
+    margin: 0 auto 4%;
+    padding: 0 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: #efefef;
+    font-weight: bold;
+    color: #000;
+    font-size: 14px;
+}
+
+.to_top{text-align: center; padding-top: 4%;margin: 8% auto;border-top: 2px solid #000;}
+.to_top a{padding: 0 0 8px; color: #000;border-bottom: 2px dotted #ccc;font-weight: bold;vertical-align: top;}
+.to_top a:before{content: url(../img/totop.jpg);font-family: "slick"; padding-right: 10px;padding-top: 20px;}
+
+.about_trs{
+    width: 90%;
+    margin: 0 auto;
+    border: 2px solid #000;
+}
+
+.about_trs p{
+    padding: 15px 15px 0 30px;
+    font-size: 12px;
+    margin: 0 0 1% 0;
+}
+
+.about_trs p span{
+    display: block;
+    font-weight: bold;
+    margin: 0 0 1% -12px;
+    padding: 0;
+}
+
+.about_trs p.cutomor_number{
+    padding-bottom: 15px;
+}
+
+.about_trs p.cutomor_number span{
+    font-weight: normal;
+    margin: 0 0 0 -20px;
+}
+
+.about_trs .trs_ttl{
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: #000;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#timelimit{
+	font-family: "°¶ƒ‰#°¶£Á·„Ô‰2°¶°¶Pro W3", Hiragino Kaku Gothic Pro," °¶°„£‚·„°¶£Â , Meiryo, Osaka," Ôº≠Ôº≥ Ôº∞„£Í·‚∑„•„°¶∞ƒ, MS PGothic," sans-serif";
+	background:#cc0000;
+	display:none;
+	height:auto;
+	padding:15px;
+	position:fixed;
+	right:0;
+	top:0;
+	width:100%;
+	z-index:10000;
+}
+
+#timelimit .timelimit_inner{
+	margin:0 auto;
+	position:relative;
+	width:90%;
+}
+
+.timer{
+	text-align:center;
+	width:90%;
+	height:auto;
+	margin:0 auto;
+	padding:0;
+	position:relative;
+    letter-spacing: 1px;
+	color:yellow;
+}
+
+.timer span.catext{
+    display:block;
+    color: #fff;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: bold;
+}
+
+#sampleA{
+    display:block;
+    text-align: center;
+	font-size:28px;
+    line-height: 28px;
+    font-weight: bold;
+}
+#sampleA span{font-size: 20px;}
+#sampleA span.end_camp{ font-size: 20px;}
+
+
+
+.cart_btn{
+		width:90%;
+		font-size: 20px;
+        background-color: #ed292a;
+		color:#fff;
+		font-weight: bold;
+		border-radius: 6px;
+		line-height:2.7;
+	margin:0 auto;
+	}
+	
+
+*{outline: none;}
+
+
+.single-item img{
+	width: 85%;
+	margin: 0 auto;
+}
