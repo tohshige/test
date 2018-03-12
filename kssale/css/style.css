@@ -371,7 +371,7 @@ width: 448px;
 .chou_dousen{
   display: flex;
   justify-content: space-between;
-  width: 980px;
+  width: 800px;
  margin: 20px auto 30px;
 }
 
@@ -383,7 +383,7 @@ width: 448px;
 .chou_dousen a:hover{
  opacity: 0.7;
 }
-#exe,#kitchen,#singu {
+#exe,#kitchen,#singu,#life,#biyou2 {
 height: 50px;
 }
 
