@@ -8,11 +8,10 @@
 <script>
 $(function(){
     $('#thumb_area img').mouseover(function(){
-        $('#main_img img').attr('src', $(this).attr('src')).css({width:"350px",paddingLeft:"0px",height:"350px"});
+        $('#main_img_two img').attr('src', $(this).attr('src')).css({width:'284px',paddingLeft:'95px'});
     });
     $('#thumb_area img').mouseout(function(){
-        $('#main_img img').attr('src', 'img/thum/wdc2_main2.jpg').css({width:"100%",paddingLeft:"0"});
-		
+        $('#main_img_two img').attr('src', 'img/thum/wdc2_main_000.jpg').css({width:'100%',paddingLeft:'0'});
     });
 });
 </script>
@@ -23,18 +22,21 @@ $(function(){
 
 <body>
 
-<div id="main_img" class="main_img_one">
-<img src="img/thum/wdc2_main2.jpg">
+
+
+
+<div id="main_img_two" class="main_img_two">
+<img src="img/thum/wdc2_main_000.jpg">
 </div>
 
-<ul id="thumb_area" class="thumb_area_one">
+<ul id="thumb_area" class="thumb_area" style="margin-top: -85px;">
 <li><img src="img/thum/wdc2_thum_01.jpg"></li>
 <li><img src="img/thum/wdc2_thum_02.jpg"></li>
 <li><img src="img/thum/wdc2_thum_03.jpg"></li>
-<li><img src="img/thum/wdc2_thum_04.jpg"></li>
 <li><img src="img/thum/wdc2_thum_05.jpg"></li>
-</ul>
 
+
+</ul>
 
 
 </body>

@@ -128,7 +128,7 @@ trsp_thum_tit1trsp_thum_tit1trsp_thum_tit1trsp_thum_tit1trsp_thum_tit1trsp_thum_
 
 	.select_btn_pc{
     display: block;
-    width: 95%;
+    width: 75%;
     height: 22px;
     margin: 0 auto 3%;
     padding: 0 10px;
@@ -294,13 +294,13 @@ v
 }
 
 .out_back {
-    width: 1350px;
+    width: 2500px;
     height: 100%;
     position: fixed;
     top: 0;
     left: 50%;
-    margin-left: -675px;
-    background-image: url(../img/out_back.png);
+    margin-left: -1250px;
+    background-image: url(../img/sj_back1.png);
     background-repeat: no-repeat;
     z-index: -1;
 }
@@ -406,3 +406,4 @@ v
 }
 #sampleA span{font-size: 34px;}
 #sampleA span.end_camp{ font-size: 34px;}
+

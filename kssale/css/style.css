@@ -322,3 +322,73 @@
 	margin:0 auto;
 	justify-content: space-between;
 }
+
+
+.main_bnr{
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-left: -1250px;
+    height: 351px;
+}
+
+.cp_bnr{
+margin-top: 350px;
+}
+
+.dousen{
+ display: flex;
+ justify-content: space-between;
+ width: 980px;
+ margin: 0 auto 30px;
+}
+
+.dousen img:hover{
+  opacity: 0.7;
+}
+
+.syousai{
+ width: 448px;
+ margin: 0px auto 10px;
+
+}
+
+
+
+.size_choice{
+width: 448px;
+ margin-left: 85px;
+}
+
+.tyuu_1col{
+  font-size: 14px;
+  margin: 20px 0px 0px 30px;
+  display: block;
+}
+
+
+.chou_dousen{
+  display: flex;
+  justify-content: space-between;
+  width: 980px;
+ margin: 20px auto 30px;
+}
+
+.zaiko_ttl{
+ position: relative;
+ left: -10px;
+}
+
+.chou_dousen a:hover{
+ opacity: 0.7;
+}
+#exe,#kitchen,#singu {
+height: 50px;
+}
+
+.tyuu_2col{
+ width: 460px;
+ font-size: 14px;
+ margin: 0 auto; 
+}
