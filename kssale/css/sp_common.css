@@ -330,3 +330,53 @@ body {
 	width: 85%;
 	margin: 0 auto;
 }
+
+#info_btn,#zaiko_info_btn,#zaiko_info_btn_a{
+text-align: center;
+font-size: 16px;
+font-weight: bold;
+color: #000;
+border-top: 1px solid #aaa;
+padding-top: 13px;
+margin: 0 auto -15px;
+width: 90%;
+}
+
+#info,#zaiko_info,#zaiko_info_a{
+text-align: center;
+font-size: 13px;
+line-height: 18px;
+display: none;
+width:90%;
+margin: 10px auto 0px;
+}
+
+#info_close,#zaiko_info_close,#zaiko_info_close_a{
+  text-align: center;
+cursor: pointer;
+font-size: 16px;
+font-weight: bold;
+color: #000;
+}
+
+.fas{
+color:#e3001e;
+    transition-property: transform;
+    transition-duration: 
+.2s;
+}
+
+.move{
+ transform: rotate(180deg);
+}
+
+.zaiko_title{
+ text-align: center;
+ font-weight: bold;
+ font-size: 16px;
+ width: 90%;
+ margin: 0 auto;
+ padding: 13px;
+ background-color: #000;
+ color: #fff;
+}

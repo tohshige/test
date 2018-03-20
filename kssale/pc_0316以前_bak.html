@@ -66,9 +66,6 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/outlet/sp.html'
 
 
 <script type="text/javascript" src="js/jquery-1.11.1.min.js" charset="UTF-8"></script>
-
-<!--<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">-->
-<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 </head>
 
 <!--楽天解析タグ-->
@@ -92,73 +89,8 @@ var bi = document.createElement('scri'+'pt');bi.type = 'text/javascript'; bi.asy
 <div class="main_bnr"><img src="img/kv_2.jpg"></div><br>
 
 
-
-<img src="img/coupon1.jpg" class="cp_bnr"><br><br>
-
-<div id="info_btn">キャンペーンについて<i class="fas fa-angle-down " id="rotation"></i>
-</div>
+<img src="img/coupon1.jpg" class="cp_bnr"><br>
 <br>
-
-
-<div id="info">
-
-次回お買い物時、5,000円以上お買い上げ時にご利用可能です。<br>
-クーポン有効期間：3か月
-クーポンの詳細はMy Rakutenからご確認いただけます。
-<br>
-<br>
-<div id="info_close">閉じる<i class="fas fa-angle-up"></i></div>
-</div>
-
-
-
-
-
-
-
-
-
-
-<br>
-<br>
-
-<style>
-
-
-
-
-#info_btn,#zaiko_info_btn,#zaiko_info_btn_a{
-text-align: center;
-cursor: pointer;
-font-size: 16px;
-font-weight: bold;
-color: #1c7ccc;
-width: 1000px;
-}
-
-#info,#zaiko_info,#zaiko_info_a{
-text-align: center;
-font-size: 16px;
-line-height: 23px;
-display: none;
-}
-
-#info_close,#zaiko_info_close,#zaiko_info_close_a{
-  text-align: center;
-cursor: pointer;
-font-size: 16px;
-font-weight: bold;
-color: #1c7ccc;
-width: 1000px;
-}
-
-.fas{
-     transition-property: transform;
-    transition-duration: .2s;
-}
-
-
-</style>
 
 <div class="dousen">
 <a href="#chou"><img src="img/chou_dou.jpg"></a>
@@ -174,7 +106,7 @@ width: 1000px;
 <li id="trcs" style="position: relative;margin:10px 0 60px -6px;">
 <div class="col_img">
 <img src="img/trcs_title.jpg" style="vertical-align: bottom;">
-<iframe scrolling="no" src="trcs1.html"></iframe></div>
+<iframe scrolling="no" src="trcs.html"></iframe></div>
 <div class="col_cart">
 <img src="img/trcs_price.jpg">
 <p class="tyuu_trcs">　　　　　　　　　　　　　　　　　　　　　　　　　　　※シングルサイズの価格</p>
@@ -207,7 +139,7 @@ width: 1000px;
 <!-------------------------------- trcs --------------------------------->
 	
 <!-------------------------------- fitp --------------------------------->
-<li id="fitp" style="position: relative;margin:90px 0px 150px 0px; display: none;">
+<li id="fitp" style="position: relative;margin:90px 0px 150px 0px;">
 <div class="col_img">
 <img src="img/fitp_title.jpg">
 <iframe scrolling="no" src="fitp.html"></iframe></div>
@@ -225,37 +157,12 @@ width: 1000px;
 </form>
 
 <p class="tyuu_1col">※返品不可<br>※通常販売価格は、ショップジャパン公式通販サイトでの販売実績に基づきます。</p>
-<div class="info"><a href="#" class="modal-wdc2 btn">商品内容はこちら</a></div>
+<!--<div class="info"><a href="#" class="modal-wdc2 btn">商品内容はこちら</a></div>-->
 
 </div>
 </li>
 <!-------------------------------- fitp --------------------------------->	    
 
-
-<!-------------------------------- stp --------------------------------->
-<li id="stp" style="position: relative;margin:100px 0px 150px 0px;">
-<div class="col_img">
-<img src="img/stp_title.jpg">
-<iframe scrolling="no" src="stp.html"></iframe></div>
-<div class="col_cart">
-<img src="img/stp_price_wn.jpg"><br>
-<br>
-<div class="syousai"><a href="https://item.rakuten.co.jp/shopjapan/out_stp_1707/" target="_blank"><img src="img/1col_syousai.jpg"></a> </div>
-<form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center;">
-<input type="text" name="units" size="4" value="1" style="display:none">
-<input type="image" src="img/1col_btn_kounyu.jpg" name="button1" class="cart_btn">
-<input type="hidden" name="__event" value="ES01_003_001">
-<input type="hidden" name="shop_bid" value="199614">
-<input type="hidden" name="item_id" value="10003743">
-<input type="hidden" name="inventory_flag" value="1">
-</form>
-
-<p class="tyuu_1col">　　　※返品不可<br></p>
-<!--<div class="info"><a href="#" class="modal-wdc2 btn">商品内容はこちら</a></div>-->
-
-</div>
-</li>
-<!-------------------------------- stp --------------------------------->	 
 <br>
 
 <img src="img/zaiko_title.jpg" class="zaiko_ttl" id="zaiko"><br>
@@ -266,63 +173,10 @@ width: 1000px;
 <div class="chou_dousen">
 <a href="#exe"><img src="img/exe_dou.jpg"></a>
 <a href="#kitchen"><img src="img/kitchen_dou.jpg"></a>
-<a href="#biyou2"><img src="img/biyou2_dou.jpg"></a>
-<a href="#life"><img src="img/life_dou2.jpg"></a>
+<a href="#biyou"><img src="img/biyou_dou.jpg"></a>
+<a href="#souji"><img src="img/souji_dou.jpg"></a>
 <!--<a href="#singu"><img src="img/singu_dou.jpg"></a>-->
 </div>
-<br>
-
-
-<div class="zaiko_title" style="margin-bottom: 20px;">必ずお読みください</div><br>
-<br>
-
-
-
-
-
-
-<div id="zaiko_info_btn_a" style="margin-bottom: 30px;">在庫処分市について<i class="fas fa-angle-down" id="zaiko_rotation_a"></i>
-</div>
-<br>
-
-
-
-<div id="zaiko_info_a" style="margin-left: -20px;width: 1000px;">
-
-<div class="zaiko_sub_title">本セールでは、以下ワケあり商品を特別価格でご用意しております。<br>
-ご理解いただけるお客様だけにご奉仕させていただきます！</div><br>
-
-
-------------------------------------------------------------------------------------------------------<br>
-<br>
-
-
-<div class="zaiko_icon_title">＜各アイコンについて＞</div><br>
-
-■アウトレット<br>
-外箱に傷や凹みがある場合があるもの<br>
-<br>
-
-■新古品（未使用品） <br>
-お客様からの返品商品（未開封）<br>
-<br>
-
-■中古（ほぼ新品）<br> 
-お客様からの返品商品のうち、弊社での外観検品により未使用と思われる商品<br>
-
-
-
-<br>
-<div id="zaiko_info_close_a" style="margin-bottom: 50px;">閉じる<i class="fas fa-angle-up"></i></div>
-</div><br>
-<br>
-
-
-
-
-
-
-
 
 
 <img src="img/exe_title.jpg" id="exe"><br>
@@ -333,7 +187,7 @@ width: 1000px;
 <!-------------------------------- wdc2 --------------------------------->
 <li id="wdc2" style="width:480px;margin:0px 0px 180px -3px;">
 <img src="img/wdc2_title.jpg">
-<iframe scrolling="no" src="wdc2 _a.html" style="height:370px;"></iframe>
+<iframe scrolling="no" src="wdc2.html" style="height:370px;"></iframe>
 <img src="img/wdc2_price.jpg" >
 <div class="syousai"><a href="https://item.rakuten.co.jp/shopjapan/wdc2/" target="_blank"><img src="img/1col_syousai.jpg"></a> </div>
 <form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
@@ -356,7 +210,7 @@ width: 1000px;
 <!-------------------------------- lgmp --------------------------------->
 <li id="lgmp" style="width:480px;margin:0 4px 450px 0">
 <img src="img/lgmp.jpg">
-<iframe scrolling="no" src="lgmp_a.html" style="height:370px;"></iframe>
+<iframe scrolling="no" src="lgmp.html" style="height:370px;"></iframe>
 <img src="img/lgmp_price1.jpg">
 <div class="syousai"><a href="https://item.rakuten.co.jp/shopjapan/lgmp/" target="_blank"><img src="img/1col_syousai.jpg"></a> </div>
 <form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
@@ -374,86 +228,16 @@ width: 1000px;
 </li>
 <!-------------------------------- lgmp --------------------------------->
 
-<!-------------------------------- nice --------------------------------->
-<!--<li id="nice" style="width:480px;margin:0 4px 450px 0">
-<img src="img/nice_title.jpg">
-<iframe scrolling="no" src="nice.html" style="height:370px;"></iframe>
-<img src="img/nice_price_01.jpg">
-<div class="syousai"><a href="https://item.rakuten.co.jp/shopjapan/nice_ua_201803/" target="_blank"><img src="img/1col_syousai.jpg"></a> </div>
-<form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
-<input type="text" name="units" size="4" value="1" style="display:none">
-<input type="image" src="img/2col_btn_kounyu.jpg" name="button1" class="cart_btn_2col">
-<input type="hidden" name="__event" value="ES01_003_001">
-<input type="hidden" name="shop_bid" value="199614">
-<input type="hidden" name="item_id" value="10004227">
-<input type="hidden" name="inventory_flag" value="1">
-</form>-->
 
-
-
-
-
-<!--<div class="info"><a href="#" class="modal-ist btn_2">商品内容はこちら</a></div>-->
-
-
-
-
-
-<!--<br>
-
-<p class="tyuu_2col">※返品不可<br>
-</li>-->
-<!-------------------------------- nice --------------------------------->
 <img src="img/kitchen_title.jpg" id="kitchen"><br>
 <br><br>
 <br>
-<!-------------------------------- crf2 --------------------------------->
-<li id="crf2" style="width:480px;margin:0px 0px 360px -3px;">
-<img src="img/crf2_title.jpg">
-<iframe scrolling="no" src="crf2.html" style="height:370px;"></iframe>
-<img src="img/crf2_price.jpg" >
-<div class="syousai"><a href="https://item.rakuten.co.jp/shopjapan/crf_ub_201803/" target="_blank"><img src="img/1col_syousai.jpg"></a> </div>
-<form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
-<input type="text" name="units" size="4" value="1" style="display:none">
-<input type="image" src="img/2col_btn_kounyu.jpg" name="button1" class="cart_btn_2col">
-<input type="hidden" name="__event" value="ES01_003_001">
-<input type="hidden" name="shop_bid" value="199614">
-<input type="hidden" name="item_id" value="10004198">
-<input type="hidden" name="inventory_flag" value="1">
-</form>
-<!--<div class="info"><a href="#" class="modal-lgms btn_2">商品内容はこちら</a></div>--><br>
 
-
-<p class="tyuu_2col">※返品不可</p>
-</li>
-
-
-<!-------------------------------- crf2 --------------------------------->
-
-<!-------------------------------- crff2 --------------------------------->
-<li id="crff2" style="width:480px;margin:0 4px 360px 0">
-<img src="img/crff2_title.jpg">
-<iframe scrolling="no" src="crff2.html" style="height:370px;"></iframe>
-<img src="img/crf2_price.jpg">
-<div class="syousai"><a href="https://item.rakuten.co.jp/shopjapan/crff_ua_201803/" target="_blank"><img src="img/1col_syousai.jpg"></a> </div>
-<form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
-<input type="text" name="units" size="4" value="1" style="display:none">
-<input type="image" src="img/2col_btn_kounyu.jpg" name="button1" class="cart_btn_2col">
-<input type="hidden" name="__event" value="ES01_003_001">
-<input type="hidden" name="shop_bid" value="199614">
-<input type="hidden" name="item_id" value="10004199">
-<input type="hidden" name="inventory_flag" value="1">
-</form>
-<!--<div class="info"><a href="#" class="modal-ist btn_2">商品内容はこちら</a></div>-->
-<br>
-<p class="tyuu_2col">※返品不可</p>
-</li>
-<!-------------------------------- crff2 --------------------------------->
     	
 <!-------------------------------- crf --------------------------------->
-<!--<li id="crf" style="width:480px;margin:0px 0px 180px -3px;">
+<li id="crf" style="width:480px;margin:0px 0px 180px -3px;">
 <img src="img/crf_title.jpg">
-<iframe scrolling="no" src="crf_a.html" style="height:370px;"></iframe>
+<iframe scrolling="no" src="crf.html" style="height:370px;"></iframe>
 <img src="img/crf_price.jpg" >
 <div class="syousai"><a href="https://item.rakuten.co.jp/shopjapan/crf-183/" target="_blank"><img src="img/1col_syousai.jpg"></a> </div>
 <form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
@@ -464,26 +248,19 @@ width: 1000px;
 <input type="hidden" name="item_id" value="10004258">
 <input type="hidden" name="inventory_flag" value="1">
 </form>
--->
+<!--<div class="info"><a href="#" class="modal-lgms btn_2">商品内容はこちら</a></div>--><br>
 
 
-
-
-
-
-<!--<div class="info"><a href="#" class="modal-lgms btn_2">商品内容はこちら</a></div><br>-->
-
-
-<!--<p class="tyuu_2col">※返品不可</p>
+<p class="tyuu_2col">※返品不可</p>
 </li>
--->
+
 
 <!-------------------------------- crf --------------------------------->
 
 <!-------------------------------- crff --------------------------------->
 <li id="crff" style="width:480px;margin:0 4px 270px 0">
 <img src="img/crff_title.jpg">
-<iframe scrolling="no" src="crff_a.html" style="height:415px;"></iframe>
+<iframe scrolling="no" src="crff.html" style="height:370px;"></iframe>
 <img src="img/crff_price.jpg">
 <div class="syousai"><a href="https://item.rakuten.co.jp/shopjapan/crff-ner/" target="_blank"><img src="img/1col_syousai.jpg"></a> </div>
 <form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
@@ -502,9 +279,9 @@ width: 1000px;
 
 
 <!-------------------------------- cutl --------------------------------->
-<!--<li id="cutl" style="width:480px;margin:100px 0px 180px -3px;">
+<li id="cutl" style="width:480px;margin:100px 0px 180px -3px;">
 <img src="img/cutl_title.jpg">
-<iframe scrolling="no" src="cutl _a.html" style="height:290px;"></iframe>
+<iframe scrolling="no" src="cutl.html" style="height:290px;"></iframe>
 <img src="img/cutb_price.jpg" >
 <div class="syousai"><a href="https://item.rakuten.co.jp/shopjapan/cutleryset/" target="_blank"><img src="img/1col_syousai.jpg"></a> </div>
 <form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
@@ -514,31 +291,20 @@ width: 1000px;
 <input type="hidden" name="shop_bid" value="199614">
 <input type="hidden" name="item_id" value="10004260">
 <input type="hidden" name="inventory_flag" value="1">
-</form>-->
-
-
-
-
-
-
-<!--<div class="info"><a href="#" class="modal-lgms btn_2">商品内容はこちら</a></div>-->
-
-
-
-
-<!--<br>
+</form>
+<!--<div class="info"><a href="#" class="modal-lgms btn_2">商品内容はこちら</a></div>--><br>
 
 
 <p class="tyuu_2col">※返品不可</p>
-</li>-->
+</li>
 
 
 <!-------------------------------- cutl --------------------------------->
 
 <!-------------------------------- cutb --------------------------------->
-<!--<li id="cutb" style="width:480px;margin:100px 4px 270px 0px">
+<li id="cutb" style="width:480px;margin:100px 4px 270px 0px">
 <img src="img/cutb_title.jpg">
-<iframe scrolling="no" src="cutb_a.html" style="height:290px;"></iframe>
+<iframe scrolling="no" src="cutb.html" style="height:290px;"></iframe>
 <img src="img/cutb_price.jpg">
 <div class="syousai"><a href="https://item.rakuten.co.jp/shopjapan/mbl-nctb/" target="_blank"><img src="img/1col_syousai.jpg"></a> </div>
 <form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
@@ -548,84 +314,18 @@ width: 1000px;
 <input type="hidden" name="shop_bid" value="199614">
 <input type="hidden" name="item_id" value="10000702">
 <input type="hidden" name="inventory_flag" value="1">
-</form>-->
-
-
-
-
-
+</form>
 <!--<div class="info"><a href="#" class="modal-ist btn_2">商品内容はこちら</a></div>-->
-
-
-
-<!--<br>
+<br>
 <p class="tyuu_2col">※返品不可</p>
-</li>-->
+</li>
 <!-------------------------------- cutb --------------------------------->
 
-<!-------------------------------- mgt --------------------------------->
-<li id="mgt" style="width:480px;margin:0px 0px 410px -3px;">
-<img src="img/mgt_title.jpg">
-<iframe scrolling="no" src="mgt.html" style="height:370px;"></iframe>
-<img src="img/mgt_price_01.jpg" >
-<div class="syousai"><a href="https://item.rakuten.co.jp/shopjapan/mgt_ua_201803/" target="_blank"><img src="img/1col_syousai.jpg"></a> </div>
-<form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
-<input type="text" name="units" size="4" value="1" style="display:none">
-<input type="image" src="img/2col_btn_kounyu.jpg" name="button1" class="cart_btn_2col">
-<input type="hidden" name="__event" value="ES01_003_001">
-<input type="hidden" name="shop_bid" value="199614">
-<input type="hidden" name="item_id" value="10004201">
-<input type="hidden" name="inventory_flag" value="1">
-</form>
-<!--<div class="info"><a href="#" class="modal-lgms btn_2">商品内容はこちら</a></div>--><br>
-
-
-<p class="tyuu_2col">※返品不可</p>
-</li>
-
-
-<!-------------------------------- mgt --------------------------------->
-
-<!-------------------------------- sfs --------------------------------->
-<li id="sfs" style="width:480px;margin:0 4px 410px 0">
-<img src="img/sfs_title.jpg">
-<iframe scrolling="no" src="sfs.html" style="height:370px;"></iframe>
-<img src="img/sfs_price_01.jpg">
-<div class="syousai"><a href="https://item.rakuten.co.jp/shopjapan/sfs_ua_201803/" target="_blank"><img src="img/1col_syousai.jpg"></a> </div>
-<form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
-<input type="text" name="units" size="4" value="1" style="display:none">
-<input type="image" src="img/2col_btn_kounyu.jpg" name="button1" class="cart_btn_2col">
-<input type="hidden" name="__event" value="ES01_003_001">
-<input type="hidden" name="shop_bid" value="199614">
-<input type="hidden" name="item_id" value="10004202">
-<input type="hidden" name="inventory_flag" value="1">
-</form>
-<!--<div class="info"><a href="#" class="modal-ist btn_2">商品内容はこちら</a></div>-->
-<br>
-<p class="tyuu_2col">※返品不可</p>
-</li>
-<!-------------------------------- sfs --------------------------------->
-
-
-
-
-
-
-
-
-
-
-
-<img src="img/biyou2_title.jpg" id="biyou2"><br>
-<br><br>
-<br>
-
-
-
 <!-------------------------------- ist --------------------------------->
-<li id="ist" style="width:480px;margin:10px 0px 360px -3px;">
+<li id="ist" style="width:480px;margin:10px 0px 180px -3px;">
+<img src="img/biyou_title.jpg" id="biyou"><br><br>
 <img src="img/ist_title.jpg">
-<iframe scrolling="no" src="ist_a.html" style="height:370px;"></iframe>
+<iframe scrolling="no" src="ist.html" style="height:370px;"></iframe>
 <img src="img/ist_price.jpg" >
 <div class="syousai"><a href="https://item.rakuten.co.jp/shopjapan/ist_1219/" target="_blank"><img src="img/1col_syousai.jpg"></a> </div>
 <form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
@@ -645,38 +345,11 @@ width: 1000px;
 
 <!-------------------------------- ist --------------------------------->
 
-<!-------------------------------- sim --------------------------------->
-<li id="sim" style="width:480px;margin:10px 0px 430px -3px;">
-<img src="img/sim_title.jpg">
-<iframe scrolling="no" src="sim.html" style="height:370px;"></iframe>
-<img src="img/sim_price_01.jpg" >
-<div class="syousai"><a href="https://item.rakuten.co.jp/shopjapan/sim_ua_201803/" target="_blank"><img src="img/1col_syousai.jpg"></a> </div>
-<form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
-<input type="text" name="units" size="4" value="1" style="display:none">
-<input type="image" src="img/2col_btn_kounyu.jpg" name="button1" class="cart_btn_2col">
-<input type="hidden" name="__event" value="ES01_003_001">
-<input type="hidden" name="shop_bid" value="199614">
-<input type="hidden" name="item_id" value="10004203">
-<input type="hidden" name="inventory_flag" value="1">
-</form>
-<!--<div class="info"><a href="#" class="modal-lgms btn_2">商品内容はこちら</a></div>--><br>
-
-
-<p class="tyuu_2col">※返品不可</p>
-</li>
-
-
-<!-------------------------------- sim --------------------------------->
-
-
-<img src="img/life_title.jpg" id="life"><br>
-<br><br>
-<br>
-
 <!-------------------------------- swcf --------------------------------->
-<li id="swcf" style="width:480px;margin:10px 4px 450px 0px">
+<li id="swcf" style="width:480px;margin:10px 4px 500px 18px">
+<img src="img/souji_title.jpg" id="souji"><br><br>
 <img src="img/swcf.jpg">
-<iframe scrolling="no" src="swcf _a.html" style="height:370px;"></iframe>
+<iframe scrolling="no" src="swcf.html" style="height:370px;"></iframe>
 <img src="img/swcf_price1.jpg">
 <div class="syousai"><a href="https://item.rakuten.co.jp/shopjapan/swcf_tnp-183/" target="_blank"><img src="img/1col_syousai.jpg"></a> </div>
 <form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
@@ -693,32 +366,13 @@ width: 1000px;
 </li>
 <!-------------------------------- swcf --------------------------------->
 
-<!-------------------------------- nue --------------------------------->
-<li id="nue" style="width:480px;margin:10px 0px 450px 16px">
-<img src="img/nue_title.jpg">
-<iframe scrolling="no" src="nue.html" style="height:370px;"></iframe>
-<img src="img/nue_price.jpg">
-<div class="syousai"><a href="https://item.rakuten.co.jp/shopjapan/nue_fn_201803/" target="_blank"><img src="img/1col_syousai.jpg"></a> </div>
-<form target="_blank" method="post" action="https://t.order.step.rakuten.co.jp/rms/mall/basket/vc" style="text-align:center">
-<input type="text" name="units" size="4" value="1" style="display:none">
-<input type="image" src="img/2col_btn_kounyu.jpg" name="button1" class="cart_btn_2col">
-<input type="hidden" name="__event" value="ES01_003_001">
-<input type="hidden" name="shop_bid" value="199614">
-<input type="hidden" name="item_id" value="10004212">
-<input type="hidden" name="inventory_flag" value="1">
-</form>
-<!--<div class="info"><a href="#" class="modal-ist btn_2">商品内容はこちら</a></div>-->
-<br>
-<p class="tyuu_2col">※返品不可</p>
-</li>
-<!-------------------------------- nue --------------------------------->
 
 
 
 <!--<img src="img/singu_title.jpg" id="singu"><br>
 <br><br>
-<br>
--->
+<br>-->
+
 <!-------------------------------- TRSS --------------------------------->
 <!--<li id="trss" style="position: relative;margin:0px 0 60px -6px;">
 <div class="col_img">
@@ -743,11 +397,7 @@ width: 1000px;
 <input type="hidden" name="shop_bid" value="199614">
 <input type="hidden" name="item_id" value="10004257">
 <input type="hidden" name="inventory_flag" value="1">
-</form>
--->
-
-
-
+</form>-->
 
 
 
@@ -755,6 +405,10 @@ width: 1000px;
 
 
 <!--<div class="info"><a href="#" class="modal-trss sel_btn">商品内容はこちら</a></div>-->
+
+
+
+
 
 <!--</div>
 </li>-->
@@ -766,113 +420,14 @@ width: 1000px;
 </ul>
 
 <!-------------------------------- アウトレットセールについて --------------------------------->
-<hr><br><br><br>
+<br><br><hr><br><br><br>
 
 <!--<div class="out" style="background-image:url(https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/out_btn_up.jpg);height:70px;margin-bottom:30px;cursor: pointer;">
 <img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/outlet/out_btn_down.jpg" id="down_btn">
 </div>
 -->
 
-<div class="zaiko_title">必ずお読みください</div><br>
-
-
-
-<div id="zaiko_info_btn">在庫処分市について<i class="fas fa-angle-down" id="zaiko_rotation"></i>
-</div>
-<br>
-
-
-<div id="zaiko_info">
-
-<div class="zaiko_sub_title">本セールでは、以下ワケあり商品を特別価格でご用意しております。<br>
-ご理解いただけるお客様だけにご奉仕させていただきます！</div><br>
-
-
-------------------------------------------------------------------------------------------------------<br>
-<br>
-
-
-<div class="zaiko_icon_title">＜各アイコンについて＞</div><br>
-
-■アウトレット<br>
-外箱に傷や凹みがある場合があるもの<br>
-<br>
-
-■新古品（未使用品） <br>
-お客様からの返品商品（未開封）<br>
-<br>
-
-■中古（ほぼ新品）<br> 
-お客様からの返品商品のうち、弊社での外観検品により未使用と思われる商品<br>
-
-
-
-<br>
-<div id="zaiko_info_close">閉じる<i class="fas fa-angle-up"></i></div>
-</div><br>
-<br>
-
-
-
-
-
-<div class="souryou">
-<div class="souryou_title">送料無料について</div>
-
-※返品時の送料はお客様負担になります。<br>
-※送料無料と送料有料の商品を同時にご購入されると、すべて送料無料となります。<br>
-ただし送料無料の商品を返品された場合は送料別商品の送料分を差し引いた金額を返金いたします。<br>
-※送料の離島割増分も当店が負担いたします。
-
-
-
-</div>
-
-<style>
-.zaiko_title{
- text-align: center;
- font-size: 19px;
- font-weight: bold;
- /*border: 2px solid #000;*/
- line-height: 45px;
- width: 800px;
- margin: 0 auto;
- background-color: #777;
- color: #fff;
- padding-top: 1px;
-}
-
-.zaiko_sub_title{
- font-weight:700;
- font-size: 23px;
- line-height: 33px;
-}
-
-.zaiko_icon_title{
- font-weight:700;
- font-size: 16px;
- line-height: 25px;
-}
-
-.souryou{
- text-align: center;
-}
-
-.souryou_title{
-font-size: 18px;
-font-weight: 700;
-text-decoration: underline;
-margin-bottom: 20px;
-}
-
-.move{
- transform: rotate(180deg);
-}
-
-</style>
-
-
-<div class="out_info" style="display: none;">
+<div class="out_info">
 <div class="about_outlet" id="out">
 <img src="img/out_info.jpg" width="1000px">
 </div>
@@ -968,68 +523,6 @@ function cdTimer1() {
 }
 // -->  
 </script>  
-
-
-
-<!--キャンペーについて-->
-<script>
-	
-	
-$("#info_btn").click(function () {
-    $("#info").slideToggle();
-	/*$("#down_btn").toggleClass("none");	*/
-});
-
-$("#info_close").click(function () {
-    $("#info").slideToggle();
-	/*$("#down_btn").toggleClass("none");	*/
-});
-
-$("#info_close,#info_btn").click(function () {
-    $("#rotation").toggleClass("move");
-});
-
-
-
-
-
-
-$("#zaiko_info_btn").click(function () {
-    $("#zaiko_info").slideToggle();
-	/*$("#down_btn").toggleClass("none");	*/
-});
-
-$("#zaiko_info_close").click(function () {
-    $("#zaiko_info").slideToggle();
-	/*$("#down_btn").toggleClass("none");	*/
-});
-
-$("#zaiko_info_close,#zaiko_info_btn").click(function () {
-    $("#zaiko_rotation").toggleClass("move");
-});
-
-
-
-
-
-$("#zaiko_info_btn_a").click(function () {
-    $("#zaiko_info_a").slideToggle();
-	/*$("#down_btn").toggleClass("none");	*/
-});
-
-$("#zaiko_info_close_a").click(function () {
-    $("#zaiko_info_a").slideToggle();
-	/*$("#down_btn").toggleClass("none");	*/
-});
-
-$("#zaiko_info_close_a,#zaiko_info_btn_a").click(function () {
-    $("#zaiko_rotation_a").toggleClass("move");
-});
-
-</script><!--キャンペーについて-->
-
-
-
 
 
 
