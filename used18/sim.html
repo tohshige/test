@@ -8,10 +8,10 @@
 <script>
 $(function(){
     $('#thumb_area img').mouseover(function(){
-        $('#main_img img').attr('src', $(this).attr('src'));
+        $('#main_img img').attr('src', $(this).attr('src')).css({width:"350px",height:"350px"});
     });
     $('#thumb_area img').mouseout(function(){
-        $('#main_img img').attr('src', 'img/sim.jpg');
+        $('#main_img img').attr('src', 'img/thum/sim_main1.jpg').css({width:"100%",paddingLeft:"0"});
 		
     });
 });
@@ -23,17 +23,14 @@ $(function(){
 
 <body>
 
-<div id="main_img" class="main_img">
-<img src="img/sim.jpg">
+<div id="main_img" class="main_img_one">
+<img src="img/thum/sim_main1.jpg">
 </div>
 
-<ul id="thumb_area" class="thumb_area">
-<!--<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/sim/renew_s.jpg"></li>-->
-<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/sim/s3.jpg"></li>
-<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/sim/s4.jpg"></li>
-<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/sim/s5.jpg"></li>
-
-
+<ul id="thumb_area" class="thumb_area_one">
+<li><img src="img/thum/sim_thum_02.jpg"></li>
+<li><img src="img/thum/sim_thum_04.jpg"></li>
+<li><img src="img/thum/sim_thum_03.jpg"></li>
 
 </ul>
 

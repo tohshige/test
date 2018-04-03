@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+@charset "euc-jp";
 
 /* Icons */
 @font-face
@@ -73,7 +73,7 @@
 .slick-prev
 {
     left: 0%;
-	    margin-top: 20% !important;
+	    margin-top: 25% !important;
 }
 [dir='rtl'] .slick-prev
 {
@@ -82,18 +82,19 @@
 }
 .slick-prev:before
 {
-    content: 'â†';
+	 content: "¢«";
+    
 }
 [dir='rtl'] .slick-prev:before
 {
-    content: 'â†’';
+   content: "¢ª";
 	
 }
 
 .slick-next
 {
     right: 0%;
-	margin-top: -43% !important;
+	margin-top: -39% !important;
 }
 [dir='rtl'] .slick-next
 {
@@ -102,11 +103,11 @@
 }
 .slick-next:before
 {
-    content: 'â†’';
+    content: "¢ª";
 }
 [dir='rtl'] .slick-next:before
 {
-    content: 'â†';
+    content: "¢«";
 }
 
 .single-item .slick-prev::before,

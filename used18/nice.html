@@ -8,10 +8,10 @@
 <script>
 $(function(){
     $('#thumb_area img').mouseover(function(){
-        $('#main_img img').attr('src', $(this).attr('src'));
+        $('#main_img img').attr('src', $(this).attr('src')).css({width:"350px",paddingLeft:"0px",height:"350px"});
     });
     $('#thumb_area img').mouseout(function(){
-        $('#main_img img').attr('src', 'https://image.rakuten.co.jp/shopjapan/cabinet/share/used/nice1.jpg');
+        $('#main_img img').attr('src', 'img/thum/nice_main1.jpg').css({width:"100%",paddingLeft:"0"});
 		
     });
 });
@@ -23,15 +23,12 @@ $(function(){
 
 <body>
 
-<div id="main_img" class="main_img">
-<img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/used/nice1.jpg">
+<div id="main_img" class="main_img_one">
+<img src="img/thum/nice_main1.jpg">
 </div>
 
-<ul id="thumb_area" class="thumb_area">
+<ul id="thumb_area" class="thumb_area_one">
 <li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/nice/s_0210_4.jpg"></li>
-
-
-
 </ul>
 
 

@@ -1,4 +1,4 @@
-@charset "utf-8";
+@charset "euc-jp";
 /* CSS Document */
 
 /**/
@@ -35,7 +35,7 @@ body {
     margin: 0 auto;
     padding: 0;
     background: #fff;
-    font-family: "ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3", "Hiragino Kaku Gothic Pro", "ãƒ¡ã‚¤ãƒªã‚ª", Meiryo, Osaka, "ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯", "MS PGothic", "sans-serif";
+    font-family: "¥Ò¥é¥®¥Î³Ñ¥´ Pro W3", "Hiragino Kaku Gothic Pro", "¥á¥¤¥ê¥ª", Meiryo, Osaka, "£Í£Ó £Ð¥´¥·¥Ã¥¯", "MS PGothic", "sans-serif";
 }
 
 .outlet_sp_wrap img{
@@ -67,7 +67,7 @@ body {
 .outlet_sp_wrap .item_lineup{
     width: 100%;
     overflow: hidden;
-    margin:0 auto;
+    margin:-10px auto;
     padding: 4% 0 0;
     /*background:url(../img/item_back.png);*/
 }
@@ -240,12 +240,13 @@ body {
 
 .about_trs .trs_ttl{
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     font-size: 16px;
     font-weight: bold;
     color: #fff;
     background: #000;
     margin: 0;
+    border-bottom: 1px solid #000;
 }
 
 
@@ -262,7 +263,7 @@ body {
 
 
 #timelimit{
-	font-family: "ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3", Hiragino Kaku Gothic Pro," ãƒ¡ã‚¤ãƒªã‚ª", Meiryo, Osaka," ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯", MS PGothic," sans-serif";
+	font-family: "¡¦Ää#¡¦£çáãïä2¡¦¡¦Pro W3", Hiragino Kaku Gothic Pro," ¡¦¡ã£âáã¡¦£å , Meiryo, Osaka," ï¼­ï¼³ ï¼°ã£êáâ·ã¥ã¡¦°Ä, MS PGothic," sans-serif";
 	background:#cc0000;
 	display:none;
 	height:auto;
@@ -326,16 +327,37 @@ body {
 *{outline: none;}
 
 
-.right_bnr{
-	width: 25%;
-    position: fixed;
-    /* bottom: 45%; */
-    top: 60px;
-    right: 0;
-    z-index: 2147480000;
+.single-item img{
+	width: 85%;
+	margin: 0 auto;
 }
 
-.to_rsj{text-align: center; padding-top: 4%;margin: 8% auto 12%;font-weight: bold;color: #000;}
-.to_rsj a{color: #000;border-bottom: 1px dotted;}
+.nav img{
+  margin-bottom: 10px;
+}
 
+.pkr{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 96%;
+  margin: 0 auto;
+}
 
+.pkr a{
+  width: 49%;
+  height: 100%;
+  margin-bottom: 5%;
+}
+
+.kv_down_nav{
+ display: flex;
+ flex-wrap: wrap;
+ width: 91%;
+ margin: 0 auto;
+ justify-content: space-between;
+}
+
+.kv_down_nav a{
+ width: 30%;
+}

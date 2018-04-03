@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="euc-jp">
+<title></title>
+
+<script src="https://www.rakuten.ne.jp/gold/shopjapan/js/jquery.min2.js"></script>
+<script>
+$(function(){
+    $('#thumb_area img').mouseover(function(){
+        $('#main_img img').attr('src', $(this).attr('src')).css({width:"350px",paddingLeft:"0px",height:"350px"});
+    });
+    $('#thumb_area img').mouseout(function(){
+        $('#main_img img').attr('src', 'img/thum/trsp_m_main1.jpg').css({width:"100%",paddingLeft:"0"});
+		
+    });
+});
+</script>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div id="main_img" class="main_img_one">
+<img src="img/thum/trsp_m_main1.jpg">
+</div>
+
+<ul id="thumb_area" class="thumb_area_one">
+<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago01.jpg"></li>
+<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago02.jpg"></li>
+<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago03.jpg"></li>
+<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago04.jpg"></li>
+<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/trs/item/trsp_kago05.jpg"></li>
+
+</ul>
+
+
+
+</body>
+</html>
