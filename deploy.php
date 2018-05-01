@@ -7,11 +7,11 @@ print_r($rv);
 // そんな時は、linux コマンドを使うべき。
 
 // $dir 取得したいフォルダパス
-$dir "/home/mono-96/www/mono-96.jp/tmp/test/rcart2/";
+$dir = "/home/mono-96/www/mono-96.jp/tmp/test/rcart2/";
 // $dir ="/Users/mono05/Documents/test/";
 // $zipFileSavePath 一時、zipを保存しておくフォルダパス
 // $zipFileSavePath ="/Users/mono05/Documents/test/";
-$zipFileSavePath "/home/mono-96/www/mono-96.jp/tmp/";
+$zipFileSavePath = "/home/mono-96/www/mono-96.jp/tmp/";
 
 function getZip($dir,$zipFileSavePath){
 
