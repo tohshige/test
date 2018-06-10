@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無題ドキュメント</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js" charset="UTF-8"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="trsp01_sc">
+<iframe scrolling="no" src="trsp.html" class="thum"></iframe>
+
+<!--<form target="_top">
+<div class="size_select">
+<p class="size_txt">▶マットレスのサイズをお選び下さい</p>
+<select name="item_id" class="select_btn">
+<option value="https://www.rakuten.ne.jp/gold/shopjapan/">シングル</option>
+<option value="https://item.rakuten.co.jp/shopjapan/c/0000000757/">セミダブル</option>
+<option  value="https://item.rakuten.co.jp/shopjapan/c/0000000783/">ダブル</option>
+</select>
+</div>
+<div class="trsp01_price"></div>
+<input value="ご購入はこちら" class="link_buy_btn" type="button" onClick="top.location.href=item_id.value">
+</form>-->
+
+<form target="_top" onSubmit="return false">
+<div class="size_select">
+<p class="size_txt">▶マットレスのサイズをお選び下さい</p>
+<select name="item_id" class="select_btn" id="trsp01_size_select">
+<option value="https://item.rakuten.co.jp/shopjapan/trsp_ua1_1804/#cart">シングル</option>
+<option value="https://item.rakuten.co.jp/shopjapan/trsp_ua3_1804/#cart">セミダブル</option>
+<option  value="https://item.rakuten.co.jp/shopjapan/trsp_ua4_1804/#cart">ダブル</option>
+</select>
+</div>
+<div class="trsp01_price"></div>
+<input class="link_buy_btn" type="image" value="" onClick="top.location.href=item_id.value" src="img/1cl_btn.jpg">
+</form>
+</div><br>
+<br><br>
+
+
+
+
+<script type="text/javascript" src="js/price.js"></script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+@charset "utf-8";
+/* CSS Document */
+
+.main_img{
+	width:385px;
+	height:385px;
+	display:block;
+	position:absolute;
+	top:0px;
+	left:0;
+	padding-top:0px;
+	border: 1px solid #efefef;
+}
+
+.main_img_one{
+	width:300px;
+	height:300px;
+	display:block;
+	position:absolute;
+	top:20px;
+	left:25px;
+	padding-top:0px;
+	border: 1px solid #efefef;
+}
+
+.main_img_one img{
+	width:300px;
+}
+
+.main_img img{
+	/*width:385px;*/
+	/*height:385px;*/
+}
+
+.main_img_two{
+	width:480px;
+	height:190px;
+	display:block;
+	position:absolute;
+	top:0px;
+	left:0;
+	padding-top:0px;
+}
+
+.main_img_two img{
+	width:480px;
+	height:284px;
+}
+
+.main_img_col{
+	width:396px;
+	height:396px;
+	display:block;
+	position:absolute;
+	top:0px;
+	left:0;
+	padding-top:0px;
+	padding-left:80px;
+    border: 1px solid #ccc;
+}
+
+.main_img_col img{
+	width:396px;
+	height:396px;
+}
+
+.price_img{
+	width:396px;
+	height:119px;
+	display:block;
+	position:absolute;
+	top:480px;
+	left:0;
+	padding-top:0px;
+}
+
+.price_img img{
+	width:396px;
+	height:119px;
+}
+
+.thumb_area{
+	width:470px;
+	height:73px;
+	display:block;
+	position:absolute;
+	top:375px;
+	left:-40px;
+	padding-top:0px;
+	z-index: 999999999;
+}
+
+.thumb_area_2col{
+	width:385px;
+	height:73px;
+	display:block;
+	position:absolute;
+	top:200px;
+	left:-40px;
+	padding-top:0px;
+	z-index: 999999999;
+}
+
+.thumb_area li{
+	display:block;
+	background:#fff;
+	margin-right:5px;
+	float: left;
+    border: 1px solid #ccc;
+	width:56px;
+	height:56px;
+}
+
+.thumb_area li:last-child{
+	margin-right:0px;
+}
+
+.thumb_area li img{
+    width: 55px;
+	cursor:pointer;
+}
+
+.thumb_area li img:hover{
+	opacity:0.7;
+	filter:alpha(opacity=70);
+	-ms-filter:"alpha(opacity=70)";
+	zoom:1;
+}
+
+.thumb_area_one li{
+	display:block;
+	background:#fff;
+	margin-right:3px;
+	float: left;
+    border: 1px solid #ccc;
+	width:56px;
+	height:56px;
+}
+
+.thumb_area_one li:last-child{
+	margin-right:0px;
+}
+
+.thumb_area_one li img{
+    width: 55px;
+	cursor:pointer;
+}
+
+.thumb_area_one li img:hover{
+	opacity:0.7;
+	filter:alpha(opacity=70);
+	-ms-filter:"alpha(opacity=70)";
+	zoom:1;
+}
+
+.thumb_area_one{
+	position: relative;
+	top:310px;
+	left: -23px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.stp_sc{
+position: relative;
+   width: 950px;
+   height: 483px;
+   background-image: url(../img/stp.jpg);
+   margin: 0 auto;
+}
+
+.stpb_sc{
+position: relative;
+   width: 950px;
+   height: 483px;
+   background-image: url(../img/stpb.jpg);
+   margin: 0 auto;
+}
+
+.tr7pdc_sc{
+position: relative;
+   width: 950px;
+   height: 483px;
+   background-image: url(../img/tr7pdc.jpg);
+   margin: 0 auto;
+}
+
+.tr7pcs_sc{
+position: relative;
+   width: 950px;
+   height: 483px;
+   background-image: url(../img/tr7pcs.jpg);
+   margin: 0 auto;
+}
+
+.thum{
+position: absolute;
+    width: 360px;
+   height: 390px;
+   border: none;
+   left: 40px;
+   top:70px;
+}
+
+.buy_btn{
+  position: absolute;
+  left: 430px;
+  top: 370px;
+}
+
+.buy_btn:hover,.link_buy_btn:hover{
+/*opacity: 0.8;*/
+}
+
+.trsp01_sc{
+position: relative;
+   width: 950px;
+   height: 556px;
+   background-image: url(../img/trsp01_bak.jpg);
+   margin: 0 auto;
+}
+
+.trsp02_sc{
+position: relative;
+   width: 950px;
+   height: 556px;
+   background-image: url(../img/trsp02_bak.jpg);
+   margin: 0 auto;
+}
+
+.trcs_sc{
+position: relative;
+   width: 950px;
+   height: 709px;
+   background-image: url(../img/trcs.jpg);
+   margin: 0 auto;
+}
+
+.link_buy_btn{
+		width:439px;
+    cursor: pointer;
+    font-weight: 900;
+    border-radius: 6px;
+    top: 470px;
+    position: absolute;
+    left: 280px;
+    outline:none;
+	}
+    
+.trcs_btn{
+top:600px;
+}
+    .size_select{
+    display:flex;
+    width: 500px;
+    position: absolute;
+      top: 288px;
+    left: 394px;
+    height: 50px;
+    }
+    
+    .trcs_select{
+     display:block;
+         top: 480px;
+    left: 78px;
+    }
+    
+    .select_btn{
+    width: 100px;
+    }
+    
+    .trsp01_price{
+     background-image: url(../img/trsp01_price_s.jpg);
+     height:128px; 
+     width: 490px;
+     position: absolute;
+      top: 343px;
+    left: 395px;
+     -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+    }
+    
+       .trsp02_price{
+     background-image: url(../img/trsp02_price_m.jpg);
+     height:128px; 
+     width: 490px;
+     position: absolute;
+      top: 343px;
+    left: 395px;
+     -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+    }
+    
+         .trcs_price{
+     background-image: url(../img/trcs_price_ss.jpg);
+     height:125px; 
+     width: 440px;
+     position: absolute;
+       top: 461px;
+    left: 444px;
+     -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+    }
+    
+    
+    .size_txt{
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    top: -2px;
+    position: relative;
+}
+
+.trcs_size_text{
+width: 300px;
+text-align: center;
+}
+
+.select_btn{
+    display: block;
+    width: 243px;
+    height: 40px;
+    text-align: center;
+    padding: 0px 10px;
+    border: 1px solid #000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.trcs_select_btn{
+  width: 320px;
+}
+
+.jump{
+position: absolute;top:-60px;
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="euc-jp">
+<title></title>
+
+<script src="https://www.rakuten.ne.jp/gold/shopjapan/js/jquery.min2.js"></script>
+<script>
+$(function(){
+    $('#thumb_area img').mouseover(function(){
+        $('#main_img img').attr('src', $(this).attr('src')).css({width:"300px",paddingLeft:"0px",height:"300px"});
+    });
+    $('#thumb_area img').mouseout(function(){
+        $('#main_img img').attr('src', 'img/thum/stpb.jpg').css({width:"100%",paddingLeft:"0"});
+		
+    });
+});
+</script>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div id="main_img" class="main_img_one">
+<img src="img/thum/stpb.jpg">
+</div>
+
+<ul id="thumb_area" class="thumb_area_one">
+<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/super/1806ss_stpb_s2.jpg"></li>
+<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/super/1806ss_stpb_s3.jpg"></li>
+<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/super/1806ss_stpb_s4.jpg"></li>
+<li><img src="https://image.rakuten.co.jp/shopjapan/cabinet/share/promise_1607.jpg"></li>
+
+</ul>
+
+
+
+</body>
+</html>

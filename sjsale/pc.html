@@ -2,9 +2,10 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>最大86％OFF！全品送料無料！ | ショップジャパン GW SALE</title>
+<title>MAX86％OFF！全品送料無料！ | ショップジャパン  楽天スーパーSALE</title>
 
 <link rel="SHORTCUT ICON" href="https://www.rakuten.ne.jp/gold/shopjapan/images/favicon.ico">
+<link rel="stylesheet" href="css/style.css">
 
 <style>
 body{margin: 0;padding: 0;}
@@ -25,7 +26,7 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/sjsale/sp.html'
 </script>
 
 <script src="//assets.adobedtm.com/fde17e0362c40547334f4e041add368f158b4119/satelliteLib-e346cd8edc0ac640d3ce7c060b5a38f5169d4add.js"></script>
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js" charset="UTF-8"></script>
 </head>
 
 
@@ -37,6 +38,25 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/sjsale/sp.html'
 
 
 
+<!--上部追従-->
+<div style="position:fixed;top: 0px;left: 50%;margin-left: -475px;height: 89px;z-index: 1;" id="fade_nav">
+<img src="img/fade_nav.png" usemap="#Nav">
+</div>
+<!--上部追従-->
+
+<!--右下追従-->
+<div style="position:fixed;width: 78px; bottom: 100px;right: 10px;height: 101px;z-index: 1;">
+<a href="https://www.rakuten.ne.jp/gold/shopjapan/"><img src="img/top.jpg" style="margin-bottom: 1px;"></a>
+<a href="https://basket.step.rakuten.co.jp/rms/mall/bs/cartall/?s-id=top_normal_cart01"><img src="img/cart.jpg"></a>
+</div>
+<!--右下追従-->
+
+
+
+
+
+
+
 
 
 
@@ -44,49 +64,184 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/sjsale/sp.html'
 
 <div class="lptop" id="lptop">
 
-<div class="mv"><img src="kv.jpg"></div>
+<div class="mv"><img src="img/kv.jpg"></div>
 
 
 <div class="lpcontents">
 
-<img src="nav.jpg" usemap="#Cp"><br><br><br>
-
-
-
-<div id="mdm"><img src="mdm_title.jpg"></div><br>
-<br>
-
-<img src="trcs2.jpg" usemap="#Sc03"><br><br><br><br>
-<img src="trcs1.jpg" usemap="#Sc02"><br><br><br><br>
-<img src="trsp.jpg" usemap="#Sc01"><br><br><br><br><br>
+<img src="img/fade_nav.png" usemap="#Nav"><div id="chou"></div><br><br><br><br>
 
 
 
 
-<div id="exe"><img src="exe_title.jpg"></div><br><br>
-
-<img src="sltc.jpg" usemap="#Sc04"><br><br><br>
-
-<div id="fit"><img src="fit_title.jpg"></div><br><br>
-<img src="fit.jpg?00" usemap="#Sc2"><br>
-
-<div id="wdc"><img src="wdc_title.jpg"></div><br><br>
-<img src="wdc.jpg" usemap="#Sc3"><br>
-
-<div id="teiban"><img src="teiban_title.jpg"></div><br><br>
-<img src="teiban.jpg" usemap="#Sc4"><br>
-
-
+<div><img src="img/chou_title.jpg"></div><br><br>
 
 <br>
+<img src="img/stp_title.jpg"><br>
+<br><br>
+
+<div class="stpb_sc">
+<iframe scrolling="no" src="stpb.html" class="thum"></iframe>
+<a href="https://item.rakuten.co.jp/shopjapan/rak-stpb_1806ss/"><img src="./img/1cl_btn.jpg" class="buy_btn"></a>
+</div><br>
+<br><br>
+
+
+
+<div class="stp_sc">
+<iframe scrolling="no" src="stp.html" class="thum"></iframe>
+<a href="https://item.rakuten.co.jp/shopjapan/out_stp_1707/"><img src="./img/1cl_btn.jpg" class="buy_btn"></a>
+</div><br>
+<br><br>
+
+
+<img src="img/trsp_title.jpg"><br>
+<br><br>
+
+
+<div class="trsp01_sc">
+<iframe scrolling="no" src="trsp.html" class="thum"></iframe>
+
+<!--<form target="_top">
+<div class="size_select">
+<p class="size_txt">▶マットレスのサイズをお選び下さい</p>
+<select name="item_id" class="select_btn">
+<option value="https://www.rakuten.ne.jp/gold/shopjapan/">シングル</option>
+<option value="https://item.rakuten.co.jp/shopjapan/c/0000000757/">セミダブル</option>
+<option  value="https://item.rakuten.co.jp/shopjapan/c/0000000783/">ダブル</option>
+</select>
+</div>
+<div class="trsp01_price"></div>
+<input value="ご購入はこちら" class="link_buy_btn" type="button" onClick="top.location.href=item_id.value">
+</form>-->
+
+<form target="_top" onSubmit="return false">
+<div class="size_select">
+<p class="size_txt">▶マットレスのサイズをお選び下さい</p>
+<select name="item_id" class="select_btn" id="trsp01_size_select">
+<option value="https://item.rakuten.co.jp/shopjapan/trsp_ua1_1804/">シングル（89個）</option>
+<option value="https://item.rakuten.co.jp/shopjapan/trsp_ua3_1804/">セミダブル（49個）</option>
+<option  value="https://item.rakuten.co.jp/shopjapan/trsp_ua4_1804/">ダブル（9個）</option>
+</select>
+</div>
+<div class="trsp01_price"></div>
+<input class="link_buy_btn" type="image" value="" onClick="top.location.href=item_id.value" src="img/1cl_btn.jpg">
+</form>
+</div><br>
+<br><br>
+
+
+
+
+
+
+<div class="trsp02_sc">
+<iframe scrolling="no" src="trsp.html" class="thum"></iframe>
+
+<form target="_top" onSubmit="return false">
+<div class="size_select">
+<p class="size_txt">▶マットレスのサイズをお選び下さい</p>
+<select name="item_id" class="select_btn" id="trsp02_size_select">
+
+<option value="https://item.rakuten.co.jp/shopjapan/trsp-m_1806ss/">セミダブル（120個）</option>
+<option  value="https://item.rakuten.co.jp/shopjapan/trsp-w_1806ss/">ダブル（100個）</option>
+<option value="https://item.rakuten.co.jp/shopjapan/trsp-q_1806ss/">クイーン（90個）</option>
+</select>
+</div>
+<div class="trsp02_price"></div>
+<input class="link_buy_btn" type="image" value="" onClick="top.location.href=item_id.value" src="img/1cl_btn.jpg">
+</form>
+</div><br>
+<br><br>
+
+
+
+
+<div class="trcs_sc">
+<iframe scrolling="no" src="trcs.html" class="thum"></iframe>
+
+<form target="_top" onSubmit="return false">
+<div class="size_select trcs_select">
+<p class="size_txt trcs_size_text">　▼マットレスのサイズをお選び下さい▼</p>
+<select name="item_id" class="select_btn trcs_select_btn" id="trcs_size_select">
+
+<option value="https://item.rakuten.co.jp/shopjapan/trcs_ss_1806ss/">シングル×シングル</option>
+<option  value="https://item.rakuten.co.jp/shopjapan/trcs_mm_1806ss/">セミダブル×セミダブル</option>
+<option value="https://item.rakuten.co.jp/shopjapan/trcs_ww_1806ss/">ダブル×ダブル</option>
+<option value="https://item.rakuten.co.jp/shopjapan/trcs_qq_1806ss/">クイーン×クイーン</option>
+<option  value="https://item.rakuten.co.jp/shopjapan/trcs_sm_1806ss/">シングル×セミダブル</option>
+<option value="https://item.rakuten.co.jp/shopjapan/trcs_sw_1806ss/">シングル×ダブル</option>
+<option value="https://item.rakuten.co.jp/shopjapan/trcs_sq_1806ss/">シングル×クイーン</option>
+<option  value="https://item.rakuten.co.jp/shopjapan/trcs_mw_1806ss/">セミダブル×ダブル</option>
+<option  value="https://item.rakuten.co.jp/shopjapan/trcs_mq_1806ss/">セミダブル×クイーン</option>
+<option  value="https://item.rakuten.co.jp/shopjapan/trcs_wq_1806ss/">ダブル×クイーン</option>
+</select>
+</div>
+<div class="trcs_price"></div>
+<input class="link_buy_btn trcs_btn" type="image" value="" onClick="top.location.href=item_id.value" src="img/1cl_btn.jpg">
+</form>
+</div><br>
 <br>
 
-<div id="zaiko"><img src="zaiko_title.jpg"></div><br><br>
 
-<img src="zaiko.jpg" usemap="#Sc6"><br><br>
 
-<!--<img src="lp_15.jpg" id="info"><br><br><br>-->
-<a href="#lptop"><img src="page_top_btn.jpg"></a><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="tr7pdc_sc">
+<iframe scrolling="no" src="tr7pdc.html" class="thum"></iframe>
+<a href="https://item.rakuten.co.jp/shopjapan/rak_7pdc_1806ss/"><img src="./img/1cl_btn.jpg" class="buy_btn" style="top:395px;"></a>
+</div><br>
+<br><br>
+
+<div class="tr7pcs_sc">
+<iframe scrolling="no" src="tr7pcs.html" class="thum"></iframe>
+<a href="https://item.rakuten.co.jp/shopjapan/rak_cs7p_1806ss/"><img src="./img/1cl_btn.jpg" class="buy_btn" style="top:395px;"></a>
+</div><br>
+<div id="super"></div>
+<br><br>
+
+<br>
+<br>
+
+
+
+
+
+
+<div><img src="img/super_title.jpg"></div><br><br>
+
+
+<img src="img/super_nav.jpg" usemap="#super_nav"><div id="diet"></div><br><br><br>
+<img src="img/diet.jpg" usemap="#Sc_diet"><div id="kitchen"></div><br><br><br>
+<img src="img/kitchen.jpg" usemap="#Sc_kitchen"><div id="life"></div><br><br><br>
+<img src="img/life.jpg" usemap="#Sc_life"><div id="sleep"></div><br><br><br>
+<img src="img/sleep.jpg" usemap="#Sc_sleep"><div id="pok"></div>
+<br><br>
+<br><br>
+
+<div><img src="img/pok_title.jpg"></div><br><br>
+<img src="img/pok_nav.jpg" usemap="#pok_nav"><div id="pok_500"></div><br><br><br>
+<img src="img/pok_500.jpg" usemap="#Sc_pok_500"><div id="pok_1500"></div><br><br>
+<img src="img/pok_1500.jpg" usemap="#Sc_pok_1500"><div id="pok_2000"></div><br><br>
+<img src="img/pok_2000.jpg" usemap="#Sc_pok_2000">
+<br>
+<br>
+
+<img src="img/info.jpg" id="info"><br><br><br>
+<hr style="width: 950px;"><br>
+<br>
+
+<a href="#lptop"><img src="img/page_top_btn.jpg"></a><br><br><br><br>
 
 </div>
 
@@ -94,70 +249,126 @@ location.href = 'https://www.rakuten.ne.jp/gold/shopjapan/cp/sjsale/sp.html'
 
 <div id="pctu"><a href="#info"><img src=""></a></div>
 
-<map name="Cp">
-<area shape="rect" coords="1,2,309,92" href="#mdm">
-<area shape="rect" coords="327,2,632,98" href="#exe">
-<area shape="rect" coords="641,-2,948,95" href="#zaiko">
-</map>
-
-<map name="Sc01">
-<area shape="rect" coords="258,353,694,409" href="https://item.rakuten.co.jp/shopjapan/trsp-s_1804a/">
-</map>
-
-<map name="Sc02">
-<area shape="rect" coords="258,353,694,409" href="https://item.rakuten.co.jp/shopjapan/trsp-su1_1804a/">
-</map>
-
-<map name="Sc03">
-<area shape="rect" coords="258,353,694,409" href="https://item.rakuten.co.jp/shopjapan/trsp-su2_1804a/">
-</map>
-
-<map name="Sc04">
-<area shape="rect" coords="258,353,694,409" href="https://item.rakuten.co.jp/shopjapan/sltc_1804a/">
-</map>
-
-<map name="Sc2">
-<area shape="rect" coords="17,281,448,330" href="https://item.rakuten.co.jp/shopjapan/sqm_1804a/">
-<area shape="rect" coords="509,281,940,327" href="https://item.rakuten.co.jp/shopjapan/opg_1804a/">
-
-</map>
-
-<map name="Sc3">
-<area shape="rect" coords="16,277,444,328" href="https://item.rakuten.co.jp/shopjapan/wds_1219a/">
-<area shape="rect" coords="508,279,932,327" href="https://item.rakuten.co.jp/shopjapan/wdt-ncx0a/">
-<area shape="rect" coords="18,644,446,695" href="https://item.rakuten.co.jp/shopjapan/wdc2_t_outa/">
-<area shape="rect" coords="509,646,933,694" href="https://item.rakuten.co.jp/shopjapan/wcc_1712_aa/">
-</map>
-
-<map name="Sc4">
-<area shape="rect" coords="16,277,444,328" href="https://item.rakuten.co.jp/shopjapan/nice6nrx_1803a/">
-<area shape="rect" coords="508,279,932,327" href="https://item.rakuten.co.jp/shopjapan/ngw_reda/">
-</map>
-
-<map name="Sc5">
-<area shape="rect" coords="80,623,497,682" href="https://item.rakuten.co.jp/shopjapan/nue_fn_201803/">
-<area shape="rect" coords="683,621,1099,679" href="https://item.rakuten.co.jp/shopjapan/pntl_fn_201803/">
-<area shape="rect" coords="79,1376,496,1433" href="https://item.rakuten.co.jp/shopjapan/wsp_fn_201803/">
-</map>
-
-<map name="Sc6">
-<area shape="rect" coords="108,160,297,214" href="https://item.rakuten.co.jp/shopjapan/trf-tmxxa/">
-<area shape="rect" coords="432,160,618,214" href="https://item.rakuten.co.jp/shopjapan/dsn_1804a/">
-<area shape="rect" coords="759,167,945,214" href="https://item.rakuten.co.jp/shopjapan/wsp_fn_201803a/">
-<area shape="rect" coords="104,407,295,459" href="https://item.rakuten.co.jp/shopjapan/mgth-198_1219a/">
-<area shape="rect" coords="427,404,622,460" href="https://item.rakuten.co.jp/shopjapan/crfp-ryt_1804a/"><area shape="rect" coords="755,405,945,459" href="https://item.rakuten.co.jp/shopjapan/sld_fn_1804a/">
-</map>
-
-<map name="Pop">
-<area shape="rect" coords="1,131,225,331" href="">
-<area shape="rect" coords="242,131,466,331" href="">
-<area shape="rect" coords="484,131,708,331" href="">
-<area shape="rect" coords="726,131,950,331" href="">
+<map name="Nav">
+<area shape="rect" coords="-1,1,307,91" href="#chou">
+<area shape="rect" coords="327,2,632,98" href="#super">
+<area shape="rect" coords="641,-2,948,95" href="#pok">
 </map>
 
 
+<!--<map name="tui">
+<area shape="rect" coords="485,1,630,50" href="https://www.rakuten.ne.jp/gold/shopjapan/">
+<area shape="rect" coords="650,1,860,50" href="#chou">
+<area shape="rect" coords="865,1,1065,50" href="#super">
+<area shape="rect" coords="1075,1,1275,50" href="#pok">
+<area shape="rect" coords="1290,1,1360,50" href="https://www.rakuten.ne.jp/gold/shopjapan/">
+<area shape="rect" coords="1370,1,1435,50" href="https://basket.step.rakuten.co.jp/rms/mall/bs/cartall/?s-id=top_normal_cart01">
+</map>-->
 
 
+
+<map name="Sc_diet">
+<area shape="rect" coords="19,410,444,455" href="https://item.rakuten.co.jp/shopjapan/sqm_1806ss/">
+<area shape="rect" coords="509,410,934,455" href="https://item.rakuten.co.jp/shopjapan/opg_1806ssa/">
+<area shape="rect" coords="19,780,444,825" href="https://item.rakuten.co.jp/shopjapan/fmsp-nx2_1806ss/">
+<area shape="rect" coords="508,781,933,826" href="https://item.rakuten.co.jp/shopjapan/wcc_1806ss/">
+<area shape="rect" coords="18,1148,443,1193" href="https://item.rakuten.co.jp/shopjapan/lgmp_1806ss/">
+<area shape="rect" coords="510,1149,935,1194" href="https://item.rakuten.co.jp/shopjapan/wsp_fn_201803/">
+</map>
+
+
+<map name="Sc_kitchen">
+<area shape="rect" coords="19,413,444,458" href="https://item.rakuten.co.jp/shopjapan/crff/">
+<area shape="rect" coords="509,413,934,458" href="https://item.rakuten.co.jp/shopjapan/crff_ktl/">
+<area shape="rect" coords="19,783,444,828" href="https://item.rakuten.co.jp/shopjapan/pkp_set1_1806ss/">
+<area shape="rect" coords="508,784,933,829" href="https://item.rakuten.co.jp/shopjapan/sfs-seta_1806ss/">
+</map>
+
+
+<map name="Sc_life">
+<area shape="rect" coords="19,413,444,458" href="https://item.rakuten.co.jp/shopjapan/rak-twos_1806ss/">
+<area shape="rect" coords="509,413,934,458" href="https://item.rakuten.co.jp/shopjapan/nue_fn_201803/">
+<area shape="rect" coords="19,783,444,828" href="https://item.rakuten.co.jp/shopjapan/ssca_50_1806ss/">
+<area shape="rect" coords="508,784,933,829" href="https://item.rakuten.co.jp/shopjapan/sim_ua_201803/">
+</map>
+
+
+<map name="Sc_sleep">
+<area shape="rect" coords="19,417,444,462" href="https://item.rakuten.co.jp/shopjapan/trsf-kne_1806ss/">
+<area shape="rect" coords="509,418,934,463" href="https://item.rakuten.co.jp/shopjapan/trs-mcsn_1806ss/">
+<area shape="rect" coords="19,787,444,832" href="https://item.rakuten.co.jp/shopjapan/trs-knec_1806ss/">
+<area shape="rect" coords="508,788,933,833" href="https://item.rakuten.co.jp/shopjapan/trdc_s2set_1806ss/">
+</map>
+
+
+<map name="Sc_pok_500">
+<area shape="rect" coords="20,520,278,561" href="https://item.rakuten.co.jp/shopjapan/trf_fn_201803/">
+<area shape="rect" coords="346,519,604,560" href="https://item.rakuten.co.jp/shopjapan/rak-ice5_1806ss/">
+<area shape="rect" coords="670,519,928,560" href="https://item.rakuten.co.jp/shopjapan/wsn-nmsk/">
+</map>
+
+
+<map name="Sc_pok_1500">
+<area shape="rect" coords="20,566,278,607" href="https://item.rakuten.co.jp/shopjapan/dsn_1804/">
+<area shape="rect" coords="346,566,604,607" href="https://item.rakuten.co.jp/shopjapan/cutleryset/">
+<area shape="rect" coords="669,565,927,606" href="https://item.rakuten.co.jp/shopjapan/sld_fn_1804/">
+<area shape="rect" coords="21,1055,279,1096" href="https://item.rakuten.co.jp/shopjapan/crf-tanrnabe/">
+<area shape="rect" coords="346,1055,604,1096" href="https://item.rakuten.co.jp/shopjapan/crf-20yk/">
+<area shape="rect" coords="670,1055,928,1096" href="https://item.rakuten.co.jp/shopjapan/rak-crfl_1806ss/">
+</map>
+
+
+<map name="Sc_pok_2000">
+<area shape="rect" coords="21,572,279,613" href="https://item.rakuten.co.jp/shopjapan/mat2_fn_201803/">
+<area shape="rect" coords="346,572,604,613" href="https://item.rakuten.co.jp/shopjapan/rak-neo5_1806ss/">
+</map>
+
+
+
+
+
+
+
+<map name="super_nav">
+<area shape="rect" coords="2,9,230,93" href="#diet">
+<area shape="rect" coords="241,7,469,88" href="#kitchen">
+<area shape="rect" coords="478,6,709,91" href="#life">
+<area shape="rect" coords="721,8,944,88" href="#sleep">
+</map>
+
+
+<map name="pok_nav">
+<area shape="rect" coords="124,17,350,99" href="#pok_500">
+<area shape="rect" coords="359,18,592,100" href="#pok_1500">
+<area shape="rect" coords="600,16,826,102" href="#pok_2000">
+</map>
+
+
+
+
+
+
+
+<script type="text/javascript" src="js/price.js"></script>
+
+
+
+
+<script>
+	// スクロールしたらじわっとフッター表示
+$(function() {
+  var topBtn = $('#fade_nav');
+  topBtn.hide();
+  $(window).scroll(function() {
+    // 200pxで表示
+    if ($(this).scrollTop() > 460) {
+      topBtn.show();
+    } else {
+      topBtn.hide();
+    }
+  });
+});
+</script>
 
 
 
